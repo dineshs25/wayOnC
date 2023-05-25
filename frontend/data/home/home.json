@@ -1,0 +1,143 @@
+[
+   {
+    "shareMArketTips": {
+        "titie":"Share Market Tips",
+        "description":"description",
+        "shareMarketTipsList":[
+            {
+                "id":"1",
+                "image":"image",
+                "description":"Perfect Technical & Fundamental research of Stocks and Commodities market."
+            },
+            {
+                "id":"2",
+                "image":"image",
+                "description":"10 Years of Wealth Creation Experience"
+            },
+            {
+                "id":"3",
+                "image":"image",
+                "description":"Risk Managed Calls"
+            },
+            {
+                "id":"4",
+                "image":"image",
+                "description":"SEBI Registered Registration Number INA000002322"
+            },
+            {
+                "id":"5",
+                "image":"image",
+                "description":"Award Winning Research and Advice"
+            }
+        ]
+    },
+    "ourWinningPacks":{
+        "title":"title",
+        "description":"description",
+        "ourWinningPacksList":[
+
+        ]
+    },
+    "recomdations":{
+        "title":"Share Recommendations Services",
+        "description":"description",
+        "recomdationsList":[
+            {
+                "id":"1",
+                "image":"image",
+                "description":"EQUITY"
+            },
+            {
+                "id":"2",
+                "image":"image",
+                "description":"MCX"
+            },
+            {
+                "id":"3",
+                "image":"image",
+                "description":"NCDEX"
+            },
+            {
+                "id":"4",
+                "image":"image",
+                "description":"CURRENCY"
+            },
+            {
+                "id":"5",
+                "image":"image",
+                "description":"FOREX"
+            }
+        ]
+    },
+    "faq":{
+        "title":"Frequently Asked Questions",
+        "description":"description",
+        "FaqList":[
+            {
+                "id":"1",
+                "title":"Why should I hire Share Market Advisory services? ",
+                "description":[
+                   " <h3>Why should I hire Share Market Advisory services?<h3>",
+                   "<p><strong>Share Market Advisory</strong> not only guides you for the investment in the share market but also educates you about the market trends. Hiring reputed and SEBI registered advisory companies have numerous advantages for a share market investor. You don’t only earn temporary profit but also build an impressive portfolio.</p>",
+                   " <h4>1. We offer Share Market advice, not assurance –<h3>",
+                   "<p>We don’t guarantee you the profit or returns on investment as the Share market is highly volatile and unpredictable. We believe in serving quality over quantity. We want our clients to grow high in the Share Market. There is no 100% assurance of anything. As an advisory company, we can only offer you the best investment advice based on our research and experience. Our experts can only make predictions and can’t guarantee you 100% profit in any specific share. We are providing the best Share Market Advisory services, not any 100% assurance on your investment in the market.</p>",
+                   " <h4>2. Educate Our Clients –<h3>",
+                   "<p>We are not only offering the best stock market advisory services today; we are educating our clients about the market and risks related to it. To stay for a long time in the market, a trader should have enough knowledge about the market and its trend. Moreover, a trader can’t rely only on the history of the market, he/she needs regular updates about the market and its policy. Our experts teach you how to anticipate risk to avoid huge losses. You might get enough share market information on the internet, but you’ll not get the insight details and facts online. Shyam Advisory® is not only offering you advisory services but also educating you about the market. A trader should know everything about markets, from profit to risks. Let’s help you in understanding the market with the help of share market professionals.</p>",
+                   " <h4>3. Research-Based Advice –<h3>",
+                   "<p>We offer you all the advice, recommendations, and trading tips after the deep research and analysis of the market. Shyam Advisory® believes that an investment can’t be done on your instincts and assumptions. Our financial advisor of intraday tips goes through the history, maps, charts, and everything before providing any trading advice for a specific stock. Our experts monitor all the stocks personally and then offer you the best advice. However, we can’t offer you a 100% guarantee, but we can try our best to offer you the most reliable advisory services. Nothing can beat a well-researched investment in the share market.</p>",
+                   " <h4>4. Veterans with Rich Experience –<h3>",
+                   "<p>We have a team of veteran financial advisors with rich experience in the Share Market. They have invested and made a huge profit by investment and now, they are here to help you. All the advisors observe the market closely and then offer you the best advice. Nothing can beat advice from an experienced person in the respective field. Also, they will help you no to commit a stupid mistake which eventually can lead to huge losses. With their years of experience and wisdom, they are the best trading tips provider in India. Along with new trend upgrades, the share market demands a rich experience to stay in the market for the longest time. Shyam Advisory® Services not only offers you the best investment advice, but they also teach you to share market tactics, how to anticipate and manage risk, what a trader shouldn’t do to make a huge profit, and more.</p>"
+                ]
+            },
+            {
+                "id":"2",
+                "title":"What is a Stock Advisory Company?",
+                "description":[
+                    " <h4>What is a Stock Advisory Company?<h3>",
+                   "<p>A Stock Advisory Company is a team of professional share market experts who guide you on investing in the stock market for long-term returns and avoiding losses. The share market advisory helps you to earn maximum profit and achieve your financial goal through stock market investment.</p>"
+                ]
+            },
+            {
+                "id":"3",
+                "title":"Are Share Market Advisory services worth the money?",
+                "description":[
+                   " <h4>Are Share Market Advisory services worth the money?<h3>",
+                   "<p>Yes, if you want to earn a maximum return without experiencing huge losses in share market investment. Shyam Advisory® is offering the best stock advisory services in India. By investing a small amount in advisory services, You can earn enough profit and accomplish your financial goals by investing right in the share market.</p>"
+                ]
+            },
+            {
+                "id":"4",
+                "title":"Why should I hire a SEBI registered Share Market Tips Company?",
+                "description":[
+                   " <h4>Why should I hire a SEBI registered Share Market Tips Company?<h3>",
+                   "<p>A SEBI registered share market advisory company like Shyam Advisory® builds financial assets after considering profit, loss, and investment risk. These advisory services help you to make a full-proof investment plan in the share market and build a strong portfolio. The financial experts guide you for the right investment and money management.</p>"
+                ]
+            },
+            {
+                "id":"5",
+                "title":"What if I lose money because of the tip of the share market advisory company?",
+                "description":[
+                   " <h4>What if I lose money because of the tip of the share market advisory company?<h3>",
+                   "<p>Do not just sue the advisory company for a small loss. Profit and loss are an integral part of the share market. A stock advisory company in Gujarat can offer you the best share market tips only; they can’t provide you 100% of the profit on any investment. Take time and observe if you are not making any profit for 1-2 years of investment, then you can find new advisory services for yourself.</p>"
+                ]
+            },
+            {
+                "id":"6",
+                "title":"What factors should I consider while hiring a Share Market Advisory Company?",
+                "description":[
+                   " <h4>What factors should I consider while hiring a Share Market Advisory Company?<h3>",
+                   "<p>The foremost thing is that the stock market advisory company should be SEBI registered. Besides this, the company should be reputed and holds years of experience in the share market. Before hiring any advisory company, check out the background and experience of the company. They should have a team of experienced and successful share market investors because a successful investor can only guide you properly.</p>"
+                ]
+            },
+            {
+                "id":"7",
+                "title":"Why Share market advisory services are beneficial for both beginners and experienced traders?",
+                "description":[
+                   " <h4>Why Share market advisory services are beneficial for both beginners and experienced traders?<h3>",
+                   "<p>Share Market Advisory services offer the best advice to the traders as per their investment goals. Moreover, the advisors make a strategy to invest in different stocks by analysing your investment plans and profit goals from the respective stock. We have built different advisory packages as per the requirements of the traders. You can select any of the packages by checking all the features. We are offering advisory services for both short and long-term investors. You can contact us via call or mail to take out services.</p>"
+                ]
+            }
+        ]
+    }
+   }
+]

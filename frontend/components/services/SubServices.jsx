@@ -1,16 +1,38 @@
+import react from "react";
 import Seo from "../../components/common/Seo";
 import DefaulHeader from "../../components/header/DefaulHeader";
 import DefaultFooter from "../../components/footer/DefaultFooter";
-import Partners from "../../components/services/Partners";
-import Faq from "../../components/services/Faq";
-import Testimonial from "../../components/home-page/home-3/Testimonial";
+import Service1 from "../../components/services/Service1";
 import Block from "../../components/services/Block";
-import Team3 from "../../components/team/Team3";
+import Testimonial from "../../components/home-page/home-3/Testimonial";
+import Faq from "../../components/services/Faq";
+import Partners from "../../components/services/Partners";
 import Link from "next/link";
-import VideoBlock from "../../components/about/VideoBlock";
-import Counter from "../../components/about/Counter";
+import ServicesData from "../../data/service/services.json";
+const services = ServicesData;
 
-const AboutUsV1 = () => {
+const SubServices = () => {
+  const slugify = function (text) {
+    return text
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, "-") // Replace spaces with -
+      .replace(/[^\w-]+/g, "") // Remove all non-word chars
+      .replace(/--+/g, "-") // Replace multiple - with single -
+      .replace(/^-+/, "") // Trim - from start of text
+      .replace(/-+$/, ""); // Trim - from end of text
+  };
+  // const equityData = services.filter(data => data.cate ? data.cate : "" === "equity");
+  const equityData = services.filter(
+    (data) => slugify(data.cate ? data.cate : "") === "equity"
+  );
+  const ncxData = services.filter(
+    (data) => slugify(data.cate ? data.cate : "") === "mcx"
+  );
+  const ncdexData = services.filter(
+    (data) => slugify(data.cate ? data.cate : "") === "ncdex"
+  );
+
   const features = [
     { text: "Amazing communication." },
     { text: "Best trending designing experience." },
@@ -27,15 +49,13 @@ const AboutUsV1 = () => {
 
   return (
     <>
-      <Seo pageTitle="About Us V1" />
-
+      <Seo pageTitle="Service V1" />
       {/* <!-- 
       =============================================
       Theme Default Menu
       ============================================== 	
       --> */}
       <DefaulHeader />
-
       {/* 
 			=============================================
 				Feature Section Fifty One
@@ -44,58 +64,32 @@ const AboutUsV1 = () => {
       <div className="fancy-feature-fiftyOne position-relative mt-200">
         <div className="container">
           <div className="row">
-            <div className="col-lg-7" data-aos="fade-right">
-              <div className="title-style-five mb-65 md-mb-40">
+            <div className="col-xxl-7 col-lg-6" data-aos="fade-right">
+              <div className="title-style-five mb-45 md-mb-10">
                 <div className="sc-title-two fst-italic position-relative">
-                  More About us.
+                  Our Services
                 </div>
                 <h2 className="main-title fw-500 tx-dark">
-                  We’r the top rated agency.
+                  Our Provided Services.
                 </h2>
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-xl-8 col-lg-9 ms-auto">
-              <div className="ps-xxl-5" data-aos="fade-left">
-                <h6 className="mb-30">Our History &amp; Goal.</h6>
-                <p className="text-lg tx-dark">
-                  Our founders Dustin Moskovitz and Justin Rosenstein met while
-                  leading Engineering teams at Facebook. As operations scaled,
-                  they grew frustrated by how difficult it was to coordinate.
-                  incidi utl abor et dolor magna aliu. enim ad mim venam, quis
-                  nostru labore lorem dus amet sample text.
-                </p>
-                <div className="row">
-                  <Counter />
-                </div>
-              </div>
-            </div>
+          {/* End .row */}
+
+          <div className="row gx-xxl-5">
+            <Service1 />
           </div>
+          {/* /.row */}
         </div>
         {/* /.container */}
-
-        <img
-          src="/images/shape/shape_171.svg"
-          alt="shape"
-          className="lazy-img shapes shape-one"
-        />
         <img
           src="/images/shape/shape_172.svg"
-          alt="shape"
+          alt="icon"
           className="lazy-img shapes shape-two"
         />
       </div>
       {/* /.fancy-feature-fiftyOne */}
-
-      {/* <!-- 
-			=============================================
-				Feature Section Fifty Two
-			============================================== 
-			--> */}
-      <VideoBlock />
-
-      {/* <!-- /.fancy-feature-fiftyTwo --> */}
 
       {/* 
 			=============================================
@@ -148,57 +142,6 @@ const AboutUsV1 = () => {
         {/* /.container */}
       </div>
       {/* /.fancy-feature-thirtySeven */}
-
-      {/*
-			=====================================================
-				Team Section Two
-			=====================================================
-			*/}
-      <div className="team-section-two position-relative pt-200 lg-pt-120">
-        <div className="container">
-          <div className="wrapper position-relative">
-            <div className="row align-items-center">
-              <div className="col-lg-5" data-aos="fade-right">
-                <div className="title-style-six text-center text-lg-start pb-40 lg-pb-20 md-pb-10">
-                  <h2 className="main-title fw-500 tx-dark">Our Team</h2>
-                </div>
-                {/* /.title-style-six */}
-              </div>
-            </div>
-            {/* /.row */}
-            <div className="row">
-              <Team3 />
-            </div>
-            {/* /.row */}
-
-            <p
-              className="cr-text text-center text-lg tx-dark mt-75 lg-mt-50"
-              data-aos="fade-up"
-            >
-              Our nearly
-              <span className="text-decoration-underline fw-500">8,000+</span>
-              committed staff members are ready to help.
-            </p>
-            <div className="text-center md-mt-20">
-              <Link
-                href="/pages-menu/team-v1"
-                className="btn-twentyTwo fw-500 tran3s"
-                data-aos="fade-left"
-              >
-                View full team
-              </Link>
-            </div>
-          </div>
-          {/* /.wrapper */}
-        </div>
-        {/* /.container */}
-        <img
-          src="/images/shape/shape_172.svg"
-          alt="shape"
-          className="lazy-img shapes shape-one d-none d-xl-inline-block"
-        />
-      </div>
-      {/* /.team-section-two */}
 
       {/*
 			=====================================================
@@ -340,4 +283,4 @@ const AboutUsV1 = () => {
   );
 };
 
-export default AboutUsV1;
+export default SubServices;

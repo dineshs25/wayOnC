@@ -1,0 +1,46 @@
+[
+    {
+        "body": [
+            "<p><strong>Shyam Advisory –</strong>Investment Advisor is one of India's leading Advisory Company. It offers services regarding Equity, MCX, NCDEX & Currency With an experience of over six years, Shyam Advisory – Investment Advisor has contributed significantly to the growth and development of the Advisory industry in India. Shyam Advisory has carved a niche in the Advisory sector due to its rich heritage, integrity, adherence to prudent practices, technology advancement, customized products and services and most of all due to its experienced, qualified and professional Representatives.</p>",
+            "<p><strong>Shyam Advisory –</strong>Investment Advisor product portfolio comprises solutions, which meet various customer needs such as Short term Investment, Long Term Investment. Our company currently has different categories of plans to fulfill the needs of customers. The company has a strong base of highly satisfied Investors and Traders.</p>"
+        ],
+        "whyus": {
+            "title": "Why Shyam Advisory - Investment Advisor?",
+            "description": "Shyam Advisory – Investment Advisor believes that establishing a strong and ethical foundation is an essential prerequisite for long-term sustainable growth. To ensure this, we have concentrated our focus on expansion of organizing an efficient and well-trained staff and setting up appropriate systems and processes with optimum use of technology. As all these areas form the basic infrastructure for establishing the highest possible customer service standards."
+        },
+        "ourVision":{
+            "title": "Our Vision", 
+            "description":"We strive to be acknowledged as a leader in helping our clients succeed in the world’s rapidly evolving financial markets. We Endeavour to be valued as a leader in client satisfaction, service performance, financial strength & profitability. We work hard continuously to enhance our reputation for accessibility, professionalism, analysis & depth & quality of our long term consultative relationship with clients.",
+            "image":"image"
+        },
+        "ourMision":{
+            "title":"Our Mision",
+            "description":"At Shyam Advisory – Investment Advisor work continuously on Training and updating staff and Executives, adopting new technology and improving infrastructure to give benefit to our customers. We are Equipped with Highly reliable software, tools, newswires, communication devices, internet, and technologies, well trained & qualified staff/representatives to protect clients investment and help them get good returns over years.",
+            "image":"image"
+        },
+        "stakeList":{
+            "title":"Engage All Stakeholders In The Learning Process",
+            "description":"No more fragmented IT infrastructure or time-consuming manual data transfer. Classter streamlines all your school operations, saves time and reduces errors. Contact our sales team and discover the benefits of a fully integrated education technology solution!",
+            "stakeListInfo":[
+                {
+                    "id":"1",
+                    "title":"Invest with confidence and precision.",
+                    "description":"Take control of your investments with our equity services, including cash, future, option, stock index, index delivery, and more. Our experienced financial professionals provide personalized advice and solutions tailored to your unique needs. Invest with confidence and precision to achieve your financial goals.",
+                    "image":"/images/gallery/f-image-1.webp"
+                },
+                {
+                    "id":"2",
+                    "title":"Diversify Your Portfolio with MCX Services.",
+                    "description":"Don't put all your eggs in one basket. With our MCX services, you can invest in a variety of options including bullions, normal MCX, energy, and metal. We provide expert guidance and personalized advice to help you diversify your portfolio and reach your financial goals. Start investing today with Investment Advisory Website.",
+                    "image":"/images/gallery/f-image-2.webp"
+                },
+                {
+                    "id":"3",
+                    "title":"Maximize your investment with personalized Ncdex services.",
+                    "description":"Take control of your investments and make informed decisions with our personalized Ncdex services. With normal Ncdex and investory options, you can tailor your investments to your unique needs and goals. Trust our team of experienced financial professionals to help you maximize your returns and achieve financial success.",
+                    "image":"/images/gallery/f-image-3.webp"
+                }
+            ]
+        }
+    }
+]

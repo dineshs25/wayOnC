@@ -1,18 +1,26 @@
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import DefaultFooter from "../../components/footer/DefaultFooter";
-import Service1 from "../../components/services/Service1";
-import Block from "../../components/services/Block";
-import Testimonial from "../../components/home-page/home-3/Testimonial";
-import Faq from "../../components/services/Faq";
-import Partners from "../../components/services/Partners";
+import Seo from "../components/common/Seo";
+import DefaulHeader from "../components/header/DefaulHeader";
+import DefaultFooter from "../components/footer/DefaultFooter";
+import Partners from "../components/services/Partners";
+import Faq from "../components/services/Faq";
+import Testimonial from "../components/home-page/home-3/Testimonial";
+import Block from "../components/services/Block";
+import Team3 from "../components/team/Team3";
 import Link from "next/link";
+import VideoBlock from "../components/about/VideoBlock";
+import Counter from "../components/about/Counter";
+import aboutData from '../data/about/about.json';
+const myData = aboutData;
 
-const ServiceV1 = () => {
+const AboutUsV1 = () => {
   const features = [
-    { text: "Amazing communication." },
-    { text: "Best trending designing experience." },
-    { text: "Email & Live chat." },
+    { text: "Empowering Your Financial Success, One Investment at a Time." },
+    { text: "Unleashing the Power of Your Investments for a Brighter Future." },
+    { text: "Precision, Strategy, and Performance - The Foundations of Our Investment Approach." },
+    { text: "Together, we build lasting partnerships that stand the test of time, empowering your financial future." },
+    { text: "When you succeed, we celebrate. Your success is our driving force." },
+    { text: "Transforming Your Financial Vision into Reality" },
+    { text: "Partner with Us for a Thriving Financial Future." },
   ];
 
   const starRating = Array(5)
@@ -25,13 +33,15 @@ const ServiceV1 = () => {
 
   return (
     <>
-      <Seo pageTitle="Service V1" />
+      <Seo pageTitle="About Us V1" />
+
       {/* <!-- 
       =============================================
       Theme Default Menu
       ============================================== 	
       --> */}
       <DefaulHeader />
+
       {/* 
 			=============================================
 				Feature Section Fifty One
@@ -40,45 +50,124 @@ const ServiceV1 = () => {
       <div className="fancy-feature-fiftyOne position-relative mt-200">
         <div className="container">
           <div className="row">
-            <div className="col-xxl-7 col-lg-6" data-aos="fade-right">
-              <div className="title-style-five mb-45 md-mb-10">
+            <div className="col-lg-7" data-aos="fade-right">
+              <div className="title-style-five mb-65 md-mb-40">
                 <div className="sc-title-two fst-italic position-relative">
-                  Our Services
+                  More About us.
                 </div>
                 <h2 className="main-title fw-500 tx-dark">
-                  Our Provided Services.
+                  We’r the top rated agency.
                 </h2>
               </div>
             </div>
           </div>
-          {/* End .row */}
-
-          <div className="row gx-xxl-5">
-            <Service1 />
+          <div className="row">
+            <div className="col-xl-8 col-lg-9 ms-auto">
+              <div className="ps-xxl-5" data-aos="fade-left">
+                <h6 className="mb-30">Our History &amp; Goal.</h6>
+                <p className="text-lg tx-dark">
+                  Our founders Dustin Moskovitz and Justin Rosenstein met while
+                  leading Engineering teams at Facebook. As operations scaled,
+                  they grew frustrated by how difficult it was to coordinate.
+                  incidi utl abor et dolor magna aliu. enim ad mim venam, quis
+                  nostru labore lorem dus amet sample text.
+                </p>
+                <div className="row">
+                  <Counter />
+                </div>
+              </div>
+            </div>
           </div>
-          {/* /.row */}
         </div>
         {/* /.container */}
+
+        <img
+          src="/images/shape/shape_171.svg"
+          alt="shape"
+          className="lazy-img shapes shape-one"
+        />
         <img
           src="/images/shape/shape_172.svg"
-          alt="icon"
+          alt="shape"
           className="lazy-img shapes shape-two"
         />
       </div>
       {/* /.fancy-feature-fiftyOne */}
+
+      {/* <!-- 
+			=============================================
+				Feature Section Fifty Two
+			============================================== 
+			--> */}
+      <VideoBlock />
+{/* visiona and mision */}
+
+<div className="fancy-feature-thirtySeven mt-80 lg-mt-120">
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-6" data-aos="fade-right">
+        <div className="ps-xxl-5 ps-xl-5 ps-lg-5 ps-md-5 ps-sm-5 ps-xs-5">
+          <h3 className="mb-30">Our Vision.</h3>
+          <p className=" tx-dark">At [Company Name], our mission is to empower our clients with reliable and insightful investment advisory services. We are dedicated to helping our clients navigate the complex world of investments, achieve their financial goals, and secure their financial future. We strive to provide exceptional expertise, personalized attention, and innovative solutions that exceed our clients' expectations.</p>
+        </div>
+      </div>
+      <div className="col-lg-6" data-aos="fade-right">
+        <div className="ps-xxl-5 ps-xl-5 ps-lg-5 ps-md-5 ps-sm-5 ps-xs-5">
+          <h3 className="mb-30">Our Mision.</h3>
+          <p className=" tx-dark">Our vision at [Company Name] is to be recognized as a leading investment advisory firm, renowned for our commitment to excellence, integrity, and client-centric approach. We aspire to be the trusted partner that our clients turn to for expert advice, tailored investment strategies, and superior financial outcomes. By leveraging our deep industry knowledge and staying at the forefront of market trends, we aim to continuously deliver exceptional value to our clients and contribute to their long-term success.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* vision and mision */}
+{/* Features of invesstmnet  */}
+
+{
+  myData.map((aboutData)=>(
+    <div className="fancy-feature-thirtySeven mt-80 lg-mt-120">
+  <div className="container">
+  <div className="parent row">
+           {
+            aboutData.stakeList.stakeListInfo.map((stakeListData)=>(
+              <div className=" valued-service mt-5 mb-5">
+              <div className="row abcd">
+                <div className="col-md-6">
+                  <h3 className="title" >{stakeListData.title}</h3>
+                  <p>{stakeListData.description}</p>
+               
+                </div>
+                <div className="col-md-6">
+                  <img src={stakeListData.image} alt={stakeListData.title} />
+                </div>
+              </div>
+            </div>
+            ))
+           }
+           </div>
+  </div>
+</div>
+  ))
+}
+{/* Features of invesstmnet  */}
+
+
+
+      {/* <!-- /.fancy-feature-fiftyTwo --> */}
 
       {/* 
 			=============================================
 				Feature Section Thirty Seven
 			============================================== 
 			*/}
-      <div className="fancy-feature-thirtySeven mt-225 lg-mt-120">
+      <div className="fancy-feature-thirtySeven mt-80 lg-mt-120">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div
                 className="block-style-four pe-xxl-5 me-xxl-4 md-mb-70"
-                data-aos="fade-right"
+                data-aos=""
               >
                 <div className="title-style-six">
                   <div className="sc-title-two text-uppercase">WHY US</div>
@@ -118,6 +207,57 @@ const ServiceV1 = () => {
         {/* /.container */}
       </div>
       {/* /.fancy-feature-thirtySeven */}
+
+      {/*
+			=====================================================
+				Team Section Two
+			=====================================================
+			*/}
+      <div className="team-section-two position-relative pt-200 lg-pt-120">
+        <div className="container">
+          <div className="wrapper position-relative">
+            <div className="row align-items-center">
+              <div className="col-lg-5" data-aos="fade-right">
+                <div className="title-style-six text-center text-lg-start pb-40 lg-pb-20 md-pb-10">
+                  <h2 className="main-title fw-500 tx-dark">Our Team</h2>
+                </div>
+                {/* /.title-style-six */}
+              </div>
+            </div>
+            {/* /.row */}
+            <div className="row">
+              <Team3 />
+            </div>
+            {/* /.row */}
+
+            <p
+              className="cr-text text-center text-lg tx-dark mt-75 lg-mt-50"
+              data-aos="fade-up"
+            >
+              Our nearly
+              <span className="text-decoration-underline fw-500">8,000+</span>
+              committed staff members are ready to help.
+            </p>
+            <div className="text-center md-mt-20">
+              <Link
+                href="/pages-menu/team-v1"
+                className="btn-twentyTwo fw-500 tran3s"
+                data-aos="fade-left"
+              >
+                View full team
+              </Link>
+            </div>
+          </div>
+          {/* /.wrapper */}
+        </div>
+        {/* /.container */}
+        <img
+          src="/images/shape/shape_172.svg"
+          alt="shape"
+          className="lazy-img shapes shape-one d-none d-xl-inline-block"
+        />
+      </div>
+      {/* /.team-section-two */}
 
       {/*
 			=====================================================
@@ -259,4 +399,4 @@ const ServiceV1 = () => {
   );
 };
 
-export default ServiceV1;
+export default AboutUsV1;
