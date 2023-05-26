@@ -12,7 +12,7 @@ const Nominee = ({
 }) => {
   return (
     <>
-      <h1>Nominee Details</h1>
+      <h2>Nominee Details</h2>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Name</Form.Label>
         <Form.Control

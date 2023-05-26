@@ -1,11 +1,18 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Sidebar from '../../components/admin/Sidebar';
+import Container from 'react-bootstrap/Container';
+import { Table } from '@nextui-org/react';
+import { IconButton } from '../../components/admin/ui/IconButton';
+import { EyeIcon } from '../../components/admin/ui/EyeIcon';
+import Search from '../../components/common/Search';
 
 const TodayEarners = () => {
   const [auth, setAuth] = useState(false);
   const [userData, setUserData] = useState('');
   const [showData, setShowData] = useState(false);
+  const [search, setSearch] = useState('');
 
   const router = useRouter();
 
@@ -101,8 +108,30 @@ const TodayEarners = () => {
   //     }
   //   };
 
-  const handleReceivedForms = async () => {
-    router.push('/admin/receivedforms');
+  const handleShowMore = async (e, id) => {
+    e.preventDefault();
+    try {
+      await axios
+        .post('http://localhost:8000/admin/showmore', {
+          id: id,
+        })
+        .then((res) => {
+          if (res.data.Status === 'Success') {
+            if (res.data.result === null) {
+              alert('No data found');
+            } else {
+              const slug = res.data.result;
+              let rep = slug.replace(/\//g, 'slash');
+              router.push(`/admin/${[rep]}`);
+            }
+          }
+        })
+        .catch((e) => {
+          console.log('clientsData axios then catch error', e);
+        });
+    } catch (e) {
+      console.log('clientsData axios catch handleshowmore error', e);
+    }
   };
 
   return (
@@ -110,55 +139,91 @@ const TodayEarners = () => {
       {auth && (
         <>
           {showData ? (
-            <>
-              <button onClick={logout}>Logout</button>
-              <h1>Today Earners</h1>
-              {/* <button onClick={handleReceivedForms}>Received Forms</button>
-              <h4>Investors</h4> */}
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>SL.NO</th>
-                    <th>Name</th>
-                    <th>Invested Amount</th>
-                    <th>Plan</th>
-                    {/* <th>Interest PerMonth(3%)</th> */}
-                    <th>Total Interest(3%)</th>
-                    <th>Age Of Interest</th>
-                    <th>Interest Earned</th>
-                    <th>Interest Paid</th>
-                    <th>Interest Pending</th>
-                    <th>Total Pending Returns</th>
-                    {/* <th>Total Returns</th> */}
-                  </tr>
-                </thead>
-                {userData.map((value, index) => {
-                  return (
-                    <React.Fragment key={value._id}>
-                      <tr>
-                        <td>{index + 1}</td>
-                        <td>{value.clintInfo.clientName}</td>
-                        <td>{value.plan.principal}</td>
-                        <td>{value.plan.months}</td>
-                        {/* <td>{value.plan.interestPerMonth}</td> */}
-                        <td>{value.plan.totalInterest}</td>
-                        <td>{value.plan.ageOfInterest}</td>
-                        <td>{value.plan.earnedInterest}</td>
-                        <td>{value.plan.paidInterest}</td>
-                        <td>{value.plan.pendingInterest}</td>
-                        <td>{value.plan.pendingTotalAmount}</td>
-                        {/* <td>{value.plan.totalReturnAmount}</td> */}
-                        <td>
-                          <button onClick={(e) => handleShowMore(e, value._id)}>
-                            Show More
-                          </button>
-                        </td>
-                      </tr>
-                    </React.Fragment>
-                  );
-                })}
-              </table>
-            </>
+            <div className="adminDashbord-parent">
+              <div className="child-sidebar">
+                <Sidebar />
+              </div>
+              <div className="child-content">
+                <div className="admin-content">
+                  <Container>
+                    <h1>Today Earners</h1>
+                    <div className="searchDiv">
+                      <Search setSearch={setSearch} />
+                    </div>
+                    <Table
+                      aria-label="Example table with static content"
+                      css={{
+                        height: 'auto',
+                        minWidth: '100%',
+                      }}
+                    >
+                      <Table.Header>
+                        <Table.Column>SL.NO</Table.Column>
+                        <Table.Column>Name</Table.Column>
+                        <Table.Column>Invested Amount</Table.Column>
+                        <Table.Column>Plan</Table.Column>
+                        <Table.Column>Age Of Interest</Table.Column>
+                        <Table.Column>Interest Earned</Table.Column>
+                        <Table.Column>Show more</Table.Column>
+                      </Table.Header>
+                      <Table.Body>
+                        {userData
+                          .filter((val) => {
+                            const email = String(val.bankInfo.email);
+                            if (search === '') {
+                              return val;
+                            } else if (
+                              email
+                                .toLocaleLowerCase()
+                                .includes(search.toLocaleLowerCase())
+                            ) {
+                              return val;
+                            }
+                          })
+                          .map((value, index) => {
+                            return (
+                              <Table.Row key={index}>
+                                <Table.Cell>{index + 1}</Table.Cell>
+                                <Table.Cell>
+                                  <p className="tableClientName">
+                                    {value.clintInfo.clientName}
+                                  </p>
+                                  <p className="tableClientEmail">
+                                    {value.bankInfo.email}
+                                  </p>
+                                </Table.Cell>
+                                <Table.Cell>{value.plan.principal}</Table.Cell>
+                                <Table.Cell>{value.plan.months}</Table.Cell>
+                                <Table.Cell>
+                                  {value.plan.ageOfInterest}
+                                </Table.Cell>
+                                <Table.Cell>
+                                  {value.plan.earnedInterest}
+                                </Table.Cell>
+                                <Table.Cell>
+                                  <IconButton
+                                    onClick={(e) => {
+                                      handleShowMore(e, value._id);
+                                    }}
+                                  >
+                                    <EyeIcon size={20} fill="#979797" />
+                                  </IconButton>
+                                </Table.Cell>
+                              </Table.Row>
+                            );
+                          })}
+                      </Table.Body>
+                      <Table.Pagination
+                        shadow
+                        noMargin
+                        align="center"
+                        rowsPerPage={2}
+                      />
+                    </Table>
+                  </Container>
+                </div>
+              </div>
+            </div>
           ) : (
             <p>Loading...</p>
           )}

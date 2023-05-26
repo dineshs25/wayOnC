@@ -1,20 +1,23 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const ClientInfo = ({
   handledatachange,
   validate,
   panError,
   panLength,
-  passportError, 
+  passportError,
   clientNameError,
-  dobError
+  dobError,
 }) => {
   return (
     <>
-      <h1>Client Information</h1>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <h2>Client Information</h2>
+      <Form.Group className="mb-3 " controlId="formBasicPassword">
         <Form.Label>Client Name</Form.Label>
+
         <Form.Control
           type="text"
           name="clientName"
@@ -22,13 +25,12 @@ const ClientInfo = ({
           onChange={handledatachange}
         />
         {clientNameError ? (
-          <p style={{ color: 'red' }}>
-            Name should contain alphabets
-          </p>
+          <p style={{ color: 'red' }}>Name should contain alphabets</p>
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>DOB</Form.Label>
+
         <Form.Control
           type="date"
           name="dob"
@@ -36,13 +38,12 @@ const ClientInfo = ({
           onChange={handledatachange}
         />
         {dobError ? (
-          <p style={{ color: 'red' }}>
-            Please provide Date of birth
-          </p>
+          <p style={{ color: 'red' }}>Please provide Date of birth</p>
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>PAN NO</Form.Label>
+
         <Form.Control
           type="text"
           name="panNum"
@@ -59,6 +60,7 @@ const ClientInfo = ({
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Adhraa Number</Form.Label>
+
         <Form.Control
           type="text"
           name="adhaar"

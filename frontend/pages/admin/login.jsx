@@ -28,7 +28,7 @@ const Login = ({ setLoginUser }) => {
       })
       .then((res) => {
         if (res.data.message === 'Success') {
-          router.push('/admin/clientsData');
+          router.push('/admin');
         } else {
           alert(res.data.Status);
         }
@@ -38,27 +38,31 @@ const Login = ({ setLoginUser }) => {
   return (
     <div className="loginparent">
       <div className="login">
-        <h1>Login</h1>
-        <input
-          type="text"
-          name="email"
-          value={user.email}
-          onChange={handleChange}
-          placeholder="Enter your Email"
-        ></input>
-        <input
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-          placeholder="Enter your Password"
-        ></input>
-        <div className="button" onClick={login}>
-          Login
+        <div className="loginForm">
+          <h2>Welcome back Admin</h2>
+          <p>Login to the Dashboard</p>
+          <form>
+            <input
+              type="text"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+              placeholder="Enter your Email"
+            ></input>
+            <input
+              type="password"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+              placeholder="Enter your Password"
+            ></input>
+          </form>
+          <button className="login-btn" onClick={login}>
+            Login
+          </button>
         </div>
-        <div>or</div>
-        <div className="button" onClick={() => navigate('/register')}>
-          Register
+        <div className="loginImage">
+          <img src="/images/assets/Finance & Investment Illustration 9.png" />
         </div>
       </div>
     </div>

@@ -3,6 +3,9 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import LogOut from '../../components/auth/logout';
 import Link from 'next/link';
+import Container from 'react-bootstrap/Container';
+
+import Sidebar from '../../components/admin/Sidebar';
 
 const ClentID = () => {
   const router = useRouter();
@@ -54,22 +57,16 @@ const ClentID = () => {
   return (
     <>
       {auth && (
-        <>
-          <button onClick={logout}>Logout</button>
-          <div>
-            <Link href="/admin/adminProfile">Profile</Link>
+        <div className="adminDashbord-parent">
+          <div className="child-sidebar">
+            <Sidebar />
           </div>
-          <h1>Admin DashBord</h1>
-          <div>
-            <Link href="/admin/receivedforms">Received forms</Link>
+          <div className="child-content">
+              <div className="admin-content">
+                <h1>Admin DashBord</h1>
+              </div>
           </div>
-          <div>
-            <Link href="/admin/clientsData">Investors</Link>
-          </div>
-          <div>
-            <Link href="/admin/todayEarners">Today Earners</Link>
-          </div>
-        </>
+        </div>
       )}
     </>
   );

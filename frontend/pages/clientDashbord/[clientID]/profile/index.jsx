@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import ClientSidebar from '../../../../components/client/ClientSideBar';
+import Container from 'react-bootstrap/Container';
+import { Table } from '@nextui-org/react';
 
 const Invest = () => {
   const router = useRouter();
@@ -48,7 +51,7 @@ const Invest = () => {
             }
           } else {
             setAuth(false);
-            router.push('/auth/login');
+            router.push('/login');
           }
         })
         .catch((e) => {
@@ -67,34 +70,44 @@ const Invest = () => {
     fetchAPI2(API2);
   }, [clientID]);
 
-  const handleCred = () => {
+  const handleCred = async (e) => {
+    e.preventDefault();
     const existingVer = existingPasswordValidation(existingPassword);
     const newVer = newPasswordValidation(newPassword);
-    const confirmVer = newPasswordValidation(confirmPassword);
-    if (existingVer && newVer && confirmVer) {
-      axios
-        .put('http://localhost:8000/auth/update', {
-          existingPassword,
-          newPassword,
-          confirmPassword,
-          email: pageData.userEmail,
-        })
-        .then((result) => {
-          if (result.data.Status === 'Success') {
-            alert('Password Updated Successfully please login again');
-            logout();
-            window.location.reload(true);
-          } else {
-            alert(result.data.Status);
-          }
-        });
-    } else {
-      alert('Please fill all the input fields');
+    if (existingVer && newVer) {
+      if (newPassword === confirmPassword) {
+        await axios
+          .put('http://localhost:8000/auth/update', {
+            existingPassword,
+            newPassword,
+            confirmPassword,
+            email: pageData.userEmail,
+          })
+          .then((result) => {
+            if (result.data.Status === 'Success') {
+              alert('Password Updated Successfully please login again');
+              logout();
+              window.location.reload(true);
+            } else {
+              alert(result.data.Status);
+            }
+          })
+          .catch((e) => {
+            alert('Failed to change password');
+          });
+      } else {
+        alert('New Password and Confirm Password are not matching');
+      }
     }
   };
 
   const handleChangePasswordButton = () => {
-    setShowInput(true);
+    if(showInput === false){
+      setShowInput(true);
+    }else{
+      setShowInput(false);
+    }
+    
   };
 
   const existingPasswordValidation = (pass) => {
@@ -108,6 +121,7 @@ const Invest = () => {
   const newPasswordValidation = (pass) => {
     const exp = /^(?=.{10,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;
     if (!pass) {
+      alert('Please fill all the input fields');
       return false;
     } else {
       if (!exp.test(pass)) {
@@ -141,54 +155,95 @@ const Invest = () => {
       {auth && (
         <>
           {showData ? (
-            <>
-              <h1>Profile</h1>
-              <h4>{pageData.username}</h4>
-              <h4>{pageData.userEmail}</h4>
-              <button onClick={handleChangePasswordButton}>
-                Change password
-              </button>
-              {showInput ? (
-                <>
-                  <input
-                    type="password"
-                    placeholder="Existing Password"
-                    onChange={(e) => {
-                      setExistingPassword(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <input
-                    type="password"
-                    placeholder="New Password"
-                    onChange={(e) => {
-                      setNewPassword(e.target.value);
-                    }}
-                  />
-                  <p><i>Password must containe at least 1 uppercase, 1 lowercase,
-                      1 digit, 1 special character and have a length of at least
-                      of 10</i></p>
-                  {passowrdError ? (
-                    <p style={{ color: 'red' }}>
-                      Password must containe at least 1 uppercase, 1 lowercase,
-                      1 digit, 1 special character and have a length of at least
-                      of 10
-                    </p>
-                  ) : null}
-                  <br />
-                  <input
-                    type="password"
-                    placeholder="Confirm New Password"
-                    onChange={(e) => {
-                      setConfirmPassword(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <button onClick={handleCred}>Submit</button>
-                </>
-              ) : null}
-              <button onClick={logout}>logout</button>
-            </>
+            <div className="adminDashbord-parent">
+              <div className="child-sidebar">
+                <ClientSidebar
+                  userID={clientID}
+                  name={pageData.username}
+                  email={pageData.userEmail}
+                />
+              </div>
+              <div className="child-content">
+                <div className="admin-content scroll">
+                  <div>
+                    <Container>
+                      <h1>Profile</h1>
+                      <Table
+                        aria-label="Example table with static content"
+                        css={{
+                          height: 'auto',
+                          minWidth: '100%',
+                        }}
+                      >
+                        <Table.Header>
+                          <Table.Column>NAME</Table.Column>
+                          <Table.Column>EMAIL</Table.Column>
+                        </Table.Header>
+                        <Table.Body>
+                          <Table.Row>
+                            <Table.Cell>{pageData.username}</Table.Cell>
+                            <Table.Cell>{pageData.userEmail}</Table.Cell>
+                          </Table.Row>
+                        </Table.Body>
+                      </Table>
+
+                      <button
+                        className="changeCred-btn"
+                        onClick={handleChangePasswordButton}
+                      >
+                        Change password
+                      </button>
+                      {showInput ? (
+                        <div
+                          className={
+                            showInput
+                              ? 'changeCred-div'
+                              : 'changeCred-div-fade-out'
+                          }
+                        >
+                          <form>
+                            <input
+                              type="password"
+                              placeholder="Existing Password"
+                              onChange={(e) => {
+                                setExistingPassword(e.target.value);
+                              }}
+                            />
+                            <br />
+                            <input
+                              type="password"
+                              placeholder="New Password"
+                              onChange={(e) => {
+                                setNewPassword(e.target.value);
+                              }}
+                            />
+                            {passowrdError ? (
+                              <p style={{ color: 'red' }}>
+                                <i>
+                                  Password must containe at least 1 uppercase, 1
+                                  lowercase, 1 digit, 1 special character and
+                                  have a length of at least of 10
+                                </i>
+                              </p>
+                            ) : null}
+                            <br />
+                            <input
+                              type="password"
+                              placeholder="Confirm New Password"
+                              onChange={(e) => {
+                                setConfirmPassword(e.target.value);
+                              }}
+                            />
+                            <br />
+                            <button onClick={handleCred}>Submit</button>
+                          </form>
+                        </div>
+                      ) : null}
+                    </Container>
+                  </div>
+                </div>
+              </div>
+            </div>
           ) : (
             'Loading...'
           )}

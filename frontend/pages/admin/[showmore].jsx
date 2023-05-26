@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import LogOut from '../../components/auth/logout';
+import Container from 'react-bootstrap/Container';
+import { Table } from '@nextui-org/react';
+import Sidebar from '../../components/admin/Sidebar';
+import Link from 'next/link';
+import Button from 'react-bootstrap/Button';
+
 
 const ClentID = () => {
   const router = useRouter();
@@ -16,6 +22,8 @@ const ClentID = () => {
   const [expDate, setExpDate] = useState(0);
 
   const [payedInterest, setPayedInterest] = useState(0);
+
+  const [reqStatus, setReqStatus] = useState(false);
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
@@ -36,6 +44,11 @@ const ClentID = () => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
                     setUserData(result.data.result);
+                    if (result.data.result.reqMoney > 0) {
+                      setReqStatus(true);
+                    } else {
+                      setReqStatus(false);
+                    }
                     const start = new Date(userData.plan.startdate)
                       .toLocaleString('en-GB')
                       .substring(0, 10);
@@ -127,77 +140,296 @@ const ClentID = () => {
       {auth && (
         <>
           {showData ? (
-            <>
-              <button onClick={logout}>Logout</button>
-              <h1>{userData.clintInfo.clientName} Details</h1>
-
-              <h4>Plan</h4>
-              <p>Months : {userData.plan.months}</p>
-              <p>Start Date :{userData.plan.startdate.substring(0, 10)}</p>
-              <p>Expire Date : {userData.plan.expdate.substring(0, 10)}</p>
-              <table border="1">
-                <thead>
-                  <th>Invested Amount</th>
-                  <th>Interest PerMonth(3%)</th>
-                  <th>Total Interest(3%)</th>
-                  <th>Age Of Interest</th>
-                  <th>Interest Earned</th>
-                  <th>Interest Paid</th>
-                  <th>Interest Pending</th>
-                  <th>Request Money</th>
-                  <th>Total Pending Returns</th>
-                  <th>Total Returns</th>
-                </thead>
-                <tr>
-                  <td>{userData.plan.principal}</td>
-                  <td>{userData.plan.interestPerMonth}</td>
-                  <td>{userData.plan.totalInterest}</td>
-                  <td>{userData.plan.ageOfInterest}</td>
-                  <td>{userData.plan.earnedInterest}</td>
-                  <td>{userData.plan.paidInterest}</td>
-                  <td>{userData.plan.pendingInterest}</td>
-                  <td>{userData.reqmoney}</td>
-                  <td>{userData.plan.pendingTotalAmount}</td>
-                  <td>{userData.plan.totalReturnAmount}</td>
-                </tr>
-              </table>
-              <h4>Pay Requested Money</h4>
-              {/* <input
-                type="text"
-                onChange={(e) => {
-                  setPayedInterest(e.target.value);
-                }}
-              /> */}
-              <button onClick={handlePaidInterest}>Pay</button>
-
-              <h4>Client Info</h4>
-              <p>Client Name : {userData.clintInfo.clientName}</p>
-              <p>DOB : {userData.clintInfo.dob.substring(0, 10)}</p>
-              <p>PAN : {userData.clintInfo.pan}</p>
-              <p>Aadhar : {userData.clintInfo.aadhar}</p>
-              <p>Passport : {userData.clintInfo.passport}</p>
-
-              <h4>Bank Info</h4>
-              <p>Mobile : {userData.bankInfo.mobile}</p>
-              <p>Alt Mobile : {userData.bankInfo.altMobile}</p>
-              <p>Bank A/C : {userData.bankInfo.bankAC}</p>
-              <p>Acc Holder : {userData.bankInfo.accHolder}</p>
-              <p>IFSC : {userData.bankInfo.ifsc}</p>
-              <p>Bank Name : {userData.bankInfo.bankName}</p>
-              <p>Email : {userData.bankInfo.email}</p>
-              <p>Address : {userData.bankInfo.address}</p>
-              <p>Permanent Address : {userData.bankInfo.permanentAddress}</p>
-
-              <h4>Nominee Details</h4>
-              <p>Nominee Name : {userData.nominee.nomineeName}</p>
-              <p>Nominee Mobile : {userData.nominee.nomineeMobile}</p>
-              <p>
-                Nominee Relationship : {userData.nominee.nomineeRelationship}
-              </p>
-              <p>Nominee Aadhar : {userData.nominee.nomineeAadhar}</p>
-              <p>Nominee Email : {userData.nominee.nomineeEmail}</p>
-              <p>Nominee Address : {userData.nominee.nomineeAddress}</p>
-            </>
+            <div className="adminDashbord-parent">
+              <div className="child-sidebar">
+                <Sidebar />
+              </div>
+              <div className="child-content">
+                <div className="admin-content scroll">
+                  <div>
+                    <Container>
+                      <Table
+                        aria-label="Example table with static content"
+                        css={{
+                          height: 'auto',
+                          minWidth: '100%',
+                        }}
+                      >
+                        <Table.Header>
+                          <Table.Column>INVESTMENT</Table.Column>
+                          <Table.Column>A.O.I</Table.Column>
+                          <Table.Column>INT EARNED</Table.Column>
+                          <Table.Column>INT PAID</Table.Column>
+                          <Table.Column>INT PENDING</Table.Column>
+                          <Table.Column>REQ AMOUNT</Table.Column>
+                          <Table.Column>TOTAL PENDING RETURNS</Table.Column>
+                          <Table.Column>PAY REQ</Table.Column>
+                        </Table.Header>
+                        <Table.Body>
+                          <Table.Row>
+                            <Table.Cell>{userData.plan.principal}</Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.ageOfInterest}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.earnedInterest}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.paidInterest}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.pendingInterest}
+                            </Table.Cell>
+                            <Table.Cell>{userData.reqmoney}</Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.pendingTotalAmount}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {reqStatus ? (
+                                <button className="pay">PAY</button>
+                              ) : (
+                                <Button
+                                  variant="outline-success"
+                                >
+                                  PAID
+                                </Button>
+                              )}
+                            </Table.Cell>
+                          </Table.Row>
+                        </Table.Body>
+                      </Table>
+                      <h4 className="h4">Selected Plan</h4>
+                      <Table
+                        aria-label="Example table with static content"
+                        css={{
+                          height: 'auto',
+                          minWidth: '100%',
+                        }}
+                      >
+                        <Table.Header>
+                          <Table.Column>MONTHS</Table.Column>
+                          <Table.Column>INVESTMENT</Table.Column>
+                          <Table.Column>START DATE</Table.Column>
+                          <Table.Column>END DATE</Table.Column>
+                          <Table.Column>INT PER MONTH</Table.Column>
+                          <Table.Column>TOTAL INT EXPECTED</Table.Column>
+                          <Table.Column>TOTAL RETURNS EXPECTED</Table.Column>
+                        </Table.Header>
+                        <Table.Body>
+                          <Table.Row>
+                            <Table.Cell>{userData.plan.months}</Table.Cell>
+                            <Table.Cell>{userData.plan.principal}</Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.startdate.substring(0, 10)}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.expdate.substring(0, 10)}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.interestPerMonth}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.totalInterest}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {userData.plan.totalReturnAmount}
+                            </Table.Cell>
+                          </Table.Row>
+                        </Table.Body>
+                      </Table>
+                      <h4 className="h4">Client Details</h4>
+                      <Table
+                        aria-label="Example table with static content"
+                        css={{
+                          height: 'auto',
+                          minWidth: '100%',
+                        }}
+                      >
+                        <Table.Header>
+                          <Table.Column>CLIENT NAME</Table.Column>
+                          <Table.Column>DOB</Table.Column>
+                          <Table.Column>PAN</Table.Column>
+                          <Table.Column>AADHAAR</Table.Column>
+                          <Table.Column>PASSPORT</Table.Column>
+                        </Table.Header>
+                        <Table.Body>
+                          <Table.Row>
+                            <Table.Cell>
+                              {userData.clintInfo.clientName}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {userData.clintInfo.dob.substring(0, 10)}
+                            </Table.Cell>
+                            <Table.Cell>{userData.clintInfo.pan}</Table.Cell>
+                            <Table.Cell>{userData.clintInfo.aadhar}</Table.Cell>
+                            <Table.Cell>
+                              {userData.clintInfo.passport}
+                            </Table.Cell>
+                          </Table.Row>
+                        </Table.Body>
+                      </Table>
+                      <h4 className="h4">Bank Details</h4>
+                      <Table
+                        aria-label="Example table with static content"
+                        css={{
+                          height: 'auto',
+                          minWidth: '100%',
+                        }}
+                      >
+                        <Table.Header>
+                          <Table.Column>Name</Table.Column>
+                          <Table.Column>DETAILS</Table.Column>
+                        </Table.Header>
+                        <Table.Body>
+                          <Table.Row>
+                            <Table.Cell>MOBILE</Table.Cell>
+                            <Table.Cell>{userData.bankInfo.mobile}</Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>ALT MOBILE</Table.Cell>
+                            <Table.Cell>
+                              {userData.bankInfo.altMobile}
+                            </Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>BANK A/C</Table.Cell>
+                            <Table.Cell>{userData.bankInfo.bankAC}</Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>ACC HOLDER</Table.Cell>
+                            <Table.Cell>
+                              {userData.bankInfo.accHolder}
+                            </Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>IFSC</Table.Cell>
+                            <Table.Cell>{userData.bankInfo.ifsc}</Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>BANK NAME</Table.Cell>
+                            <Table.Cell>
+                              {userData.bankInfo.bankName}
+                            </Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>EMAIL</Table.Cell>
+                            <Table.Cell>{userData.bankInfo.email}</Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>ADDRESS</Table.Cell>
+                            <Table.Cell>{userData.bankInfo.address}</Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>PERMANENT ADDRESS</Table.Cell>
+                            <Table.Cell>
+                              {userData.bankInfo.permanentAddress}
+                            </Table.Cell>
+                          </Table.Row>
+                        </Table.Body>
+                      </Table>
+                      <h4 className="h4">Nominee Details</h4>
+                      <Table
+                        aria-label="Example table with static content"
+                        css={{
+                          height: 'auto',
+                          minWidth: '100%',
+                        }}
+                      >
+                        <Table.Header>
+                          <Table.Column>Name</Table.Column>
+                          <Table.Column>DETAILS</Table.Column>
+                        </Table.Header>
+                        <Table.Body>
+                          <Table.Row>
+                            <Table.Cell>NAME</Table.Cell>
+                            <Table.Cell>
+                              {userData.nominee.nomineeName}
+                            </Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>MOBILE</Table.Cell>
+                            <Table.Cell>
+                              {userData.nominee.nomineeMobile}
+                            </Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>RELATIONSHIP</Table.Cell>
+                            <Table.Cell>
+                              {userData.nominee.nomineeRelationship}
+                            </Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>AADHAAR</Table.Cell>
+                            <Table.Cell>
+                              {userData.nominee.nomineeAadhar}
+                            </Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>EMAIL</Table.Cell>
+                            <Table.Cell>
+                              {userData.nominee.nomineeEmail}
+                            </Table.Cell>
+                          </Table.Row>
+                          <Table.Row>
+                            <Table.Cell>ADDRESS</Table.Cell>
+                            <Table.Cell>
+                              {userData.nominee.nomineeAddress}
+                            </Table.Cell>
+                          </Table.Row>
+                        </Table.Body>
+                      </Table>
+                      <h4 className="h4">Uploaded Image Links</h4>
+                      <Table
+                        aria-label="Example table with static content"
+                        css={{
+                          height: 'auto',
+                          minWidth: '100%',
+                        }}
+                      >
+                        <Table.Header>
+                          <Table.Column>AADHAAR</Table.Column>
+                          <Table.Column>PAN</Table.Column>
+                          <Table.Column>CLIENT PHOTO</Table.Column>
+                          <Table.Column>SIGNATURE</Table.Column>
+                        </Table.Header>
+                        <Table.Body>
+                          <Table.Row>
+                            <Table.Cell>
+                              <Link
+                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.aadharImage}`}
+                              >
+                                Aadhar Image
+                              </Link>
+                            </Table.Cell>
+                            <Table.Cell>
+                              <Link
+                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.panImage}`}
+                              >
+                                Pan Image
+                              </Link>
+                            </Table.Cell>
+                            <Table.Cell>
+                              <Link
+                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.passportSizeImage}`}
+                              >
+                                Client Image
+                              </Link>
+                            </Table.Cell>
+                            <Table.Cell>
+                              <Link
+                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.signatureImage}`}
+                              >
+                                Signature Image
+                              </Link>
+                            </Table.Cell>
+                          </Table.Row>
+                        </Table.Body>
+                      </Table>
+                    </Container>
+                  </div>
+                </div>
+              </div>
+            </div>
           ) : (
             <p>Loading...</p>
           )}

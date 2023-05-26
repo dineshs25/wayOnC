@@ -3,6 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import Sidebar from '../../../components/admin/Sidebar';
+import Container from 'react-bootstrap/Container';
+import { Table } from '@nextui-org/react';
+import { IconButton } from '../../../components/admin/ui/IconButton';
+import { EyeIcon } from '../../../components/admin/ui/EyeIcon';
+import { DeleteIcon } from '../../../components/admin/ui/DeleteIcon';
+import Search from '../../../components/common/Search';
 
 const ClientsData = () => {
   const [auth, setAuth] = useState(false);
@@ -10,6 +17,8 @@ const ClientsData = () => {
   const [showData, setShowData] = useState(false);
 
   const [show, setShow] = useState(false);
+
+  const [search, setSearch] = useState('');
 
   const router = useRouter();
 
@@ -133,75 +142,115 @@ const ClientsData = () => {
       {auth && (
         <>
           {showData ? (
-            <>
-              <button onClick={logout}>Logout</button>
-              <h1>Received Forms</h1>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>SL.NO</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>DOB</th>
-                    <th>Details</th>
-                    <th>Verification</th>
-                    <th>Registeration</th>
-                    <th>rejected</th>
-                  </tr>
-                </thead>
-                {userData.map((value, index) => {
-                  return (
-                    <React.Fragment key={value._id}>
-                      <tr>
-                        <td>{index + 1}</td>
-                        <td>{value.clintInfo.clientName}</td>
-                        <td>{value.bankInfo.email}</td>
-                        <td>{value.clintInfo.dob.substring(0, 10)}</td>
-                        <td>
-                          {/* <Link
-                            href={`http://localhost:8000/admin/receivedforms/${value._id}`}
-                          >
-                            Show Details
-                          </Link> */}
-                          <button
-                            onClick={(e) => {
-                              handleShowDetail(e, value._id);
-                            }}
-                          >
-                            Show Details
-                          </button>
-                        </td>
-                        <td>{value.verification === true? <p>verified</p> : <p>Not verified</p> }</td>
-                        <td>
-                          {value.userAuth ? (
-                            <Button variant="outline-success">
-                              Registered
-                            </Button>
-                          ) : (
-                            <Button
-                              variant="outline-primary"
-                              onClick={(e) => {
-                                handleRegister(
-                                  e,
-                                  value._id,
-                                  value.clintInfo.clientName,
-                                  value.bankInfo.email
-                                );
-                              }}
-                            >
-                              Registere User
-                            </Button>
-                          )}
-                        </td>
-                        <td>
-                          <Button variant="outline-danger">Rejected</Button>{' '}
-                        </td>
-                      </tr>
-                    </React.Fragment>
-                  );
-                })}
-              </table>
-            </>
+            <div className="adminDashbord-parent">
+              <div className="child-sidebar">
+                <Sidebar />
+              </div>
+              <div className="child-content">
+                <div className="admin-content scroll">
+                  <Container>
+                    <h2>Received Forms</h2>
+                    <div className="searchDiv">
+                      <Search setSearch={setSearch} />
+                    </div>
+                    <Table
+                      aria-label="Example table with static content"
+                      css={{
+                        height: 'auto',
+                        minWidth: '100%',
+                      }}
+                    >
+                      <Table.Header>
+                        <Table.Column>SL NO</Table.Column>
+                        <Table.Column>NAME</Table.Column>
+                        <Table.Column>DETAILS</Table.Column>
+                        <Table.Column>STATUS</Table.Column>
+                        <Table.Column>REGISTRATION</Table.Column>
+                        <Table.Column>REJECTED</Table.Column>
+                      </Table.Header>
+                      <Table.Body>
+                        {userData
+                          .filter((val) => {
+                            const email = String(val.bankInfo.email);
+                            if (search === '') {
+                              return val;
+                            } else if (
+                              email
+                                .toLocaleLowerCase()
+                                .includes(search.toLocaleLowerCase())
+                            ) {
+                              return val;
+                            }
+                          })
+                          .map((value, index) => {
+                            return (
+                              <Table.Row key={index}>
+                                <Table.Cell>{index + 1}</Table.Cell>
+                                <Table.Cell>
+                                  <p className="tableClientName">
+                                    {value.clintInfo.clientName}
+                                  </p>
+                                  <p className="tableClientEmail">
+                                    {value.bankInfo.email}
+                                  </p>
+                                </Table.Cell>
+                                <Table.Cell>
+                                  <IconButton
+                                    onClick={(e) => {
+                                      handleShowDetail(e, value._id);
+                                    }}
+                                  >
+                                    <EyeIcon size={20} fill="#979797" />
+                                  </IconButton>
+                                </Table.Cell>
+                                <Table.Cell>
+                                  {value.verification === true ? (
+                                    <p className="verified">verified</p>
+                                  ) : (
+                                    <p className="notVerified">Not verified</p>
+                                  )}
+                                </Table.Cell>
+                                <Table.Cell>
+                                  {value.userAuth ? (
+                                    <Button variant="outline-success">
+                                      Registered
+                                    </Button>
+                                  ) : (
+                                    <Button
+                                      variant="outline-primary"
+                                      onClick={(e) => {
+                                        handleRegister(
+                                          e,
+                                          value._id,
+                                          value.clintInfo.clientName,
+                                          value.bankInfo.email
+                                        );
+                                      }}
+                                    >
+                                      Registere User
+                                    </Button>
+                                  )}
+                                </Table.Cell>
+                                <Table.Cell>
+                                  <IconButton>
+                                    <DeleteIcon size={20} fill="#FF0080" />
+                                  </IconButton>
+                                </Table.Cell>
+                              </Table.Row>
+                            );
+                          })}
+                      </Table.Body>
+                      <Table.Pagination
+                        shadow
+                        noMargin
+                        align="center"
+                        rowsPerPage={2}
+                      />
+                    </Table>
+                  </Container>
+                </div>
+              </div>
+            </div>
           ) : (
             <p>Loading...</p>
           )}

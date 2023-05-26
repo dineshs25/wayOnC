@@ -14,7 +14,7 @@ const ContactBank = ({
 }) => {
   return (
     <>
-      <h1>Contact & Bank Information</h1>
+      <h2>Contact & Bank Information</h2>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Mobile No</Form.Label>
         <Form.Control

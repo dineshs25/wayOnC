@@ -2,7 +2,6 @@ import Link from 'next/link';
 import LoginForm from '../components/common/LoginForm';
 import Seo from '../components/common/Seo';
 
-
 const LogIn = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -41,7 +40,7 @@ const LogIn = () => {
             <h2 className="tx-dark mb-30 lg-mb-10">Login</h2>
             <p className="fs-20 tx-dark">
               Still don&lsquo;t have an account?{' '}
-              <Link href="/signup">Sign up</Link>
+              <Link href="/form/clientForm">Register</Link>
             </p>
           </div>
           <LoginForm />

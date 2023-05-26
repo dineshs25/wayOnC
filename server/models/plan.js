@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const plan_Schema = new mongoose.Schema({
   months: {
-    type: String,
+    type: Array,
   },
   minAmount: {
     type: String,

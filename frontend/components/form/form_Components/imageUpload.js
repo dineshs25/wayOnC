@@ -22,7 +22,7 @@ const ImageUpload = ({
 }) => {
   return (
     <>
-      <h1>Images upload</h1>
+      <h2>Images upload</h2>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Passport Size photo</Form.Label>
         <Form.Control

@@ -3,6 +3,9 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import LogOut from '../../components/auth/logout';
 import Link from 'next/link';
+import Sidebar from '../../components/admin/Sidebar';
+import Container from 'react-bootstrap/Container';
+import { Table } from '@nextui-org/react';
 
 const AdminProfile = () => {
   const router = useRouter();
@@ -83,14 +86,6 @@ const AdminProfile = () => {
     e.preventDefault();
     setShowInputs(true);
   };
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   const { name, value } = e.target;
-  //   setAdminCred({
-  //     ...adminCred,
-  //     [name]: value,
-  //   });
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -121,7 +116,10 @@ const AdminProfile = () => {
             } else {
               alert(result.data.Status);
             }
-          });
+          })
+          .catch((e)=>{
+            alert("Failed to change password")
+          })
       } else {
         alert('New Password and Confirm Password are not matching');
       }
@@ -153,75 +151,112 @@ const AdminProfile = () => {
     }
   };
 
+  const handleClose =(e)=>{
+    e.preventDefault();
+    // setShowInputs(false);
+    document.body.classList.remove('fade-in');
+  }
+
   return (
     <>
       {auth && (
         <>
           {loading ? (
-            <>
-              <h1>Admin Profile</h1>
-              <h5>Name : {adminData.adminName}</h5>
-              <h5>Email : {adminData.adminEmail}</h5>
-              <h6
-                onClick={(e) => {
-                  handleButton(e);
-                }}
-              >
-                Change Credentials
-              </h6>
-              {showInputs ? (
-                <>
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    name="adminName"
-                    Value={adminName}
-                    onChange={(e) => {
-                      setAdminName(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    name="adminEmail"
-                    value={adminEmail}
-                    onChange={(e) => {
-                      setAdminEmail(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <input
-                    type="text"
-                    placeholder="Existing Password"
-                    name="adminExistingPassword"
-                    onChange={(e) => {
-                      setAdminExistingPassword(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <input
-                    type="text"
-                    placeholder="New Password"
-                    name="adminNewPassword"
-                    onChange={(e) => {
-                      setAdminNewPassword(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <input
-                    placeholder="Confirm New Password"
-                    name="adminConfirmPassword"
-                    onChange={(e) => {
-                      setAdminConfirmPassword(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <button onClick={handleSubmit}>Submit</button>
-                </>
-              ) : null}
-              <button onClick={logout}>Logout</button>
-            </>
+            <div className="adminDashbord-parent">
+              <div className="child-sidebar">
+                <Sidebar />
+              </div>
+              <div className="child-content">
+                <div className="admin-content">
+                  <Container>
+                    <h1>Admin Profile</h1>
+                    <Table
+                      aria-label="Example table with static content"
+                      css={{
+                        height: 'auto',
+                        minWidth: '100%',
+                      }}
+                    >
+                      <Table.Header>
+                        <Table.Column>NAME</Table.Column>
+                        <Table.Column>EMAIL</Table.Column>
+                      </Table.Header>
+                      <Table.Body>
+                        <Table.Row>
+                          <Table.Cell>{adminData.adminName}</Table.Cell>
+                          <Table.Cell>{adminData.adminEmail}</Table.Cell>
+                        </Table.Row>
+                      </Table.Body>
+                    </Table>
+                    <button
+                      className="changeCred-btn"
+                      onClick={(e) => {
+                        handleButton(e);
+                      }}
+                    >
+                      Change Credentials
+                    </button>
+                    {showInputs ? (
+                      <>
+                      
+                        <div className="changeCred-div fade-in">
+                        <i onClick={handleClose} class="fa-solid fa-angle-up"></i>
+                          <form>
+                            <input
+                              type="text"
+                              placeholder="Name"
+                              name="adminName"
+                              Value={adminName}
+                              onChange={(e) => {
+                                setAdminName(e.target.value);
+                              }}
+                            />
+                            <br />
+                            <input
+                              type="email"
+                              placeholder="Email"
+                              name="adminEmail"
+                              value={adminEmail}
+                              onChange={(e) => {
+                                setAdminEmail(e.target.value);
+                              }}
+                            />
+                            <br />
+                            <input
+                              type="text"
+                              placeholder="Existing Password"
+                              name="adminExistingPassword"
+                              onChange={(e) => {
+                                setAdminExistingPassword(e.target.value);
+                              }}
+                            />
+                            <br />
+                            <input
+                              type="text"
+                              placeholder="New Password"
+                              name="adminNewPassword"
+                              onChange={(e) => {
+                                setAdminNewPassword(e.target.value);
+                              }}
+                            />
+                            <br />
+                            <input
+                              placeholder="Confirm New Password"
+                              name="adminConfirmPassword"
+                              onChange={(e) => {
+                                setAdminConfirmPassword(e.target.value);
+                              }}
+                            />
+                            <br />
+                            <button onClick={handleSubmit}>Submit</button>
+                          </form>
+                        </div>
+                      </>
+                    ) : null}
+                  </Container>
+                </div>
+              </div>
+            </div>
           ) : (
             <p>Loading..</p>
           )}

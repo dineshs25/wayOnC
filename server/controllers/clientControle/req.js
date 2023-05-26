@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_AUTH_USER,
-      pass: process.env.qrbdqwgxmiphtnuz,
+      pass: process.env.GMAIL_AUTH_PASSWORD,
     },
   });
 

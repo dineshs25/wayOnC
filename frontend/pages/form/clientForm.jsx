@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import axios from 'axios';
 import validator from 'aadhaar-validator';
 import Form from 'react-bootstrap/Form';
@@ -8,10 +9,13 @@ import Nominee from '../../components/form/form_Components/nominee';
 import ImageUpload from '../../components/form/form_Components/imageUpload';
 import ChoosePlan from '../../components/form/form_Components/choosePlan';
 import ClientInfo from '../../components/form/form_Components/clientInfo';
+import Container from 'react-bootstrap/Container';
 
 import { useRouter } from 'next/navigation';
 
 const ClientForm = () => {
+  const currentYear = new Date().getFullYear();
+
   const [auth, setAuth] = useState(false);
   const [panError, setPanError] = useState(false);
   const [panLength, setPanLength] = useState(false);
@@ -689,70 +693,102 @@ const ClientForm = () => {
     <>
       {/* {auth && ( */}
       <>
-        <button onClick={logout}>logout</button>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          {/* choose plan */}
-          {/* <ChoosePlan handledatachange={handledatachange} duedate={duedate} /> */}
+        <header className="theme-main-menu sticky-menu theme-menu-eight">
+          <div className="inner-content position-relative">
+            <div className="d-flex align-items-center justify-content-between">
+              <div className="logo order-lg-0">
+                <Link href="/" className="d-block">
+                  <img src="/images/logo/logo_01.png" alt="" width={95} />
+                </Link>
+              </div>
+              <Link href="/" className="go-back-btn fw-500 tran3s">
+                Go to home
+              </Link>
+            </div>
+          </div>
+          {/* /.inner-content */}
+        </header>
+        <div className="user-data-section d-flex align-items-center justify-content-center flex-column position-relative">
+          <div className="form-div position-relative ">
+            <form
+              onSubmit={(e) => handleSubmit(e)}
+              className="col-md-8 m-auto "
+            >
+              {/* choose plan */}
+              {/* <ChoosePlan handledatachange={handledatachange} duedate={duedate} /> */}
 
-          {/* Client Information */}
-          <ClientInfo
-            handledatachange={handledatachange}
-            validate={validate}
-            panError={panError}
-            panLength={panLength}
-            passportError={passportError}
-            clientNameError={clientNameError}
-            dobError={dobError}
+              {/* Client Information */}
+              <ClientInfo
+                handledatachange={handledatachange}
+                validate={validate}
+                panError={panError}
+                panLength={panLength}
+                passportError={passportError}
+                clientNameError={clientNameError}
+                dobError={dobError}
+              />
+
+              {/* Contact & Bank Information */}
+              <ContactBank
+                handledatachange={handledatachange}
+                numberError={numberError}
+                altNumberError={altNumberError}
+                bankACError={bankACError}
+                acHolderNameError={acHolderNameError}
+                ifscError={ifscError}
+                bankNameError={bankNameError}
+                emailError={emailError}
+                addressError={addressError}
+              />
+
+              {/* Nominee Details */}
+              <Nominee
+                handleNomineedatachange={handleNomineedatachange}
+                nomineeNameError={nomineeNameError}
+                nomineeNumberError={nomineeNumberError}
+                relationshipError={relationshipError}
+                nomineeAadhaarError={nomineeAadhaarError}
+                nomineeEmailError={nomineeEmailError}
+                nomineeAddressError={nomineeAddressError}
+              />
+
+              {/* images */}
+              <ImageUpload
+                handleChangeAadhaar={handleChangeAadhaar}
+                aadharImage={aadharImage}
+                handleChangePassport={handleChangePassport}
+                passportSizeImage={passportSizeImage}
+                handleChangePan={handleChangePan}
+                panImage={panImage}
+                handleChangeSignature={handleChangeSignature}
+                signatureImage={signatureImage}
+                handleImageUpload={handleImageUpload}
+                passPortSizeError={passPortSizeError}
+                passPortSizeImageEmptyError={passPortSizeImageEmptyError}
+                aadhaarImageEmptyError={aadhaarImageEmptyError}
+                aadhaarError={aadhaarError}
+                panImageEmptyError={panImageEmptyError}
+                panImageError={panImageError}
+                signatureImageEmptyError={signatureImageEmptyError}
+                signatureError={signatureError}
+              />
+              <button type="submit">submit</button>
+
+              {/* <button onClick={handleImageUpload}>Upload Images</button> */}
+            </form>
+          </div>
+          <p className="">Copyright @{currentYear} jano inc.</p>
+          <img
+            src="/images/assets/ils_11.png"
+            alt="illustration"
+            className="lazy-img illustration-one wow fadeInRight"
           />
-
-          {/* Contact & Bank Information */}
-          <ContactBank
-            handledatachange={handledatachange}
-            numberError={numberError}
-            altNumberError={altNumberError}
-            bankACError={bankACError}
-            acHolderNameError={acHolderNameError}
-            ifscError={ifscError}
-            bankNameError={bankNameError}
-            emailError={emailError}
-            addressError={addressError}
+          <img
+            src="/images/assets/ils_12.png"
+            alt="illustration"
+            className="lazy-img illustration-two wow fadeInLeft"
           />
-
-          {/* Nominee Details */}
-          <Nominee
-            handleNomineedatachange={handleNomineedatachange}
-            nomineeNameError={nomineeNameError}
-            nomineeNumberError={nomineeNumberError}
-            relationshipError={relationshipError}
-            nomineeAadhaarError={nomineeAadhaarError}
-            nomineeEmailError={nomineeEmailError}
-            nomineeAddressError={nomineeAddressError}
-          />
-
-          {/* images */}
-          <ImageUpload
-            handleChangeAadhaar={handleChangeAadhaar}
-            aadharImage={aadharImage}
-            handleChangePassport={handleChangePassport}
-            passportSizeImage={passportSizeImage}
-            handleChangePan={handleChangePan}
-            panImage={panImage}
-            handleChangeSignature={handleChangeSignature}
-            signatureImage={signatureImage}
-            handleImageUpload={handleImageUpload}
-            passPortSizeError={passPortSizeError}
-            passPortSizeImageEmptyError={passPortSizeImageEmptyError}
-            aadhaarImageEmptyError={aadhaarImageEmptyError}
-            aadhaarError={aadhaarError}
-            panImageEmptyError={panImageEmptyError}
-            panImageError={panImageError}
-            signatureImageEmptyError={signatureImageEmptyError}
-            signatureError={signatureError}
-          />
-          <button type="submit">submit</button>
-
-          {/* <button onClick={handleImageUpload}>Upload Images</button> */}
-        </form>
+        </div>
       </>
       {/* )} */}
     </>
