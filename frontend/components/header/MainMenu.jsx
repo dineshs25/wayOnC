@@ -4,7 +4,8 @@ import {
   pagesItems,
   portfolioItems,
   blogItems,
-} from "../../data/menu";
+  resources,
+} from '../../data/menu';
 import {
   isActiveLink,
   isActiveParent,
@@ -42,52 +43,30 @@ const MainMenu = () => {
           {/* End li */}
 
           <li className="nav-item dropdown mega-dropdown-md active">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              data-bs-auto-close="outside"
-              aria-expanded="false"
-            >
-              Home
-            </a>
-            <ul className="dropdown-menu">
-              <li>
-                <div className="row">
-                  {menuItems.map((menu, index) => (
-                    <div className="col-lg-4" key={index}>
-                      <div className="menu-column">
-                        <h6 className="mega-menu-title">{menu.title}</h6>
-                        <ul className="style-none mega-dropdown-list">
-                          {menu.items.map((item, index) => (
-                            <li key={index}>
-                              <Link href={item.link} className="dropdown-item">
-                                <span>{item.title}</span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </li>
-            </ul>
+            <Link href="/" className="nav-link text-black">
+              Home{" "}
+            </Link>
           </li>
+          <li className="nav-item dropdown mega-dropdown-md active">
+            <Link href="/about-us" className="nav-link text-black">
+              About{" "}
+            </Link>
+          </li>
+
           {/* End li (home mega menu) */}
 
           <li className="nav-item  dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
+            <Link
+              className="nav-link dropdown-toggle text-black"
+              href="/services/SubServices"
               role="button"
               data-bs-toggle="dropdown"
               data-bs-auto-close="outside"
               aria-expanded="false"
             >
-              Pages
-            </a>
+             
+              Services{" "}
+            </Link>
             <ul className="dropdown-menu">
               {pagesItems.map((item, index) => (
                 <li className="dropdown-submenu dropdown" key={index}>
@@ -111,22 +90,34 @@ const MainMenu = () => {
                   </ul>
                 </li>
               ))}
+            </ul>
+          </li>
 
-              <li>
-                <Link href="/pages-menu/pricing" className="dropdown-item">
-                  <span>Pricing</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/pages-menu/testimonials" className="dropdown-item">
-                  <span>Testimonials</span>
-                </Link>
-              </li>
+            <li className="nav-item  dropdown">
+            <Link
+              className="nav-link dropdown-toggle text-black"
+              href="/services/SubServices"
+              role="button"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              aria-expanded="false"
+            >
+             
+              Resources{" "}
+            </Link>
+            <ul className="dropdown-menu">
+            {resources.map((item, index) => (
+                <li key={index}>
+                  <Link href={item.link} className="dropdown-item">
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </li>
           {/* End li (pages) */}
 
-          <li className="nav-item dropdown">
+          {/* <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
               href="#"
@@ -146,10 +137,11 @@ const MainMenu = () => {
                 </li>
               ))}
             </ul>
-          </li>
+          </li> */}
+
           {/* End li (portfolio) */}
 
-          <li className="nav-item dropdown">
+          {/* <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
               href="#"
@@ -169,9 +161,8 @@ const MainMenu = () => {
                 </li>
               ))}
             </ul>
-          </li>
-          {/* End li (blog) */}
-
+          </li> */}
+          
           <li className="nav-item">
             <Link className="nav-link" href="/contact" role="button">
               Contact

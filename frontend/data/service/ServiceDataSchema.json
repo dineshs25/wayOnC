@@ -1,0 +1,72 @@
+{
+    "title": "Get Stock Option Tips From Experts at Shyam Advisory ®",
+    "cate": "MCX",
+    "description": "description",
+    "mainImage": "mainImage",
+    "pageUrl": "cash",
+    "cashData": [
+        {
+            "cashDataInfo": {
+                "id": "1",
+                "title": "Intraday Calls",
+                "body": [
+                    "<p>description</p>",
+                    "<h4>description</h4>",
+                    "<p>description</p>",
+                    "<h4>description</h4>",
+                    "<ul><li>one</li><li>one</li><li>one</li><li>one</li><li>one</li></ul>",
+                    "<h4>description</h4>",
+                    "<p>description</p>",
+                    "<h4>description</h4>",
+                    "<p>description</p>"
+                ]
+            },
+            "tableData": {
+                "title": "Intraday Cash",
+                "tableDataList": [
+                    {
+                        "id": "1",
+                        "title": "PERIOD",
+                        "data1": "2 Days",
+                        "data2": "7 Days",
+                        "data3": "15 Days",
+                        "data4": "1 Months",
+                        "data5": "3 Months",
+                        "data6": "6 Months"
+                    },
+                    {
+                        "id": "1",
+                        "title": "AMOUNT",
+                        "data1": "one",
+                        "data2": "one",
+                        "data3": "one",
+                        "data4": "one",
+                        "data5": "one",
+                        "data6": "one"
+                    },
+                    {
+                        "id": "1",
+                        "title": "GST  (18%)",
+                        "data1": "one",
+                        "data2": "one",
+                        "data3": "one",
+                        "data4": "one",
+                        "data5": "one",
+                        "data6": "one"
+                    },
+                    {
+                        "id": "1",
+                        "title": "TOTAL",
+                        "data1": "one",
+                        "data2": "one",
+                        "data3": "one",
+                        "data4": "one",
+                        "data5": "one",
+                        "data6": "one"
+                    }
+                ]
+            }
+        }
+    ],
+    "serviceCost": "Service charges are excluding taxes. 18% GST will be charged on the package amount."
+}

@@ -1,7 +1,7 @@
 const Block = () => {
   return (
     <>
-      <div className="row align-items-end" data-aos="fade-up">
+      <div className="row align-items-end" data-aos="">
         <div className="col-md-5 col-sm-4">
           <img
             src="/images/shape/shape_136.svg"

@@ -24,13 +24,13 @@ const Hero1 = () => {
             data-aos="fade-up"
           >
             <h1 className="hero-heading fw-500 tx-dark">
-              Everything for your <span>Home</span> &amp; Future.
+            Unlock Your Financial Potential: <span>Expert Investment</span> &amp;  Advisory Services.
             </h1>
             <p className="text-lg tx-dark mt-45 mb-50 lg-mt-30 lg-mb-40">
-              Instant everything. Incredible prices. Big heart.
+            Let's Start Building Your Path to Financial Prosperity - Contact Us Today.
             </p>
-            <form
-              className="search-area d-md-inline-flex m-auto"
+            {/* <form
+              className="search-area d-md-inline-flex m-auto d-no"
               onSubmit={handleSubmit}
             >
               <select className="nice-select form-select">
@@ -48,7 +48,7 @@ const Hero1 = () => {
               <button className="fw-500 text-white tran3s" type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
             {/* End form */}
 
             <div>

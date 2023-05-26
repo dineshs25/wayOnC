@@ -29,7 +29,7 @@ const DynamicBlogDetails = () => {
 
   return (
     <>
-      <Seo pageTitle="Dynami Blog Details" />
+      <Seo pageTitle="Dynamic Blog Details" />
       {/* <!-- 
       =============================================
       Theme Default Menu

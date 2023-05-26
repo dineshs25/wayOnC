@@ -1,42 +1,34 @@
 import Link from "next/link";
-
-const services = [
-  {
-    iconSrc: "/images/icon/icon_104.svg",
-    title: "Home Loan",
-    delay: "100",
-  },
-  {
-    iconSrc: "/images/icon/icon_105.svg",
-    title: "Travel Insurance",
-    delay: "200",
-  },
-  {
-    iconSrc: "/images/icon/icon_106.svg",
-    title: "Insure the Car",
-    delay: "300",
-  },
-  {
-    iconSrc: "/images/icon/icon_107.svg",
-    title: "Health Insurance",
-    delay: "100",
-  },
-  {
-    iconSrc: "/images/icon/icon_141.svg",
-    title: "Life Insurance",
-    delay: "200",
-  },
-  {
-    iconSrc: "/images/icon/icon_142.svg",
-    title: "Family Inurance",
-    delay: "300",
-  },
-];
+import ServicesData from '../../data/service/services.json'
+const services = ServicesData
 
 const Service1 = () => {
+  const slugify = function (text) {
+    return text
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, "-") // Replace spaces with -
+      .replace(/[^\w-]+/g, "") // Remove all non-word chars
+      .replace(/--+/g, "-") // Replace multiple - with single -
+      .replace(/^-+/, "") // Trim - from start of text
+      .replace(/-+$/, ""); // Trim - from end of text
+  };
+  // const equityData = services.filter(data => data.cate ? data.cate : "" === "equity");
+  const equityData = services.filter(
+    (data) => slugify(data.cate ? data.cate : "") === "equity"
+  );
+  const ncxData = services.filter(
+    (data) => slugify(data.cate ? data.cate : "") === "mcx"
+  );
+  const ncdexData = services.filter(
+    (data) => slugify(data.cate ? data.cate : "") === "ncdex"
+  );
+  console.log(equityData);
+  console.log(ncxData);
+  console.log(ncdexData);
   return (
     <>
-      {services.map((service, index) => (
+      {services.map((service, index) => ( 
         <div
           className="col-lg-4 col-sm-6"
           data-aos="fade-up"
@@ -53,6 +45,7 @@ const Service1 = () => {
             </div>
             <p className="fs-20 m0 pt-20">I want</p>
             <h4 className="tx-dark">{service.title}</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam deserunt facere voluptatibus voluptatum, veritatis dolores animi maiores tempora reprehenderit necessitatibus, sit repellendus amet incidunt maxime doloremque distinctio enim!</p>
             <Link
               href="/pages-menu/service-details"
               className="read-more rounded-circle text-start tran3s"
