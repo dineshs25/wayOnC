@@ -11,6 +11,7 @@ const Future = () => {
   // console.log(Gdata)
   return (
     <div>
+     <div className="cash-body-data">
 {
   bData.map((info)=>(
 <>
@@ -68,6 +69,7 @@ const Future = () => {
 </>
   ))
 }
+</div>
 <DefaultFooter/>
     </div>
     

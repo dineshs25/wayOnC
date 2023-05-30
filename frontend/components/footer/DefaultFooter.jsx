@@ -12,7 +12,7 @@ const DefaultFooter = () => {
             <div className="col-xl-2 footer-intro mb-40">
               <div className="logo">
                 <Link href="/">
-                  <img src="/images/logo/logo_01.png" alt="brand" />
+                  <img src="/images/logo/logo.jpg" alt="brand" />
                 </Link>
               </div>
             </div>
@@ -20,7 +20,7 @@ const DefaultFooter = () => {
 
             <Footer2 />
 
-            <div className="col-xl-4 col-lg-5 mb-30 form-widget">
+            <div className="col-xl-4 col-lg-5 mb-30 form-widget d-none">
               <h5 className="footer-title tx-dark fw-normal">Newslettert</h5>
               <h6 className="pt-15 pb-20 md-pt-10">Join our newsletter</h6>
               <NewsLetter />

@@ -185,15 +185,13 @@ const ClentID = () => {
                               {userData.plan.pendingTotalAmount}
                             </Table.Cell>
                             <Table.Cell>
-                              {reqStatus ? (
-                                <button className="pay">PAY</button>
-                              ) : (
-                                <Button
+                             
+                                <Button onClick={handlePaidInterest}
                                   variant="outline-success"
                                 >
-                                  PAID
+                                  PAY
                                 </Button>
-                              )}
+                              
                             </Table.Cell>
                           </Table.Row>
                         </Table.Body>

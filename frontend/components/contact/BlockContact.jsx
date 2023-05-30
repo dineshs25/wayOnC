@@ -5,14 +5,14 @@ const BlockContact = () => {
     {
       icon: "/images/icon/icon_147.svg",
       title: "Our Address",
-      content: "1012 Pebda Parkway, Mirpur 2 Dhaka, Bangladesh",
+      content: "18, 2nd floor, KV Jairam Rd, Jakkuru, Bengaluru, Karnataka 560064",
       delay: "100",
     },
     {
       icon: "/images/icon/icon_148.svg",
       title: "Contact Info",
       content: "Open a chat or give us call at",
-      link: "tel:310.841.5500",
+      link: "tel:078995 27597",
       delay: "200",
     },
     {

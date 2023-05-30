@@ -12,6 +12,7 @@ const NormalMcx = () => {
   return (
     <div>
     <DefaulHeader/>
+    <div className="cash-body-data">
 {
   bData.map((info)=>(
 <>
@@ -69,6 +70,7 @@ const NormalMcx = () => {
 </>
   ))
 }
+</div>
 <DefaultFooter/>
     </div>
     
