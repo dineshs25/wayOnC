@@ -7,6 +7,7 @@ import { Table } from '@nextui-org/react';
 import { IconButton } from '../../components/admin/ui/IconButton';
 import { EyeIcon } from '../../components/admin/ui/EyeIcon';
 import Search from '../../components/common/Search';
+import Load from '../../components/common/Loading';
 
 const ClientsData = () => {
   const [auth, setAuth] = useState(false);
@@ -100,7 +101,6 @@ const ClientsData = () => {
               router.push(`/admin/${[rep]}`);
             }
           }
-          // router.push('/auth/login');
         })
         .catch((e) => {
           console.log('clientsData axios then catch error', e);
@@ -205,7 +205,7 @@ const ClientsData = () => {
               </div>
             </div>
           ) : (
-            <p>Loading...</p>
+            <Load/>
           )}
         </>
       )}

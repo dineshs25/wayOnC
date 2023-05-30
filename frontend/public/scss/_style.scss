@@ -10253,6 +10253,7 @@ button.reqbtn:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #fff;
 }
 
 .login {
@@ -10265,6 +10266,7 @@ button.reqbtn:hover {
   justify-content: center;
   align-items: center;
   padding: 0 44px;
+  background-color: #fff;
 }
 
 .loginForm form input {
@@ -10468,6 +10470,7 @@ input[type='checkbox'] {
 li.sub-li {
   list-style-type: circle !important;
 }
+<<<<<<< HEAD
 ::-webkit-inner-spin-button {
     height: auto;
     visibility: hidden;
@@ -10488,3 +10491,74 @@ li.sub-li {
 .cash-body-data li {
   padding: 10px 0px;
 }
+=======
+
+::-webkit-inner-spin-button {
+  height: auto;
+  visibility: hidden;
+}
+
+.dash-box {
+  border: 1px solid transparent;
+  width: 265px;
+  height: 150px;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 12px 20px 6px rgb(104 112 118 / 0.08);
+}
+
+.dash-box h4 {
+  font-size: 20px;
+}
+
+.dash-box p {
+  color: #d09600;
+  font-size: 50px;
+}
+
+.dash-box-div {
+  padding-block: 40px;
+}
+
+.dash-box-div {
+  padding-block: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+}
+
+.tc a {
+  text-decoration: underline;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tc a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.profile-img {
+  width: 83px !important;
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px solid #d09600;
+}
+
+.checkbox-p {
+  margin-bottom: -3px;
+}
+
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.nextui-c-chTLhx-cGhcKQ-type-points i {
+  background: var(--background-gold) !important;
+}
+>>>>>>> 82df2fe917a9f4af3e814a2127b3fa6009c75793

@@ -10,6 +10,8 @@ import { IconButton } from '../../../components/admin/ui/IconButton';
 import { EyeIcon } from '../../../components/admin/ui/EyeIcon';
 import { DeleteIcon } from '../../../components/admin/ui/DeleteIcon';
 import Search from '../../../components/common/Search';
+import Load from '../../../components/common/Loading';
+
 
 const ClientsData = () => {
   const [auth, setAuth] = useState(false);
@@ -137,6 +139,10 @@ const ClientsData = () => {
       });
   };
 
+  const handleDelete = async (e, id) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       {auth && (
@@ -232,7 +238,11 @@ const ClientsData = () => {
                                   )}
                                 </Table.Cell>
                                 <Table.Cell>
-                                  <IconButton>
+                                  <IconButton
+                                    onClick={(e) => {
+                                      handleDelete(e, value._id);
+                                    }}
+                                  >
                                     <DeleteIcon size={20} fill="#FF0080" />
                                   </IconButton>
                                 </Table.Cell>
@@ -252,7 +262,7 @@ const ClientsData = () => {
               </div>
             </div>
           ) : (
-            <p>Loading...</p>
+            <Load/>
           )}
         </>
       )}

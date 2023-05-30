@@ -4,6 +4,7 @@ import axios from 'axios';
 import ClientSidebar from '../../../../components/client/ClientSideBar';
 import Container from 'react-bootstrap/Container';
 import Link from 'next/link';
+import Load from '../../../../components/common/Loading';
 
 const Invest = () => {
   const router = useRouter();
@@ -26,6 +27,7 @@ const Invest = () => {
   const [checkbox, setCheckBox] = useState(false);
   const [showData, setShowData] = useState(false);
   const [pageData, setPageData] = useState('');
+  const [profileImage, setProfileImage] = useState('');
 
   const [investmentCountError, setInvestmentCountError] = useState(false);
   const [investmentError, setInvestmentError] = useState(false);
@@ -49,6 +51,7 @@ const Invest = () => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
                     setPageData(result.data.result);
+                    setProfileImage(result.data.image);
                   } else {
                     setShowData(false);
                   }
@@ -192,6 +195,7 @@ const Invest = () => {
                   userID={clientID}
                   name={pageData.username}
                   email={pageData.userEmail}
+                  image={profileImage}
                 />
               </div>
               <div className="child-content">
@@ -282,7 +286,7 @@ const Invest = () => {
               </div>
             </div>
           ) : (
-            <p>Loading...</p>
+            <Load/>
           )}
         </>
       )}

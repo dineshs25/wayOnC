@@ -4,6 +4,7 @@ import axios from 'axios';
 import ClientSidebar from '../../../../components/client/ClientSideBar';
 import Container from 'react-bootstrap/Container';
 import { Table } from '@nextui-org/react';
+import Load from '../../../../components/common/Loading';
 
 const Invest = () => {
   const router = useRouter();
@@ -18,6 +19,7 @@ const Invest = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passowrdError, setPasswordError] = useState(false);
+  const [profileImage, setProfileImage] = useState('');
 
   axios.defaults.withCredentials = true;
 
@@ -39,6 +41,7 @@ const Invest = () => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
                     setPageData(result.data.result);
+                    setProfileImage(result.data.image);
                   } else {
                     setShowData(false);
                   }
@@ -102,12 +105,11 @@ const Invest = () => {
   };
 
   const handleChangePasswordButton = () => {
-    if(showInput === false){
+    if (showInput === false) {
       setShowInput(true);
-    }else{
+    } else {
       setShowInput(false);
     }
-    
   };
 
   const existingPasswordValidation = (pass) => {
@@ -161,6 +163,7 @@ const Invest = () => {
                   userID={clientID}
                   name={pageData.username}
                   email={pageData.userEmail}
+                  image={profileImage}
                 />
               </div>
               <div className="child-content">
@@ -245,7 +248,7 @@ const Invest = () => {
               </div>
             </div>
           ) : (
-            'Loading...'
+            <Load/>
           )}
         </>
       )}

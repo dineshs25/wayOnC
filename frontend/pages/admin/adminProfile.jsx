@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Sidebar from '../../components/admin/Sidebar';
 import Container from 'react-bootstrap/Container';
 import { Table } from '@nextui-org/react';
+import Load from '../../components/common/Loading';
 
 const AdminProfile = () => {
   const router = useRouter();
@@ -82,9 +83,12 @@ const AdminProfile = () => {
       });
   };
 
-  const handleButton = (e) => {
-    e.preventDefault();
-    setShowInputs(true);
+  const handleButton = () => {
+    if (showInputs === false) {
+      setShowInputs(true);
+    } else {
+      setShowInputs(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -117,9 +121,9 @@ const AdminProfile = () => {
               alert(result.data.Status);
             }
           })
-          .catch((e)=>{
-            alert("Failed to change password")
-          })
+          .catch((e) => {
+            alert('Failed to change password');
+          });
       } else {
         alert('New Password and Confirm Password are not matching');
       }
@@ -150,12 +154,6 @@ const AdminProfile = () => {
       }
     }
   };
-
-  const handleClose =(e)=>{
-    e.preventDefault();
-    // setShowInputs(false);
-    document.body.classList.remove('fade-in');
-  }
 
   return (
     <>
@@ -198,9 +196,13 @@ const AdminProfile = () => {
                     </button>
                     {showInputs ? (
                       <>
-                      
-                        <div className="changeCred-div fade-in">
-                        <i onClick={handleClose} class="fa-solid fa-angle-up"></i>
+                        <div
+                          className={
+                            showInputs
+                              ? 'changeCred-div'
+                              : 'changeCred-div-fade-out'
+                          }
+                        >
                           <form>
                             <input
                               type="text"
@@ -258,7 +260,7 @@ const AdminProfile = () => {
               </div>
             </div>
           ) : (
-            <p>Loading..</p>
+            <Load/>
           )}
         </>
       )}

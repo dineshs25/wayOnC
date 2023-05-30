@@ -5,6 +5,7 @@ import LogOut from '../../../components/auth/logout';
 import Container from 'react-bootstrap/Container';
 import ClientSidebar from '../../../components/client/ClientSideBar';
 import { Table } from '@nextui-org/react';
+import Load from '../../../components/common/Loading';
 
 const ClentID = () => {
   const router = useRouter();
@@ -165,6 +166,7 @@ const ClentID = () => {
                   userID={userID}
                   name={userData.clintInfo.clientName}
                   email={userData.bankInfo.email}
+                  image={userData.image.passportSizeImage}
                 />
               </div>
               <div className="child-content">
@@ -279,7 +281,7 @@ const ClentID = () => {
               </div>
             </div>
           ) : (
-            <p>Loading...</p>
+            <Load/>
           )}
         </>
       )}

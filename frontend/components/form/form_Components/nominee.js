@@ -54,7 +54,8 @@ const Nominee = ({
         <Form.Control
           type="text"
           name="nominee_adhaar"
-          placeholder="Aadhaar No"
+          placeholder="Aadhaar No" 
+          maxLength={12}
           onChange={handleNomineedatachange}
         />
         {nomineeAadhaarError ? (

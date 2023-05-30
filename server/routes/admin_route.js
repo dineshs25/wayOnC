@@ -17,6 +17,7 @@ const receivedforms = require('../controllers/adminControle/receivedforms');
 const verification = require('../controllers/adminControle/verification');
 const adminProfile = require('../controllers/adminControle/adminProfile');
 const changeCred = require('../controllers/adminControle/changeCred');
+const total = require('../controllers/adminControle/total');
 
 router.use(express.json());
 router.use(cookieParser());
@@ -47,5 +48,6 @@ router.post('/verification', verification);
 router.get('/earners', earners);
 router.get('/adminProfile', adminProfile);
 router.post('/changeCred', changeCred);
+router.get('/total', total);
 
 module.exports = router;

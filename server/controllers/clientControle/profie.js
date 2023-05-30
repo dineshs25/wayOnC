@@ -1,4 +1,5 @@
 const user_collection = require('../../models/users');
+const client_collection = require('../../models/client');
 
 module.exports = async (req, res) => {
   const { authEmail } = req.body;
@@ -8,7 +9,15 @@ module.exports = async (req, res) => {
       if (result === null) {
         res.send({ Status: 'User Not found' });
       } else {
-        res.send({ Status: 'Success', result: result });
+        client_collection
+          .findOne({ userAuth: authEmail })
+          .then((imageResult) => {
+            // console.log(imageResult);
+            res.send({ Status: 'Success', result: result, image: imageResult.image.passportSizeImage });
+          })
+          .catch((e) => {
+            console.log(e);
+          });
       }
     })
     .catch((e) => {
