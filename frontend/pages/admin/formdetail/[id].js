@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import { Table } from '@nextui-org/react';
 import Sidebar from '../../../components/admin/Sidebar';
+import Load from '../../../components/common/Loading';
 
 const formDetails = () => {
   const router = useRouter();
@@ -316,7 +317,7 @@ const formDetails = () => {
               </div>
             </div>
           ) : (
-            <p>Loading...</p>
+            <Load/>
           )}
         </>
       )}

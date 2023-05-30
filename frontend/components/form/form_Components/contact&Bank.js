@@ -46,7 +46,7 @@ const ContactBank = ({
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Bank A/c No</Form.Label>
         <Form.Control
-          type="text"
+          type="number"
           name="bank_AC_Num"
           placeholder="Bank A/c No"
           onChange={handledatachange}

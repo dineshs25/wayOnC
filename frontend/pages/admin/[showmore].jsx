@@ -7,7 +7,7 @@ import { Table } from '@nextui-org/react';
 import Sidebar from '../../components/admin/Sidebar';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
-
+import Load from '../../components/common/Loading';
 
 const ClentID = () => {
   const router = useRouter();
@@ -44,10 +44,10 @@ const ClentID = () => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
                     setUserData(result.data.result);
-                    if (result.data.result.reqMoney > 0) {
-                      setReqStatus(true);
-                    } else {
+                    if (result.data.result.reqmoney > 0) {
                       setReqStatus(false);
+                    } else {
+                      setReqStatus(true);
                     }
                     const start = new Date(userData.plan.startdate)
                       .toLocaleString('en-GB')
@@ -90,21 +90,21 @@ const ClentID = () => {
     fetchAPI2(API2);
   }, [userID]);
 
-  const logout = async () => {
-    await axios
-      .post('http://localhost:8000/admin/logout')
-      .then((res) => {
-        console.log(res);
-        if (res.data.Status === 'Success') {
-          window.location.reload(true);
-        } else {
-          alert('failed to logout');
-        }
-      })
-      .catch((e) => {
-        console.log('logout axios error', e);
-      });
-  };
+  // const logout = async () => {
+  //   await axios
+  //     .post('http://localhost:8000/admin/logout')
+  //     .then((res) => {
+  //       console.log(res);
+  //       if (res.data.Status === 'Success') {
+  //         window.location.reload(true);
+  //       } else {
+  //         alert('failed to logout');
+  //       }
+  //     })
+  //     .catch((e) => {
+  //       console.log('logout axios error', e);
+  //     });
+  // };
 
   const handlePaidInterest = async () => {
     let hash = userID.replace(/slash/g, '/');
@@ -185,13 +185,14 @@ const ClentID = () => {
                               {userData.plan.pendingTotalAmount}
                             </Table.Cell>
                             <Table.Cell>
-                              {reqStatus ? (
-                                <button className="pay">PAY</button>
+                              {reqStatus === true ? (
+                                <button className="pay">PAID</button>
                               ) : (
                                 <Button
+                                  onClick={handlePaidInterest}
                                   variant="outline-success"
                                 >
-                                  PAID
+                                  PAY
                                 </Button>
                               )}
                             </Table.Cell>
@@ -431,7 +432,7 @@ const ClentID = () => {
               </div>
             </div>
           ) : (
-            <p>Loading...</p>
+            <Load/>
           )}
         </>
       )}

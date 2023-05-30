@@ -52,9 +52,10 @@ const Nominee = ({
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Aadhaar No</Form.Label>
         <Form.Control
-          type="text"
+          type="number"
           name="nominee_adhaar"
-          placeholder="Aadhaar No"
+          placeholder="Aadhaar No" 
+          maxLength={12}
           onChange={handleNomineedatachange}
         />
         {nomineeAadhaarError ? (

@@ -7,6 +7,7 @@ import { Table } from '@nextui-org/react';
 import { IconButton } from '../../components/admin/ui/IconButton';
 import { EyeIcon } from '../../components/admin/ui/EyeIcon';
 import Search from '../../components/common/Search';
+import Load from '../../components/common/Loading';
 
 const TodayEarners = () => {
   const [auth, setAuth] = useState(false);
@@ -225,7 +226,7 @@ const TodayEarners = () => {
               </div>
             </div>
           ) : (
-            <p>Loading...</p>
+            <Load/>
           )}
         </>
       )}

@@ -109,6 +109,8 @@ const ClientForm = () => {
   const [signatureError, setSignatureError] = useState(false);
 
   const [duedate, setDueDate] = useState('');
+  const [checkbox, setCheckBox] = useState(false);
+
 
   const [id, setId] = useState('');
 
@@ -171,7 +173,9 @@ const ClientForm = () => {
     const aadhaarImageVer = aadhaarImageValidation(aadharImage);
     const panImageVer = panImageValidation(panImage);
     const signatureImageVer = signatureImageValidation(signatureImage);
+    const checkedVer = handleCheckboxSubmit(checkbox);
     if (
+      checkedVer && 
       panVer &&
       aadhaarVal &&
       passver &&
@@ -689,6 +693,23 @@ const ClientForm = () => {
     }
   };
 
+  const handleCheckbox = () => {
+    if (checkbox === false) {
+      setCheckBox(true);
+    } else {
+      setCheckBox(false);
+    }
+  };
+
+  const handleCheckboxSubmit = (checkbox) => {
+    if (checkbox === false) {
+      alert('Please tick the checkbox to submit');
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   return (
     <>
       {/* {auth && ( */}
@@ -772,6 +793,13 @@ const ClientForm = () => {
                 signatureImageEmptyError={signatureImageEmptyError}
                 signatureError={signatureError}
               />
+              <p className="tc">
+                <Link href="/T&C">Terms & Conditions</Link>
+              </p>
+              <div className="checkbox">
+                <input type="checkbox" onChange={handleCheckbox} required />
+                <p className='checkbox-p'>I agree for the terms and conditions</p>
+              </div>
               <button type="submit">submit</button>
 
               {/* <button onClick={handleImageUpload}>Upload Images</button> */}
