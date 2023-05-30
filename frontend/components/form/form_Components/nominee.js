@@ -52,7 +52,7 @@ const Nominee = ({
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Aadhaar No</Form.Label>
         <Form.Control
-          type="number"
+          type="text"
           name="nominee_adhaar"
           placeholder="Aadhaar No" 
           maxLength={12}

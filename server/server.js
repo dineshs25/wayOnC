@@ -51,7 +51,7 @@ app.use('/auth', auth);
 app.use('/admin', admin);
 
 cron.schedule('*/10 * * * * *', () => {
-  const date = new Date('2023-08-29').toISOString().substring(0, 10);
+  const date = new Date('2023-08-30').toISOString().substring(0, 10);
 
   investor_collection.find().then((result) => {
     result.map((doc) => {

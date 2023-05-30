@@ -441,7 +441,7 @@ const ClientForm = () => {
 
   //name
   const clientNameValidator = (text) => {
-    var exp1 = /^[A-Za-z]+$/;
+    var exp1 = /^[A-Za-z ]+$/;
     if (text === null) {
       return false;
     } else {
@@ -474,7 +474,7 @@ const ClientForm = () => {
 
   //AcHoldername
   const acHolderNameValidator = (text) => {
-    var exp1 = /^[A-Za-z]+$/;
+    var exp1 = /^[A-Za-z ]+$/;
     if (!text) {
       setAcHolderNameError(true);
       return false;
@@ -508,7 +508,7 @@ const ClientForm = () => {
 
   //BankName
   const bankNameeValidator = (text) => {
-    var exp1 = /^[A-Za-z]+$/;
+    var exp1 = /^[A-Za-z ]+$/;
     if (!text) {
       setBankNameError(true);
       return false;
@@ -554,7 +554,7 @@ const ClientForm = () => {
 
   //NomineeName
   const nomineeNameeValidator = (text) => {
-    var exp1 = /^[A-Za-z]+$/;
+    var exp1 = /^[A-Za-z ]+$/;
     if (!text) {
       setNomineeNameError(true);
       return false;
