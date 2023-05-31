@@ -11,6 +11,7 @@ const Index = () => {
   // console.log(Gdata)
   return (
     <div>
+    <div className="cash-body-data">
 {
   bData.map((info)=>(
 <>
@@ -68,6 +69,7 @@ const Index = () => {
 </>
   ))
 }
+</div>
 <DefaultFooter/>
     </div>
     

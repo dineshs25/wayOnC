@@ -32,7 +32,7 @@ const DefaulHeader = () => {
           <div className="logo order-lg-0">
             <Link href="/" className="d-block">
               <Image
-                src="/images/logo/logo_01.png"
+                src="/images/logo/logo.jpg"
                 alt="logo"
                 width={95}
                 height={30}

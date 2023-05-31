@@ -62,7 +62,7 @@ const ClientInfo = ({
         <Form.Label>Adhraa Number</Form.Label>
 
         <Form.Control
-          type="text"
+          type="number"
           name="adhaar"
           placeholder="Adhaar Number"
           maxLength={12}

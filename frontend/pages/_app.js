@@ -1,9 +1,9 @@
-import Aos from 'aos';
+  import Aos from 'aos';
 import { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import '../styles/index.scss';
 import ScrollToTop from '../components/common/ScrollTop';
-import { NextUIProvider } from '@nextui-org/react';
+// import { NextUIProvider } from '@nextui-org/react';
 
 if (typeof window !== 'undefined') {
   require('bootstrap/dist/js/bootstrap');

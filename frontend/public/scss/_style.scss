@@ -189,7 +189,7 @@ body {
   font-size: 16px;
   position: relative;
   color: var(--text-color);
-  background: rgb(238, 251, 250);
+  background: #ffffff;
 }
 .h1,
 h1,
@@ -1076,7 +1076,16 @@ body .btn-twentyFive:hover {
 .theme-main-menu .logo {
   min-height: 50px;
   display: flex;
+  width: 150px;
   align-items: center;
+}
+.theme-main-menu .logo .d-block{
+  width: 150px;
+}
+.theme-main-menu .logo .d-block img{
+  width: 150px;
+    height: 100px;
+    object-fit: contain;
 }
 .theme-main-menu .contact-btn-one {
   line-height: 52px;
@@ -8009,6 +8018,7 @@ body .btn-twentyFive:hover {
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  padding-left: 44px;
 }
 .footer-style-eleven .footer-nav-link a:hover {
   color: var(--prime-two);
@@ -10460,6 +10470,28 @@ input[type='checkbox'] {
 li.sub-li {
   list-style-type: circle !important;
 }
+<<<<<<< HEAD
+::-webkit-inner-spin-button {
+    height: auto;
+    visibility: hidden;
+}.row.abcd {
+  align-items: center;
+}
+.valued-service.mt-5.mb-5:nth-child(2n+1) .abcd {
+  flex-direction: row-reverse;
+  display: flex;
+}
+.cash-body-data {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 85%;
+    margin: -1px auto 2px;
+    padding: 50px 0;
+}
+
+.cash-body-data li {
+  padding: 10px 0px;
+}
+=======
 
 ::-webkit-inner-spin-button {
   height: auto;
@@ -10529,6 +10561,7 @@ li.sub-li {
 .nextui-c-chTLhx-cGhcKQ-type-points i {
   background: var(--background-gold) !important;
 }
+<<<<<<< HEAD
 
 
 .forget-parent {
@@ -10634,3 +10667,6 @@ input.newPass {
   margin-inline: auto;
   margin-top: 24px;
 }
+=======
+>>>>>>> 82df2fe917a9f4af3e814a2127b3fa6009c75793
+>>>>>>> f2dceb500eb89264f6600030df048c20bf77d047

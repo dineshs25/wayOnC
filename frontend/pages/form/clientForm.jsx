@@ -15,7 +15,7 @@ import { useRouter } from 'next/navigation';
 
 const ClientForm = () => {
   const currentYear = new Date().getFullYear();
-
+  
   const [auth, setAuth] = useState(false);
   const [panError, setPanError] = useState(false);
   const [panLength, setPanLength] = useState(false);
@@ -719,7 +719,7 @@ const ClientForm = () => {
             <div className="d-flex align-items-center justify-content-between">
               <div className="logo order-lg-0">
                 <Link href="/" className="d-block">
-                  <img src="/images/logo/logo_01.png" alt="" width={95} />
+                  <img src="/images/logo/logo.jpg" alt="" width={95} />
                 </Link>
               </div>
               <Link href="/" className="go-back-btn fw-500 tran3s">
