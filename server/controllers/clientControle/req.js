@@ -1,5 +1,6 @@
 const investor_collection = require('../../models/investers');
 const nodemailer = require('nodemailer');
+const {reqDone} = require('../../emailTemplates/reqDone');
 require("dotenv").config();
 
 
@@ -29,10 +30,11 @@ module.exports = async (req, res) => {
           }
         )
         .then((result) => {
+          const name = result.clintInfo.clientName;
 
           //mail
           let mailOptions = {
-            from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
+            from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
             to: 'dineshroyc25@gmail.com', // list of receivers
             subject: 'Investor Requested for Interest', // Subject liners
 
@@ -43,15 +45,17 @@ module.exports = async (req, res) => {
           };
 
           let mailClientOption = {
-            from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
+            from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
             to: result.bankInfo.email, // list of receivers
-            subject: 'Finance Company Pvt ltd', // Subject liners
+            subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
 
             text: 'Hello world?', // plain text body
-            html: `<p>Dear ${result.clintInfo.clientName},</p><br/>
-            <p>Your request is for Interest Rs ${reqested} is sent Successfully</p><br/>
-            <p>Thank you</p>
-            `, // html body
+            // html: `<p>Dear ${result.clintInfo.clientName},</p><br/>
+            // <p>Your request is for Interest Rs ${reqested} is sent Successfully</p><br/>
+            // <p>Thank you</p>
+            // `, 
+            html: reqDone(result.clintInfo.clientName, reqested)
+            ,
           };
 
           transporter.sendMail(mailOptions, (err, info) => {

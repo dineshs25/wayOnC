@@ -5973,6 +5973,11 @@
     "uglify-js" "^3.16.0"
     "watchify" "^4.0.0"
 
+"react-otp-input@^3.0.2":
+  "integrity" "sha512-YzOYnol7NodV1KZdy9Y4y3jV4u3mlug98WfJqwV4hs7+zeRqzp5jcA/+onZ6OHjpdOMRQvA675xAHB5ynSmViA=="
+  "resolved" "https://registry.npmjs.org/react-otp-input/-/react-otp-input-3.0.2.tgz"
+  "version" "3.0.2"
+
 "react-photoswipe-gallery@^2.2.6":
   "integrity" "sha512-AEYNoL4/IIRosIUonn4haaFQNn1ui4vdVgAY9LHd/imVamNCkqUcyWeT6317UILp/yJI2gohsd3lWmcJEbjCag=="
   "resolved" "https://registry.npmjs.org/react-photoswipe-gallery/-/react-photoswipe-gallery-2.2.7.tgz"

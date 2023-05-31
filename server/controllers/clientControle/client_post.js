@@ -6,7 +6,8 @@ const user_collection = require('../../models/users');
 // const transporter = require('../../email.config');
 const nodemailer = require('nodemailer');
 const _ = require('lodash');
-require("dotenv").config();
+require('dotenv').config();
+const { formSubmit } = require('../../emailTemplates/formSubmit');
 
 const saltRounds = 10;
 
@@ -134,17 +135,18 @@ module.exports = async (req, res) => {
                     };
 
                     let mailClientOption = {
-                      from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
+                      from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
                       to: email, // list of receivers
-                      subject: 'Finance Company Pvt ltd', // Subject liners
+                      subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
 
                       text: 'Hello world?', // plain text body
-                      html: `<p>Dear ${clientName},</p><br/>
-                      <p>Thank you for showing interest in our company</p><br/>
-                      <p>Our team members will verify your submitted form details</p><br/>
-                      <p>Then we'll notify with the next procedure</p><br/>
-                      <p>Thank you</p>
-                      `, // html body
+                      // html: `<p>Dear ${clientName},</p><br/>
+                      // <p>Thank you for showing interest in our company</p><br/>
+                      // <p>Our team members will verify your submitted form details</p><br/>
+                      // <p>Then we'll notify with the next procedure</p><br/>
+                      // <p>Thank you</p>
+                      // `,
+                      html: formSubmit(clientName),
                     };
 
                     transporter.sendMail(mailOptions, (err, info) => {

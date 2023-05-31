@@ -30,6 +30,9 @@ const Sidebar = () => {
               <Link href="/admin/todayEarners">
                 <li>TodayEarners</li>
               </Link>
+              <Link href="/admin/requests">
+                <li>Requests</li>
+              </Link>
             </ul>
           </div>
           <div className="sidebar-content-child-footer">

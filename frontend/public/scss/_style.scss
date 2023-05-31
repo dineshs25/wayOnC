@@ -10529,3 +10529,108 @@ li.sub-li {
 .nextui-c-chTLhx-cGhcKQ-type-points i {
   background: var(--background-gold) !important;
 }
+
+
+.forget-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.forget-child {
+  border: 2px solid transparent;
+  box-shadow: 0 12px 20px 6px rgba(104, 112, 118, 0.08);
+  border-radius: 20px;
+  padding: 20px;
+  width: 450px;
+}
+
+.forget-child input {
+  border: 2px solid #d09600;
+  width: 300px;
+  height: 35px;
+  padding: 5px 10px;
+  margin-block: 13px;
+  border-radius: 10px;
+}
+
+.forget-child button {
+  border: 2px solid #d09600;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  color: #d09600;
+}
+
+.forget-child button:hover {
+  background-color: #d09600;
+  color: #fff;
+}
+
+.forgetOtp input {
+  height: 4rem;
+  width: 3rem !important;
+  margin-inline: 13px;
+}
+
+.forgetOtp {
+  display: flex;
+  justify-content: center;
+}
+
+.otph4{
+  font-size: 17px;
+    color: gray;
+    text-align: center;
+}
+
+button.otpButton {
+  margin-inline: auto;
+  margin-block: 20px;
+}
+
+button.resendBtn {
+  color: #fff;
+  border: 1px solid #0D6EFD;
+  background-color: #0D6EFD;
+  margin-inline: auto;
+  margin-bottom: 10px;
+}
+
+.otpExpire{
+  text-align: center;
+}
+
+button.resendBtn:hover{
+  color: #fff;
+  border: 1px solid #0D6EFD;
+  background-color: #0D6EFD;
+}
+
+.newPass {
+  margin-inline: auto !important;
+}
+
+.inputbox {
+  display: flex;
+  height: fit-content;
+  width: 341px;
+  align-items: center;
+  border: 2px solid #d09600;
+  border-radius: 10px;
+  padding-right: 8px;
+  margin-inline: auto;
+}
+
+input.newPass {
+  border: none;
+  margin-block: 0;
+  margin-left: 0px !important;
+}
+
+.newPassbtn{
+  margin-inline: auto;
+  margin-top: 24px;
+}

@@ -1,6 +1,7 @@
+const { paidDone } = require('../../emailTemplates/paidDone');
 const investor_collection = require('../../models/investers');
 const nodemailer = require('nodemailer');
-require("dotenv").config();
+require('dotenv').config();
 
 module.exports = async (req, res) => {
   const { reqMoney, authEmail } = req.body;
@@ -39,47 +40,6 @@ module.exports = async (req, res) => {
           )
           .then((result) => {
             console.log(result);
-            //mail
-            let mailOptions = {
-              from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
-              to: 'dineshroyc25@gmail.com', // list of receivers
-              subject: 'Investor Requested Interest Paid', // Subject liners
-
-              text: 'Hello world?', // plain text body
-              html: `<p>Requested Interest Paid</p><br/><table border="1px"><tr><td>Name</td><td>${result.clintInfo.clientName}</td>
-            </tr><tr><td>Paid Interest</td><td>${reqMoney} Rs</td></tr><tr><td>Total Interest Paid</td><td>${totalpaid} Rs</td></tr>
-            </table>`, // html body
-            };
-
-            let mailClientOption = {
-              from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
-              to: result.bankInfo.email, // list of receivers
-              subject: 'Paid Your Requested Interest', // Subject liners
-
-              text: 'Hello world?', // plain text body
-              html: `<p>Dear ${result.clintInfo.clientName},</p><br/>
-            <p>Your requested Interest Rs ${reqMoney} has been paid Successfully</p><br/>
-            <p>Thank you</p>
-            `, // html body
-            };
-
-            transporter.sendMail(mailOptions, (err, info) => {
-              if (!err) {
-              } else {
-                console.log(err);
-              }
-            });
-
-            try {
-              transporter.sendMail(mailClientOption, (err, info) => {
-                if (!err) {
-                } else {
-                  console.log(err);
-                }
-              });
-            } catch (e) {
-              console.log('Client sent email error occured');
-            }
 
             res.send({ Status: 'Success' });
           })
@@ -118,6 +78,49 @@ module.exports = async (req, res) => {
                     }
                   )
                   .then((result) => {
+
+                    //mail
+                    let mailOptions = {
+                      from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+                      to: 'dineshroyc25@gmail.com', // list of receivers
+                      subject: 'Investor Requested Interest Paid', // Subject liners
+
+                      text: 'Hello world?', // plain text body
+                      html: `<p>Requested Interest Paid</p><br/><table border="1px"><tr><td>Name</td><td>${result.clintInfo.clientName}</td>
+            </tr><tr><td>Paid Interest</td><td>${reqMoney} Rs</td></tr><tr><td>Total Interest Paid</td><td>${totalpaid} Rs</td></tr>
+            </table>`, // html body
+                    };
+
+                    let mailClientOption = {
+                      from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+                      to: result.bankInfo.email, // list of receivers
+                      subject: 'Paid Your Requested Interest', // Subject liners
+
+                      text: 'Hello world?', // plain text body
+                      //           html: `<p>Dear ${result.clintInfo.clientName},</p><br/>
+                      // <p>Your requested Interest Rs ${reqMoney} has been paid Successfully</p><br/>
+                      // <p>Thank you</p>
+                      // `,
+                      html: paidDone(result.clintInfo.clientName, reqMoney),
+                    };
+
+                    transporter.sendMail(mailOptions, (err, info) => {
+                      if (!err) {
+                      } else {
+                        console.log(err);
+                      }
+                    });
+
+                    try {
+                      transporter.sendMail(mailClientOption, (err, info) => {
+                        if (!err) {
+                        } else {
+                          console.log(err);
+                        }
+                      });
+                    } catch (e) {
+                      console.log('Client sent email error occured');
+                    }
                     res.send({ Status: 'Success' });
                   })
                   .catch((e) => {

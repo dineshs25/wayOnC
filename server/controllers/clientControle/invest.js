@@ -1,6 +1,7 @@
 const client_collection = require('../../models/client');
 const investor_collection = require('../../models/investers');
 const nodemailer = require('nodemailer');
+const { investmentDone } = require('../../emailTemplates/investmentDone');
 require('dotenv').config();
 
 module.exports = async (req, res) => {
@@ -111,7 +112,7 @@ module.exports = async (req, res) => {
               .then((result) => {
                 //mail
                 let mailOptions = {
-                  from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
+                  from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
                   to: 'dineshroyc25@gmail.com', // list of receivers
                   subject: 'New Investment Received', // Subject liners
 
@@ -122,16 +123,17 @@ module.exports = async (req, res) => {
                 };
 
                 let mailClientOption = {
-                  from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
+                  from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
                   to: result[0].bankInfo.email, // list of receivers
-                  subject: 'Finance Company Pvt ltd', // Subject liners
+                  subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
 
                   text: 'Hello world?', // plain text body
-                  html: `<p>Dear ${result[0].clintInfo.clientName},</p><br/>
-          <p>Thank you for investing</p><br/>
-          <p>You can veiw your investment details in your dashbord</p><br/>
-          <p>Thank you</p>
-          `, // html body
+                  //         html: `<p>Dear ${result[0].clintInfo.clientName},</p><br/>
+                  // <p>Thank you for investing</p><br/>
+                  // <p>You can veiw your investment details in your dashbord</p><br/>
+                  // <p>Thank you</p>
+                  // `,
+                  html: investmentDone(result[0].clintInfo.clientName),
                 };
 
                 transporter.sendMail(mailOptions, (err, info) => {

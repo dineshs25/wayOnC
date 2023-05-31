@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -103,7 +104,7 @@ const LoginForm = () => {
                 <input type="checkbox" id="remember" />
                 <label htmlFor="remember">Keep me logged in</label>
               </div>
-              <a href="#">Forget Password?</a>
+              <Link href="/ForgetPassword">Forget Password?</Link>
             </div>
             {/* /.agreement-checkbox */}
           </div>

@@ -3,8 +3,8 @@ const investor_collection = require('../../models/investers');
 const user_collection = require('../../models/users');
 const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
-require("dotenv").config();
-
+const { verificationDone } = require('../../emailTemplates/verificationDone');
+require('dotenv').config();
 
 const saltRounds = 10;
 
@@ -59,25 +59,23 @@ module.exports = async (req, res) => {
                               res.send({ Status: 'Form data not found' });
                             } else {
                               let mailClientOption = {
-                                from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
+                                from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
                                 to: email, // list of receivers
-                                subject: 'Finance Company Pvt ltd', // Subject liners
+                                subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
 
                                 text: 'Hello world?', // plain text body
-                                html: `<p>Dear ${name},</p><br/>
-                                <p>Your details are successfully verified</p><br/>
-                                <p>You can login to your Account with your email and password</p><br/>
-                                <p>Your login password : your name with your born year (eg: Name2001)</p><br/>
-                                <p>Thank you</p>
-                                `, // html body
+                                html: verificationDone(name),
                               };
 
-                              transporter.sendMail(mailClientOption, (err, info) => {
-                                if (!err) {
-                                } else {
-                                  console.log(err);
+                              transporter.sendMail(
+                                mailClientOption,
+                                (err, info) => {
+                                  if (!err) {
+                                  } else {
+                                    console.log(err);
+                                  }
                                 }
-                              });
+                              );
 
                               res.send({ Status: 'Success' });
                             }

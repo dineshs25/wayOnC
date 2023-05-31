@@ -7,6 +7,10 @@ const authControll = require('../controllers/credControle/authControll');
 const update = require('../controllers/credControle/update');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const email = require('../controllers/credControle/email');
+const otpVer = require('../controllers/credControle/otpVer');
+const resetOTP = require('../controllers/credControle/resetOTP');
+const resetPassword = require('../controllers/credControle/resetPassword');
 
 router.use(express.json());
 router.use(
@@ -30,5 +34,10 @@ router.post('/logout', logout);
 router.post('/register', register);
 router.post('/auth', authControll);
 router.put('/update', update);
+router.post('/email', email);
+router.post('/otpVer', otpVer);
+router.post('/resetOTP', resetOTP);
+router.put('/resetPassword', resetPassword);
+
 
 module.exports = router;
