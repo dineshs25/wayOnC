@@ -11,6 +11,7 @@ const email = require('../controllers/credControle/email');
 const otpVer = require('../controllers/credControle/otpVer');
 const resetOTP = require('../controllers/credControle/resetOTP');
 const resetPassword = require('../controllers/credControle/resetPassword');
+const resendOTp = require('../controllers/credControle/resendOTp');
 
 router.use(express.json());
 router.use(
@@ -38,6 +39,8 @@ router.post('/email', email);
 router.post('/otpVer', otpVer);
 router.post('/resetOTP', resetOTP);
 router.put('/resetPassword', resetPassword);
+router.post('/resendOtp', resendOTp);
+
 
 
 module.exports = router;

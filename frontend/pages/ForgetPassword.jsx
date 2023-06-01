@@ -31,7 +31,6 @@ const ForgetPassword = () => {
         .then((result) => {
           if (result.data.Status === 'Success') {
             setAuthEmail(result.data.authEmail);
-            console.log(result.data.authEmail);
             alert('Email Found');
             setEmailScreen(false);
             setOtpScreen(true);
@@ -46,6 +45,26 @@ const ForgetPassword = () => {
           console.log('Axios error forgetPassword', e);
         });
     }
+  };
+
+  const handleResend = async () => {
+    await axios
+      .post('http://localhost:8000/auth/resendOtp', { email })
+      .then((result) => {
+        if (result.data.Status === 'Success') {
+          setAuthEmail(result.data.authEmail);
+          setEmailScreen(false);
+          setOtpScreen(true);
+          timeCountDown();
+        } else {
+          alert(result.data.Status);
+          setEmailScreen(true);
+          setOtpScreen(false);
+        }
+      })
+      .catch((e) => {
+        console.log('Axios error forgetPassword', e);
+      });
   };
 
   const handleDeleteOTP = async () => {
@@ -200,7 +219,11 @@ const ForgetPassword = () => {
         {otpScreen && (
           <>
             <p className="otpExpire">OTP expires in : {timer}</p>
-            {resendBtn && <button className="resendBtn">Resend</button>}
+            {resendBtn && (
+              <button className="resendBtn" onClick={handleResend}>
+                Resend
+              </button>
+            )}
             <h4 className="otph4">
               Enter OTP sent to your registered email ID
             </h4>
