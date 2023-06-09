@@ -2,7 +2,14 @@ const investor_collection = require('../models/investers');
 
 const TaxDeduction = (doc, index, ded) => {
   const count = index + 1;
-  const deduction = doc.plan.interestPerMonth - ded;
+  
+  
+  const tdsDed = (parseInt(doc.plan.interestPerMonth) * 10) / 100;
+  const totDed = tdsDed + ded;
+  const deduction = doc.plan.interestPerMonth - totDed;
+
+  
+  
   const earnedInterest = count * deduction;
   const pendingInterest =
     parseInt(earnedInterest) - parseInt(doc.plan.paidInterest);

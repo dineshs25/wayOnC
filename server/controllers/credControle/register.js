@@ -32,7 +32,8 @@ module.exports = async (req, res) => {
               if (result2 === null) {
                 const dob = new Date(result1.clintInfo.dob).getFullYear();
                 const name = result1.clintInfo.clientName;
-                const password = name + dob;
+                const namePass = result1.clintInfo.clientName.substring(0, 4);
+                const password = namePass + dob;
 
                 bcrypt.hash(password, saltRounds).then((hashPassword) => {
                   bcrypt.hash(email, saltRounds).then((hashEmail) => {

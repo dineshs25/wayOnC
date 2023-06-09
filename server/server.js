@@ -8,19 +8,18 @@ const client_collection = require('./models/client');
 const client = require('./routes/client_route');
 const admin = require('./routes/admin_route');
 const auth = require('./routes/auth');
-require("dotenv").config();
-
+const user = require('./routes/user_route');
+require('dotenv').config();
 
 const { TaxDeduction } = require('./deductions/taxDeduction');
 const { MonthChecker } = require('./monthCheck/monthChecker');
 
 const app = require('express')();
 
-
 const investor_collection = require('./models/investers');
 
 const cron = require('node-cron');
-
+const { StateUpdate } = require('./extendState/stateUpdate');
 
 app.use(
   cors({
@@ -36,9 +35,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 mongoose
-  .connect(
-    process.env.MONGODB_API
-  )
+  .connect(process.env.MONGODB_API)
   .then(() => {
     console.log('DB_Connected');
   })
@@ -49,13 +46,16 @@ mongoose
 app.use('/client', client);
 app.use('/auth', auth);
 app.use('/admin', admin);
+app.use('/user', user);
 
 cron.schedule('*/10 * * * * *', () => {
-  const date = new Date('2023-10-01').toISOString().substring(0, 10);
-
-
+  const date = new Date('2023-10-09').toISOString().substring(0, 10);
   investor_collection.find().then((result) => {
     result.map((doc) => {
+      const len = doc.plan.arrayMonths.length - 2;
+      if (doc.plan.arrayMonths[len] === date) {
+        StateUpdate(doc);
+      }
       const plan = doc.plan.arrayMonths;
       plan.map((dates, index) => {
         if (dates === date) {

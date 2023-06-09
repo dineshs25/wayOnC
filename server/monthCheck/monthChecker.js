@@ -1,9 +1,12 @@
 const investor_collection = require('../models/investers');
 
 const MonthChecker = (doc, index, ded) => {
-  const count = index+1;
+  const count = index + 1;
   const earnedInterest = count * parseInt(doc.plan.interestPerMonth);
-  const dedInterest = earnedInterest - ded
+  const tdsDed = (parseInt(doc.plan.interestPerMonth) * 10) / 100;
+  const totDed = count * tdsDed;
+  const earn = earnedInterest - totDed;
+  const dedInterest = earn - ded;
   const pendingInterest =
     parseInt(dedInterest) - parseInt(doc.plan.paidInterest);
   const totalPending = parseInt(doc.plan.principal) + parseInt(pendingInterest);

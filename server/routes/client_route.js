@@ -8,11 +8,13 @@ const user = require('../controllers/clientControle/user');
 const paidamt = require('../controllers/clientControle/paidamt');
 const req = require('../controllers/clientControle/req');
 const profile = require('../controllers/clientControle/profie');
+const checkout = require('../controllers/clientControle/checkout');
 const cors = require('cors');
 
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const investedClient = require('../controllers/clientControle/investedClient');
+const extend = require('../controllers/clientControle/extend');
 
 
 router.use(express.json());
@@ -41,6 +43,10 @@ router.post('/paidamt', paidamt);
 router.put('/req', req);
 router.post('/profile', profile);
 router.get('/investedClient/:userAuth', investedClient);
+router.put('/extend', extend);
+router.put('/checkout', checkout);
+
+
 
 
 module.exports = router;

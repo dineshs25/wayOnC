@@ -1,8 +1,7 @@
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const user_collection = require('../../models/users');
-require("dotenv").config();
-
+require('dotenv').config();
 
 module.exports = async (req, res) => {
   const { authEmail } = req.body;
@@ -19,7 +18,10 @@ module.exports = async (req, res) => {
             res.clearCookie('token');
             return res.send({ message: 'login' });
           }
-        });
+        })
+        .catch((e)=>{
+          return res.send({message:"login"})
+        })
       }
     });
   } else {

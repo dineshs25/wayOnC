@@ -28,7 +28,7 @@ const Register = () => {
     const { name, email, password, reEnterPassword } = user;
     if (name && email && password && password === reEnterPassword) {
       axios
-        .post('http://localhost:8000/auth/register', user)
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/register`, user)
         .then((res) => {
           console.log(res);
           alert(res.data.message);

@@ -4,7 +4,7 @@ import axios from 'axios';
 const LogOut = () => {
   const logout = async () => {
     await axios
-      .get('http://localhost:8000/auth/logout')
+      .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {

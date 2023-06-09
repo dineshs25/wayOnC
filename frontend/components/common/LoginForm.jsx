@@ -26,7 +26,7 @@ const LoginForm = () => {
     e.preventDefault();
     console.log(user.email);
     await axios
-      .post('http://localhost:8000/auth/login', user, {
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/login`, user, {
         withCredentials: true,
         credentials: 'include',
       })
@@ -85,11 +85,11 @@ const LoginForm = () => {
                 <span className=" d-flex align-items-center">
                   {showPassword ? (
                     <>
-                      <i class="fa-regular fa-eye"></i>
+                      <i className="fa-regular fa-eye"></i>
                     </>
                   ) : (
                     <>
-                      <i class=" fa-regular fa-eye-slash"></i>
+                      <i className=" fa-regular fa-eye-slash"></i>
                     </>
                   )}
                 </span>

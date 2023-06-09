@@ -28,7 +28,7 @@ const ClientsData = () => {
             setAuth(true);
             try {
               axios
-                .get('http://localhost:8000/admin/clientsdata')
+                .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/clientsdata`)
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     if (result.data.result === null) {
@@ -37,10 +37,8 @@ const ClientsData = () => {
                     } else {
                       setShowData(true);
                       setUserData(result.data.result);
-                      //   console.log(result.data.result[0])
                     }
                   } else {
-                    // setAuth(false);
                     router.push('/auth/login');
                   }
                 })
@@ -64,13 +62,13 @@ const ClientsData = () => {
   };
 
   useEffect(() => {
-    const API2 = 'http://localhost:8000/admin/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
     fetchAPI2(API2);
   }, []);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/admin/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {
@@ -88,7 +86,7 @@ const ClientsData = () => {
     e.preventDefault();
     try {
       await axios
-        .post('http://localhost:8000/admin/showmore', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showmore`, {
           id: id,
         })
         .then((res) => {

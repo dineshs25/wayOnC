@@ -36,7 +36,7 @@ const ClentID = () => {
           if (result.data.message === 'Success') {
             setAuth(true);
             axios
-              .get('http://localhost:8000/admin/total')
+              .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/total`)
               .then((res) => {
                 if (res.data.Status === 'Success') {
                   setData({
@@ -66,15 +66,15 @@ const ClentID = () => {
       console.log(e);
     }
   };
-
+  // console.log(process.env.NEXT_PUBLIC_BACKEND_API);
   useEffect(() => {
-    const API2 = 'http://localhost:8000/admin/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
     fetchAPI2(API2);
   }, []);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/admin/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {
@@ -92,7 +92,7 @@ const ClentID = () => {
     e.preventDefault();
     try {
       await axios
-        .post('http://localhost:8000/admin/showmore', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showmore`, {
           id: id,
         })
         .then((res) => {
@@ -212,7 +212,7 @@ const ClentID = () => {
                         shadow
                         noMargin
                         align="center"
-                        rowsPerPage={2}
+                        rowsPerPage={6}
                       />
                     </Table>
                   </Container>

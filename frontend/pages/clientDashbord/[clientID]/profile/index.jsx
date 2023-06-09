@@ -34,7 +34,7 @@ const Invest = () => {
             let hash = clientID.replace(/slash/g, '/');
             try {
               axios
-                .post('http://localhost:8000/client/profile', {
+                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/profile`, {
                   authEmail: hash,
                 })
                 .then((result) => {
@@ -69,7 +69,7 @@ const Invest = () => {
     if (!clientID) {
       return;
     }
-    const API2 = 'http://localhost:8000/auth/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/auth/auth`;
     fetchAPI2(API2);
   }, [clientID]);
 
@@ -80,7 +80,7 @@ const Invest = () => {
     if (existingVer && newVer) {
       if (newPassword === confirmPassword) {
         await axios
-          .put('http://localhost:8000/auth/update', {
+          .put(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/update`, {
             existingPassword,
             newPassword,
             confirmPassword,
@@ -138,7 +138,7 @@ const Invest = () => {
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/auth/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {
@@ -248,7 +248,7 @@ const Invest = () => {
               </div>
             </div>
           ) : (
-            <Load/>
+            <Load />
           )}
         </>
       )}

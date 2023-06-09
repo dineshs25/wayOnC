@@ -36,13 +36,13 @@ const ClientForm = () => {
   };
 
   useEffect(() => {
-    const API = 'http://localhost:8000/auth/auth';
+    const API = `${process.env.NEXT_PUBLIC_BACKEND_API}/auth/auth`;
     fetchAPI(API);
   }, []);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/auth/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/logout`)
       .then((res) => {
         if (res.data.Status === 'Success') {
           window.location.reload(true);
@@ -116,7 +116,7 @@ const ClientForm = () => {
     if (val) {
       setValidate(false);
       const result = await axios
-        .post('http://localhost:8000/client/client_post', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/client_post`, {
           formData,
           nomineeData,
           expDate: isodate,

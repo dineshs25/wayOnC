@@ -131,7 +131,7 @@ const verificationDone = (name) => {
                                                                         <p style="margin: 0; margin-bottom: 16px;"><strong>Your details are successfully verified.</strong></p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">You can login to your account with your email and password.</p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">Click <a href="http://localhost:3000/login" target="_blank" style="text-decoration: underline; color: #8a3c90;" rel="noopener">Here</a>, for Login Page.</p>
-                                                                        <p style="margin: 0; margin-bottom: 16px;"><em>Note(Your login password) :- Your name with your born year (eg : Dinesh2001).</em></p>
+                                                                        <p style="margin: 0; margin-bottom: 16px;"><em>Note(Your login password) :- Your First Four letters of your name with your born year (eg : Dine2001).</em></p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">&nbsp;</p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">Thank you</p>
                                                                         <p style="margin: 0;"><strong>WayOnC team</strong></p>

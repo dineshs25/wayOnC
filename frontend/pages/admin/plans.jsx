@@ -20,7 +20,7 @@ const Plans = () => {
             setAuth(true);
             try {
               axios
-                .get('http://localhost:8000/admin/clientsdata')
+                .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/clientsdata`)
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     if (result.data.result === null) {
@@ -56,13 +56,13 @@ const Plans = () => {
   };
 
   useEffect(() => {
-    const API2 = 'http://localhost:8000/auth/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/auth/auth`;
     fetchAPI2(API2);
   }, []);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/auth/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {
@@ -80,7 +80,7 @@ const Plans = () => {
     e.preventDefault();
     try {
       await axios
-        .post('http://localhost:8000/admin/showmore', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showmore`, {
           id: id,
         })
         .then((res) => {

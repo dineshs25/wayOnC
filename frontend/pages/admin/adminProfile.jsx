@@ -31,7 +31,7 @@ const AdminProfile = () => {
           if (result.data.message === 'Success') {
             setAuth(true);
             axios
-              .get('http://localhost:8000/admin/adminProfile')
+              .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/adminProfile`)
               .then((result) => {
                 if (result.data.Status === 'Success') {
                   if (result.data.result.length === null) {
@@ -63,13 +63,13 @@ const AdminProfile = () => {
   };
 
   useEffect(() => {
-    const API2 = 'http://localhost:8000/admin/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
     fetchAPI2(API2);
   }, []);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/admin/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {
@@ -107,7 +107,7 @@ const AdminProfile = () => {
     ) {
       if (adminNewPassword === adminConfirmPassword) {
         await axios
-          .post('http://localhost:8000/admin/changeCred', {
+          .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/changeCred`, {
             adminName,
             adminEmail,
             adminExistingPassword,

@@ -28,7 +28,7 @@ const TodayEarners = () => {
             setAuth(true);
             try {
               axios
-                .get('http://localhost:8000/admin/earners')
+                .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/earners`)
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     if (result.data.result === null) {
@@ -63,13 +63,13 @@ const TodayEarners = () => {
   };
 
   useEffect(() => {
-    const API2 = 'http://localhost:8000/admin/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
     fetchAPI2(API2);
   }, []);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/admin/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {
@@ -83,37 +83,13 @@ const TodayEarners = () => {
       });
   };
 
-  //   const handleShowMore = async (e, id) => {
-  //     e.preventDefault();
-  //     try {
-  //       await axios
-  //         .post('http://localhost:8000/admin/showmore', {
-  //           id: id,
-  //         })
-  //         .then((res) => {
-  //           if (res.data.Status === 'Success') {
-  //             if (res.data.result === null) {
-  //               alert('No data found');
-  //             } else {
-  //               const slug = res.data.result;
-  //               let rep = slug.replace(/\//g, 'slash');
-  //               router.push(`/admin/${[rep]}`);
-  //             }
-  //           }
-  //         })
-  //         .catch((e) => {
-  //           console.log('clientsData axios then catch error', e);
-  //         });
-  //     } catch (e) {
-  //       console.log('clientsData axios catch handleshowmore error', e);
-  //     }
-  //   };
+
 
   const handleShowMore = async (e, id) => {
     e.preventDefault();
     try {
       await axios
-        .post('http://localhost:8000/admin/showmore', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showmore`, {
           id: id,
         })
         .then((res) => {

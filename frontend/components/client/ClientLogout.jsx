@@ -5,7 +5,7 @@ function ClientLogout() {
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/auth/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {

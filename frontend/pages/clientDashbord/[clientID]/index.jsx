@@ -6,11 +6,17 @@ import Container from 'react-bootstrap/Container';
 import ClientSidebar from '../../../components/client/ClientSideBar';
 import { Table } from '@nextui-org/react';
 import Load from '../../../components/common/Loading';
+import Button from 'react-bootstrap/Button';
+import MyVerticallyCenteredModal from '../../../components/client/MyVerticallyCenteredModal';
+import CheckOutModel from '../../../components/client/checkOutModel';
 
 const ClentID = () => {
   const router = useRouter();
 
   const userID = router.query.clientID;
+
+  const [modalShow, setModalShow] = useState(false);
+  const [modalShow2, setModalShow2] = useState(false);
 
   const [auth, setAuth] = useState(false);
   const [userData, setUserData] = useState('');
@@ -23,6 +29,7 @@ const ClentID = () => {
   const [reqMoney, setReqMoney] = useState(0);
   const [reqError, setReqError] = useState(false);
   const [reqStatus, setReqStatus] = useState(false);
+  const [pdfDownload, setPdsDownload] = useState(false);
 
   axios.defaults.withCredentials = true;
 
@@ -38,12 +45,18 @@ const ClentID = () => {
             let hash = userID.replace(/slash/g, '/');
             try {
               axios
-                .post('http://localhost:8000/client/user', {
+                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/user`, {
                   authEmail: hash,
                 })
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
+                    console.log(result.data.result.image.agreement);
+                    if (result.data.result.image.agreement) {
+                      setPdsDownload(true);
+                    } else {
+                      setPdsDownload(false);
+                    }
                     if (result.data.result.plan.principal === null) {
                       setShowTable(false);
                       // setUserData(result.data.result);
@@ -86,25 +99,9 @@ const ClentID = () => {
     if (!userID) {
       return;
     }
-    const API2 = 'http://localhost:8000/auth/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/auth/auth`;
     fetchAPI2(API2);
   }, [userID]);
-
-  const logout = async () => {
-    await axios
-      .post('http://localhost:8000/auth/logout')
-      .then((res) => {
-        console.log(res);
-        if (res.data.Status === 'Success') {
-          window.location.reload(true);
-        } else {
-          alert('failed to logout');
-        }
-      })
-      .catch((e) => {
-        console.log('logout axios error', e);
-      });
-  };
 
   const handleCheckout = () => {
     const reqVer = reqValidation(reqMoney);
@@ -118,7 +115,7 @@ const ClentID = () => {
       } else {
         let hash = userID.replace(/slash/g, '/');
         axios
-          .put('http://localhost:8000/client/req', {
+          .put(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/req`, {
             reqested: reqMoney,
             userAuth: hash,
           })
@@ -166,13 +163,34 @@ const ClentID = () => {
                   userID={userID}
                   name={userData.clintInfo.clientName}
                   email={userData.bankInfo.email}
-                  image={userData.image.passportSizeImage}
+                  image={userData.image.passportSizeImage} 
+                  pdfDownload={pdfDownload}
+                  path={userData.image.agreement}
                 />
               </div>
               <div className="child-content">
                 <div className="admin-content scroll">
                   <div>
                     <Container>
+                      {userData.extend ? (
+                        <>
+                          <button
+                            className="pending"
+                            onClick={() => setModalShow(true)}
+                          >
+                            EXTEND PLAN
+                          </button>{' '}
+                          <p className="extend-p">
+                            Your Plan is about to end on{' '}
+                            {userData.plan.expdate.substring(0, 10)}.
+                          </p>
+                        </>
+                      ) : null}
+                      <MyVerticallyCenteredModal
+                        id={userData._id}
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                      />
                       <h4>Invested Information</h4>
                       <Table
                         aria-label="Example table with static content"
@@ -187,9 +205,9 @@ const ClentID = () => {
                           <Table.Column>INT EARNED</Table.Column>
                           <Table.Column>INT PAID</Table.Column>
                           <Table.Column>INT PENDING</Table.Column>
-                          <Table.Column>REQ AMOUNT</Table.Column>
+                          {/* <Table.Column>REQ AMOUNT</Table.Column> */}
                           <Table.Column>TOTAL PENDING RETURNS</Table.Column>
-                          <Table.Column>REQ STATUS</Table.Column>
+                          {/* <Table.Column>REQ STATUS</Table.Column> */}
                         </Table.Header>
                         <Table.Body>
                           <Table.Row>
@@ -206,21 +224,21 @@ const ClentID = () => {
                             <Table.Cell>
                               {userData.plan.pendingInterest}
                             </Table.Cell>
-                            <Table.Cell>{userData.reqmoney}</Table.Cell>
+                            {/* <Table.Cell>{userData.reqmoney}</Table.Cell> */}
                             <Table.Cell>
                               {userData.plan.pendingTotalAmount}
                             </Table.Cell>
-                            <Table.Cell>
+                            {/* <Table.Cell>
                               {reqStatus ? (
                                 <p className="pending">PAID</p>
                               ) : (
                                 <p className="pay">PENDING</p>
                               )}
-                            </Table.Cell>
+                            </Table.Cell> */}
                           </Table.Row>
                         </Table.Body>
                       </Table>
-                      <h4>Checkout Money</h4>
+                      {/* <h4>Checkout Money</h4>
                       <input
                         className="reqInput"
                         type="tel"
@@ -232,10 +250,21 @@ const ClentID = () => {
                         <p style={{ color: 'red' }}>
                           Please enter only number !
                         </p>
-                      ) : null}
-                      <button className="reqbtn" onClick={handleCheckout}>
-                        REQUEST
-                      </button>
+                      ) : null} */}
+                      {/* <button className="reqbtn" onClick={handleCheckout}>
+                        CheckOut Investment
+                      </button> */}
+                      <Button
+                        variant="outline-danger"
+                        onClick={() => setModalShow2(true)}
+                      >
+                        CheckOut Investment
+                      </Button>{' '}
+                      <CheckOutModel
+                        id={userData._id}
+                        show={modalShow2}
+                        onHide={() => setModalShow2(false)}
+                      />
                       <h4 className="h4">Selected Plan</h4>
                       <Table
                         aria-label="Example table with static content"
@@ -275,13 +304,19 @@ const ClentID = () => {
                           </Table.Row>
                         </Table.Body>
                       </Table>
+                      <p className="note">
+                        <i>
+                          NOTE : Every Month Interest will be Credited with the
+                          deduction of Rs {userData.tds} (10% of Int Per Month)
+                        </i>
+                      </p>
                     </Container>
                   </div>
                 </div>
               </div>
             </div>
           ) : (
-            <Load/>
+            <Load />
           )}
         </>
       )}

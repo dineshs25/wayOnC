@@ -49,6 +49,8 @@ module.exports = async (req, res) => {
   const perMonthInterest = totalInterest / totalMonths;
   const totalAmountReturns = principal + totalInterest;
 
+  const tds = (parseInt(perMonthInterest) * 10) / 100;
+
   investor_collection
     .findOne({ userAuth: hash })
     .then((result) => {
@@ -96,9 +98,9 @@ module.exports = async (req, res) => {
                 startdate: planStartDate,
                 expdate: end,
                 principal: principal,
-                interestPerMonth: perMonthInterest,
-                totalInterest: totalInterest,
-                totalReturnAmount: totalAmountReturns,
+                interestPerMonth: 0,
+                totalInterest: 0,
+                totalReturnAmount: 0,
                 ageOfInterest: 0,
                 earnedInterest: 0,
                 paidInterest: 0,

@@ -4,6 +4,9 @@ const investor_Schema = new mongoose.Schema({
   userAuth: {
     type: String,
   },
+  interest: {
+    type: Number,
+  },
   clintInfo: {
     clientName: {
       type: String,
@@ -83,6 +86,9 @@ const investor_Schema = new mongoose.Schema({
     signatureImage: {
       type: String,
     },
+    agreement: {
+      type: String,
+    },
   },
   plan: {
     months: {
@@ -126,6 +132,21 @@ const investor_Schema = new mongoose.Schema({
     },
   },
   reqmoney: {
+    type: String,
+  },
+  extend: {
+    type: Boolean,
+  },
+  checkout: {
+    type: Boolean,
+  },
+  checkoutMoney: {
+    type: String,
+  },
+  tds: {
+    type: String,
+  },
+  annumInt: {
     type: String,
   },
 });

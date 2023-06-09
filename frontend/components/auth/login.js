@@ -21,7 +21,7 @@ const Login = ({ setLoginUser }) => {
   axios.defaults.withCredentials = true;
   const login = async () => {
     await axios
-      .post('http://localhost:8000/auth/login', user,{
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/login`, user,{
         withCredentials:true,
         credentials:'include',
       })

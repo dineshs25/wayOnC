@@ -25,6 +25,7 @@ const Invest = () => {
   //calculator useState ends here
 
   const [checkbox, setCheckBox] = useState(false);
+  const [checkbox2, setCheckBox2] = useState(false);
   const [showData, setShowData] = useState(false);
   const [pageData, setPageData] = useState('');
   const [profileImage, setProfileImage] = useState('');
@@ -44,7 +45,7 @@ const Invest = () => {
             setAuth(true);
             try {
               axios
-                .post('http://localhost:8000/client/profile', {
+                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/profile`, {
                   authEmail: hash,
                 })
                 .then((result) => {
@@ -79,17 +80,18 @@ const Invest = () => {
     if (!clientID) {
       return;
     }
-    const API2 = 'http://localhost:8000/auth/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/auth/auth`;
     fetchAPI2(API2);
   }, [clientID]);
 
   const handleInvest = async () => {
     const checkedVer = handleCheckboxSubmit(checkbox);
+    const checkedVer2 = handleCheckboxSubmit(checkbox2);
     const InvestmentVer = investmentValidation(amt);
     const monthVer = monthSelectValidation(time);
-    if (checkedVer && InvestmentVer && monthVer) {
+    if (checkedVer && InvestmentVer && monthVer && checkedVer2) {
       await axios
-        .post(`http://localhost:8000/client/${clientID}/invest`, {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/${clientID}/invest`, {
           amt,
           time,
         })
@@ -129,6 +131,14 @@ const Invest = () => {
       setCheckBox(true);
     } else {
       setCheckBox(false);
+    }
+  };
+
+  const handleCheckbox2 = () => {
+    if (checkbox2 === false) {
+      setCheckBox2(true);
+    } else {
+      setCheckBox2(false);
     }
   };
 
@@ -224,7 +234,7 @@ const Invest = () => {
                             </p>
                           ) : null}
                           <p className="tableClientEmail">
-                            Rate of Interest 3%
+                            Rate of Interest is applicable has per the agreement
                           </p>
                           <select
                             onChange={(e) => {
@@ -243,13 +253,24 @@ const Invest = () => {
                           <p>
                             <Link href="/T&C">Terms & Conditions</Link>
                           </p>
-                          <div className="checkbox">
+                          <div className="checkbox authorize-check">
                             <input
                               type="checkbox"
                               onChange={handleCheckbox}
                               required
                             />
                             <p>I agree for the terms and conditions</p>
+                          </div>
+                          <div className="checkbox authorize-check">
+                            <input
+                              type="checkbox"
+                              onChange={handleCheckbox2}
+                              required
+                            />
+                            <p>
+                              I authorize WayOnC Investments Pvt Ltd to use my
+                              signature to process the legal investment bond.
+                            </p>
                           </div>
                           <button onClick={handleInvest}>Invest</button>
                         </div>
@@ -286,7 +307,7 @@ const Invest = () => {
               </div>
             </div>
           ) : (
-            <Load/>
+            <Load />
           )}
         </>
       )}

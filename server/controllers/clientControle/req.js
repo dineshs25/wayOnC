@@ -73,17 +73,17 @@ module.exports = async (req, res) => {
               }
             });
           } catch (e) {
-            console.log('Client sent email error occured');
+            res.send({Status:'Client sent email error occured'});
           }
 
 
           res.json({ Status: 'Success', result:result });
         })
         .catch((e) => {
-          console.log('Server side erro req', e);
+          res.send({Status:'Server side erro req'});
         });
     })
     .catch((e) => {
-      console.log(e);
+      res.send({Status:'Failed to send request'});
     });
 };

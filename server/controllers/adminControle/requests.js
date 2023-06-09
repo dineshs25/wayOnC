@@ -7,8 +7,8 @@ module.exports = async (req, res) => {
     .then((result) => {
       const arrayDoc = [];
       result.map((doc) => {
-        const todayArray = doc.reqmoney;
-        if (todayArray > 0) {
+        const todayArray = doc.checkout;
+        if (todayArray === true) {
           return arrayDoc.push(doc);
         }
       });

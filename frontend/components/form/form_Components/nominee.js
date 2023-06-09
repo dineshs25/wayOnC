@@ -8,7 +8,7 @@ const Nominee = ({
   relationshipError,
   nomineeAadhaarError,
   nomineeEmailError,
-  nomineeAddressError
+  nomineeAddressError,
 }) => {
   return (
     <>
@@ -39,14 +39,32 @@ const Nominee = ({
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Relationship</Form.Label>
-        <Form.Control
+        <br />
+        {/* <Form.Control
           type="text"
           name="nominee_relationship"
           placeholder="Relationship"
+          
+        /> */}
+        <select
           onChange={handleNomineedatachange}
-        />
+          // defaultValue={'default'}
+          name="nominee_relationship"
+          className="nominee-select"
+        >
+          <option disabled selected hidden>
+            select
+          </option>
+          <option value="Father">Father</option>
+          <option value="Mother">Mother</option>
+          <option value="Wife">Wife</option>
+          <option value="Brother">Brother</option>
+          <option value="Sister">Sister</option>
+          <option value="Spouse">Spouse</option>
+          <option value="Others">Others</option>
+        </select>
         {relationshipError ? (
-          <p style={{ color: 'red' }}>Provide Valide Nominee Mobile Number</p>
+          <p style={{ color: 'red' }}>Provide Selct Nominee Relationship</p>
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -54,7 +72,7 @@ const Nominee = ({
         <Form.Control
           type="text"
           name="nominee_adhaar"
-          placeholder="Aadhaar No" 
+          placeholder="Aadhaar No"
           maxLength={12}
           onChange={handleNomineedatachange}
         />

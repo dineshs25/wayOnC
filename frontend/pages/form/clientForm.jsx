@@ -68,14 +68,10 @@ const ClientForm = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const API = 'http://localhost:8000/auth/auth';
-  //   fetchAPI(API);
-  // }, []);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/auth/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/logout`)
       .then((res) => {
         if (res.data.Status === 'Success') {
           window.location.reload(true);
@@ -201,7 +197,7 @@ const ClientForm = () => {
       signatureImageVer
     ) {
       await axios
-        .post('http://localhost:8000/client/client_post', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/client_post`, {
           formData,
           nomineeData,
           aadharImage,
@@ -327,7 +323,7 @@ const ClientForm = () => {
   //handleUploadImage
   const handleImageUpload = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:8000/client/client_images', {
+    await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/client_images`, {
       aadharImage,
       passportSizeImage,
       signatureImage,

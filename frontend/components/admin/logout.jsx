@@ -4,7 +4,7 @@ import axios from 'axios';
 const Logout = () => {
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/admin/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/logout`)
       .then((res) => {
         if (res.data.Status === 'Success') {
           window.location.reload(true);

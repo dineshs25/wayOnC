@@ -28,7 +28,7 @@ const formDetails = () => {
 
             try {
               axios
-                .get(`http://localhost:8000/admin/formdetail/${userID}`)
+                .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/formdetail/${userID}`)
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
@@ -64,13 +64,13 @@ const formDetails = () => {
     if (!userID) {
       return;
     }
-    const API2 = 'http://localhost:8000/admin/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
     fetchAPI2(API2);
   }, [userID]);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/admin/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {
@@ -87,7 +87,7 @@ const formDetails = () => {
   const handleVerification = async (e, id) => {
     e.preventDefault();
     await axios
-      .post('http://localhost:8000/admin/verification', {
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/verification`, {
         id: id,
       })
       .then((result) => {

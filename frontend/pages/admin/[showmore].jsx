@@ -24,6 +24,7 @@ const ClentID = () => {
   const [payedInterest, setPayedInterest] = useState(0);
 
   const [reqStatus, setReqStatus] = useState(false);
+  const [interest, setInterest] = useState('');
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
@@ -37,14 +38,14 @@ const ClentID = () => {
             let hash = userID.replace(/slash/g, '/');
             try {
               axios
-                .post('http://localhost:8000/admin/showdetails', {
+                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showdetails`, {
                   authEmail: hash,
                 })
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
                     setUserData(result.data.result);
-                    if (result.data.result.reqmoney > 0) {
+                    if (result.data.result.plan.pendingInterest > 0) {
                       setReqStatus(false);
                     } else {
                       setReqStatus(true);
@@ -86,25 +87,10 @@ const ClentID = () => {
     if (!userID) {
       return;
     }
-    const API2 = 'http://localhost:8000/admin/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
     fetchAPI2(API2);
   }, [userID]);
 
-  // const logout = async () => {
-  //   await axios
-  //     .post('http://localhost:8000/admin/logout')
-  //     .then((res) => {
-  //       console.log(res);
-  //       if (res.data.Status === 'Success') {
-  //         window.location.reload(true);
-  //       } else {
-  //         alert('failed to logout');
-  //       }
-  //     })
-  //     .catch((e) => {
-  //       console.log('logout axios error', e);
-  //     });
-  // };
 
   const handlePaidInterest = async () => {
     let hash = userID.replace(/slash/g, '/');
@@ -116,9 +102,9 @@ const ClentID = () => {
       parseInt(payedInterest) < parseInt(userData.plan.earnedInterest)
     ) {
       await axios
-        .post('http://localhost:8000/client/paidamt', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/paidamt`, {
           // payedInterest,
-          reqMoney: userData.reqmoney,
+          // reqMoney: userData.reqmoney,
           authEmail: hash,
         })
         .then((result) => {
@@ -131,6 +117,23 @@ const ClentID = () => {
         })
         .catch((e) => {
           console.log('axios error handlepaidInterst', e);
+        });
+    }
+  };
+
+  const handleInterest = async (e, id) => {
+    e.preventDefault();
+    if (interest === '') {
+      alert('Assign Interest');
+    } else {
+      await axios
+        .put(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/assignInterest`, { interest, id })
+        .then((result) => {
+          if (result.data.Status === 'Success') {
+            alert('Assigned Interest Successfully');
+          } else {
+            alert(result.data.Status);
+          }
         });
     }
   };
@@ -161,9 +164,9 @@ const ClentID = () => {
                           <Table.Column>INT EARNED</Table.Column>
                           <Table.Column>INT PAID</Table.Column>
                           <Table.Column>INT PENDING</Table.Column>
-                          <Table.Column>REQ AMOUNT</Table.Column>
+                          {/* <Table.Column>REQ AMOUNT</Table.Column> */}
                           <Table.Column>TOTAL PENDING RETURNS</Table.Column>
-                          <Table.Column>PAY REQ</Table.Column>
+                          <Table.Column>PAY INT</Table.Column>
                         </Table.Header>
                         <Table.Body>
                           <Table.Row>
@@ -180,7 +183,7 @@ const ClentID = () => {
                             <Table.Cell>
                               {userData.plan.pendingInterest}
                             </Table.Cell>
-                            <Table.Cell>{userData.reqmoney}</Table.Cell>
+                            {/* <Table.Cell>{userData.reqmoney}</Table.Cell> */}
                             <Table.Cell>
                               {userData.plan.pendingTotalAmount}
                             </Table.Cell>
@@ -199,6 +202,30 @@ const ClentID = () => {
                           </Table.Row>
                         </Table.Body>
                       </Table>
+                      <p>
+                        <strong>Assign Interest</strong>
+                      </p>
+                      <input
+                        className="assignInterest"
+                        type="number"
+                        onChange={(e) => {
+                          setInterest(e.target.value);
+                        }}
+                      />
+                      <button
+                        className="pay"
+                        onClick={(e) => {
+                          handleInterest(e, userData._id);
+                        }}
+                      >
+                        Assign
+                      </button>
+                      {/* <p className="note">
+                        <i>
+                          NOTE : Every Month Interest will be Credited with the
+                          deduction of Rs {userData.tds} (10% of Int Per Month)
+                        </i>
+                      </p> */}
                       <h4 className="h4">Selected Plan</h4>
                       <Table
                         aria-label="Example table with static content"
@@ -392,6 +419,7 @@ const ClentID = () => {
                           <Table.Column>PAN</Table.Column>
                           <Table.Column>CLIENT PHOTO</Table.Column>
                           <Table.Column>SIGNATURE</Table.Column>
+                          <Table.Column>AGREEMENT</Table.Column>
                         </Table.Header>
                         <Table.Body>
                           <Table.Row>
@@ -421,6 +449,13 @@ const ClentID = () => {
                                 href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.signatureImage}`}
                               >
                                 Signature Image
+                              </Link>
+                            </Table.Cell>
+                            <Table.Cell>
+                              <Link
+                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.agreement}`}
+                              >
+                                Agreement
                               </Link>
                             </Table.Cell>
                           </Table.Row>

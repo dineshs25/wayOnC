@@ -27,7 +27,7 @@ const ForgetPassword = () => {
     const emailVer = emailValidator(email);
     if (emailVer) {
       await axios
-        .post('http://localhost:8000/auth/email', { email })
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/email`, { email })
         .then((result) => {
           if (result.data.Status === 'Success') {
             setAuthEmail(result.data.authEmail);
@@ -49,7 +49,7 @@ const ForgetPassword = () => {
 
   const handleResend = async () => {
     await axios
-      .post('http://localhost:8000/auth/resendOtp', { email })
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/resendOtp`, { email })
       .then((result) => {
         if (result.data.Status === 'Success') {
           setAuthEmail(result.data.authEmail);
@@ -69,7 +69,7 @@ const ForgetPassword = () => {
 
   const handleDeleteOTP = async () => {
     await axios
-      .post('http://localhost:8000/auth/resetOTP', {
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/resetOTP`, {
         email,
       })
       .then((result) => {
@@ -101,7 +101,7 @@ const ForgetPassword = () => {
     const otpVer = otpValidation(otp);
     if (otpVer) {
       await axios
-        .post('http://localhost:8000/auth/otpVer', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/otpVer`, {
           authEmail,
           otp,
         })
@@ -151,7 +151,7 @@ const ForgetPassword = () => {
     const matchVer = matchValidation(newPassword, confirmPassword);
     if (passVer && matchVer) {
       await axios
-        .put('http://localhost:8000/auth/resetPassword', {
+        .put(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/resetPassword`, {
           email,
           newPassword,
         })

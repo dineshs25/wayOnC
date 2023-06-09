@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 module.exports = async (req, res) => {
-  const { reqMoney, authEmail } = req.body;
+  const { authEmail } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -19,7 +19,9 @@ module.exports = async (req, res) => {
     .then((result) => {
       // const totalpaid =
       //   parseInt(result.plan.paidInterest) + parseInt(payedInterest);
-      const totalpaid = parseInt(result.plan.paidInterest) + parseInt(reqMoney);
+      const totalpaid =
+        parseInt(result.plan.paidInterest) +
+        parseInt(result.plan.pendingInterest);
 
       if (result.plan.earnedInterest === result.plan.paidInterest) {
         const pending1 = 0;
@@ -34,13 +36,11 @@ module.exports = async (req, res) => {
                 'plan.paidInterest': totalpaid,
                 'plan.pendingInterest': pending1,
                 'plan.pendingTotalAmount': totalPending,
-                reqmoney: 0,
+                // reqmoney: 0,
               },
             }
           )
           .then((result) => {
-            console.log(result);
-
             res.send({ Status: 'Success' });
           })
           .catch((e) => {
@@ -53,83 +53,56 @@ module.exports = async (req, res) => {
             {
               $set: {
                 'plan.paidInterest': totalpaid,
-                reqmoney: 0,
+                'plan.pendingInterest': 0,
+                'plan.pendingTotalAmount': result.plan.principal,
+                // reqmoney: 0,
               },
             }
           )
           .then((result) => {
-            investor_collection
-              .findOne({ _id: result._id })
-              .then((result) => {
-                const pending =
-                  parseInt(result.plan.earnedInterest) -
-                  parseInt(result.plan.paidInterest);
-                const totalPending =
-                  parseInt(result.plan.principal) + parseInt(pending);
-                // const totalPending = parseInt(result.plan.principal) + 0;
-                investor_collection
-                  .findOneAndUpdate(
-                    { userAuth: authEmail },
-                    {
-                      $set: {
-                        'plan.pendingInterest': pending,
-                        'plan.pendingTotalAmount': totalPending,
-                      },
-                    }
-                  )
-                  .then((result) => {
+            //mail
+            let mailOptions = {
+              from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+              to: 'dineshroyc25@gmail.com', // list of receivers
+              subject: 'Investor Requested Interest Paid', // Subject liners
 
-                    //mail
-                    let mailOptions = {
-                      from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
-                      to: 'dineshroyc25@gmail.com', // list of receivers
-                      subject: 'Investor Requested Interest Paid', // Subject liners
+              text: 'Hello world?', // plain text body
+              html: `<p>Requested Interest Paid</p><br/><table border="1px"><tr><td>Name</td><td>${result.clintInfo.clientName}</td>
+</tr><tr><td>Paid Interest</td><td>${result.plan.pendingInterest} Rs</td></tr><tr><td>Total Interest Paid</td><td>${totalpaid} Rs</td></tr>
+</table>`, // html body
+            };
 
-                      text: 'Hello world?', // plain text body
-                      html: `<p>Requested Interest Paid</p><br/><table border="1px"><tr><td>Name</td><td>${result.clintInfo.clientName}</td>
-            </tr><tr><td>Paid Interest</td><td>${reqMoney} Rs</td></tr><tr><td>Total Interest Paid</td><td>${totalpaid} Rs</td></tr>
-            </table>`, // html body
-                    };
+            let mailClientOption = {
+              from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+              to: result.bankInfo.email, // list of receivers
+              subject: 'Paid Your Requested Interest', // Subject liners
 
-                    let mailClientOption = {
-                      from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
-                      to: result.bankInfo.email, // list of receivers
-                      subject: 'Paid Your Requested Interest', // Subject liners
+              text: 'Hello world?', // plain text body
+              //           html: `<p>Dear ${result.clintInfo.clientName},</p><br/>
+              // <p>Your requested Interest Rs ${reqMoney} has been paid Successfully</p><br/>
+              // <p>Thank you</p>
+              // `,
+              html: paidDone(result.clintInfo.clientName, result.plan.pendingInterest),
+            };
 
-                      text: 'Hello world?', // plain text body
-                      //           html: `<p>Dear ${result.clintInfo.clientName},</p><br/>
-                      // <p>Your requested Interest Rs ${reqMoney} has been paid Successfully</p><br/>
-                      // <p>Thank you</p>
-                      // `,
-                      html: paidDone(result.clintInfo.clientName, reqMoney),
-                    };
+            transporter.sendMail(mailOptions, (err, info) => {
+              if (!err) {
+              } else {
+                console.log(err);
+              }
+            });
 
-                    transporter.sendMail(mailOptions, (err, info) => {
-                      if (!err) {
-                      } else {
-                        console.log(err);
-                      }
-                    });
-
-                    try {
-                      transporter.sendMail(mailClientOption, (err, info) => {
-                        if (!err) {
-                        } else {
-                          console.log(err);
-                        }
-                      });
-                    } catch (e) {
-                      console.log('Client sent email error occured');
-                    }
-                    res.send({ Status: 'Success' });
-                  })
-                  .catch((e) => {
-                    console.log('Server side error paid amount', e);
-                  });
-              })
-              .catch((e) => {
-                console.log(e);
+            try {
+              transporter.sendMail(mailClientOption, (err, info) => {
+                if (!err) {
+                } else {
+                  console.log(err);
+                }
               });
+            } catch (e) {
+              console.log('Client sent email error occured');
+            }
+            res.send({ Status: 'Success' });
           })
           .catch((e) => {
             console.log('server side error in reqmoney js', e);

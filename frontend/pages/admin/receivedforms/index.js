@@ -12,7 +12,6 @@ import { DeleteIcon } from '../../../components/admin/ui/DeleteIcon';
 import Search from '../../../components/common/Search';
 import Load from '../../../components/common/Loading';
 
-
 const ClientsData = () => {
   const [auth, setAuth] = useState(false);
   const [userData, setUserData] = useState('');
@@ -35,7 +34,7 @@ const ClientsData = () => {
             setAuth(true);
             try {
               axios
-                .get('http://localhost:8000/admin/receivedforms')
+                .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/receivedforms`)
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     if (result.data.result === null) {
@@ -69,13 +68,13 @@ const ClientsData = () => {
   };
 
   useEffect(() => {
-    const API2 = 'http://localhost:8000/admin/auth';
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
     fetchAPI2(API2);
   }, []);
 
   const logout = async () => {
     await axios
-      .post('http://localhost:8000/admin/logout')
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/logout`)
       .then((res) => {
         console.log(res);
         if (res.data.Status === 'Success') {
@@ -93,7 +92,7 @@ const ClientsData = () => {
     e.preventDefault();
     try {
       await axios
-        .post('http://localhost:8000/admin/showmore', {
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showmore`, {
           id: id,
         })
         .then((res) => {
@@ -119,13 +118,12 @@ const ClientsData = () => {
   const handleShowDetail = async (e, id) => {
     e.preventDefault();
     router.push(`/admin/formdetail/${[id]}`);
-    console.log(id);
   };
 
   const handleRegister = async (e, id, name, email) => {
     e.preventDefault();
     await axios
-      .post('http://localhost:8000/auth/register', {
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/register`, {
         id: id,
         name: name,
         email: email,
@@ -136,11 +134,27 @@ const ClientsData = () => {
         } else {
           alert(result.data.Status);
         }
+      })
+      .catch((e) => {
+        console.log('axios', e);
       });
   };
 
   const handleDelete = async (e, id) => {
     e.preventDefault();
+    await axios
+      .delete(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/deleteForm/${id}`)
+      .then((result) => {
+        if (result.data.Status === 'Success') {
+          alert('Deleted Successfully');
+          window.location.reload(true);
+        } else {
+          alert(result.data.Status);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (
@@ -262,7 +276,7 @@ const ClientsData = () => {
               </div>
             </div>
           ) : (
-            <Load/>
+            <Load />
           )}
         </>
       )}
