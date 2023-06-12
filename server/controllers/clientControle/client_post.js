@@ -64,8 +64,8 @@ module.exports = async (req, res) => {
     let image = async (value) => {
       try {
         const response = await cloudinary.uploader.upload(value, {
-          upload_preset: 'fintech',
-          folder: `fintech/${foldername}`,
+          upload_preset: 'wayonc',
+          folder: `wayonc/${foldername}`,
           allowed_formats: ['png', 'jpg', 'jpeg', 'svg', 'webp', 'ico', 'jfif'],
         });
         return response;
@@ -79,6 +79,7 @@ module.exports = async (req, res) => {
 
     Promise.all(upload)
       .then((result1) => {
+        // console.log(result1);
         try {
           user_collection
             .findOne({ userEmail: email })

@@ -32,6 +32,15 @@ module.exports = async (req, res) => {
         .catch((e) => {
           res.send({ Status: 'Password is Incorrect' });
         });
+      // const token = jwt.sign(
+      //   { admin_id: result._id },
+      //   process.env.ADMIN_JWT_SECRET,
+      //   {
+      //     expiresIn: '1d',
+      //   }
+      // );
+      // res.cookie(process.env.ADMIN_JWT_NAME, token, { httpOnly: true });
+      // return res.send({ message: 'Success' });
     })
     .catch((e) => {
       res.send({ Status: 'Admin not found' });

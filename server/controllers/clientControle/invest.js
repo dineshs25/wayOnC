@@ -3,8 +3,11 @@ const investor_collection = require('../../models/investers');
 const nodemailer = require('nodemailer');
 const { investmentDone } = require('../../emailTemplates/investmentDone');
 require('dotenv').config();
+const Razorpay = require('razorpay');
+const crypto = require('crypto');
 
 module.exports = async (req, res) => {
+  const { amt, time } = req.body;
   const userAuth = req.params.slug;
   let hash = userAuth.replace(/slash/g, '/');
 
@@ -16,7 +19,17 @@ module.exports = async (req, res) => {
     },
   });
 
-  const { amt, time } = req.body;
+  // const instance = new Razorpay({
+  //   key_id: process.env.RAZORPAY_API_KEY,
+  //   key_secret: process.env.RAZORPAY_API_SECRET,
+  // });
+
+  // const options = {
+  //   amount: parseInt(amt) * 100,
+  //   currency: 'INR',
+  //   receipt: crypto.randomBytes(10).toString('hex'),
+  // };
+
   const planStartDate = new Date();
 
   //startdate and end calc starts here
@@ -109,62 +122,73 @@ module.exports = async (req, res) => {
               },
               reqmoney: 0,
             });
-            investor_collection
-              .insertMany(newInvestor)
-              .then((result) => {
-                //mail
-                let mailOptions = {
-                  from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
-                  to: 'dineshroyc25@gmail.com', // list of receivers
-                  subject: 'New Investment Received', // Subject liners
 
-                  text: 'Hello world?', // plain text body
-                  html: `<p>New Investment Received</p><br/><table border="1px"><tr><td>Name</td><td>${result[0].clintInfo.clientName}</td>
-          </tr><tr><td>Invested Amount</td><td>${result[0].plan.principal} Rs</td></tr>
-          </table>`, // html body
-                };
+            //payment
+            // instance.orders.create(options, (error, order) => {
+            //   if (error) {
+            //     console.log(error);
+            //     res.send({ Status: 'Payment Failed' });
+            //   } else {
+            //     res.send({ Status: 'Success', data: order });
+            //   }
+            // });
 
-                let mailClientOption = {
-                  from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
-                  to: result[0].bankInfo.email, // list of receivers
-                  subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
+              investor_collection
+                .insertMany(newInvestor)
+                .then((result) => {
+                  //mail
+                  let mailOptions = {
+                    from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+                    to: 'dineshroyc25@gmail.com', // list of receivers
+                    subject: 'New Investment Received', // Subject liners
 
-                  text: 'Hello world?', // plain text body
-                  //         html: `<p>Dear ${result[0].clintInfo.clientName},</p><br/>
-                  // <p>Thank you for investing</p><br/>
-                  // <p>You can veiw your investment details in your dashbord</p><br/>
-                  // <p>Thank you</p>
-                  // `,
-                  html: investmentDone(result[0].clintInfo.clientName),
-                };
+                    text: 'Hello world?', // plain text body
+                    html: `<p>New Investment Received</p><br/><table border="1px"><tr><td>Name</td><td>${result[0].clintInfo.clientName}</td>
+            </tr><tr><td>Invested Amount</td><td>${result[0].plan.principal} Rs</td></tr>
+            </table>`, // html body
+                  };
 
-                transporter.sendMail(mailOptions, (err, info) => {
-                  if (!err) {
-                  } else {
-                    console.log(err);
-                  }
-                });
+                  let mailClientOption = {
+                    from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+                    to: result[0].bankInfo.email, // list of receivers
+                    subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
 
-                try {
-                  transporter.sendMail(mailClientOption, (err, info) => {
+                    text: 'Hello world?', // plain text body
+                    //         html: `<p>Dear ${result[0].clintInfo.clientName},</p><br/>
+                    // <p>Thank you for investing</p><br/>
+                    // <p>You can veiw your investment details in your dashbord</p><br/>
+                    // <p>Thank you</p>
+                    // `,
+                    html: investmentDone(result[0].clintInfo.clientName),
+                  };
+
+                  transporter.sendMail(mailOptions, (err, info) => {
                     if (!err) {
                     } else {
                       console.log(err);
                     }
                   });
-                } catch (e) {
-                  console.log('Client sent email error occured');
-                }
 
-                res.send({
-                  Status: 'Success',
+                  try {
+                    transporter.sendMail(mailClientOption, (err, info) => {
+                      if (!err) {
+                      } else {
+                        console.log(err);
+                      }
+                    });
+                  } catch (e) {
+                    console.log('Client sent email error occured');
+                  }
+
+                  res.send({
+                    Status: 'Success',
+                  });
+                })
+                .catch((e) => {
+                  res.send({
+                    Status: 'failed',
+                  });
                 });
-              })
-              .catch((e) => {
-                res.send({
-                  Status: 'failed',
-                });
-              });
           })
           .catch((e) => {
             console.log('server side error in invest js', e);

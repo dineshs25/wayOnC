@@ -14,7 +14,7 @@ const ClientSidebar = ({ userID, name, email, image, pdfDownload, path }) => {
           </Link> */}
           <Link href={`/clientDashbord/${[userID]}`}>
             <img
-              src={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${image}`}
+              src={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${image}`}
               alt="Logo"
               className="profile-img"
             />
@@ -34,7 +34,7 @@ const ClientSidebar = ({ userID, name, email, image, pdfDownload, path }) => {
               </Link>
               {pdfDownload && (
                 <Link
-                  href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${path}`}
+                  href={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${path}`}
                 >
                   <li>Agreement</li>
                 </Link>

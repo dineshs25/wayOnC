@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
 
       const response = cloudinary.uploader
         .upload(passportSizeImage, {
-          upload_preset: 'fintech',
+          upload_preset: 'wayonc',
           folder: `${folder}`,
           allowed_formats: [
             'png',
