@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import LoginForm from '../components/common/LoginForm';
 import Seo from '../components/common/Seo';
+import Image from 'next/image';
 
 const LogIn = () => {
   const currentYear = new Date().getFullYear();
@@ -17,7 +18,12 @@ const LogIn = () => {
           <div className="d-flex align-items-center justify-content-between">
             <div className="logo order-lg-0">
               <Link href="/" className="d-block">
-                <img src="/images/logo/logo.jpg" alt="" width={95} />
+                <img
+                  src="/images/logo/logo.jpg"
+                  alt=""
+                  width={95}
+                  height={50}
+                />
               </Link>
             </div>
             <Link href="/" className="go-back-btn fw-500 tran3s">
@@ -52,11 +58,15 @@ const LogIn = () => {
           src="/images/assets/ils_11.png"
           alt="illustration"
           className="lazy-img illustration-one wow fadeInRight"
+          width={40}
+          height={40}
         />
         <img
           src="/images/assets/ils_12.png"
           alt="illustration"
           className="lazy-img illustration-two wow fadeInLeft"
+          width={40}
+          height={40}
         />
       </div>
       {/* /.fancy-feature-fiftyOne */}

@@ -1,5 +1,6 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
+import Image from 'next/image';
 
 const CallToAction = () => {
   return (
@@ -16,7 +17,7 @@ const CallToAction = () => {
                 <h2 className="main-title fw-500 tx-dark">
                   Have Any Project? <br />
                   <span className="position-relative">
-                    Let’s Talk{" "}
+                    Let’s Talk{' '}
                     <img src="/images/shape/shape_132.svg" alt="shape" />
                   </span>
                   &amp; Grow your Business

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import ClientLogout from './clientLogout';
 import useDownloader from 'react-use-downloader';
+import Image from 'next/image';
 
 const ClientSidebar = ({ userID, name, email, image, pdfDownload, path }) => {
   const { download } = useDownloader();
@@ -10,14 +11,14 @@ const ClientSidebar = ({ userID, name, email, image, pdfDownload, path }) => {
       <div className="sidebar">
         <div className="sidebar-header">
           {/* <Link href={`/clientDashbord/${[userID]}`}>
-            <img src="/images/logo/wayOnC-logo.png" alt="Logo" />
+           <img src="/images/logo/wayOnC-logo.png" alt="Logo" />
           </Link> */}
           <Link href={`/clientDashbord/${[userID]}`}>
-            <img
+            {/*<img
               src={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${image}`}
               alt="Logo"
-              className="profile-img"
-            />
+              className="profile-img" width={50} height={50}
+            /> */}
           </Link>
         </div>
         <div className="sidebar-content-parent">

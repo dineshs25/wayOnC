@@ -1,14 +1,15 @@
-import react from "react";
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import DefaultFooter from "../../components/footer/DefaultFooter";
-import Service1 from "../../components/services/Service1";
-import Block from "../../components/services/Block";
-import Testimonial from "../../components/home-page/home-3/Testimonial";
-import Faq from "../../components/services/Faq";
-import Partners from "../../components/services/Partners";
-import Link from "next/link";
-import ServicesData from "../../data/service/services.json";
+import react from 'react';
+import Seo from '../../components/common/Seo';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import DefaultFooter from '../../components/footer/DefaultFooter';
+import Service1 from '../../components/services/Service1';
+import Block from '../../components/services/Block';
+import Testimonial from '../../components/home-page/home-3/Testimonial';
+import Faq from '../../components/services/Faq';
+import Partners from '../../components/services/Partners';
+import Link from 'next/link';
+import ServicesData from '../../data/service/services.json';
+import Image from 'next/image';
 const services = ServicesData;
 
 const ServiceV1 = () => {
@@ -16,27 +17,27 @@ const ServiceV1 = () => {
     return text
       .toString()
       .toLowerCase()
-      .replace(/\s+/g, "-") // Replace spaces with -
-      .replace(/[^\w-]+/g, "") // Remove all non-word chars
-      .replace(/--+/g, "-") // Replace multiple - with single -
-      .replace(/^-+/, "") // Trim - from start of text
-      .replace(/-+$/, ""); // Trim - from end of text
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/[^\w-]+/g, '') // Remove all non-word chars
+      .replace(/--+/g, '-') // Replace multiple - with single -
+      .replace(/^-+/, '') // Trim - from start of text
+      .replace(/-+$/, ''); // Trim - from end of text
   };
   // const equityData = services.filter(data => data.cate ? data.cate : "" === "equity");
   const equityData = services.filter(
-    (data) => slugify(data.cate ? data.cate : "") === "equity"
+    (data) => slugify(data.cate ? data.cate : '') === 'equity'
   );
   const ncxData = services.filter(
-    (data) => slugify(data.cate ? data.cate : "") === "mcx"
+    (data) => slugify(data.cate ? data.cate : '') === 'mcx'
   );
   const ncdexData = services.filter(
-    (data) => slugify(data.cate ? data.cate : "") === "ncdex"
+    (data) => slugify(data.cate ? data.cate : '') === 'ncdex'
   );
 
   const features = [
-    { text: "Amazing communication." },
-    { text: "Best trending designing experience." },
-    { text: "Email & Live chat." },
+    { text: 'Amazing communication.' },
+    { text: 'Best trending designing experience.' },
+    { text: 'Email & Live chat.' },
   ];
 
   const starRating = Array(5)

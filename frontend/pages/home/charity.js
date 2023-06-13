@@ -1,19 +1,20 @@
-import Seo from "../../components/common/Seo";
-import Header4 from "../../components/header/Header4";
-import Blog from "../../components/home-page/home-4/Blog";
-import BrandSlider from "../../components/home-page/home-4/BrandSlider";
-import CallToAction from "../../components/home-page/home-4/CallToAction";
-import CampaignBlock from "../../components/home-page/home-4/CampaignBlock";
-import CampaignBlock2 from "../../components/home-page/home-4/CampaignBlock2";
-import ContactUs from "../../components/home-page/home-4/ContactUs";
-import Counter from "../../components/home-page/home-4/Counter";
-import Features from "../../components/home-page/home-4/Features";
-import Hero from "../../components/home-page/home-4/Hero";
-import HowCanHelpBlock from "../../components/home-page/home-4/HowCanHelpBlock";
-import IntroAction from "../../components/home-page/home-4/IntroAction";
-import IntroVideo from "../../components/home-page/home-4/IntroVideo";
-import Team from "../../components/home-page/home-4/Team";
-import Footer from "../../components/home-page/home-4/footer";
+import Seo from '../../components/common/Seo';
+import Header4 from '../../components/header/Header4';
+import Blog from '../../components/home-page/home-4/Blog';
+import BrandSlider from '../../components/home-page/home-4/BrandSlider';
+import CallToAction from '../../components/home-page/home-4/CallToAction';
+import CampaignBlock from '../../components/home-page/home-4/CampaignBlock';
+import CampaignBlock2 from '../../components/home-page/home-4/CampaignBlock2';
+import ContactUs from '../../components/home-page/home-4/ContactUs';
+import Counter from '../../components/home-page/home-4/Counter';
+import Features from '../../components/home-page/home-4/Features';
+import Hero from '../../components/home-page/home-4/Hero';
+import HowCanHelpBlock from '../../components/home-page/home-4/HowCanHelpBlock';
+import IntroAction from '../../components/home-page/home-4/IntroAction';
+import IntroVideo from '../../components/home-page/home-4/IntroVideo';
+import Team from '../../components/home-page/home-4/Team';
+import Footer from '../../components/home-page/home-4/footer';
+import Image from 'next/image';
 
 const charity = () => {
   return (
@@ -74,7 +75,7 @@ const charity = () => {
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="title-style-six text-center " data-aos="fade-up">
-                <div className="sc-title" style={{ color: "#FF8A8A" }}>
+                <div className="sc-title" style={{ color: '#FF8A8A' }}>
                   Featured Causes
                 </div>
                 <h2 className="main-title fw-500 tx-dark">
@@ -231,7 +232,7 @@ const charity = () => {
             className="title-style-six text-center mb-50 lg-mb-10"
             data-aos="fade-up"
           >
-            <div className="sc-title" style={{ color: "#FF8A8A" }}>
+            <div className="sc-title" style={{ color: '#FF8A8A' }}>
               Our News
             </div>
             <h2 className="main-title fw-500 tx-dark">Our latest News</h2>

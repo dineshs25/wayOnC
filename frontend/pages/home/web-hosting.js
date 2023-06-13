@@ -1,18 +1,19 @@
-import Link from "next/link";
-import Seo from "../../components/common/Seo";
-import CopyrightFooter2 from "../../components/footer/CopyrightFooter2";
-import Footer2 from "../../components/footer/Footer2";
-import NewsLetter from "../../components/footer/NewsLetter";
-import Header2 from "../../components/header/Header2";
-import BannerSubscribe from "../../components/home-page/home-2/BannerSubscribe";
-import FancyBanner from "../../components/home-page/home-2/FancyBanner";
-import FancyBlock from "../../components/home-page/home-2/FancyBlock";
-import Faq from "../../components/home-page/home-2/Faq";
-import Hero from "../../components/home-page/home-2/Hero";
-import IncludedPlan from "../../components/home-page/home-2/IncludedPlan";
-import Partner from "../../components/home-page/home-2/Partner";
-import Pricing from "../../components/home-page/home-2/Pricing";
-import Testimonial from "../../components/home-page/home-2/Testimonial";
+import Link from 'next/link';
+import Seo from '../../components/common/Seo';
+import CopyrightFooter2 from '../../components/footer/CopyrightFooter2';
+import Footer2 from '../../components/footer/Footer2';
+import NewsLetter from '../../components/footer/NewsLetter';
+import Header2 from '../../components/header/Header2';
+import BannerSubscribe from '../../components/home-page/home-2/BannerSubscribe';
+import FancyBanner from '../../components/home-page/home-2/FancyBanner';
+import FancyBlock from '../../components/home-page/home-2/FancyBlock';
+import Faq from '../../components/home-page/home-2/Faq';
+import Hero from '../../components/home-page/home-2/Hero';
+import IncludedPlan from '../../components/home-page/home-2/IncludedPlan';
+import Partner from '../../components/home-page/home-2/Partner';
+import Pricing from '../../components/home-page/home-2/Pricing';
+import Testimonial from '../../components/home-page/home-2/Testimonial';
+import Image from 'next/image';
 
 const WebHosting = () => {
   return (
@@ -203,7 +204,8 @@ const WebHosting = () => {
                   <h2 className="main-title fw-bold tx-dark">
                     Got questions? <br /> Well, we&lsquo;ve got
                     <span className="position-relative d-inline-block">
-                      answers <img src="/images/shape/shape_99.svg" alt="" />
+                      answers
+                      <img src="/images/shape/shape_99.svg" alt="" />
                     </span>
                   </h2>
                 </div>
@@ -216,10 +218,7 @@ const WebHosting = () => {
                   <h3 className="fw-bold tx-dark mb-30">
                     Didn’t get your answer?
                   </h3>
-                  <Link
-                    href="/contact"
-                    className="btn-fourteen fw-500 tran3s"
-                  >
+                  <Link href="/contact" className="btn-fourteen fw-500 tran3s">
                     Submit your question
                   </Link>
                 </div>

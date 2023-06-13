@@ -1,5 +1,6 @@
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import { useState } from 'react';
+import ModalVideo from 'react-modal-video';
+import Image from 'next/image';
 
 const IntroVideo = () => {
   const [isOpen, setOpen] = useState(false);

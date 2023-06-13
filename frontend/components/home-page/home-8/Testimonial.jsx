@@ -1,37 +1,38 @@
-import React from "react";
-import Slider from "react-slick";
+import React from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const testimonials = [
   {
     id: 1,
-    logo: "/images/logo/Plogo-28.png",
+    logo: '/images/logo/Plogo-28.png',
     rating: 5,
     feedback:
-      "Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.",
+      'Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.',
     cost: 15.0,
   },
   {
     id: 2,
-    logo: "/images/logo/Plogo-29.png",
+    logo: '/images/logo/Plogo-29.png',
     rating: 5,
     feedback:
-      "They not only understand what I say but read between the lines and also give me ideas of my own.",
+      'They not only understand what I say but read between the lines and also give me ideas of my own.',
     cost: 15.0,
   },
   {
     id: 3,
-    logo: "/images/logo/Plogo-30.png",
+    logo: '/images/logo/Plogo-30.png',
     rating: 5,
     feedback:
-      "Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.",
+      'Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.',
     cost: 15.0,
   },
   {
     id: 4,
-    logo: "/images/logo/Plogo-29.png",
+    logo: '/images/logo/Plogo-29.png',
     rating: 5,
     feedback:
-      "They not only understand what I say but read between the lines and also give me ideas of my own.",
+      'They not only understand what I say but read between the lines and also give me ideas of my own.',
     cost: 18.0,
   },
 ];

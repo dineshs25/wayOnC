@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // import Image from 'next/image';
 import Button from 'react-bootstrap/Button';
 const { ToWords } = require('to-words');
+import Image from 'next/image';
 
 const Agreement = ({ data }) => {
   const handlePrint = () => {
@@ -20,6 +21,31 @@ const Agreement = ({ data }) => {
 
   return (
     <div className="agreement-div">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="agreement-header">
         <h3>
           <u>Investment Agreement</u>
@@ -40,7 +66,9 @@ const Agreement = ({ data }) => {
         </p>
         <p>&</p>
         <p className="bold-p">{data.clintInfo.clientName}</p>
-        <p className="client-add-p">{data.bankInfo.address}</p>
+        <p className="client-add-p">{data.bankInfo.address} </p>
+        <br />
+        <br />
       </div>
       <p>
         {' '}
@@ -74,35 +102,35 @@ const Agreement = ({ data }) => {
         <strong>1. Covenant to pay principal:</strong>
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;That in pursuance of the aforesaid
-        agreement and in consideration of the sum of &#8377;{' '}
+        agreement and in consideration of the sum of &nbsp;
         <strong>
-          ₹{data.plan.principal} /- (in words: &ldquo;Rupees {words}&nbsp;
-          Only&rdquo;)
+          &#8377; {data.plan.principal} /- (in words: &ldquo;Rupees {words}
+          &nbsp; Only&rdquo;)
         </strong>{' '}
         on or before the execution of these presents advanced by the Investor to
         the company (receipt whereof the company doth hereby acknowledge) the
         Investor doth hereby covenants with the Company that the Company will
-        pay to the Investor after 13 months of the said sum of &#8377;{' '}
+        pay to the Investor after 13 months of the said sum of &nbsp;
         <strong>
-          ₹{data.plan.principal} /- (in words: &ldquo;Rupees {words}&nbsp;
-          Only&rdquo;)
+          &#8377; {data.plan.principal} /- (in words: &ldquo;Rupees {words}
+          &nbsp; Only&rdquo;)
         </strong>{' '}
-        on the {date} day of {month} {year} (hereinafter referred to as &ldquo;the due
-        date&rdquo; which expression shall also mean the date on which the
-        amount hereby secured becomes due and payable under and by virtue of any
-        of the terms of these Presents irrespective of whether the said date has
-        expired or not)
+        on the {date} day of {month} {year} (hereinafter referred to as
+        &ldquo;the due date&rdquo; which expression shall also mean the date on
+        which the amount hereby secured becomes due and payable under and by
+        virtue of any of the terms of these Presents irrespective of whether the
+        said date has expired or not)
       </p>
       <p>
         <strong>2. Covenant to pay returns:</strong>
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here by the Company agreed to pay the
-        returns on the said amount of &#8377;{' '}
+        returns on the said amount of &nbsp;
         <strong>
-          ₹{data.plan.principal} /- (in words: &ldquo;Rupees {words}&nbsp;
-          Only&rdquo;)
+          &#8377; {data.plan.principal} /- (in words: &ldquo;Rupees {words}
+          &nbsp; Only&rdquo;)
         </strong>
-        at the rate of {data.annumInt}% per cent per annum from the date of investment by
+        at the rate of 18% per cent per annum from the date of investment by
         monthly rests, the first of such payment to be made on the 10th day of
         next month on prorated calculations and the subsequent payments to be
         made regularly on the 10th day of every month in the manner aforesaid.
@@ -118,10 +146,10 @@ const Agreement = ({ data }) => {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROVIDED ALWAYS AND IT IS HEREBY AGREED,
         DECLARED that if the Company shall pursuant to the covenant in that
         behalf hereinbefore contained pay to the Investors in Bangalore city the
-        said sum of &#8377;{' '}
+        said sum of &nbsp;
         <strong>
-          ₹{data.plan.principal} /- (in words: &ldquo;Rupees {words}&nbsp;
-          Only&rdquo;)
+          &#8377; {data.plan.principal} /- (in words: &ldquo;Rupees {words}
+          &nbsp; Only&rdquo;)
         </strong>{' '}
         for the same at the rate and in the manner hereinbefore mentioned and
         also all other the moneys, costs charges, and expenses by law or under
@@ -170,7 +198,7 @@ const Agreement = ({ data }) => {
         effective only when it is delivered to the addressee at the last known
         address in the manner prescribed in the operating instructions.
       </p>
-      <p className="page-break">
+      <p>
         <strong>6. Force Majeure:</strong>
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notwithstanding anything contained herein
@@ -228,9 +256,10 @@ const Agreement = ({ data }) => {
       <p>Director</p>
       <p>
         Received the day and year first hereinabove written of and from the
-        within named Investors a sum of{' '}
+        within named Investors a sum of&nbsp;
         <span className="bold-p">
-          ₹{data.plan.principal} /- (in words: “Rupees {words}&nbsp; Only”)
+          &#8377; {data.plan.principal} /- (in words: “Rupees {words}&nbsp;
+          Only”)
         </span>{' '}
         as within mentioned.
       </p>
@@ -243,9 +272,10 @@ const Agreement = ({ data }) => {
         </div>
       </div>
       <div className="sign-div-flex">
-        <div>
-          <p>{data.clintInfo.pan.toUpperCase()}</p>
-          <p>&#40;Investor&#41;</p>
+        <div className='sign-mar'>
+          <p className='p-line-height'>{data.clintInfo.clientName}</p>
+          <p className='p-line-height'>{data.clintInfo.pan.toUpperCase()}</p>
+          <p className='p-line-height'>&#40;Investor&#41;</p>
         </div>
       </div>
       <div className="nominee-sign-div-flex">
@@ -256,7 +286,9 @@ const Agreement = ({ data }) => {
           </div>
           <p>Aadhaar: {data.nominee.nomineeAadhar}</p>
           <p>Name: {data.nominee.nomineeName}</p>
-          <p className='nominee-adress'>Address: {data.nominee.nomineeAddress}</p>
+          <p className="nominee-adress">
+            Address: {data.nominee.nomineeAddress}
+          </p>
           <p>Contact No: {data.nominee.nomineeMobile}</p>
         </div>
         <div className="nominee-sign-child">

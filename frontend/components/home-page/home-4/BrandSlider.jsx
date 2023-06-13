@@ -1,14 +1,15 @@
-import Slider from "react-slick";
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const BrandSlider = () => {
   const brands = [
-    { id: 1, src: "/images/logo/Plogo-18.png" },
-    { id: 2, src: "/images/logo/Plogo-19.png" },
-    { id: 3, src: "/images/logo/Plogo-20.png" },
-    { id: 4, src: "/images/logo/Plogo-21.png" },
-    { id: 5, src: "/images/logo/Plogo-20.png" },
-    { id: 6, src: "/images/logo/Plogo-20.png" },
-    { id: 7, src: "/images/logo/Plogo-21.png" },
+    { id: 1, src: '/images/logo/Plogo-18.png' },
+    { id: 2, src: '/images/logo/Plogo-19.png' },
+    { id: 3, src: '/images/logo/Plogo-20.png' },
+    { id: 4, src: '/images/logo/Plogo-21.png' },
+    { id: 5, src: '/images/logo/Plogo-20.png' },
+    { id: 6, src: '/images/logo/Plogo-20.png' },
+    { id: 7, src: '/images/logo/Plogo-21.png' },
   ];
 
   const settings = {

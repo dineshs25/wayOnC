@@ -1,15 +1,15 @@
-import { useState } from "react";
-import items from "../../data/portfolio";
-import { Gallery, Item } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
-import Link from "next/link";
-import Image from "next/image";
+import { useState } from 'react';
+import items from '../../data/portfolio';
+import { Gallery, Item } from 'react-photoswipe-gallery';
+import 'photoswipe/dist/photoswipe.css';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const PortfolioGallery2 = () => {
-  const [filter, setFilter] = useState("*");
+  const [filter, setFilter] = useState('*');
 
   const filteredItems =
-    filter === "*"
+    filter === '*'
       ? items.slice(8, 17)
       : items.slice(8, 17).filter((item) => item.category.includes(filter));
 
@@ -18,32 +18,32 @@ const PortfolioGallery2 = () => {
       <div className="container">
         <ul className="style-none text-center isotop-menu-wrapper g-control-nav-two">
           <li
-            className={filter === "*" ? "is-checked" : ""}
-            onClick={() => setFilter("*")}
+            className={filter === '*' ? 'is-checked' : ''}
+            onClick={() => setFilter('*')}
           >
             All
           </li>
           <li
-            className={filter === "marketing" ? "is-checked" : ""}
-            onClick={() => setFilter("marketing")}
+            className={filter === 'marketing' ? 'is-checked' : ''}
+            onClick={() => setFilter('marketing')}
           >
             Marketing
           </li>
           <li
-            className={filter === "application" ? "is-checked" : ""}
-            onClick={() => setFilter("application")}
+            className={filter === 'application' ? 'is-checked' : ''}
+            onClick={() => setFilter('application')}
           >
             Application
           </li>
           <li
-            className={filter === "design" ? "is-checked" : ""}
-            onClick={() => setFilter("design")}
+            className={filter === 'design' ? 'is-checked' : ''}
+            onClick={() => setFilter('design')}
           >
             Design
           </li>
           <li
-            className={filter === "dev" ? "is-checked" : ""}
-            onClick={() => setFilter("dev")}
+            className={filter === 'dev' ? 'is-checked' : ''}
+            onClick={() => setFilter('dev')}
           >
             Development
           </li>
@@ -57,7 +57,7 @@ const PortfolioGallery2 = () => {
               >
                 <div className="portfolio-block-four mb-50">
                   <div className="img-meta position-relative">
-                    <Image
+                    <img
                       width={410}
                       height={340}
                       src={item.image}

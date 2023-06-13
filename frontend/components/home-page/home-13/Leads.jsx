@@ -1,7 +1,9 @@
+import Image from 'next/image';
+
 const leadItems = [
-  { icon: "/images/icon/icon_94.svg", text: "Maintain Internet" },
-  { icon: "/images/icon/icon_95.svg", text: "Accurate Information" },
-  { icon: "/images/icon/icon_96.svg", text: "Quality Leads" },
+  { icon: '/images/icon/icon_94.svg', text: 'Maintain Internet' },
+  { icon: '/images/icon/icon_95.svg', text: 'Accurate Information' },
+  { icon: '/images/icon/icon_96.svg', text: 'Quality Leads' },
 ];
 
 const Leads = () => {

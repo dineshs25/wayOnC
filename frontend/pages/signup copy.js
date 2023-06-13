@@ -1,6 +1,7 @@
-import Link from "next/link";
-import Seo from "../components/common/Seo";
-import SignupForm from "../components/common/SignupForm";
+import Link from 'next/link';
+import Seo from '../components/common/Seo';
+import SignupForm from '../components/common/SignupForm';
+import Image from 'next/image';
 
 const SignUp = () => {
   const currentYear = new Date().getFullYear();

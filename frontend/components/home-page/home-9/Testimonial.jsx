@@ -1,5 +1,6 @@
-import React from "react";
-import Slider from "react-slick";
+import React from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const Testimonial = () => {
   const settings = {
@@ -28,43 +29,43 @@ const Testimonial = () => {
   const testimonialData = [
     {
       id: 1,
-      name: "Martin Jonas",
-      location: "USA",
+      name: 'Martin Jonas',
+      location: 'USA',
       rating: 5,
       content:
-        "The passage experienced a surgu popularity during the ios when Letraset used it on their lor bonord dry-transfer sheets &amp; again during the sample.",
-      color: "#B67DFF",
-      icon: "/images/icon/icon_42.svg",
+        'The passage experienced a surgu popularity during the ios when Letraset used it on their lor bonord dry-transfer sheets &amp; again during the sample.',
+      color: '#B67DFF',
+      icon: '/images/icon/icon_42.svg',
     },
     {
       id: 2,
-      name: "Rashed Ka",
-      location: "USA",
+      name: 'Rashed Ka',
+      location: 'USA',
       rating: 5,
       content:
-        "The passage experienced a surgu popularity during the ios when Letraset used it on their lor bonord dry-transfer sheets &amp; again during the sample.",
-      color: "#FFBC3A",
-      icon: "/images/icon/icon_42.svg",
+        'The passage experienced a surgu popularity during the ios when Letraset used it on their lor bonord dry-transfer sheets &amp; again during the sample.',
+      color: '#FFBC3A',
+      icon: '/images/icon/icon_42.svg',
     },
     {
       id: 3,
-      name: "Martin Jonas",
-      location: "USA",
+      name: 'Martin Jonas',
+      location: 'USA',
       rating: 5,
       content:
-        "The passage experienced a surgu popularity during the ios when Letraset used it on their lor bonord dry-transfer sheets &amp; again during the sample.",
-      color: "#49E5EF",
-      icon: "/images/icon/icon_42.svg",
+        'The passage experienced a surgu popularity during the ios when Letraset used it on their lor bonord dry-transfer sheets &amp; again during the sample.',
+      color: '#49E5EF',
+      icon: '/images/icon/icon_42.svg',
     },
     {
       id: 4,
-      name: "Rashed Ka",
-      location: "USA",
+      name: 'Rashed Ka',
+      location: 'USA',
       rating: 5,
       content:
-        "The passage experienced a surgu popularity during the ios when Letraset used it on their lor bonord dry-transfer sheets &amp; again during the sample.",
-      color: "#8F6BF6",
-      icon: "/images/icon/icon_42.svg",
+        'The passage experienced a surgu popularity during the ios when Letraset used it on their lor bonord dry-transfer sheets &amp; again during the sample.',
+      color: '#8F6BF6',
+      icon: '/images/icon/icon_42.svg',
     },
   ];
 
@@ -81,7 +82,7 @@ const Testimonial = () => {
               <h6 className="name fs-20 fw-500 m0 tx-dark">
                 {testimonial.name}
                 <span className="fw-normal opacity-50 fs-16">
-                  {" "}
+                  {' '}
                   {testimonial.location}
                 </span>
               </h6>

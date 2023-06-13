@@ -1,42 +1,43 @@
-import Link from "next/link";
-import { useState } from "react";
+import Link from 'next/link';
+import { useState } from 'react';
+import Image from 'next/image';
 
 const footerLinks = [
   {
-    title: "Links",
+    title: 'Links',
     links: [
-      { label: "Home", href: "/" },
-      { label: "Pricing", href: "/pages-menu/pricing" },
-      { label: "About us", href: "/pages-menu/about-us-v1" },
-      { label: "Careers", href: "/blog/blog-v1" },
-      { label: "Features", href: "/pages-menu/service-v1" },
-      { label: "Demo the product", href: "/blog/blog-v1" },
+      { label: 'Home', href: '/' },
+      { label: 'Pricing', href: '/pages-menu/pricing' },
+      { label: 'About us', href: '/pages-menu/about-us-v1' },
+      { label: 'Careers', href: '/blog/blog-v1' },
+      { label: 'Features', href: '/pages-menu/service-v1' },
+      { label: 'Demo the product', href: '/blog/blog-v1' },
     ],
   },
   {
-    title: "Legal",
+    title: 'Legal',
     links: [
-      { label: "Terms of use", href: "/pages-menu/faq" },
-      { label: "Terms & conditions", href: "/pages-menu/faq" },
-      { label: "Privacy policy", href: "/pages-menu/faq" },
-      { label: "Cookie policy", href: "/pages-menu/faq" },
+      { label: 'Terms of use', href: '/pages-menu/faq' },
+      { label: 'Terms & conditions', href: '/pages-menu/faq' },
+      { label: 'Privacy policy', href: '/pages-menu/faq' },
+      { label: 'Cookie policy', href: '/pages-menu/faq' },
     ],
   },
   {
-    title: "Products",
+    title: 'Products',
     links: [
-      { label: "Take the tour", href: "/pages-menu/faq" },
-      { label: "Live chat", href: "/pages-menu/faq" },
-      { label: "Self-service", href: "/pages-menu/faq" },
-      { label: "Social", href: "/pages-menu/faq" },
-      { label: "Collaboration", href: "/pages-menu/faq" },
-      { label: "Jano Reviews", href: "/pages-menu/faq" },
+      { label: 'Take the tour', href: '/pages-menu/faq' },
+      { label: 'Live chat', href: '/pages-menu/faq' },
+      { label: 'Self-service', href: '/pages-menu/faq' },
+      { label: 'Social', href: '/pages-menu/faq' },
+      { label: 'Collaboration', href: '/pages-menu/faq' },
+      { label: 'Jano Reviews', href: '/pages-menu/faq' },
     ],
   },
 ];
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();

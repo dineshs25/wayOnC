@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import MainMenu from "./MainMenu";
-import Link from "next/link";
+import { useEffect, useState } from 'react';
+import MainMenu from './MainMenu';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const DefaulHeader = () => {
   const [navbar, setNavbar] = useState(false);
@@ -14,23 +15,28 @@ const DefaulHeader = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground);
+    window.addEventListener('scroll', changeBackground);
     return () => {
-      window.removeEventListener("scroll", changeBackground);
+      window.removeEventListener('scroll', changeBackground);
     };
   }, []);
 
   return (
     <header
       className={`theme-main-menu sticky-menu theme-menu-six ${
-        navbar ? "fixed" : ""
+        navbar ? 'fixed' : ''
       }`}
     >
       <div className="inner-content position-relative">
         <div className="d-flex align-items-center justify-content-between">
           <div className="logo order-lg-0">
             <Link href="/" className="d-block">
-              <img src="/images/logo/logo_01.png" alt="" width={95} />
+              <img
+                src="/images/logo/logo.jpg"
+                alt="logo"
+                width={95}
+                height={30}
+              />
             </Link>
           </div>
           {/* End logo */}
@@ -48,7 +54,7 @@ const DefaulHeader = () => {
             >
               Get Started
             </Link>
-          </div>{" "}
+          </div>{' '}
           {/* /.right-widget */}
           <MainMenu />
         </div>

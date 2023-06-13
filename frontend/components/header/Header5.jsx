@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import MainMenu from "./MainMenu";
-import Link from "next/link";
+import { useEffect, useState } from 'react';
+import MainMenu from './MainMenu';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Header5 = () => {
   const [navbar, setNavbar] = useState(false);
@@ -14,23 +15,28 @@ const Header5 = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground);
+    window.addEventListener('scroll', changeBackground);
     return () => {
-      window.removeEventListener("scroll", changeBackground);
+      window.removeEventListener('scroll', changeBackground);
     };
   }, []);
 
   return (
     <header
       className={`theme-main-menu sticky-menu theme-menu-ten ${
-        navbar ? "fixed" : ""
+        navbar ? 'fixed' : ''
       }`}
     >
       <div className="inner-content position-relative">
         <div className="d-flex align-items-center justify-content-between">
           <div className="logo order-lg-0">
             <Link href="/">
-              <img src="/images/logo/logo_07.png" alt="" width={93} />
+              <img
+                src="/images/logo/logo.jpg"
+                alt="logo"
+                width={95}
+                height={30}
+              />
             </Link>
           </div>
           {/* End logo */}
@@ -44,6 +50,8 @@ const Header5 = () => {
                 src="/images/icon/icon_122.svg"
                 alt="icon"
                 className="icon position-absolute"
+                width={95}
+                height={30}
               />
             </form>
             <Link

@@ -1,27 +1,27 @@
-import Image from "next/image";
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import Image from 'next/image';
+import { useState } from 'react';
+import ModalVideo from 'react-modal-video';
 
 const IntroAbout = () => {
   const [isOpen, setOpen] = useState(false);
   const cardsData = [
     {
       id: 1,
-      cardNo: "card-one",
-      title: "Happier",
-      subtitle: "Customers",
+      cardNo: 'card-one',
+      title: 'Happier',
+      subtitle: 'Customers',
     },
     {
       id: 2,
-      title: "30+",
-      cardNo: "card-two",
-      subtitle: "Insurance Item",
+      title: '30+',
+      cardNo: 'card-two',
+      subtitle: 'Insurance Item',
     },
     {
       id: 3,
-      title: "Saller Leads",
-      cardNo: "card-three",
-      subtitle: "Who are listing soon",
+      title: 'Saller Leads',
+      cardNo: 'card-three',
+      subtitle: 'Who are listing soon',
     },
   ];
 
@@ -38,7 +38,7 @@ const IntroAbout = () => {
       <div className="row">
         <div className="col-xl-5 col-md-6 order-md-last">
           <div className="text-wrapper md-pb-70">
-            <Image
+            <img
               width={66}
               height={66}
               src="/images/icon/icon_103.svg"
@@ -68,7 +68,7 @@ const IntroAbout = () => {
               alt="shape"
               className="lazy-img"
             />
-            <Image
+            <img
               width={561}
               height={732}
               layout="intrinsic"

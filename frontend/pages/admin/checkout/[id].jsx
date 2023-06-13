@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Load from '../../../components/common/Loading';
 
-const checkOutShowMore = () => {
+const CheckOutShowMore = () => {
   const router = useRouter();
   const userID = router.query.id;
 
@@ -473,4 +473,4 @@ const checkOutShowMore = () => {
   );
 };
 
-export default checkOutShowMore;
+export default CheckOutShowMore;

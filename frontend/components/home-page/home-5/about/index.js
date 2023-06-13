@@ -1,6 +1,7 @@
-import Counter from "./Counter";
-import ImgGallery from "./ImgGallery";
-import Intro from "./Intro";
+import Counter from './Counter';
+import ImgGallery from './ImgGallery';
+import Intro from './Intro';
+import Image from 'next/image';
 
 const index = () => {
   return (
@@ -16,6 +17,7 @@ const index = () => {
       {/* End .col-lg-6 */}
 
       <div className="col-lg-5 order-lg-first position-relative">
+        {/*<imgGallery /> */}
         <ImgGallery />
         {/* /.img-gallery */}
       </div>

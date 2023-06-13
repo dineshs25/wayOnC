@@ -1,28 +1,29 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const FancyBanner = () => {
   const bannerData = [
     {
-      title: "TRSUTED SECURITY",
-      mainTitle: "Security you can trust blindly.",
+      title: 'TRSUTED SECURITY',
+      mainTitle: 'Security you can trust blindly.',
       description:
         "Lorem ipsum began as scrambled, Latin derived Cicero's 1st-century BC text De Finibus ubiquitous lorem ipsum passage.",
-      buttonLabel: "Click here to learn more",
-      illustration: "/images/assets/ils_06.png",
-      illustrationAlt: "illustration",
-      illustrationPosition: "right",
-      aos: "fade-right",
+      buttonLabel: 'Click here to learn more',
+      illustration: '/images/assets/ils_06.png',
+      illustrationAlt: 'illustration',
+      illustrationPosition: 'right',
+      aos: 'fade-right',
     },
     {
-      title: "SITE TRANSFER",
-      mainTitle: "Migration is super fast with no downtime.",
+      title: 'SITE TRANSFER',
+      mainTitle: 'Migration is super fast with no downtime.',
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisci sed do eiusmod tempor incididunt ut labore et dolore magna ad minim veniam.",
-      buttonLabel: "",
-      illustration: "/images/assets/ils_07.png",
-      illustrationAlt: "illustration",
-      illustrationPosition: "left",
-      aos: "fade-left",
+        'Lorem ipsum dolor sit amet, consectetur adipisci sed do eiusmod tempor incididunt ut labore et dolore magna ad minim veniam.',
+      buttonLabel: '',
+      illustration: '/images/assets/ils_07.png',
+      illustrationAlt: 'illustration',
+      illustrationPosition: 'left',
+      aos: 'fade-left',
     },
   ];
 
@@ -34,7 +35,7 @@ const FancyBanner = () => {
             <div className="row align-items-center">
               <div
                 className={`col-xl-5 col-lg-6 order-lg-${
-                  data.illustrationPosition === "left" ? "first" : "last"
+                  data.illustrationPosition === 'left' ? 'first' : 'last'
                 }`}
                 data-aos={data.aos}
               >
@@ -45,7 +46,7 @@ const FancyBanner = () => {
                   </h2>
                 </div>
                 <p className="fs-20 lh-lg mt-35 lg-mt-20">{data.description}</p>
-                {data.buttonLabel !== "" && (
+                {data.buttonLabel !== '' && (
                   <Link
                     href="/pages-menu/about-us-v1"
                     className="btn-fifteen fw-500 position-relative d-inline-flex align-items-center"
@@ -61,7 +62,7 @@ const FancyBanner = () => {
               </div>
               <div
                 className={`col-xl-7 col-lg-6 col-md-8 m-auto order-lg-${
-                  data.illustrationPosition === "left" ? "last" : "first"
+                  data.illustrationPosition === 'left' ? 'last' : 'first'
                 }`}
                 data-aos={data.aos}
               >

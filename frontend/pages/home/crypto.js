@@ -1,21 +1,21 @@
-import Link from "next/link";
-import Seo from "../../components/common/Seo";
-import Header from "../../components/home-page/home-8/Header";
-import Hero from "../../components/home-page/home-8/Hero";
-import ShapeGroup from "../../components/home-page/home-8/ShapeGroup";
-import Block1 from "../../components/home-page/home-8/Block1";
-import Block2 from "../../components/home-page/home-8/Block2";
-import BlockFeatureList from "../../components/home-page/home-8/BlockFeatureList";
-import Block3 from "../../components/home-page/home-8/Block3";
-import WhyChooseList from "../../components/home-page/home-8/WhyChooseList";
-import Coutner from "../../components/home-page/home-8/Coutner";
-import Testimonial from "../../components/home-page/home-8/Testimonial";
-import Faq from "../../components/home-page/home-8/Faq";
-import Blog from "../../components/home-page/home-8/Blog";
-import CallToAction from "../../components/home-page/home-8/CallToAction";
-import CopyrightFooter2 from "../../components/footer/CopyrightFooter2";
-import Footer from "../../components/home-page/home-8/Footer";
-import Image from "next/image";
+import Link from 'next/link';
+import Seo from '../../components/common/Seo';
+import Header from '../../components/home-page/home-8/Header';
+import Hero from '../../components/home-page/home-8/Hero';
+import ShapeGroup from '../../components/home-page/home-8/ShapeGroup';
+import Block1 from '../../components/home-page/home-8/Block1';
+import Block2 from '../../components/home-page/home-8/Block2';
+import BlockFeatureList from '../../components/home-page/home-8/BlockFeatureList';
+import Block3 from '../../components/home-page/home-8/Block3';
+import WhyChooseList from '../../components/home-page/home-8/WhyChooseList';
+import Coutner from '../../components/home-page/home-8/Coutner';
+import Testimonial from '../../components/home-page/home-8/Testimonial';
+import Faq from '../../components/home-page/home-8/Faq';
+import Blog from '../../components/home-page/home-8/Blog';
+import CallToAction from '../../components/home-page/home-8/CallToAction';
+import CopyrightFooter2 from '../../components/footer/CopyrightFooter2';
+import Footer from '../../components/home-page/home-8/Footer';
+import Image from 'next/image';
 
 const crypto = () => {
   return (
@@ -50,7 +50,7 @@ const crypto = () => {
         {/* /.container */}
 
         <div className="illustration-holder" data-aos="fade-right">
-          <Image
+          <img
             width={697}
             height={664}
             layout="intrinsic"
@@ -122,7 +122,7 @@ const crypto = () => {
               data-aos="fade-right"
             >
               <div className="illustration-holder md-mt-50 pe-xxl-1 pe-xl-5 pe-lg-4">
-                <Image
+                <img
                   width={569}
                   height={559}
                   layout="intrinsic"
@@ -167,7 +167,7 @@ const crypto = () => {
                   alt="shape"
                   className="lazy-img main-img"
                 />
-                <Image
+                <img
                   width={766}
                   height={766}
                   layout="intrinsic"

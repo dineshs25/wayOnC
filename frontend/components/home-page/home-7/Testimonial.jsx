@@ -1,46 +1,47 @@
-import React from "react";
-import Slider from "react-slick";
+import React from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const items = [
   {
-    name: "Martin Jonas",
-    location: "USA",
-    image: "/images/media/img_18.jpg",
+    name: 'Martin Jonas',
+    location: 'USA',
+    image: '/images/media/img_18.jpg',
     rating: 5,
     feedback:
-      "We have 9,000 agents around the country. Find agents near your neighborhood.",
+      'We have 9,000 agents around the country. Find agents near your neighborhood.',
   },
   {
-    name: "Rashed ka.",
-    location: "Brazil",
-    image: "/images/media/img_19.jpg",
+    name: 'Rashed ka.',
+    location: 'Brazil',
+    image: '/images/media/img_19.jpg',
     rating: 5,
     feedback:
-      "We have 9,000 agents around the country. Find agents near your neighborhood.",
+      'We have 9,000 agents around the country. Find agents near your neighborhood.',
   },
   {
-    name: "Jannatul Fa.",
-    location: "England",
-    image: "/images/media/img_20.jpg",
+    name: 'Jannatul Fa.',
+    location: 'England',
+    image: '/images/media/img_20.jpg',
     rating: 5,
     feedback:
-      "We have 9,000 agents around the country. Find agents near your neighborhood.",
+      'We have 9,000 agents around the country. Find agents near your neighborhood.',
   },
   {
-    name: "Martin Jonas",
-    location: "USA",
-    image: "/images/media/img_18.jpg",
+    name: 'Martin Jonas',
+    location: 'USA',
+    image: '/images/media/img_18.jpg',
     rating: 5,
     feedback:
-      "We have 9,000 agents around the country. Find agents near your neighborhood.",
+      'We have 9,000 agents around the country. Find agents near your neighborhood.',
   },
   {
-    name: "Rashed ka.",
-    location: "Brazil",
-    image: "/images/media/img_19.jpg",
+    name: 'Rashed ka.',
+    location: 'Brazil',
+    image: '/images/media/img_19.jpg',
     rating: 5,
     feedback:
-      "We have 9,000 agents around the country. Find agents near your neighborhood.",
+      'We have 9,000 agents around the country. Find agents near your neighborhood.',
   },
 ];
 
@@ -101,7 +102,7 @@ const FeedbackSlider = () => {
                 className="avatar rounded-circle"
               />
               <h6 className="name fs-20 fw-500 m0 ps-4">
-                {item.name}{" "}
+                {item.name}{' '}
                 <span className="d-block fw-normal">{item.location}</span>
               </h6>
               <img

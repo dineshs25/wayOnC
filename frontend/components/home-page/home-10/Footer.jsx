@@ -1,28 +1,29 @@
-import Link from "next/link";
-import Social from "./Social";
+import Link from 'next/link';
+import Social from './Social';
+import Image from 'next/image';
 
 const Footer = () => {
   const footerLinks = [
     {
-      title: "Links",
+      title: 'Links',
       links: [
-        { label: "Home", href: "/" },
-        { label: "Pricing", href: "/pages-menu/pricing" },
-        { label: "About us", href: "/pages-menu/about-us-v1" },
-        { label: "Service", href: "/pages-menu/service-v1" },
-        { label: "Blog", href: "/blog/blog-v1" },
+        { label: 'Home', href: '/' },
+        { label: 'Pricing', href: '/pages-menu/pricing' },
+        { label: 'About us', href: '/pages-menu/about-us-v1' },
+        { label: 'Service', href: '/pages-menu/service-v1' },
+        { label: 'Blog', href: '/blog/blog-v1' },
       ],
-      classes: "col-lg-2 col-sm-4 ms-auto mb-30",
+      classes: 'col-lg-2 col-sm-4 ms-auto mb-30',
     },
     {
-      title: "Help & Support",
+      title: 'Help & Support',
       links: [
-        { label: "FAQ", href: "/pages-menu/faq" },
-        { label: "Blog", href: "/blog/blog-v1" },
-        { label: "Contact Us", href: "/contact" },
-        { label: "Support", href: "/contact" },
+        { label: 'FAQ', href: '/pages-menu/faq' },
+        { label: 'Blog', href: '/blog/blog-v1' },
+        { label: 'Contact Us', href: '/contact' },
+        { label: 'Support', href: '/contact' },
       ],
-      classes: "col-lg-3 col-sm-4 mb-30",
+      classes: 'col-lg-3 col-sm-4 mb-30',
     },
   ];
 

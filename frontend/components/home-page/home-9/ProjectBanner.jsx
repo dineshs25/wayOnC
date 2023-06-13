@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const ProjectBanner = () => {
   return (
     <div className="img-meta d-inline-block position-relative mt-80">

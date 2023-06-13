@@ -1,18 +1,20 @@
+import Image from 'next/image';
+
 const CardData = [
   {
-    icon: "/images/icon/icon_82.svg",
-    title: "Create Account",
-    description: "Learn content by interacting quis expert lesson a video.",
+    icon: '/images/icon/icon_82.svg',
+    title: 'Create Account',
+    description: 'Learn content by interacting quis expert lesson a video.',
   },
   {
-    icon: "/images/icon/icon_83.svg",
-    title: "Link Your Bank",
-    description: "Practice what you realistic SAT test questions.",
+    icon: '/images/icon/icon_83.svg',
+    title: 'Link Your Bank',
+    description: 'Practice what you realistic SAT test questions.',
   },
   {
-    icon: "/images/icon/icon_84.svg",
-    title: "Start Buy & Sell",
-    description: "Review your practice and learn how to improve.",
+    icon: '/images/icon/icon_84.svg',
+    title: 'Start Buy & Sell',
+    description: 'Review your practice and learn how to improve.',
   },
 ];
 

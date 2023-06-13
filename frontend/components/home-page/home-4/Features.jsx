@@ -1,26 +1,28 @@
+import Image from 'next/image';
+
 const features = [
   {
-    icon: "/images/icon/icon_44.svg",
-    title: "Healthy Food",
-    color: "#FF5555",
+    icon: '/images/icon/icon_44.svg',
+    title: 'Healthy Food',
+    color: '#FF5555',
     delay: 100,
   },
   {
-    icon: "/images/icon/icon_45.svg",
-    title: "Clean Water",
-    color: "#36E0D1",
+    icon: '/images/icon/icon_45.svg',
+    title: 'Clean Water',
+    color: '#36E0D1',
     delay: 200,
   },
   {
-    icon: "/images/icon/icon_46.svg",
-    title: "Education",
-    color: "#FFD94F",
+    icon: '/images/icon/icon_46.svg',
+    title: 'Education',
+    color: '#FFD94F',
     delay: 300,
   },
   {
-    icon: "/images/icon/icon_47.svg",
-    title: "Medical Care",
-    color: "#B855FF",
+    icon: '/images/icon/icon_47.svg',
+    title: 'Medical Care',
+    color: '#B855FF',
     delay: 400,
   },
 ];

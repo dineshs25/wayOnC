@@ -1,32 +1,32 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const blocks = [
   {
-    icon: "/images/icon/icon_75.png",
-    crName: "BTC",
-    crPoint: "1.34500",
-    arrow: "up",
-    crValue: "+14%",
-    shape: "/images/shape/shape_103.svg",
-    balance: "42,530.2310",
+    icon: '/images/icon/icon_75.png',
+    crName: 'BTC',
+    crPoint: '1.34500',
+    arrow: 'up',
+    crValue: '+14%',
+    shape: '/images/shape/shape_103.svg',
+    balance: '42,530.2310',
   },
   {
-    icon: "/images/icon/icon_76.png",
-    crName: "DESH",
-    crPoint: "1.42800",
-    arrow: "down",
-    crValue: "-11%",
-    shape: "/images/shape/shape_104.svg",
-    balance: "3,210.2390",
+    icon: '/images/icon/icon_76.png',
+    crName: 'DESH',
+    crPoint: '1.42800',
+    arrow: 'down',
+    crValue: '-11%',
+    shape: '/images/shape/shape_104.svg',
+    balance: '3,210.2390',
   },
   {
-    icon: "/images/icon/icon_77.png",
-    crName: "BTC",
-    crPoint: "1.34500",
-    arrow: "up",
-    crValue: "+14%",
-    shape: "/images/shape/shape_105.svg",
-    balance: "51,530.2310",
+    icon: '/images/icon/icon_77.png',
+    crName: 'BTC',
+    crPoint: '1.34500',
+    arrow: 'up',
+    crValue: '+14%',
+    shape: '/images/shape/shape_105.svg',
+    balance: '51,530.2310',
   },
 ];
 
@@ -38,7 +38,7 @@ const Block1 = () => {
           <div className="trade-meta-block">
             <div className="d-sm-flex justify-content-between">
               <div className="icon rounded-circle d-flex align-items-center justify-content-center">
-                <Image
+                <img
                   width={35}
                   height={35}
                   src={block.icon}
@@ -55,7 +55,7 @@ const Block1 = () => {
                 </div>
                 <div className="ms-5 text-center">
                   <div className={`arrow arrow-${block.arrow}`}>
-                    {block.arrow === "up" ? (
+                    {block.arrow === 'up' ? (
                       <i className="bi bi-caret-up-fill" />
                     ) : (
                       <i className="bi bi-caret-down-fill" />

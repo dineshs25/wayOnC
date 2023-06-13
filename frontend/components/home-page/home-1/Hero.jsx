@@ -1,13 +1,13 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 const Hero1 = () => {
   const options = [
-    { value: 0, display: "Select insurance type.." },
-    { value: 1, display: "Life Insurance" },
-    { value: 2, display: "Health insurance" },
-    { value: 3, display: "Property insurance" },
-    { value: 4, display: "Motor insurance" },
+    { value: 0, display: 'Select insurance type..' },
+    { value: 1, display: 'Life Insurance' },
+    { value: 2, display: 'Health insurance' },
+    { value: 3, display: 'Property insurance' },
+    { value: 4, display: 'Motor insurance' },
   ];
 
   const handleSubmit = (event) => {
@@ -24,10 +24,12 @@ const Hero1 = () => {
             data-aos="fade-up"
           >
             <h1 className="hero-heading fw-500 tx-dark">
-            Unlock Your Financial Potential: <span>Expert Investment</span> &amp;  Advisory Services.
+              Unlock Your Financial Potential: <span>Expert Investment</span>{' '}
+              &amp; Advisory Services.
             </h1>
             <p className="text-lg tx-dark mt-45 mb-50 lg-mt-30 lg-mb-40">
-            Let's Start Building Your Path to Financial Prosperity - Contact Us Today.
+              Let&apos;s Start Building Your Path to Financial Prosperity - Contact
+              Us Today.
             </p>
             {/* <form
               className="search-area d-md-inline-flex m-auto d-no"
@@ -53,7 +55,8 @@ const Hero1 = () => {
 
             <div>
               <div className="approval-info d-inline-flex align-items-center mt-130 lg-mt-80">
-                <img src="/images/icon/icon_99.svg" alt="" className="me-1" />
+               <img src="/images/icon/icon_99.svg"  width={95}
+                height={30} alt="" className="me-1" />
                 <span>An UK insurer approved by the UICO.</span>
               </div>
             </div>
@@ -62,7 +65,7 @@ const Hero1 = () => {
       </div>
       {/* End .container */}
 
-      <Image
+     <img
         width={487}
         height={649}
         src="/images/assets/ils_11.png"
@@ -71,7 +74,7 @@ const Hero1 = () => {
         data-aos="fade-left"
         layout="intrinsic"
       />
-      <Image
+     <img
         width={537}
         height={658}
         src="/images/assets/ils_12.png"

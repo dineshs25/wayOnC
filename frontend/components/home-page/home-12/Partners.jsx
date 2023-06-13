@@ -1,30 +1,31 @@
-import React from "react";
-import Slider from "react-slick";
+import React from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const partners = [
   {
     id: 1,
-    logo: "/images/logo/Plogo-37.png",
+    logo: '/images/logo/Plogo-37.png',
   },
   {
     id: 2,
-    logo: "/images/logo/Plogo-38.png",
+    logo: '/images/logo/Plogo-38.png',
   },
   {
     id: 3,
-    logo: "/images/logo/Plogo-39.png",
+    logo: '/images/logo/Plogo-39.png',
   },
   {
     id: 4,
-    logo: "/images/logo/Plogo-40.png",
+    logo: '/images/logo/Plogo-40.png',
   },
   {
     id: 5,
-    logo: "/images/logo/Plogo-41.png",
+    logo: '/images/logo/Plogo-41.png',
   },
   {
     id: 6,
-    logo: "/images/logo/Plogo-39.png",
+    logo: '/images/logo/Plogo-39.png',
   },
 ];
 

@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const ProjectSlide = ({ slide }) => {
-  const images = [slide?.image ?? "", slide?.image ?? "", slide?.image ?? ""];
+  const images = [slide?.image ?? '', slide?.image ?? '', slide?.image ?? ''];
 
   return (
     <div
@@ -12,10 +12,10 @@ const ProjectSlide = ({ slide }) => {
       <div className="carousel-inner">
         {images.map((image, index) => (
           <div
-            className={`carousel-item ${index === 0 ? "active" : ""}`}
+            className={`carousel-item ${index === 0 ? 'active' : ''}`}
             key={index}
           >
-            <Image
+            <img
               width={824}
               height={654}
               layout="responsive"

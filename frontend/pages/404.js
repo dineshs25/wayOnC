@@ -1,6 +1,7 @@
-import Link from "next/link";
-import Seo from "../components/common/Seo";
-import DefaulHeader from "../components/header/DefaulHeader";
+import Link from 'next/link';
+import Seo from '../components/common/Seo';
+import DefaulHeader from '../components/header/DefaulHeader';
+import Image from 'next/image';
 
 const Pricing = () => {
   return (

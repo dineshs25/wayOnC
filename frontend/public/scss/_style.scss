@@ -10829,6 +10829,16 @@ p.client-add-p {
     margin-bottom: 10px;
 }
 
+p.p-line-height {
+    line-height: 9px !important;
+    text-align: center;
+}
+
+.sign-mar {
+  margin-top: 14px;
+  margin-right: 25px;
+}
+
 @media print {
   .agreement-div {
     page-break-before: always;
@@ -10836,4 +10846,7 @@ p.client-add-p {
   .page-break {
     page-break-before: always;
   }
+  // .client-add-p{
+  //   page-break-before: always;
+  // }
 }

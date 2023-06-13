@@ -1,23 +1,24 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Services = () => {
   const servicesData = [
     {
-      icon: "/images/icon/icon_09.svg",
-      title: "Quality Design",
-      description: "Design from Worldclass UI/UX designer.",
+      icon: '/images/icon/icon_09.svg',
+      title: 'Quality Design',
+      description: 'Design from Worldclass UI/UX designer.',
       delay: 0,
     },
     {
-      icon: "/images/icon/icon_51.svg",
-      title: "Marketing",
-      description: "Provide SEO & SMM Services.",
+      icon: '/images/icon/icon_51.svg',
+      title: 'Marketing',
+      description: 'Provide SEO & SMM Services.',
       delay: 200,
     },
     {
-      icon: "/images/icon/icon_11.svg",
-      title: "Development",
-      description: "Mobile App & Website Development.",
+      icon: '/images/icon/icon_11.svg',
+      title: 'Development',
+      description: 'Mobile App & Website Development.',
       delay: 300,
     },
   ];

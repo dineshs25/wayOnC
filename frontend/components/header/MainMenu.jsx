@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 import {
   menuItems,
   pagesItems,
@@ -10,9 +11,9 @@ import {
   isActiveLink,
   isActiveParent,
   isActiveParentChaild,
-} from "../../utils/linkActiveChecker";
+} from '../../utils/linkActiveChecker';
 
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
 const MainMenu = () => {
   const router = useRouter();
@@ -36,7 +37,12 @@ const MainMenu = () => {
           <li className="d-block d-lg-none">
             <div className="logo">
               <Link href="/" className="d-block">
-                <img src="/images/logo/logo_01.png" alt="" width={95} />
+                <img
+                  src="/images/logo/logo.jpg"
+                  alt="logo"
+                  width={95}
+                  height={30}
+                />
               </Link>
             </div>
           </li>
@@ -44,12 +50,12 @@ const MainMenu = () => {
 
           <li className="nav-item dropdown mega-dropdown-md active">
             <Link href="/" className="nav-link text-black">
-              Home{" "}
+              Home{' '}
             </Link>
           </li>
           <li className="nav-item dropdown mega-dropdown-md active">
             <Link href="/about-us" className="nav-link text-black">
-              About{" "}
+              About{' '}
             </Link>
           </li>
 
@@ -64,8 +70,7 @@ const MainMenu = () => {
               data-bs-auto-close="outside"
               aria-expanded="false"
             >
-             
-              Services{" "}
+              Services{' '}
             </Link>
             <ul className="dropdown-menu">
               {pagesItems.map((item, index) => (
@@ -93,7 +98,7 @@ const MainMenu = () => {
             </ul>
           </li>
 
-            <li className="nav-item  dropdown">
+          <li className="nav-item  dropdown">
             <Link
               className="nav-link dropdown-toggle text-black"
               href="/services/SubServices"
@@ -102,11 +107,10 @@ const MainMenu = () => {
               data-bs-auto-close="outside"
               aria-expanded="false"
             >
-             
-              Resources{" "}
+              Resources{' '}
             </Link>
             <ul className="dropdown-menu">
-            {resources.map((item, index) => (
+              {resources.map((item, index) => (
                 <li key={index}>
                   <Link href={item.link} className="dropdown-item">
                     <span>{item.name}</span>
@@ -162,7 +166,7 @@ const MainMenu = () => {
               ))}
             </ul>
           </li> */}
-          
+
           <li className="nav-item">
             <Link className="nav-link" href="/contact" role="button">
               Contact

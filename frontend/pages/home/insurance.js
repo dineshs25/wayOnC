@@ -1,21 +1,22 @@
-import Link from "next/link";
-import Seo from "../../components/common/Seo";
-import Footer from "../../components/footer/Footer";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import AppBanner from "../../components/home-page/home-1/AppBanner";
-import Banner from "../../components/home-page/home-1/Banner";
-import Block from "../../components/home-page/home-1/Block";
-import Blog from "../../components/home-page/home-1/Blog";
-import ContactForm from "../../components/home-page/home-1/ContactForm";
-import Feature from "../../components/home-page/home-1/Feature";
-import Hero from "../../components/home-page/home-1/Hero";
-import IntroAbout from "../../components/home-page/home-1/IntroAbout";
-import Service from "../../components/home-page/home-1/Service";
-import Testimonial from "../../components/home-page/home-1/Testimonial";
-import WhyChoose from "../../components/home-page/home-1/WhyChoose";
-import Features3 from "../../components/home-page/home-7/Features3";
-import LogoGroup from "../../components/home-page/home-7/LogoGroup";
-import DefaultFooter from "../../components/footer/DefaultFooter";
+import Link from 'next/link';
+import Seo from '../../components/common/Seo';
+import Footer from '../../components/footer/Footer';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import AppBanner from '../../components/home-page/home-1/AppBanner';
+import Banner from '../../components/home-page/home-1/Banner';
+import Block from '../../components/home-page/home-1/Block';
+import Blog from '../../components/home-page/home-1/Blog';
+import ContactForm from '../../components/home-page/home-1/ContactForm';
+import Feature from '../../components/home-page/home-1/Feature';
+import Hero from '../../components/home-page/home-1/Hero';
+import IntroAbout from '../../components/home-page/home-1/IntroAbout';
+import Service from '../../components/home-page/home-1/Service';
+import Testimonial from '../../components/home-page/home-1/Testimonial';
+import WhyChoose from '../../components/home-page/home-1/WhyChoose';
+import Features3 from '../../components/home-page/home-7/Features3';
+import LogoGroup from '../../components/home-page/home-7/LogoGroup';
+import DefaultFooter from '../../components/footer/DefaultFooter';
+import Image from 'next/image';
 
 const Insurance = () => {
   return (
@@ -54,7 +55,7 @@ const Insurance = () => {
                 className="title-style-four text-center pb-100"
                 data-aos="fade-up"
               >
-                <div className="sc-title-two" style={{ color: "#6A45FF" }}>
+                <div className="sc-title-two" style={{ color: '#6A45FF' }}>
                   Features
                 </div>
                 <h2 className="main-title fw-500 tx-dark m0">
@@ -78,7 +79,7 @@ const Insurance = () => {
 			=====================================================
 			*/}
       <div className="fancy-feature-thirtyFive mt-90 md-mt-70 d-none">
-        <div className="container" >
+        <div className="container">
           <Banner />
           {/* /.top-banner */}
         </div>
@@ -168,12 +169,12 @@ const Insurance = () => {
 				Feedback Section Eleven
 			=====================================================
 			*/}
-  {/*
+      {/*
         =====================================================
         Feedback Section Three
         =====================================================
         */}
-        <div
+      <div
         className="feedback-section-three position-relative mt-225 lg-mt-120 pb-100"
         data-data-aos="fade-up"
       >
@@ -181,7 +182,7 @@ const Insurance = () => {
           <div className="row">
             <div className="col-xl-5 col-lg-6 ms-auto">
               <div className="title-style-four text-center text-lg-start pb-100 lg-pb-30">
-                <div className="sc-title-two" style={{ color: "#6A45FF" }}>
+                <div className="sc-title-two" style={{ color: '#6A45FF' }}>
                   Testimonials
                 </div>
                 <h2 className="main-title fw-500 tx-dark m0">
@@ -210,25 +211,25 @@ const Insurance = () => {
             src="/images/media/img_22.jpg"
             alt="media"
             className="lazy-img shapes rounded-circle avatar-one"
-            style={{ width: "50px", height: "50px" }}
+            style={{ width: '50px', height: '50px' }}
           />
           <img
             src="/images/media/img_23.jpg"
             alt="media"
             className="lazy-img shapes rounded-circle avatar-two"
-            style={{ width: "80px", height: "80px" }}
+            style={{ width: '80px', height: '80px' }}
           />
           <img
             src="/images/media/img_24.jpg"
             alt="media"
             className="lazy-img shapes rounded-circle avatar-three"
-            style={{ width: "60px", height: "60px" }}
+            style={{ width: '60px', height: '60px' }}
           />
           <img
             src="/images/media/img_25.jpg"
             alt="media"
             className="lazy-img shapes rounded-circle avatar-four"
-            style={{ width: "80px", height: "80px" }}
+            style={{ width: '80px', height: '80px' }}
           />
         </div>
       </div>
@@ -237,17 +238,17 @@ const Insurance = () => {
 				Feature Section Thirty Eight
 			============================================== 
 			*/}
-     {/* 
+      {/* 
         =============================================
         Partner Section Two
         ============================================== 
         */}
-        <div className="partner-section-two position-relative mt-225 mb-250 md-mt-120 md-mb-120">
+      <div className="partner-section-two position-relative mt-225 mb-250 md-mt-120 md-mb-120">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-5 col-lg-6" data-data-aos="fade-right">
               <div className="title-style-four">
-                <div className="sc-title-two" style={{ color: "#6A45FF" }}>
+                <div className="sc-title-two" style={{ color: '#6A45FF' }}>
                   Our Partners
                 </div>
                 <h2 className="main-title fw-500 tx-dark m0">
@@ -310,7 +311,10 @@ const Insurance = () => {
                         </h2>
                       </div>
                       <p className="fs-20 tx-dark pt-20 m0">
-                      Contact us today to schedule a consultation and discover how Our Investment Advisory can help you achieve your financial goals. Together, let's navigate the markets and build a prosperous future.
+                        Contact us today to schedule a consultation and discover
+                        how Our Investment Advisory can help you achieve your
+                        financial goals. Together, let &apos;s navigate the
+                        markets and build a prosperous future.
                       </p>
                     </div>
                   </div>
@@ -384,7 +388,7 @@ const Insurance = () => {
 				Footer
 			=====================================================
 			*/}
-     <DefaultFooter/>
+      <DefaultFooter />
     </>
   );
 };

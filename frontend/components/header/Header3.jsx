@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import MainMenu from "./MainMenu";
-import Link from "next/link";
+import { useEffect, useState } from 'react';
+import MainMenu from './MainMenu';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Header3 = () => {
   const [navbar, setNavbar] = useState(false);
@@ -14,20 +15,20 @@ const Header3 = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground);
+    window.addEventListener('scroll', changeBackground);
     return () => {
-      window.removeEventListener("scroll", changeBackground);
+      window.removeEventListener('scroll', changeBackground);
     };
   }, []);
 
   return (
     <header
       className={`theme-main-menu sticky-menu theme-menu-nine ${
-        navbar ? "fixed" : ""
+        navbar ? 'fixed' : ''
       }`}
     >
       <div className="notice-banner text-center">
-        It&lsquo;s the last day to save. The skills for now —{" "}
+        It&lsquo;s the last day to save. The skills for now —{' '}
         <a href="#" className="fw-500">
           now on sale.
         </a>
@@ -38,7 +39,12 @@ const Header3 = () => {
         <div className="d-flex align-items-center justify-content-between">
           <div className="logo order-lg-0">
             <Link href="/" className="logo order-lg-0">
-              <img src="/images/logo/logo_07.png" alt="" width={93} />
+              <img
+                src="/images/logo/logo.jpg"
+                alt="logo"
+                width={95}
+                height={30}
+              />
             </Link>
           </div>
           {/* End logo */}
@@ -51,6 +57,8 @@ const Header3 = () => {
               src="/images/icon/icon_122.svg"
               alt="icon"
               className="icon position-absolute"
+              width={95}
+              height={30}
             />
           </form>
           <div className="right-widget d-flex align-items-center order-lg-3 ms-xxl-5 ms-lg-3">
@@ -71,7 +79,7 @@ const Header3 = () => {
             >
               Sign Up
             </Link>
-          </div>{" "}
+          </div>{' '}
           {/* /.right-widget */}
           <MainMenu />
         </div>

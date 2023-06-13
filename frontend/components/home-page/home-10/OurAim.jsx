@@ -1,54 +1,55 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const OurAim = () => {
   const aimItems = [
     {
-      title: "About us",
-      heading: "Your Comfort is Our Priority",
-      text: "Some hardworking people are working day and night to provide scalable product.",
+      title: 'About us',
+      heading: 'Your Comfort is Our Priority',
+      text: 'Some hardworking people are working day and night to provide scalable product.',
       list: [
-        "Amazing communication.",
-        "Best trending designing experience.",
-        "Email & Live chat.",
+        'Amazing communication.',
+        'Best trending designing experience.',
+        'Email & Live chat.',
       ],
-      link: "/pages-menu/about-us-v1",
+      link: '/pages-menu/about-us-v1',
     },
   ];
 
   const imageItems = [
-    { src: "/images/media/img_01.jpg", alt: "shape" },
+    { src: '/images/media/img_01.jpg', alt: 'shape' },
     {
-      src: "/images/shape/shape_09.svg",
-      alt: "shape",
-      className: "shapes shape-one",
+      src: '/images/shape/shape_09.svg',
+      alt: 'shape',
+      className: 'shapes shape-one',
     },
     {
-      src: "/images/shape/shape_10.svg",
-      alt: "shape",
-      className: "shapes shape-two",
+      src: '/images/shape/shape_10.svg',
+      alt: 'shape',
+      className: 'shapes shape-two',
     },
     {
-      src: "/images/shape/shape_11.svg",
-      alt: "shape",
-      className: "lazy-img shapes shape-four",
+      src: '/images/shape/shape_11.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-four',
     },
     {
-      src: "/images/shape/shape_12.svg",
-      alt: "shape",
-      className: "lazy-img shapes shape-five",
+      src: '/images/shape/shape_12.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-five',
     },
     {
-      src: "/images/shape/shape_13.svg",
-      alt: "shape",
-      className: "lazy-img shapes shape-seven",
+      src: '/images/shape/shape_13.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-seven',
     },
   ];
 
   const cardItem = {
-    imgSrc: "/images/icon/icon_06.svg",
-    name: "- Rashed Ka",
-    position: "CEO",
-    text: "We aim to answer any query in less than",
+    imgSrc: '/images/icon/icon_06.svg',
+    name: '- Rashed Ka',
+    position: 'CEO',
+    text: 'We aim to answer any query in less than',
   };
 
   return (
@@ -99,7 +100,7 @@ const OurAim = () => {
               <img src={cardItem.imgSrc} alt="shape" className="lazy-img" />
             </div>
             <div className="name fs-18 fw-500 tx-dark mb-10">
-              - {cardItem.name},{" "}
+              - {cardItem.name},{' '}
               <span className="opacity-50">{cardItem.position}</span>
             </div>
             <p className="fs-18 m0">{cardItem.text}</p>

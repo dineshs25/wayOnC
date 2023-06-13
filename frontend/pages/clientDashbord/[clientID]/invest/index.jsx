@@ -91,13 +91,59 @@ const Invest = () => {
     const monthVer = monthSelectValidation(time);
     if (checkedVer && InvestmentVer && monthVer && checkedVer2) {
       await axios
-        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/${clientID}/invest`, {
-          amt,
-          time,
-        })
+        .post(
+          `${process.env.NEXT_PUBLIC_BACKEND_API}/client/${clientID}/invest`,
+          {
+            amt,
+            time,
+          }
+        )
         .then((result) => {
           if (result.data.Status === 'Success') {
-            alert('Invested Successfully');
+            const resu = result.data.result;
+            const amount = result.data.data.amount;
+            const options = {
+              key: result.data.key, // Enter the Key ID generated from the Dashboard
+              amount: result.data.data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+              currency: 'INR',
+              name: 'WayOnC Investemnets Pvt Ltd',
+              description: 'Test Transaction',
+              // image: 'https://example.com/your_logo',
+              order_id: result.data.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+              // callback_url: 'http://localhost:8000/client/paymentSuccess',
+              handler: function (response) {
+                axios
+                  .post('http://localhost:8000/client/paymentSuccess', {
+                    response,
+                    resu,
+                    time,
+                    amount,
+                  })
+                  .then((res) => {
+                    if (res.data.Status === 'Success') {
+                      alert('Payment Success');
+                    } else {
+                      alert('Payment Failed');
+                    }
+                  })
+                  .catch((e) => {
+                    console.log(e);
+                  });
+              },
+              prefill: {
+                name: result.data.result.clintInfo.clientName,
+                email: result.data.result.bankInfo.email,
+                contact: result.data.result.bankInfo.mobile,
+              },
+              notes: {
+                address: 'Razorpay Corporate Office',
+              },
+              theme: {
+                color: '#3399cc',
+              },
+            };
+            var rzp1 = new window.Razorpay(options);
+            rzp1.open();
           } else if (result.data.Status === 'You have already invested') {
             alert(result.data.Status);
           } else {
@@ -153,9 +199,9 @@ const Invest = () => {
 
   const investmentValidation = (amt) => {
     if (!amt) {
-      alert('Please enter insvestment');
+      alert('Please enter investment amount');
       return false;
-    } else if (amt < 100000) {
+    } else if (amt < 5000) {
       setInvestmentCountError(true);
       return false;
     } else {

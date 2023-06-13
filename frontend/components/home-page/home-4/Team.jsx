@@ -1,22 +1,24 @@
+import Image from 'next/image';
+
 const Team = () => {
   const teamMembers = [
     {
-      imgSrc: "/images/team/img_01.jpg",
-      name: "Rashe ka",
-      role: "Marketing Head",
-      delay: "100",
+      imgSrc: '/images/team/img_01.jpg',
+      name: 'Rashe ka',
+      role: 'Marketing Head',
+      delay: '100',
     },
     {
-      imgSrc: "/images/team/img_02.jpg",
-      name: "James Arthur",
-      role: "Volunteer",
-      delay: "200",
+      imgSrc: '/images/team/img_02.jpg',
+      name: 'James Arthur',
+      role: 'Volunteer',
+      delay: '200',
     },
     {
-      imgSrc: "/images/team/img_03.jpg",
-      name: "Jannat Kabir",
-      role: "Volunteer Head",
-      delay: "300",
+      imgSrc: '/images/team/img_03.jpg',
+      name: 'Jannat Kabir',
+      role: 'Volunteer Head',
+      delay: '300',
     },
   ];
 

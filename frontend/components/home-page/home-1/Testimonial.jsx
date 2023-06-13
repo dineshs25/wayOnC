@@ -1,6 +1,6 @@
-import Slider from "react-slick";
-import testimonial from "../../../data/testimonial";
-import Image from "next/image";
+import Slider from 'react-slick';
+import testimonial from '../../../data/testimonial';
+import Image from 'next/image';
 
 const Testimonial = () => {
   var settings = {
@@ -56,10 +56,10 @@ const Testimonial = () => {
               <p className="tx-dark">{item.text}</p>
               <div className="d-flex align-items-center justify-content-between">
                 <div className="cost fw-500 tx-dark fs-20">
-                  {item.author},{" "}
+                  {item.author},{' '}
                   <span className="opacity-50 fw-normal">{item.location}</span>
                 </div>
-                <Image
+                <img
                   width={60}
                   height={60}
                   alt="testimonial avatar"

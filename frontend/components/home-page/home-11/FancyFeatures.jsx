@@ -1,8 +1,10 @@
+import Image from 'next/image';
+
 const FancyFeatures = () => {
   const items = [
-    "Amazing communication.",
-    "Best trending designing experience.",
-    "Email & Live chat.",
+    'Amazing communication.',
+    'Best trending designing experience.',
+    'Email & Live chat.',
   ];
 
   return (
@@ -14,7 +16,7 @@ const FancyFeatures = () => {
               Over
               <span
                 className="text-decoration-underline"
-                style={{ color: "#ff733b" }}
+                style={{ color: '#ff733b' }}
               >
                 150,000+ client
               </span>

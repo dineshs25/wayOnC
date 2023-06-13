@@ -1,6 +1,6 @@
-import Link from "next/link";
-import blogData from "../../data/blog";
-import Image from "next/image";
+import Link from 'next/link';
+import blogData from '../../data/blog';
+import Image from 'next/image';
 
 const RecentPost = () => {
   return (
@@ -11,7 +11,7 @@ const RecentPost = () => {
           key={post.id}
         >
           <div>
-            <Image
+            <img
               width={80}
               height={90}
               src={post.imageSrc}

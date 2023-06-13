@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const Block = () => {
   return (
     <>
@@ -11,7 +13,7 @@ const Block = () => {
         </div>
         <div className="col-md-7 col-sm-8 wow fadeInDown">
           <div className="block-wrapper block-one">
-            <h3 style={{ color: "#FFAE10" }}>10million+</h3>
+            <h3 style={{ color: '#FFAE10' }}>10million+</h3>
             <p>Customers trust us &amp; have bought insurance.</p>
           </div>
           {/* /.block-wrapper */}
@@ -22,7 +24,7 @@ const Block = () => {
       <div className="row gx-xxl-5" data-aos="fade-down">
         <div className="col-sm-7 wow fadeInDown">
           <div className="block-wrapper block-two position-relative mt-50 sm-mt-30">
-            <h3 style={{ color: "#9650EF" }}>
+            <h3 style={{ color: '#9650EF' }}>
               50+ <br />
               <span>Insurance</span>
             </h3>
@@ -42,7 +44,7 @@ const Block = () => {
 
         <div className="col-sm-5 wow fadeInUp">
           <div className="block-wrapper block-three mt-50 sm-mt-30">
-            <h3 style={{ color: "#00BDE6" }}>
+            <h3 style={{ color: '#00BDE6' }}>
               <span>Claims</span>
             </h3>
             <p>Get Support by expert easily.</p>

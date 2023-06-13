@@ -1,40 +1,41 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const FeatureData = [
   {
     id: 1,
-    iconSrc: "/images/icon/icon_13.svg",
-    title: "File sharing",
+    iconSrc: '/images/icon/icon_13.svg',
+    title: 'File sharing',
     description:
-      "Our deep understanding of project and program management has enabled the success of our clients.",
+      'Our deep understanding of project and program management has enabled the success of our clients.',
   },
   {
     id: 2,
-    iconSrc: "/images/icon/icon_14.svg",
-    title: "Team Management",
+    iconSrc: '/images/icon/icon_14.svg',
+    title: 'Team Management',
     description:
-      "Our deep understanding of project and program management has enabled the success of our clients.",
+      'Our deep understanding of project and program management has enabled the success of our clients.',
   },
   {
     id: 3,
-    iconSrc: "/images/icon/icon_15.svg",
-    title: "Time Tracking",
+    iconSrc: '/images/icon/icon_15.svg',
+    title: 'Time Tracking',
     description:
-      "Our deep understanding of project and program management has enabled the success of our clients.",
+      'Our deep understanding of project and program management has enabled the success of our clients.',
   },
   {
     id: 4,
-    iconSrc: "/images/icon/icon_16.svg",
-    title: "Voice & video call",
+    iconSrc: '/images/icon/icon_16.svg',
+    title: 'Voice & video call',
     description:
-      "Our deep understanding of project and program management has enabled the success of our clients.",
+      'Our deep understanding of project and program management has enabled the success of our clients.',
   },
   {
     id: 5,
-    iconSrc: "/images/icon/icon_17.svg",
-    title: "Cloud storage",
+    iconSrc: '/images/icon/icon_17.svg',
+    title: 'Cloud storage',
     description:
-      "Our deep understanding of project and program management has enabled the success of our clients.",
+      'Our deep understanding of project and program management has enabled the success of our clients.',
   },
 ];
 

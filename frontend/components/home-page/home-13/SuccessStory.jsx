@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const SuccessStory = () => {
   return (
     <>
@@ -11,7 +13,7 @@ const SuccessStory = () => {
               >
                 <p className="mb-35">
                   “WordPress has been a great success—with
-                  <span style={{ color: "#FF1292" }}>WordPress VIP</span>
+                  <span style={{ color: '#FF1292' }}>WordPress VIP</span>
                   giving us that enterprise”
                 </p>
                 <h4 className="text-white fw-normal m0">
@@ -50,7 +52,7 @@ const SuccessStory = () => {
                   Hasan Jannat. <span className="opacity-75">Pran inc.</span>
                 </h4>
                 <p className="m0">
-                  “<span style={{ color: "#00FFFF" }}>Conversation</span> has
+                  “<span style={{ color: '#00FFFF' }}>Conversation</span> has
                   been a great success with top assured quality.”
                 </p>
               </div>

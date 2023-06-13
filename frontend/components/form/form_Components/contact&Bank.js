@@ -23,6 +23,7 @@ const ContactBank = ({
           placeholder="+91**********"
           onChange={handledatachange}
         />
+        <button>Verify</button>
         {numberError ? (
           <p style={{ color: 'red' }}>
             Provide Valid Phone Number with contry-code

@@ -1,56 +1,58 @@
+import Image from 'next/image';
+
 const Features3 = () => {
   const icons = [
     {
-      src: "/images/icon/icon_30.svg",
-      alt: "shape",
-      className: "lazy-img shapes icon-one",
+      src: '/images/icon/icon_30.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes icon-one',
     },
     {
-      src: "/images/icon/icon_31.svg",
-      alt: "shape",
-      className: "lazy-img shapes icon-two",
+      src: '/images/icon/icon_31.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes icon-two',
     },
     {
-      src: "/images/icon/icon_32.svg",
-      alt: "shape",
-      className: "lazy-img shapes icon-three",
+      src: '/images/icon/icon_32.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes icon-three',
     },
     {
-      src: "/images/icon/icon_33.svg",
-      alt: "shape",
-      className: "lazy-img shapes icon-four",
+      src: '/images/icon/icon_33.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes icon-four',
     },
     {
-      src: "/images/icon/icon_34.svg",
-      alt: "shape",
-      className: "lazy-img shapes icon-five",
+      src: '/images/icon/icon_34.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes icon-five',
     },
   ];
   const blocks = [
     {
       className:
-        "block-bg shapes tran3s block-one d-flex align-items-center justify-content-center",
-      text: "Trusted & strong security",
+        'block-bg shapes tran3s block-one d-flex align-items-center justify-content-center',
+      text: 'Trusted & strong security',
     },
     {
       className:
-        "block-bg shapes tran3s block-two d-flex align-items-center justify-content-center",
-      text: "Free cloud storage",
+        'block-bg shapes tran3s block-two d-flex align-items-center justify-content-center',
+      text: 'Free cloud storage',
     },
     {
       className:
-        "block-bg shapes tran3s block-three d-flex align-items-center justify-content-center",
-      text: "Easy Customizable",
+        'block-bg shapes tran3s block-three d-flex align-items-center justify-content-center',
+      text: 'Easy Customizable',
     },
     {
       className:
-        "block-bg shapes tran3s block-four d-flex align-items-center justify-content-center",
-      text: "SEO Optimized",
+        'block-bg shapes tran3s block-four d-flex align-items-center justify-content-center',
+      text: 'SEO Optimized',
     },
     {
       className:
-        "block-bg shapes tran3s block-five d-flex align-items-center justify-content-center",
-      text: "User Friendly Interface",
+        'block-bg shapes tran3s block-five d-flex align-items-center justify-content-center',
+      text: 'User Friendly Interface',
     },
   ];
 

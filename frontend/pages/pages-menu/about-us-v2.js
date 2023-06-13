@@ -1,13 +1,13 @@
-import Seo from "../../components/common/Seo";
-import Header5 from "../../components/header/Header5";
-import Quote from "../../components/home-page/home-5/Quote";
-import About from "../../components/home-page/home-5/about";
-import Testimonial from "../../components/home-page/home-5/Testimonial";
-import Blog from "../../components/home-page/home-5/Blog";
-import Footer from "../../components/home-page/home-5/footer";
-import Team4 from "../../components/team/Team4";
-import Link from "next/link";
-import Image from "next/image";
+import Seo from '../../components/common/Seo';
+import Header5 from '../../components/header/Header5';
+import Quote from '../../components/home-page/home-5/Quote';
+import About from '../../components/home-page/home-5/about';
+import Testimonial from '../../components/home-page/home-5/Testimonial';
+import Blog from '../../components/home-page/home-5/Blog';
+import Footer from '../../components/home-page/home-5/footer';
+import Team4 from '../../components/team/Team4';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const RealEstate = () => {
   return (
@@ -134,7 +134,7 @@ const RealEstate = () => {
                   className="img-holder position-relative mt-25"
                   data-aos="fade-left"
                 >
-                  <Image
+                  <img
                     width={500}
                     height={592}
                     layout="responsive"

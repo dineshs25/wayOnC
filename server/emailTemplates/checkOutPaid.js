@@ -1,5 +1,5 @@
 const checkOutPaid = (name, amt) => {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
       <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
       
       <head>
@@ -103,7 +103,7 @@ const checkOutPaid = (name, amt) => {
                                                           <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                                               <tr>
                                                                   <td class="pad" style="padding-bottom:10px;padding-right:15px;padding-top:15px;width:100%;padding-left:0px;">
-                                                                      <div class="alignment" align="left" style="line-height:10px"><img src="https://6410f8d46b.imgdist.com/public/users/Integrators/BeeProAgency/982749_967413/wayOnC-logo.png" style="display: block; height: auto; border: 0; width: 180px; max-width: 100%;" width="180"></div>
+                                                                      <div class="alignment" align="left" style="line-height:10px"><Image src="https://6410f8d46b.imgdist.com/public/users/Integrators/BeeProAgency/982749_967413/wayOnC-logo.png" style="display: block; height: auto; border: 0; width: 180px; max-width: 100%;" width="180"></div>
                                                                   </td>
                                                               </tr>
                                                           </table>
@@ -187,10 +187,10 @@ const checkOutPaid = (name, amt) => {
                                                                       <div class="alignment" align="left">
                                                                           <table class="social-table" width="188px" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;">
                                                                               <tr>
-                                                                                  <td style="padding:0 15px 0 0;"><a href="https://www.facebook.com/profile.php?id=100078370776931&mibextid=ZbWKwL" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/facebook@2x.png" width="32" height="32" alt="Facebook" title="Facebook" style="display: block; height: auto; border: 0;"></a></td>
-                                                                                  <td style="padding:0 15px 0 0;"><a href="https://instagram.com/wayonc.in?igshid=MmJiY2I4NDBkZg==" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" width="32" height="32" alt="Instagram" title="Instagram" style="display: block; height: auto; border: 0;"></a></td>
-                                                                                  <td style="padding:0 15px 0 0;"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.linkedin.com/shareArticle?mini=true&url=https://in.linkedin.com/company/wayonc-investments" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" width="32" height="32" alt="LinkedIn" title="LinkedIn" style="display: block; height: auto; border: 0;"></a></td>
-                                                                                  <td style="padding:0 15px 0 0;"><a href="https://www.youtube.com/channel/UCNNPtulXy7r82qLgOoEijhQ" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" width="32" height="32" alt="YouTube" title="YouTube" style="display: block; height: auto; border: 0;"></a></td>
+                                                                                  <td style="padding:0 15px 0 0;"><a href="https://www.facebook.com/profile.php?id=100078370776931&mibextid=ZbWKwL" target="_blank"><Image src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/facebook@2x.png" width="32" height="32" alt="Facebook" title="Facebook" style="display: block; height: auto; border: 0;"></a></td>
+                                                                                  <td style="padding:0 15px 0 0;"><a href="https://instagram.com/wayonc.in?igshid=MmJiY2I4NDBkZg==" target="_blank"><Image src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" width="32" height="32" alt="Instagram" title="Instagram" style="display: block; height: auto; border: 0;"></a></td>
+                                                                                  <td style="padding:0 15px 0 0;"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.linkedin.com/shareArticle?mini=true&url=https://in.linkedin.com/company/wayonc-investments" target="_blank"><Image src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" width="32" height="32" alt="LinkedIn" title="LinkedIn" style="display: block; height: auto; border: 0;"></a></td>
+                                                                                  <td style="padding:0 15px 0 0;"><a href="https://www.youtube.com/channel/UCNNPtulXy7r82qLgOoEijhQ" target="_blank"><Image src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" width="32" height="32" alt="YouTube" title="YouTube" style="display: block; height: auto; border: 0;"></a></td>
                                                                               </tr>
                                                                           </table>
                                                                       </div>
@@ -257,7 +257,7 @@ const checkOutPaid = (name, amt) => {
                                                                                   <!--[if !vml]><!-->
                                                                                   <table class="icons-inner" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; margin-right: -4px; padding-left: 0px; padding-right: 0px;" cellpadding="0" cellspacing="0" role="presentation"><!--<![endif]-->
                                                                                       <tr>
-                                                                                          <td style="vertical-align: middle; text-align: center; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 6px;"><a href="https://www.designedwithbee.com/?utm_source=editor&utm_medium=bee_pro&utm_campaign=free_footer_link" target="_blank" style="text-decoration: none;"><img class="icon" alt="Designed with BEE" src="https://d1oco4z2z1fhwp.cloudfront.net/assets/bee.png" height="32" width="34" align="center" style="display: block; height: auto; margin: 0 auto; border: 0;"></a></td>
+                                                                                          <td style="vertical-align: middle; text-align: center; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 6px;"><a href="https://www.designedwithbee.com/?utm_source=editor&utm_medium=bee_pro&utm_campaign=free_footer_link" target="_blank" style="text-decoration: none;"><Image class="icon" alt="Designed with BEE" src="https://d1oco4z2z1fhwp.cloudfront.net/assets/bee.png" height="32" width="34" align="center" style="display: block; height: auto; margin: 0 auto; border: 0;"></a></td>
                                                                                           <td style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #9d9d9d; vertical-align: middle; letter-spacing: undefined; text-align: center;"><a href="https://www.designedwithbee.com/?utm_source=editor&utm_medium=bee_pro&utm_campaign=free_footer_link" target="_blank" style="color: #9d9d9d; text-decoration: none;">Designed with BEE</a></td>
                                                                                       </tr>
                                                                                   </table>
@@ -282,7 +282,6 @@ const checkOutPaid = (name, amt) => {
       </body>
       
       </html>`;
-  };
-  
-  module.exports = { checkOutPaid };
-  
+};
+
+module.exports = { checkOutPaid };

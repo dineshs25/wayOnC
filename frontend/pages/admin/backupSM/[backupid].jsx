@@ -7,6 +7,8 @@ import Sidebar from '../../../components/admin/Sidebar';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Load from '../../../components/common/Loading';
+import Image from 'next/image';
+
 
 const ClentID = () => {
   const router = useRouter();

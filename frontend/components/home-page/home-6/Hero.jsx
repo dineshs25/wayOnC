@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import Link from 'next/link';
+import { useState } from 'react';
+import ModalVideo from 'react-modal-video';
+import Image from 'next/image';
 
 const Hero = () => {
   const [isOpen, setOpen] = useState(false);

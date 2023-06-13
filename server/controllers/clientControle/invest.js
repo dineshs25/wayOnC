@@ -19,16 +19,18 @@ module.exports = async (req, res) => {
     },
   });
 
-  // const instance = new Razorpay({
-  //   key_id: process.env.RAZORPAY_API_KEY,
-  //   key_secret: process.env.RAZORPAY_API_SECRET,
-  // });
+  const instance = new Razorpay({
+    key_id: process.env.RAZORPAY_API_KEY,
+    key_secret: process.env.RAZORPAY_API_SECRET,
+  });
 
-  // const options = {
-  //   amount: parseInt(amt) * 100,
-  //   currency: 'INR',
-  //   receipt: crypto.randomBytes(10).toString('hex'),
-  // };
+  
+
+  const options = {
+    amount: Number(amt*100),
+    currency: 'INR',
+    receipt: crypto.randomBytes(10).toString('hex'),
+  };
 
   const planStartDate = new Date();
 
@@ -71,127 +73,17 @@ module.exports = async (req, res) => {
         client_collection
           .findOne({ userAuth: hash })
           .then((result) => {
-            const newInvestor = new investor_collection({
-              userAuth: result.userAuth,
-              clintInfo: {
-                clientName: result.clintInfo.clientName,
-                dob: result.clintInfo.dob,
-                pan: result.clintInfo.pan,
-                aadhar: result.clintInfo.aadhar,
-                passport: result.clintInfo.passport,
-              },
-              bankInfo: {
-                mobile: result.bankInfo.mobile,
-                altMobile: result.bankInfo.altMobile,
-                bankAC: result.bankInfo.bankAC,
-                accHolder: result.bankInfo.accHolder,
-                ifsc: result.bankInfo.ifsc,
-                bankName: result.bankInfo.bankName,
-                email: result.bankInfo.email,
-                address: result.bankInfo.address,
-                permanentAddress: result.bankInfo.permanentAddress,
-              },
-              nominee: {
-                nomineeName: result.nominee.nomineeName,
-                nomineeMobile: result.nominee.nomineeMobile,
-                nomineeRelationship: result.nominee.nomineeRelationship,
-                nomineeAadhar: result.nominee.nomineeAadhar,
-                nomineeEmail: result.nominee.nomineeEmail,
-                nomineeAddress: result.nominee.nomineeAddress,
-              },
-              image: {
-                aadharImage: result.image.aadharImage,
-                passportSizeImage: result.image.passportSizeImage,
-                signatureImage: result.image.signatureImage,
-                panImage: result.image.panImage,
-              },
-              plan: {
-                months: totalMonths,
-                arrayMonths: months,
-                startdate: planStartDate,
-                expdate: end,
-                principal: principal,
-                interestPerMonth: 0,
-                totalInterest: 0,
-                totalReturnAmount: 0,
-                ageOfInterest: 0,
-                earnedInterest: 0,
-                paidInterest: 0,
-                pendingInterest: 0,
-                pendingTotalAmount: principal,
-              },
-              reqmoney: 0,
-            });
-
             //payment
-            // instance.orders.create(options, (error, order) => {
-            //   if (error) {
-            //     console.log(error);
-            //     res.send({ Status: 'Payment Failed' });
-            //   } else {
-            //     res.send({ Status: 'Success', data: order });
-            //   }
-            // });
-
-              investor_collection
-                .insertMany(newInvestor)
-                .then((result) => {
-                  //mail
-                  let mailOptions = {
-                    from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
-                    to: 'dineshroyc25@gmail.com', // list of receivers
-                    subject: 'New Investment Received', // Subject liners
-
-                    text: 'Hello world?', // plain text body
-                    html: `<p>New Investment Received</p><br/><table border="1px"><tr><td>Name</td><td>${result[0].clintInfo.clientName}</td>
-            </tr><tr><td>Invested Amount</td><td>${result[0].plan.principal} Rs</td></tr>
-            </table>`, // html body
-                  };
-
-                  let mailClientOption = {
-                    from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
-                    to: result[0].bankInfo.email, // list of receivers
-                    subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
-
-                    text: 'Hello world?', // plain text body
-                    //         html: `<p>Dear ${result[0].clintInfo.clientName},</p><br/>
-                    // <p>Thank you for investing</p><br/>
-                    // <p>You can veiw your investment details in your dashbord</p><br/>
-                    // <p>Thank you</p>
-                    // `,
-                    html: investmentDone(result[0].clintInfo.clientName),
-                  };
-
-                  transporter.sendMail(mailOptions, (err, info) => {
-                    if (!err) {
-                    } else {
-                      console.log(err);
-                    }
-                  });
-
-                  try {
-                    transporter.sendMail(mailClientOption, (err, info) => {
-                      if (!err) {
-                      } else {
-                        console.log(err);
-                      }
-                    });
-                  } catch (e) {
-                    console.log('Client sent email error occured');
-                  }
-
-                  res.send({
-                    Status: 'Success',
-                  });
-                })
-                .catch((e) => {
-                  res.send({
-                    Status: 'failed',
-                  });
-                });
+            instance.orders.create(options, (error, order) => {
+              if (error) {
+                res.send({ Status: 'Payment Failed' });
+              } else {
+                res.send({ Status: 'Success', data: order, key: process.env.RAZORPAY_API_KEY, result:result });
+              }
+            });
           })
           .catch((e) => {
-            console.log('server side error in invest js', e);
+            res.send({ Status: 'User Not Found' });
           });
       } else {
         res.send({ Status: 'You have already invested' });

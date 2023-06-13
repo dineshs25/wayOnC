@@ -1,29 +1,29 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const teamMembers = [
   {
     id: 1,
-    name: "Zubayer Al Hasan",
-    role: "Developer",
-    imgSrc: "/images/team/img_04.jpg",
+    name: 'Zubayer Al Hasan',
+    role: 'Developer',
+    imgSrc: '/images/team/img_04.jpg',
   },
   {
     id: 2,
-    name: "Jannatul Ferdaus",
-    role: "CEO",
-    imgSrc: "/images/team/img_05.jpg",
+    name: 'Jannatul Ferdaus',
+    role: 'CEO',
+    imgSrc: '/images/team/img_05.jpg',
   },
   {
     id: 3,
-    name: "Rashed Kabir",
-    role: "Designer",
-    imgSrc: "/images/team/img_06.jpg",
+    name: 'Rashed Kabir',
+    role: 'Designer',
+    imgSrc: '/images/team/img_06.jpg',
   },
   {
     id: 4,
-    name: "Angelina Shelly",
-    role: "Analyst",
-    imgSrc: "/images/team/img_07.jpg",
+    name: 'Angelina Shelly',
+    role: 'Analyst',
+    imgSrc: '/images/team/img_07.jpg',
   },
 ];
 
@@ -39,7 +39,7 @@ const Team3 = () => {
         >
           <div className="team-block-two mt-40">
             <div className="img-meta position-relative">
-              <Image
+              <img
                 width={312}
                 height={281}
                 src={member.imgSrc}

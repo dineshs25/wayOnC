@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import MainMenu from "./MainMenu";
-import Link from "next/link";
-import Image from "next/image";
+import { useEffect, useState } from 'react';
+import MainMenu from './MainMenu';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const DefaulHeader = () => {
   const [navbar, setNavbar] = useState(false);
@@ -15,23 +15,23 @@ const DefaulHeader = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground);
+    window.addEventListener('scroll', changeBackground);
     return () => {
-      window.removeEventListener("scroll", changeBackground);
+      window.removeEventListener('scroll', changeBackground);
     };
   }, []);
 
   return (
     <header
       className={`theme-main-menu sticky-menu theme-menu-eight border-bottom ${
-        navbar ? "fixed" : ""
+        navbar ? 'fixed' : ''
       }`}
     >
       <div className="inner-content position-relative">
         <div className="d-flex align-items-center justify-content-between">
           <div className="logo order-lg-0">
             <Link href="/" className="d-block">
-              <Image
+              <img
                 src="/images/logo/logo.jpg"
                 alt="logo"
                 width={95}
@@ -52,7 +52,7 @@ const DefaulHeader = () => {
             >
               Contact us
             </Link>
-          </div>{" "}
+          </div>{' '}
           {/* /.right-widget */}
           <MainMenu />
         </div>

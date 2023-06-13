@@ -1,30 +1,31 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
+import React, { useRef } from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const testimonialData = [
   {
-    company: "Linkedin",
-    position: "Engineer at Google",
-    background: "#FFED4E",
-    text: "One should not hesitate to ask for the unlikely as they might think.",
+    company: 'Linkedin',
+    position: 'Engineer at Google',
+    background: '#FFED4E',
+    text: 'One should not hesitate to ask for the unlikely as they might think.',
   },
   {
-    company: "Google",
-    position: "Giant search engine",
-    background: "#00FCFC",
-    text: "One should not hesitate to ask for the unlikely as they might think.",
+    company: 'Google',
+    position: 'Giant search engine',
+    background: '#00FCFC',
+    text: 'One should not hesitate to ask for the unlikely as they might think.',
   },
   {
-    company: "Gravity inc.",
-    position: "From Google",
-    background: "#F27AFF",
-    text: "One should not hesitate to ask for the unlikely as they might think.",
+    company: 'Gravity inc.',
+    position: 'From Google',
+    background: '#F27AFF',
+    text: 'One should not hesitate to ask for the unlikely as they might think.',
   },
   {
-    company: "Google",
-    position: "Giant search engine",
-    background: "#52C1FF",
-    text: "One should not hesitate to ask for the unlikely as they might think.",
+    company: 'Google',
+    position: 'Giant search engine',
+    background: '#52C1FF',
+    text: 'One should not hesitate to ask for the unlikely as they might think.',
   },
 ];
 

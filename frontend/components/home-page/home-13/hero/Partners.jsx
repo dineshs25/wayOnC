@@ -1,18 +1,19 @@
-import React from "react";
+import React from 'react';
+import Image from 'next/image';
 
 const Partners = () => {
   const partners = [
-    { name: "Google", font: "" },
-    { name: "", font: "font-recoleta" },
-    { name: "Facebook", font: "font-recoleta" },
-    { name: "", font: "" },
-    { name: "Insta", font: "" },
-    { name: "", font: "font-recoleta" },
-    { name: "Dribbble", font: "font-recoleta" },
-    { name: "", font: "" },
-    { name: "Fundbox", font: "" },
-    { name: "", font: "font-recoleta" },
-    { name: "Segment", font: "font-recoleta" },
+    { name: 'Google', font: '' },
+    { name: '', font: 'font-recoleta' },
+    { name: 'Facebook', font: 'font-recoleta' },
+    { name: '', font: '' },
+    { name: 'Insta', font: '' },
+    { name: '', font: 'font-recoleta' },
+    { name: 'Dribbble', font: 'font-recoleta' },
+    { name: '', font: '' },
+    { name: 'Fundbox', font: '' },
+    { name: '', font: 'font-recoleta' },
+    { name: 'Segment', font: 'font-recoleta' },
   ];
 
   return (

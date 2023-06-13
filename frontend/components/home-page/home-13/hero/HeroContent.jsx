@@ -1,10 +1,13 @@
+import Image from 'next/image';
+
 const HeroContent = () => {
   return (
     <>
       <h1 className="hero-heading fw-normal text-white font-recoleta">
-        Find your quality{" "}
+        Find your quality{' '}
         <span className="position-relative">
-          leads <img src="/images/shape/shape_114.svg" alt="img" />
+          leads
+          <img src="/images/shape/shape_114.svg" alt="img" />
         </span>
         in single click.
       </h1>

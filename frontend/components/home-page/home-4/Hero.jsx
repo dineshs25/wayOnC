@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -14,7 +15,8 @@ const Hero = () => {
             <h1 className="hero-heading text-white mb-50 md-mb-30">
               Get
               <span className="position-relative">
-                Loud <img src="/images/shape/shape_71.svg" alt="shape" />
+                Loud
+                <img src="/images/shape/shape_71.svg" alt="shape" />
               </span>
               <br /> Rise your Voice Today
             </h1>

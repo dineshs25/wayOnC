@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const HowCanHelpBlock = () => {
   return (
     <div className="fancy-feature-seventeen position-relative">
@@ -13,7 +15,7 @@ const HowCanHelpBlock = () => {
             data-aos="fade-left"
           >
             <div className="title-style-six">
-              <div className="sc-title" style={{ color: "#4BCEB0" }}>
+              <div className="sc-title" style={{ color: '#4BCEB0' }}>
                 How can you help?
               </div>
               <h2 className="main-title fw-500 tx-dark">

@@ -1,50 +1,52 @@
+import Image from 'next/image';
+
 const cards = [
   {
     id: 1,
-    icon: "/images/icon/icon_63.svg",
-    title: "1-click installation",
+    icon: '/images/icon/icon_63.svg',
+    title: '1-click installation',
     description:
       "Integrating your apps couldn't be any easier through Installatron.",
-    delayAnim: "100",
+    delayAnim: '100',
   },
   {
     id: 2,
-    icon: "/images/icon/icon_64.svg",
-    title: "Domain name setup",
+    icon: '/images/icon/icon_64.svg',
+    title: 'Domain name setup',
     description:
-      "Linking your site to your domain name has never been easier with GoDaddy registered domain.",
-    delayAnim: "200",
+      'Linking your site to your domain name has never been easier with GoDaddy registered domain.',
+    delayAnim: '200',
   },
   {
     id: 3,
-    icon: "/images/icon/icon_65.svg",
-    title: "24/7 network security",
-    description: "Get peace of mind, knowing network dsu security and visitors",
-    delayAnim: "300",
+    icon: '/images/icon/icon_65.svg',
+    title: '24/7 network security',
+    description: 'Get peace of mind, knowing network dsu security and visitors',
+    delayAnim: '300',
   },
   {
     id: 4,
-    icon: "/images/icon/icon_66.svg",
-    title: "Easy-to-use control panel",
+    icon: '/images/icon/icon_66.svg',
+    title: 'Easy-to-use control panel',
     description:
-      "Includes industry-standard cPanel to install apps, manage backups and security.",
-    delayAnim: "100",
+      'Includes industry-standard cPanel to install apps, manage backups and security.',
+    delayAnim: '100',
   },
   {
     id: 5,
-    icon: "/images/icon/icon_67.svg",
-    title: "Resources on-demand",
+    icon: '/images/icon/icon_67.svg',
+    title: 'Resources on-demand',
     description:
-      "If you require more power for your site, seamlessly increase your CPU/RAM, I/O and storage with 1 click.",
-    delayAnim: "200",
+      'If you require more power for your site, seamlessly increase your CPU/RAM, I/O and storage with 1 click.',
+    delayAnim: '200',
   },
   {
     id: 6,
-    icon: "/images/icon/icon_68.svg",
-    title: "Global Data Centers",
+    icon: '/images/icon/icon_68.svg',
+    title: 'Global Data Centers',
     description:
-      "Get faster page loads & better customer experience with lorem.",
-    delayAnim: "300",
+      'Get faster page loads & better customer experience with lorem.',
+    delayAnim: '300',
   },
 ];
 

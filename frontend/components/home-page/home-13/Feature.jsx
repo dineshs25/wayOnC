@@ -1,10 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Feature = () => {
   const items = [
-    "Amazing communication.",
-    "Best trending designing experience.",
-    "Email & Live chat.",
+    'Amazing communication.',
+    'Best trending designing experience.',
+    'Email & Live chat.',
   ];
 
   return (
@@ -19,13 +20,13 @@ const Feature = () => {
               <div className="title-style-ten">
                 <div className="sc-title">FEATURES</div>
                 <h2 className="main-title font-recoleta fw-normal tx-dark">
-                  Everything starts with a{" "}
+                  Everything starts with a{' '}
                   <span className="position-relative">
-                    Marketing.{" "}
+                    Marketing.{' '}
                     <img src="/images/shape/shape_122.svg" alt="shape" />
                   </span>
                 </h2>
-              </div>{" "}
+              </div>{' '}
               {/* /.title-style-ten */}
               <p className="fs-20 pt-30 pb-30 lg-pb-10 md-pt-10">
                 Turn your business into a sales machine today with lorem Things
@@ -37,16 +38,16 @@ const Feature = () => {
                 ))}
               </ul>
               <div className="btn-eighteen position-relative d-inline-block tx-dark mt-35 lg-mt-20">
-                Want to learn more?{" "}
+                Want to learn more?{' '}
                 <Link href="/pages-menu/about-us-v1" className="fw-500 tran3s">
                   Click here <i className="bi bi-arrow-right" />
                 </Link>
               </div>
-            </div>{" "}
+            </div>{' '}
             {/* /.block-style-four */}
           </div>
         </div>
-      </div>{" "}
+      </div>{' '}
       {/* /.container */}
       <div className="illustration-holder" data-aos="fade-right">
         <img

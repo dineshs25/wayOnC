@@ -149,6 +149,9 @@ const investor_Schema = new mongoose.Schema({
   annumInt: {
     type: String,
   },
+  paymentID: {
+    type: String,
+  },
 });
 
 const investor_collection = mongoose.model('Investor', investor_Schema);

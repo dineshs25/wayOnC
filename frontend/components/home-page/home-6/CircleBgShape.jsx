@@ -1,40 +1,42 @@
+import Image from 'next/image';
+
 const CircleBgShape = () => {
   const images = [
     {
-      src: "/images/media/img_07.jpg",
+      src: '/images/media/img_07.jpg',
       width: 80,
       height: 80,
-      className: "cp-one",
+      className: 'cp-one',
     },
     {
-      src: "/images/media/img_08.jpg",
+      src: '/images/media/img_08.jpg',
       width: 45,
       height: 45,
-      className: "cp-two",
+      className: 'cp-two',
     },
     {
-      src: "/images/media/img_09.jpg",
+      src: '/images/media/img_09.jpg',
       width: 85,
       height: 85,
-      className: "cp-three",
+      className: 'cp-three',
     },
     {
-      src: "/images/media/img_10.jpg",
+      src: '/images/media/img_10.jpg',
       width: 45,
       height: 45,
-      className: "cp-four",
+      className: 'cp-four',
     },
     {
-      src: "/images/media/img_11.jpg",
+      src: '/images/media/img_11.jpg',
       width: 110,
       height: 110,
-      className: "cp-five",
+      className: 'cp-five',
     },
     {
-      src: "/images/media/img_12.jpg",
+      src: '/images/media/img_12.jpg',
       width: 55,
       height: 55,
-      className: "cp-six",
+      className: 'cp-six',
     },
   ];
 

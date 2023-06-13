@@ -1,46 +1,46 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const CampaignBlock = () => {
   const campaigns = [
     {
-      imgSrc: "/images/media/img_30.jpg",
-      goal: "$123,000",
-      daysLeft: "2",
-      ribbonBg: "#FF3F64",
-      title: "Education for all",
+      imgSrc: '/images/media/img_30.jpg',
+      goal: '$123,000',
+      daysLeft: '2',
+      ribbonBg: '#FF3F64',
+      title: 'Education for all',
       description:
-        "Lorem ipsum dolor consectetur adipisci. Vivamus in magna tellus fringilla eleifend.",
-      aosDelay: "100",
+        'Lorem ipsum dolor consectetur adipisci. Vivamus in magna tellus fringilla eleifend.',
+      aosDelay: '100',
     },
     {
-      imgSrc: "/images/media/img_31.jpg",
-      goal: "$47,000",
-      daysLeft: "3",
-      ribbonBg: "#FFBA3C",
-      title: "Feed African child",
+      imgSrc: '/images/media/img_31.jpg',
+      goal: '$47,000',
+      daysLeft: '3',
+      ribbonBg: '#FFBA3C',
+      title: 'Feed African child',
       description:
-        "Lorem ipsum dolor consectetur adipisci. Vivamus in magna tellus fringilla eleifend.",
-      aosDelay: "200",
+        'Lorem ipsum dolor consectetur adipisci. Vivamus in magna tellus fringilla eleifend.',
+      aosDelay: '200',
     },
     {
-      imgSrc: "/images/media/img_32.jpg",
-      goal: "$320,000",
-      daysLeft: "5",
-      ribbonBg: "#00E38A",
-      title: "Better Future",
+      imgSrc: '/images/media/img_32.jpg',
+      goal: '$320,000',
+      daysLeft: '5',
+      ribbonBg: '#00E38A',
+      title: 'Better Future',
       description:
-        "Lorem ipsum dolor consectetur adipisci. Vivamus in magna tellus fringilla eleifend.",
-      aosDelay: "300",
+        'Lorem ipsum dolor consectetur adipisci. Vivamus in magna tellus fringilla eleifend.',
+      aosDelay: '300',
     },
     {
-      imgSrc: "/images/media/img_31.jpg",
-      goal: "$47,000",
-      daysLeft: "3",
-      ribbonBg: "#FFBA3C",
-      title: "Feed African child",
+      imgSrc: '/images/media/img_31.jpg',
+      goal: '$47,000',
+      daysLeft: '3',
+      ribbonBg: '#FFBA3C',
+      title: 'Feed African child',
       description:
-        "Lorem ipsum dolor consectetur adipisci. Vivamus in magna tellus fringilla eleifend.",
-      aosDelay: "400",
+        'Lorem ipsum dolor consectetur adipisci. Vivamus in magna tellus fringilla eleifend.',
+      aosDelay: '400',
     },
   ];
 
@@ -55,7 +55,7 @@ const CampaignBlock = () => {
         >
           <div className="card-style-eight mt-40 ">
             <div className="img-meta position-relative">
-              <Image
+              <img
                 width={364}
                 height={282}
                 src={campaign.imgSrc}
@@ -72,7 +72,7 @@ const CampaignBlock = () => {
               </div>
               <div
                 className="ribbon position-absolute"
-                style={{ background: campaign.ribbonBg, width: "66%" }}
+                style={{ background: campaign.ribbonBg, width: '66%' }}
               />
             </div>
             <div className="text-meta pt-40 pb-25 ps-2 pe-2 pe-xl-4 ps-xl-4">

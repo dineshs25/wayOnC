@@ -1,5 +1,6 @@
-import React from "react";
-import Slider from "react-slick";
+import React from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const Testimonial = () => {
   const settings = {
@@ -21,22 +22,22 @@ const Testimonial = () => {
 
   const testimonials = [
     {
-      name: "Jubayer Hasan",
-      location: "Texas",
+      name: 'Jubayer Hasan',
+      location: 'Texas',
       feedback:
-        "We’v 9,000 agents around the country, Find agents near your neighborhood.",
+        'We’v 9,000 agents around the country, Find agents near your neighborhood.',
     },
     {
-      name: "Rashed Kabir",
-      location: "California",
+      name: 'Rashed Kabir',
+      location: 'California',
       feedback:
-        "We’v 9,000 agents around the country, Find agents near your neighborhood.",
+        'We’v 9,000 agents around the country, Find agents near your neighborhood.',
     },
     {
-      name: "Mahfuz Riad",
-      location: "Brazil",
+      name: 'Mahfuz Riad',
+      location: 'Brazil',
       feedback:
-        "We’v 9,000 agents around the country, Find agents near your neighborhood.",
+        'We’v 9,000 agents around the country, Find agents near your neighborhood.',
     },
   ];
 

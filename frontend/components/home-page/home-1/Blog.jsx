@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import blogs from "../../../data/blog";
+import Image from 'next/image';
+import Link from 'next/link';
+import blogs from '../../../data/blog';
 
 const Blog = () => {
   return (
@@ -15,7 +15,7 @@ const Blog = () => {
           <article className="blog-meta-three mt-40 wow fadeInUp">
             <figure className="post-img m0">
               <Link href={`/blog/${post.id}`} className="w-100 d-block">
-                <Image
+                <img
                   width={410}
                   height={300}
                   src={post.imageSrc}

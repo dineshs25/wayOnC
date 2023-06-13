@@ -1,22 +1,23 @@
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import { useState } from 'react';
+import ModalVideo from 'react-modal-video';
+import Image from 'next/image';
 
 const HeroBtnGroup = () => {
   const options = [
     {
-      value: "IOS & Android",
-      label: "IOS & Android",
-      icon: "/images/icon/icon_22.svg",
+      value: 'IOS & Android',
+      label: 'IOS & Android',
+      icon: '/images/icon/icon_22.svg',
     },
     {
-      value: "Mac & Windows",
-      label: "Mac & Windows",
-      icon: "/images/icon/icon_23.svg",
+      value: 'Mac & Windows',
+      label: 'Mac & Windows',
+      icon: '/images/icon/icon_23.svg',
     },
   ];
 
   const [isOpen, setOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
@@ -65,10 +66,10 @@ const HeroBtnGroup = () => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            {selectedValue ? selectedValue : "Download - It’s free"}
+            {selectedValue ? selectedValue : 'Download - It’s free'}
           </button>
           <ul
-            className={`dropdown-menu ${showDropdown ? "show" : ""}`}
+            className={`dropdown-menu ${showDropdown ? 'show' : ''}`}
             aria-labelledby="appDownBtn"
           >
             {options.map((option, index) => (

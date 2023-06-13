@@ -1,9 +1,10 @@
-import Seo from "../components/common/Seo";
-import BlockContact from "../components/contact/BlockContact";
-import ContactForm from "../components/contact/ContactForm";
-import Map from "../components/contact/Map";
-import DefaultFooter from "../components/footer/DefaultFooter";
-import DefaulHeader from "../components/header/DefaulHeader";
+import Seo from '../components/common/Seo';
+import BlockContact from '../components/contact/BlockContact';
+import ContactForm from '../components/contact/ContactForm';
+import Map from '../components/contact/Map';
+import DefaultFooter from '../components/footer/DefaultFooter';
+import DefaulHeader from '../components/header/DefaulHeader';
+import Image from 'next/image';
 
 const contact = () => {
   return (

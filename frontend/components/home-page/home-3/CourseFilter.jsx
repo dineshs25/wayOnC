@@ -1,87 +1,87 @@
-import { useState } from "react";
-import Slider from "react-slick";
-import Image from "next/image";
+import { useState } from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const courseData = [
   {
     id: 1,
-    imgSrc: "/images/media/img_63.jpg",
-    instructor: "Rashed Ka.",
-    duration: "53m",
-    title: "Master in Design System in Figam & Sketch",
+    imgSrc: '/images/media/img_63.jpg',
+    instructor: 'Rashed Ka.',
+    duration: '53m',
+    title: 'Master in Design System in Figam & Sketch',
     rating: 4,
     ratingsCount: 310,
     price: 17.99,
     discountedPrice: 29.99,
-    tags: ["graphic", "it", "language", "coding"],
+    tags: ['graphic', 'it', 'language', 'coding'],
   },
   {
     id: 2,
-    imgSrc: "/images/media/img_64.jpg",
-    instructor: "Zubayer Al Hasan",
-    duration: "8h",
-    title: "Master in Bootstrap only within 30 days.",
+    imgSrc: '/images/media/img_64.jpg',
+    instructor: 'Zubayer Al Hasan',
+    duration: '8h',
+    title: 'Master in Bootstrap only within 30 days.',
     rating: 4,
     ratingsCount: 180,
     price: 13.99,
     discountedPrice: 19.99,
-    tags: ["art", "marketing", "it", "coding"],
+    tags: ['art', 'marketing', 'it', 'coding'],
   },
   {
     id: 3,
-    imgSrc: "/images/media/img_65.jpg",
-    instructor: "Rashed Ka.",
-    duration: "53m",
-    title: "Master in Design System in Figam & Sketch",
+    imgSrc: '/images/media/img_65.jpg',
+    instructor: 'Rashed Ka.',
+    duration: '53m',
+    title: 'Master in Design System in Figam & Sketch',
     rating: 4,
     ratingsCount: 310,
     price: 17.99,
     discountedPrice: 29.99,
-    tags: ["coding", "it", "language", "graphic", "art"],
+    tags: ['coding', 'it', 'language', 'graphic', 'art'],
   },
   {
     id: 4,
-    imgSrc: "/images/media/img_66.jpg",
-    instructor: "Zubayer Al Hasan",
-    duration: "8h",
-    title: "Master in Bootstrap only within 30 days.",
+    imgSrc: '/images/media/img_66.jpg',
+    instructor: 'Zubayer Al Hasan',
+    duration: '8h',
+    title: 'Master in Bootstrap only within 30 days.',
     rating: 4,
     ratingsCount: 180,
     price: 13.99,
     discountedPrice: 19.99,
-    tags: ["graphic", "art", "marketing", "language"],
+    tags: ['graphic', 'art', 'marketing', 'language'],
   },
   {
     id: 5,
-    imgSrc: "/images/media/img_64.jpg",
-    instructor: "Zubayer Al Hasan",
-    duration: "8h",
-    title: "Master in Bootstrap only within 30 days.",
+    imgSrc: '/images/media/img_64.jpg',
+    instructor: 'Zubayer Al Hasan',
+    duration: '8h',
+    title: 'Master in Bootstrap only within 30 days.',
     rating: 4,
     ratingsCount: 180,
     price: 13.99,
     discountedPrice: 19.99,
-    tags: ["language", "marketing", "graphic"],
+    tags: ['language', 'marketing', 'graphic'],
   },
   {
     id: 6,
-    imgSrc: "/images/media/img_65.jpg",
-    instructor: "Zubayer Al Hasan",
-    duration: "8h",
-    title: "Master in Bootstrap only within 30 days.",
+    imgSrc: '/images/media/img_65.jpg',
+    instructor: 'Zubayer Al Hasan',
+    duration: '8h',
+    title: 'Master in Bootstrap only within 30 days.',
     rating: 4,
     ratingsCount: 180,
     price: 13.99,
     discountedPrice: 19.99,
-    tags: ["art", "marketing", "coding", "it"],
+    tags: ['art', 'marketing', 'coding', 'it'],
   },
 ];
 
 const CourseFilter = () => {
-  const [filter, setFilter] = useState("*");
+  const [filter, setFilter] = useState('*');
 
   const filteredItems =
-    filter === "*"
+    filter === '*'
       ? courseData
       : courseData.filter((item) => item.tags.includes(filter));
 
@@ -124,48 +124,48 @@ const CourseFilter = () => {
         <ul className="style-none text-center isotop-menu-wrapper d-flex flex-wrap">
           <li className="nav-item">
             <button
-              className={filter === "*" ? "active nav-link" : "nav-link"}
-              onClick={() => setFilter("*")}
+              className={filter === '*' ? 'active nav-link' : 'nav-link'}
+              onClick={() => setFilter('*')}
             >
               All
             </button>
           </li>
           <li className="nav-item">
             <button
-              className={filter === "graphic" ? "active nav-link" : "nav-link"}
-              onClick={() => setFilter("graphic")}
+              className={filter === 'graphic' ? 'active nav-link' : 'nav-link'}
+              onClick={() => setFilter('graphic')}
             >
               Graphic Design
             </button>
           </li>
           <li className="nav-item">
             <button
-              className={filter === "it" ? "active nav-link" : "nav-link"}
-              onClick={() => setFilter("it")}
+              className={filter === 'it' ? 'active nav-link' : 'nav-link'}
+              onClick={() => setFilter('it')}
             >
               IT
             </button>
           </li>
           <li className="nav-item">
             <button
-              className={filter === "language" ? "active nav-link" : "nav-link"}
-              onClick={() => setFilter("language")}
+              className={filter === 'language' ? 'active nav-link' : 'nav-link'}
+              onClick={() => setFilter('language')}
             >
               Language
             </button>
           </li>
           <li className="nav-item">
             <button
-              className={filter === "coding" ? "active nav-link" : "nav-link"}
-              onClick={() => setFilter("coding")}
+              className={filter === 'coding' ? 'active nav-link' : 'nav-link'}
+              onClick={() => setFilter('coding')}
             >
               Coding
             </button>
           </li>
           <li className="nav-item">
             <button
-              className={filter === "art" ? "active nav-link" : "nav-link"}
-              onClick={() => setFilter("art")}
+              className={filter === 'art' ? 'active nav-link' : 'nav-link'}
+              onClick={() => setFilter('art')}
             >
               Art
             </button>
@@ -173,9 +173,9 @@ const CourseFilter = () => {
           <li className="nav-item">
             <button
               className={
-                filter === "marketing" ? "active nav-link" : "nav-link"
+                filter === 'marketing' ? 'active nav-link' : 'nav-link'
               }
-              onClick={() => setFilter("marketing")}
+              onClick={() => setFilter('marketing')}
             >
               Marketing
             </button>
@@ -194,7 +194,7 @@ const CourseFilter = () => {
               <div className="item" key={course.id}>
                 <div className="card-style-twenty tran3s">
                   <div className="img-meta">
-                    <Image
+                    <img
                       width={315}
                       height={222}
                       src={course.imgSrc}
@@ -234,7 +234,7 @@ const CourseFilter = () => {
                     </div>
                     <div className="d-flex align-items-center justify-content-between mt-30 mb-10">
                       <strong className="price fw-500 fs-20 tx-dark">
-                        ${course.price.toFixed(2)}{" "}
+                        ${course.price.toFixed(2)}{' '}
                         <del className="opacity-50 fw-normal">
                           ${course.discountedPrice.toFixed(2)}
                         </del>

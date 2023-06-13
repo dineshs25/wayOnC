@@ -1,40 +1,41 @@
-import React, { useRef } from "react";
-import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
+import React, { useRef } from 'react';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 const Counter = () => {
   const countersData = [
     {
       id: 1,
       value: 20,
-      unit: "billion",
-      label: "People Helped",
-      image: "/images/shape/shape_72.svg",
-      delay: "100",
+      unit: 'billion',
+      label: 'People Helped',
+      image: '/images/shape/shape_72.svg',
+      delay: '100',
     },
     {
       id: 2,
       value: 123,
-      unit: "",
-      label: "Country Impected",
-      image: "/images/shape/shape_73.svg",
-      delay: "200",
+      unit: '',
+      label: 'Country Impected',
+      image: '/images/shape/shape_73.svg',
+      delay: '200',
     },
     {
       id: 3,
       value: 30,
-      unit: "k+",
-      label: "Volunteer",
-      image: "/images/shape/shape_74.svg",
-      delay: "300",
+      unit: 'k+',
+      label: 'Volunteer',
+      image: '/images/shape/shape_74.svg',
+      delay: '300',
     },
     {
       id: 4,
       value: 218,
-      unit: "",
-      label: "Sucessfull Project",
-      image: "/images/shape/shape_75.svg",
-      delay: "400",
+      unit: '',
+      label: 'Sucessfull Project',
+      image: '/images/shape/shape_75.svg',
+      delay: '400',
     },
   ];
 

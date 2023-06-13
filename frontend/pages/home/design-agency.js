@@ -1,12 +1,13 @@
-import Link from "next/link";
-import Seo from "../../components/common/Seo";
-import Header from "../../components/home-page/home-12/Header";
-import Hero from "../../components/home-page/home-12/Hero";
-import Portfolio from "../../components/home-page/home-12/Portfolio";
-import Testimonial from "../../components/home-page/home-12/Testimonial";
-import Partners from "../../components/home-page/home-12/Partners";
-import Blog from "../../components/home-page/home-12/Blog";
-import Social from "../../components/home-page/home-12/Social";
+import Link from 'next/link';
+import Seo from '../../components/common/Seo';
+import Header from '../../components/home-page/home-12/Header';
+import Hero from '../../components/home-page/home-12/Hero';
+import Portfolio from '../../components/home-page/home-12/Portfolio';
+import Testimonial from '../../components/home-page/home-12/Testimonial';
+import Partners from '../../components/home-page/home-12/Partners';
+import Blog from '../../components/home-page/home-12/Blog';
+import Social from '../../components/home-page/home-12/Social';
+import Image from 'next/image';
 
 const DesignAgency = () => {
   return (
@@ -216,7 +217,7 @@ const DesignAgency = () => {
               >
                 <span className="icon d-flex align-items-center justify-content-center rounded-circle">
                   <i className="far fa-envelope" />
-                </span>{" "}
+                </span>{' '}
                 <span>support@jano.com</span>
               </a>
             </div>

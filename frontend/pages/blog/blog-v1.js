@@ -1,12 +1,13 @@
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import DefaultFooter from "../../components/footer/DefaultFooter";
-import Blog1 from "../../components/blog/Blog1";
-import Pagination from "../../components/blog/Pagination";
-import SearchBox from "../../components/blog/SearchBox";
-import Category from "../../components/blog/Category";
-import RecentPost from "../../components/blog/RecentPost";
-import BannerPost from "../../components/blog/BannerPost";
+import Seo from '../../components/common/Seo';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import DefaultFooter from '../../components/footer/DefaultFooter';
+import Blog1 from '../../components/blog/Blog1';
+import Pagination from '../../components/blog/Pagination';
+import SearchBox from '../../components/blog/SearchBox';
+import Category from '../../components/blog/Category';
+import RecentPost from '../../components/blog/RecentPost';
+import BannerPost from '../../components/blog/BannerPost';
+import Image from 'next/image';
 
 const ListWithSidebar = () => {
   return (

@@ -1,12 +1,13 @@
-import Seo from "../components/common/Seo";
-import DefaulHeader from "../components/header/DefaulHeader";
-import DefaultFooter from "../components/footer/DefaultFooter";
-import Pagination from "../components/blog/Pagination";
-import SearchBox from "../components/blog/SearchBox";
-import Category from "../components/blog/Category";
-import RecentPost from "../components/blog/RecentPost";
-import BannerPost from "../components/blog/BannerPost";
-import Blog2 from "../components/blog/Blog2";
+import Seo from '../components/common/Seo';
+import DefaulHeader from '../components/header/DefaulHeader';
+import DefaultFooter from '../components/footer/DefaultFooter';
+import Pagination from '../components/blog/Pagination';
+import SearchBox from '../components/blog/SearchBox';
+import Category from '../components/blog/Category';
+import RecentPost from '../components/blog/RecentPost';
+import BannerPost from '../components/blog/BannerPost';
+import Blog2 from '../components/blog/Blog2';
+import Image from 'next/image';
 
 const GridWithSidebar = () => {
   return (

@@ -1,19 +1,20 @@
-import React from "react";
-import Seo from "../../components/common/Seo";
-import Header from "../../components/home-page/home-13/Header";
-import Hero from "../../components/home-page/home-13/hero";
-import Feedback from "../../components/home-page/home-13/Feedback";
-import Feature from "../../components/home-page/home-13/Feature";
-import Leads from "../../components/home-page/home-13/Leads";
-import FeaturesBlock from "../../components/home-page/home-13/FeaturesBlock";
-import Counter from "../../components/home-page/home-13/Counter";
-import SuccessStory from "../../components/home-page/home-13/SuccessStory";
-import Testimonial from "../../components/home-page/home-13/Testimonial";
-import Faq from "../../components/home-page/home-13/Faq";
-import Link from "next/link";
-import FooterContent from "../../components/home-page/home-13/FooterContent";
-import Subscribe from "../../components/home-page/home-13/Subscribe";
-import CopyrightFooter from "../../components/home-page/home-13/CopyrightFooter";
+import React from 'react';
+import Seo from '../../components/common/Seo';
+import Header from '../../components/home-page/home-13/Header';
+import Hero from '../../components/home-page/home-13/hero';
+import Feedback from '../../components/home-page/home-13/Feedback';
+import Feature from '../../components/home-page/home-13/Feature';
+import Leads from '../../components/home-page/home-13/Leads';
+import FeaturesBlock from '../../components/home-page/home-13/FeaturesBlock';
+import Counter from '../../components/home-page/home-13/Counter';
+import SuccessStory from '../../components/home-page/home-13/SuccessStory';
+import Testimonial from '../../components/home-page/home-13/Testimonial';
+import Faq from '../../components/home-page/home-13/Faq';
+import Link from 'next/link';
+import FooterContent from '../../components/home-page/home-13/FooterContent';
+import Subscribe from '../../components/home-page/home-13/Subscribe';
+import CopyrightFooter from '../../components/home-page/home-13/CopyrightFooter';
+import Image from 'next/image';
 
 const LeadGeneration = () => {
   return (
@@ -63,7 +64,7 @@ const LeadGeneration = () => {
                 <h2 className="main-title font-recoleta fw-normal tx-dark">
                   Get
                   <span className="position-relative">
-                    {" "}
+                    {' '}
                     Quality
                     <img src="/images/shape/shape_122.svg" alt="icon shape" />
                   </span>
@@ -171,8 +172,9 @@ const LeadGeneration = () => {
                   <h2 className="main-title font-recoleta fw-normal tx-dark">
                     What
                     <span className="position-relative">
-                      {" "}
-                      client <img src="/images/shape/shape_129.svg" alt="" />
+                      {' '}
+                      client
+                      <img src="/images/shape/shape_129.svg" alt="" />
                     </span>
                     think about us.
                   </h2>
@@ -211,7 +213,8 @@ const LeadGeneration = () => {
             <h2 className="main-title font-recoleta fw-normal tx-dark">
               Questions &amp;
               <span className="position-relative">
-                Answers <img src="/images/shape/shape_132.svg" alt="" />
+                Answers
+                <img src="/images/shape/shape_132.svg" alt="" />
               </span>
             </h2>
           </div>

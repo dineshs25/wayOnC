@@ -1,5 +1,5 @@
-const investmentDone = (name) => {
-    return `<!DOCTYPE html>
+const investmentDone = (name, id) => {
+  return `<!DOCTYPE html>
     <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
     
     <head>
@@ -103,7 +103,7 @@ const investmentDone = (name) => {
                                                         <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                                             <tr>
                                                                 <td class="pad" style="padding-bottom:10px;padding-right:15px;padding-top:15px;width:100%;padding-left:0px;">
-                                                                    <div class="alignment" align="left" style="line-height:10px"><img src="https://6410f8d46b.imgdist.com/public/users/Integrators/BeeProAgency/982749_967413/wayOnC-logo.png" style="display: block; height: auto; border: 0; width: 180px; max-width: 100%;" width="180"></div>
+                                                                    <div class="alignment" align="left" style="line-height:10px"><Image src="https://6410f8d46b.imgdist.com/public/users/Integrators/BeeProAgency/982749_967413/wayOnC-logo.png" style="display: block; height: auto; border: 0; width: 180px; max-width: 100%;" width="180"></div>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -128,6 +128,7 @@ const investmentDone = (name) => {
                                                                 <td class="pad">
                                                                     <div style="color:#101112;direction:ltr;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;">
                                                                         <p style="margin: 0; margin-bottom: 16px;"><strong>Dear ${name},</strong></p>
+                                                                        <p style="margin: 0; margin-bottom: 16px;">Your Transaction ID : ${id},</p>
                                                                         <p style="margin: 0; margin-bottom: 16px;"><strong>Thank you for Investing.</strong></p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">You can view your Investment details in your Dashboard.</p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">&nbsp;</p>
@@ -188,10 +189,10 @@ const investmentDone = (name) => {
                                                                     <div class="alignment" align="left">
                                                                         <table class="social-table" width="188px" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;">
                                                                             <tr>
-                                                                                <td style="padding:0 15px 0 0;"><a href="https://www.facebook.com/profile.php?id=100078370776931&mibextid=ZbWKwL" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/facebook@2x.png" width="32" height="32" alt="Facebook" title="Facebook" style="display: block; height: auto; border: 0;"></a></td>
-                                                                                <td style="padding:0 15px 0 0;"><a href="https://instagram.com/wayonc.in?igshid=MmJiY2I4NDBkZg==" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" width="32" height="32" alt="Instagram" title="Instagram" style="display: block; height: auto; border: 0;"></a></td>
-                                                                                <td style="padding:0 15px 0 0;"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.linkedin.com/shareArticle?mini=true&url=https://in.linkedin.com/company/wayonc-investments" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" width="32" height="32" alt="LinkedIn" title="LinkedIn" style="display: block; height: auto; border: 0;"></a></td>
-                                                                                <td style="padding:0 15px 0 0;"><a href="https://www.youtube.com/channel/UCNNPtulXy7r82qLgOoEijhQ" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" width="32" height="32" alt="YouTube" title="YouTube" style="display: block; height: auto; border: 0;"></a></td>
+                                                                                <td style="padding:0 15px 0 0;"><a href="https://www.facebook.com/profile.php?id=100078370776931&mibextid=ZbWKwL" target="_blank"><Image src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/facebook@2x.png" width="32" height="32" alt="Facebook" title="Facebook" style="display: block; height: auto; border: 0;"></a></td>
+                                                                                <td style="padding:0 15px 0 0;"><a href="https://instagram.com/wayonc.in?igshid=MmJiY2I4NDBkZg==" target="_blank"><Image src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" width="32" height="32" alt="Instagram" title="Instagram" style="display: block; height: auto; border: 0;"></a></td>
+                                                                                <td style="padding:0 15px 0 0;"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.linkedin.com/shareArticle?mini=true&url=https://in.linkedin.com/company/wayonc-investments" target="_blank"><Image src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" width="32" height="32" alt="LinkedIn" title="LinkedIn" style="display: block; height: auto; border: 0;"></a></td>
+                                                                                <td style="padding:0 15px 0 0;"><a href="https://www.youtube.com/channel/UCNNPtulXy7r82qLgOoEijhQ" target="_blank"><Image src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" width="32" height="32" alt="YouTube" title="YouTube" style="display: block; height: auto; border: 0;"></a></td>
                                                                             </tr>
                                                                         </table>
                                                                     </div>
@@ -249,6 +250,6 @@ const investmentDone = (name) => {
     </body>
     
     </html>`;
-  };
-  
-  module.exports = { investmentDone };
+};
+
+module.exports = { investmentDone };

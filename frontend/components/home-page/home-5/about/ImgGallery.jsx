@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import Image from 'next/image';
+import { useState } from 'react';
+import ModalVideo from 'react-modal-video';
 
 const ImgGallery = () => {
   const [isOpen, setOpen] = useState(false);
@@ -18,14 +18,14 @@ const ImgGallery = () => {
       <div className="img-gallery md-mt-60 ">
         <div className="row align-items-center" data-aos="fade-right">
           <div className="col-6">
-            <Image
+            <img
               width={256}
               height={310}
               src="/images/media/img_79.jpg"
               alt="media"
               className="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20"
             />
-            <Image
+            <img
               width={200}
               height={219}
               src="/images/media/img_80.jpg"
@@ -34,7 +34,7 @@ const ImgGallery = () => {
             />
           </div>
           <div className="col-6">
-            <Image
+            <img
               width={256}
               height={367}
               src="/images/media/img_81.jpg"

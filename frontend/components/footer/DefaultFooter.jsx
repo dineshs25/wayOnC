@@ -1,7 +1,8 @@
-import Link from "next/link";
-import Footer2 from "./Footer2";
-import NewsLetter from "./NewsLetter";
-import CopyrightFooter2 from "./CopyrightFooter2";
+import Link from 'next/link';
+import Footer2 from './Footer2';
+import NewsLetter from './NewsLetter';
+import CopyrightFooter2 from './CopyrightFooter2';
+import Image from 'next/image';
 
 const DefaultFooter = () => {
   return (

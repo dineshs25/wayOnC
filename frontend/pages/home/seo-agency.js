@@ -1,18 +1,19 @@
-import Link from "next/link";
-import Seo from "../../components/common/Seo";
-import Contact from "../../components/home-page/home-11/Contact";
-import Counter from "../../components/home-page/home-11/Counter";
-import FancyFeatures from "../../components/home-page/home-11/FancyFeatures";
-import Header from "../../components/home-page/home-11/Header";
-import Hero from "../../components/home-page/home-11/Hero";
-import Services from "../../components/home-page/home-11/Services";
-import Services2 from "../../components/home-page/home-11/Services2";
-import Testimonial from "../../components/home-page/home-11/Testimonial";
-import Pricing from "../../components/pricing/Pricing";
-import Blog from "../../components/home-page/home-11/Blog";
-import CallToActions from "../../components/home-page/home-11/CallToActions";
-import Social from "../../components/home-page/home-11/Social";
-import Footer from "../../components/home-page/home-11/Footer";
+import Link from 'next/link';
+import Seo from '../../components/common/Seo';
+import Contact from '../../components/home-page/home-11/Contact';
+import Counter from '../../components/home-page/home-11/Counter';
+import FancyFeatures from '../../components/home-page/home-11/FancyFeatures';
+import Header from '../../components/home-page/home-11/Header';
+import Hero from '../../components/home-page/home-11/Hero';
+import Services from '../../components/home-page/home-11/Services';
+import Services2 from '../../components/home-page/home-11/Services2';
+import Testimonial from '../../components/home-page/home-11/Testimonial';
+import Pricing from '../../components/pricing/Pricing';
+import Blog from '../../components/home-page/home-11/Blog';
+import CallToActions from '../../components/home-page/home-11/CallToActions';
+import Social from '../../components/home-page/home-11/Social';
+import Footer from '../../components/home-page/home-11/Footer';
+import Image from 'next/image';
 
 const SeoAgency = () => {
   return (
@@ -367,7 +368,7 @@ const SeoAgency = () => {
 
             <div className="bottom-footer">
               <p className="copyright text-center m0">
-                Copyright © {new Date().getFullYear()} {"  "}
+                Copyright © {new Date().getFullYear()} {'  '}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"

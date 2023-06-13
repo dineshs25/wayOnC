@@ -15,6 +15,7 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const investedClient = require('../controllers/clientControle/investedClient');
 const extend = require('../controllers/clientControle/extend');
+const paymentSuccess = require('../controllers/clientControle/paymentSuccess');
 
 
 router.use(express.json());
@@ -45,6 +46,7 @@ router.post('/profile', profile);
 router.get('/investedClient/:userAuth', investedClient);
 router.put('/extend', extend);
 router.put('/checkout', checkout);
+router.post('/paymentSuccess', paymentSuccess);
 
 
 

@@ -1,54 +1,55 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
+import React, { useRef } from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const Testimonial = () => {
   const sliderRef = useRef(null);
 
   const testimonialData = [
     {
-      background: "#825EFF",
-      imgSrc: "/images/icon/icon_61.svg",
+      background: '#825EFF',
+      imgSrc: '/images/icon/icon_61.svg',
       content:
-        "We have 9,000 agents around the country, Find agents near your neighborhood.",
-      avatarSrc: "/images/media/img_18.jpg",
-      name: "Martin Jonas",
-      location: "USA",
+        'We have 9,000 agents around the country, Find agents near your neighborhood.',
+      avatarSrc: '/images/media/img_18.jpg',
+      name: 'Martin Jonas',
+      location: 'USA',
     },
     {
-      background: "#11D09F",
-      imgSrc: "/images/icon/icon_61.svg",
+      background: '#11D09F',
+      imgSrc: '/images/icon/icon_61.svg',
       content:
-        "We have 9,000 agents around the country, Find agents near your neighborhood.",
-      avatarSrc: "/images/media/img_19.jpg",
-      name: "Martin Jonas",
-      location: "USA",
+        'We have 9,000 agents around the country, Find agents near your neighborhood.',
+      avatarSrc: '/images/media/img_19.jpg',
+      name: 'Martin Jonas',
+      location: 'USA',
     },
     {
-      background: "#FFB900",
-      imgSrc: "/images/icon/icon_61.svg",
+      background: '#FFB900',
+      imgSrc: '/images/icon/icon_61.svg',
       content:
-        "We have 9,000 agents around the country, Find agents near your neighborhood.",
-      avatarSrc: "/images/media/img_20.jpg",
-      name: "Martin Jonas",
-      location: "USA",
+        'We have 9,000 agents around the country, Find agents near your neighborhood.',
+      avatarSrc: '/images/media/img_20.jpg',
+      name: 'Martin Jonas',
+      location: 'USA',
     },
     {
-      background: "#FF5E5E",
-      imgSrc: "/images/icon/icon_61.svg",
+      background: '#FF5E5E',
+      imgSrc: '/images/icon/icon_61.svg',
       content:
-        "We have 9,000 agents around the country, Find agents near your neighborhood.",
-      avatarSrc: "/images/media/img_21.jpg",
-      name: "Martin Jonas",
-      location: "USA",
+        'We have 9,000 agents around the country, Find agents near your neighborhood.',
+      avatarSrc: '/images/media/img_21.jpg',
+      name: 'Martin Jonas',
+      location: 'USA',
     },
     {
-      background: "#EF4DD5",
-      imgSrc: "/images/icon/icon_61.svg",
+      background: '#EF4DD5',
+      imgSrc: '/images/icon/icon_61.svg',
       content:
-        "We have 9,000 agents around the country, Find agents near your neighborhood.",
-      avatarSrc: "/images/media/img_19.jpg",
-      name: "Martin Jonas",
-      location: "USA",
+        'We have 9,000 agents around the country, Find agents near your neighborhood.',
+      avatarSrc: '/images/media/img_19.jpg',
+      name: 'Martin Jonas',
+      location: 'USA',
     },
   ];
 

@@ -1,5 +1,6 @@
-import Link from "next/link";
-import blogPosts from "../../../data/blog";
+import Link from 'next/link';
+import blogPosts from '../../../data/blog';
+import Image from 'next/image';
 
 const Blog = () => {
   return (

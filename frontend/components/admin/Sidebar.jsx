@@ -5,6 +5,7 @@ import ReceivedFormsButton from './receivedFormsButton';
 import Investors from './Investors';
 import TodayEarners from './TodayEarners';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Sidebar = () => {
   return (
@@ -40,7 +41,7 @@ const Sidebar = () => {
                 <li>Users</li>
               </Link>
               <Link href="/admin/agreements">
-                <li>Aggrements</li>
+                <li>Agreements</li>
               </Link>
             </ul>
           </div>

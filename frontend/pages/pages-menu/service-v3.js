@@ -1,12 +1,13 @@
-import Link from "next/link";
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import Leads from "../../components/home-page/home-13/Leads";
-import Faq from "../../components/services/Faq";
-import Testimonial from "../../components/home-page/home-13/Testimonial";
-import FooterContent from "../../components/home-page/home-13/FooterContent";
-import Subscribe from "../../components/home-page/home-13/Subscribe";
-import CopyrightFooter from "../../components/home-page/home-13/CopyrightFooter";
+import Link from 'next/link';
+import Seo from '../../components/common/Seo';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import Leads from '../../components/home-page/home-13/Leads';
+import Faq from '../../components/services/Faq';
+import Testimonial from '../../components/home-page/home-13/Testimonial';
+import FooterContent from '../../components/home-page/home-13/FooterContent';
+import Subscribe from '../../components/home-page/home-13/Subscribe';
+import CopyrightFooter from '../../components/home-page/home-13/CopyrightFooter';
+import Image from 'next/image';
 
 const ServiceV3 = () => {
   return (
@@ -35,7 +36,7 @@ const ServiceV3 = () => {
                 <h2 className="main-title font-recoleta fw-normal tx-dark">
                   Get
                   <span className="position-relative">
-                    {" "}
+                    {' '}
                     Quality
                     <img src="/images/shape/shape_122.svg" alt="icon shape" />
                   </span>
@@ -118,7 +119,7 @@ const ServiceV3 = () => {
 			*/}
       <div
         className="feedback-section-ten position-relative zn2 pt-110 pb-170 mt-200 lg-mt-120 lg-pt-80 lg-pb-100"
-        style={{ background: "#FAFAFA" }}
+        style={{ background: '#FAFAFA' }}
       >
         <div className="container">
           <div className="position-relative">
@@ -132,8 +133,9 @@ const ServiceV3 = () => {
                   <h2 className="main-title font-recoleta fw-normal tx-dark">
                     What
                     <span className="position-relative">
-                      {" "}
-                      client <img src="/images/shape/shape_129.svg" alt="" />
+                      {' '}
+                      client
+                      <img src="/images/shape/shape_129.svg" alt="" />
                     </span>
                     think about us.
                   </h2>

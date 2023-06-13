@@ -8,6 +8,7 @@ import ImageUpload from './form_Components/imageUpload';
 import ChoosePlan from './form_Components/choosePlan';
 import ClientInfo from './form_Components/clientInfo';
 import { useNavigate } from 'react-router-dom';
+import Image from 'next/image';
 
 const ClientForm = () => {
   const [auth, setAuth] = useState(false);
@@ -226,7 +227,7 @@ const ClientForm = () => {
             <Nominee handleNomineedatachange={handleNomineedatachange} />
 
             {/* images */}
-            {/* <ImageUpload
+            {/*<imgUpload
               handleChangeAadhaar={handleChangeAadhaar}
               aadharImage={aadharImage}
               handleChangePassport={handleChangePassport}

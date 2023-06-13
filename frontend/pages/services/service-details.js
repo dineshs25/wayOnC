@@ -1,10 +1,11 @@
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import DefaultFooter from "../../components/footer/DefaultFooter";
-import ProgressBar from "../pages-menu/service-details/ProgressBar";
-import Faq from "../../components/home-page/home-2/Faq";
-import Social from "../pages-menu/service-details/Social";
-import Link from "next/link";
+import Seo from '../../components/common/Seo';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import DefaultFooter from '../../components/footer/DefaultFooter';
+import ProgressBar from '../pages-menu/service-details/ProgressBar';
+import Faq from '../../components/home-page/home-2/Faq';
+import Social from '../pages-menu/service-details/Social';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const PortfolioV1 = () => {
   return (

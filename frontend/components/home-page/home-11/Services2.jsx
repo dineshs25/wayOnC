@@ -1,30 +1,31 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Services2 = () => {
   const services = [
     {
-      icon: "/images/icon/icon_09.svg",
-      title: "Design & Devlopment",
+      icon: '/images/icon/icon_09.svg',
+      title: 'Design & Devlopment',
       delay: 100,
     },
     {
-      icon: "/images/icon/icon_52.svg",
-      title: "Content writing & Affiliate",
+      icon: '/images/icon/icon_52.svg',
+      title: 'Content writing & Affiliate',
       delay: 200,
     },
     {
-      icon: "/images/icon/icon_53.svg",
-      title: "Design & Devlopment",
+      icon: '/images/icon/icon_53.svg',
+      title: 'Design & Devlopment',
       delay: 100,
     },
     {
-      icon: "/images/icon/icon_54.svg",
-      title: "SEO & Social marketing",
+      icon: '/images/icon/icon_54.svg',
+      title: 'SEO & Social marketing',
       delay: 200,
     },
     {
-      icon: "/images/icon/icon_55.svg",
-      title: "Pay per click",
+      icon: '/images/icon/icon_55.svg',
+      title: 'Pay per click',
       delay: 300,
     },
   ];
@@ -74,7 +75,7 @@ const Services2 = () => {
         data-aos-delay="400"
       >
         <div className="block">
-          <div className="fs-15 fw-500" style={{ color: "#FF7228" }}>
+          <div className="fs-15 fw-500" style={{ color: '#FF7228' }}>
             Confusion?
           </div>
           <h4 className="fw-normal">Send message for info.</h4>

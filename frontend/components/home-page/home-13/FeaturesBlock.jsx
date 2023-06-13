@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const FeaturesBlock = () => {
   return (
@@ -10,7 +11,8 @@ const FeaturesBlock = () => {
             <h2 className="main-title font-recoleta fw-normal tx-dark">
               Get quality
               <span className="position-relative">
-                Lead <img src="/images/shape/shape_122.svg" alt="" />
+                Lead
+                <img src="/images/shape/shape_122.svg" alt="" />
               </span>
               in single click.
             </h2>

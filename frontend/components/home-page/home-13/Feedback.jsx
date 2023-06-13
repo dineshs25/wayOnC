@@ -1,34 +1,36 @@
+import Image from 'next/image';
+
 const Feedback = () => {
   const images = [
     {
-      src: "/images/media/img_44.jpg",
-      alt: "shape",
-      className: "lazy-img shapes shape-one",
+      src: '/images/media/img_44.jpg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-one',
     },
     {
-      src: "/images/media/img_45.jpg",
-      alt: "shape",
-      className: "lazy-img shapes shape-two",
+      src: '/images/media/img_45.jpg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-two',
     },
     {
-      src: "/images/media/img_46.jpg",
-      alt: "shape",
-      className: "lazy-img shapes shape-three",
+      src: '/images/media/img_46.jpg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-three',
     },
     {
-      src: "/images/media/img_47.jpg",
-      alt: "shape",
-      className: "lazy-img shapes shape-four",
+      src: '/images/media/img_47.jpg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-four',
     },
     {
-      src: "/images/shape/shape_120.svg",
-      alt: "shape",
-      className: "lazy-img shapes shape-five",
+      src: '/images/shape/shape_120.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-five',
     },
     {
-      src: "/images/shape/shape_121.svg",
-      alt: "shape",
-      className: "lazy-img shapes shape-six",
+      src: '/images/shape/shape_121.svg',
+      alt: 'shape',
+      className: 'lazy-img shapes shape-six',
     },
   ];
 
@@ -56,14 +58,14 @@ const Feedback = () => {
                   <h6 className="fw-normal fs-20 d-inline-block fst-italic position-relative ps-4">
                     Jessica Woodbeck, CEO
                   </h6>
-                </div>{" "}
+                </div>{' '}
                 {/* /.feedback-block-eight */}
               </div>
-            </div>{" "}
+            </div>{' '}
             {/* /.feedback_slider_eight */}
           </div>
         </div>
-      </div>{" "}
+      </div>{' '}
       {/* /.container */}
       {images.map((image, index) => (
         <img

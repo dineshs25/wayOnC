@@ -1,19 +1,20 @@
-import Link from "next/link";
-import Seo from "../../components/common/Seo";
-import Awards from "../../components/home-page/home-9/Awards";
-import Block from "../../components/home-page/home-9/Block";
-import ContactForm from "../../components/home-page/home-9/ContactForm";
-import Counter from "../../components/home-page/home-9/Counter";
-import Education from "../../components/home-page/home-9/Education";
-import Header from "../../components/home-page/home-9/Header";
-import Hero from "../../components/home-page/home-9/Hero";
-import Portfolio from "../../components/home-page/home-9/Portfolio";
-import ProjectBanner from "../../components/home-page/home-9/ProjectBanner";
-import Sidebar from "../../components/home-page/home-9/Sidebar";
-import Skills from "../../components/home-page/home-9/Skills";
-import Testimonial from "../../components/home-page/home-9/Testimonial";
-import Tools from "../../components/home-page/home-9/Tools";
-import Social from "../../components/home-page/home-9/Social";
+import Link from 'next/link';
+import Seo from '../../components/common/Seo';
+import Awards from '../../components/home-page/home-9/Awards';
+import Block from '../../components/home-page/home-9/Block';
+import ContactForm from '../../components/home-page/home-9/ContactForm';
+import Counter from '../../components/home-page/home-9/Counter';
+import Education from '../../components/home-page/home-9/Education';
+import Header from '../../components/home-page/home-9/Header';
+import Hero from '../../components/home-page/home-9/Hero';
+import Portfolio from '../../components/home-page/home-9/Portfolio';
+import ProjectBanner from '../../components/home-page/home-9/ProjectBanner';
+import Sidebar from '../../components/home-page/home-9/Sidebar';
+import Skills from '../../components/home-page/home-9/Skills';
+import Testimonial from '../../components/home-page/home-9/Testimonial';
+import Tools from '../../components/home-page/home-9/Tools';
+import Social from '../../components/home-page/home-9/Social';
+import Image from 'next/image';
 
 const PersonalPortfolio = () => {
   return (
@@ -123,7 +124,7 @@ const PersonalPortfolio = () => {
                     Expereince
                     <span
                       className="mark-bg"
-                      style={{ backgroundColor: "#FFDBDB" }}
+                      style={{ backgroundColor: '#FFDBDB' }}
                     />
                   </span>
                   &amp; skills.
@@ -246,7 +247,7 @@ const PersonalPortfolio = () => {
                 Feedback
                 <span
                   className="mark-bg"
-                  style={{ backgroundColor: "#FFE9B0" }}
+                  style={{ backgroundColor: '#FFE9B0' }}
                 />
               </span>
             </h2>

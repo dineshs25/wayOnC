@@ -1,33 +1,34 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const servicesData = [
   {
-    bgColor: "rgba(255, 171, 51, 0.18)",
-    iconSrc: "/images/icon/icon_01.svg",
-    title: "Quality Design Maker.",
+    bgColor: 'rgba(255, 171, 51, 0.18)',
+    iconSrc: '/images/icon/icon_01.svg',
+    title: 'Quality Design Maker.',
     description:
-      "The core of our service is based on the objective investment advice we seek to provide supported.",
+      'The core of our service is based on the objective investment advice we seek to provide supported.',
   },
   {
-    bgColor: "rgba(100, 219, 226, 0.18)",
-    iconSrc: "/images/icon/icon_02.svg",
-    title: "Professional Support by Expert.",
+    bgColor: 'rgba(100, 219, 226, 0.18)',
+    iconSrc: '/images/icon/icon_02.svg',
+    title: 'Professional Support by Expert.',
     description:
-      "Through our Family Office Services, we are able to provide the expertise derived from our beginnings.",
+      'Through our Family Office Services, we are able to provide the expertise derived from our beginnings.',
   },
   {
-    bgColor: "rgba(255, 160, 194, 0.18)",
-    iconSrc: "/images/icon/icon_03.svg",
-    title: "Marketing & Affiliate Services.",
+    bgColor: 'rgba(255, 160, 194, 0.18)',
+    iconSrc: '/images/icon/icon_03.svg',
+    title: 'Marketing & Affiliate Services.',
     description:
-      "Capco’s response is proven by our superb record of driving change through effective portfolio.",
+      'Capco’s response is proven by our superb record of driving change through effective portfolio.',
   },
   {
-    bgColor: "rgba(246, 243, 255, 1)",
-    iconSrc: "/images/icon/icon_04.svg",
-    title: "Cross Browser Optimized.",
+    bgColor: 'rgba(246, 243, 255, 1)',
+    iconSrc: '/images/icon/icon_04.svg',
+    title: 'Cross Browser Optimized.',
     description:
-      "The core of our service is based on the objective investment advice we seek to provide supported.",
+      'The core of our service is based on the objective investment advice we seek to provide supported.',
   },
 ];
 

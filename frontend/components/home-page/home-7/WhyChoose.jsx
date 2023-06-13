@@ -1,16 +1,18 @@
+import Image from 'next/image';
+
 const WhyChoose = () => {
   const cards = [
     {
-      iconSrc: "/images/icon/icon_27.svg",
-      title: "Friendly user interface",
+      iconSrc: '/images/icon/icon_27.svg',
+      title: 'Friendly user interface',
     },
     {
-      iconSrc: "/images/icon/icon_28.svg",
-      title: "Quality & fast support",
+      iconSrc: '/images/icon/icon_28.svg',
+      title: 'Quality & fast support',
     },
     {
-      iconSrc: "/images/icon/icon_29.svg",
-      title: "SEO Optimization",
+      iconSrc: '/images/icon/icon_29.svg',
+      title: 'SEO Optimization',
     },
   ];
 
@@ -28,7 +30,7 @@ const WhyChoose = () => {
               <div
                 key={index}
                 className={`card-style-five wow ${
-                  index === 0 ? "fadeInDown" : "fadeInUp"
+                  index === 0 ? 'fadeInDown' : 'fadeInUp'
                 }`}
                 wow-delay="0.2s"
               >

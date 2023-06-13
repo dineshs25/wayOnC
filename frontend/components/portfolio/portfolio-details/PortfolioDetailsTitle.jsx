@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const PortfolioDetailsTitle = ({ portfolio }) => {
   return (
     <div className="fancy-feature-fiftyOne position-relative mt-200">

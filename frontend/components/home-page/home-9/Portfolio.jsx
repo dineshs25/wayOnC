@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { Gallery, Item } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
-import Image from "next/image";
-import Link from "next/link";
-import items from "../../../data/portfolio";
+import { useState } from 'react';
+import { Gallery, Item } from 'react-photoswipe-gallery';
+import 'photoswipe/dist/photoswipe.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import items from '../../../data/portfolio';
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState("*");
+  const [filter, setFilter] = useState('*');
 
   const filteredItems =
-    filter === "*"
+    filter === '*'
       ? items.slice(51, 55)
       : items.slice(51, 55).filter((item) => item.category.includes(filter));
 
@@ -25,7 +25,7 @@ const Portfolio = () => {
                   Recent
                   <span
                     className="mark-bg"
-                    style={{ backgroundColor: "#D9F5F8" }}
+                    style={{ backgroundColor: '#D9F5F8' }}
                   />
                 </span>
                 Work.
@@ -38,33 +38,33 @@ const Portfolio = () => {
           <div className="col-lg-8">
             <ul className="style-none text-center text-lg-end isotop-menu-wrapper g-control-nav-one">
               <li
-                className={filter === "*" ? "is-checked" : ""}
-                onClick={() => setFilter("*")}
+                className={filter === '*' ? 'is-checked' : ''}
+                onClick={() => setFilter('*')}
               >
                 All
               </li>
 
               <li
-                className={filter === "design" ? "is-checked" : ""}
-                onClick={() => setFilter("design")}
+                className={filter === 'design' ? 'is-checked' : ''}
+                onClick={() => setFilter('design')}
               >
                 Design
               </li>
               <li
-                className={filter === "branding" ? "is-checked" : ""}
-                onClick={() => setFilter("branding")}
+                className={filter === 'branding' ? 'is-checked' : ''}
+                onClick={() => setFilter('branding')}
               >
                 Branding
               </li>
               <li
-                className={filter === "logo" ? "is-checked" : ""}
-                onClick={() => setFilter("logo")}
+                className={filter === 'logo' ? 'is-checked' : ''}
+                onClick={() => setFilter('logo')}
               >
                 Logo
               </li>
               <li
-                className={filter === "illustration" ? "is-checked" : ""}
-                onClick={() => setFilter("illustration")}
+                className={filter === 'illustration' ? 'is-checked' : ''}
+                onClick={() => setFilter('illustration')}
               >
                 Illustration
               </li>
@@ -83,7 +83,7 @@ const Portfolio = () => {
               >
                 <div className="portfolio-block-one mt-40 xs-mt-30">
                   <div className="img-meta">
-                    <Image
+                    <img
                       width={640}
                       height={666}
                       src={item.image}

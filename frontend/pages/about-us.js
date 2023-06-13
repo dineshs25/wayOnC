@@ -1,26 +1,33 @@
-import Seo from "../components/common/Seo";
-import DefaulHeader from "../components/header/DefaulHeader";
-import DefaultFooter from "../components/footer/DefaultFooter";
-import Partners from "../components/services/Partners";
-import Faq from "../components/services/Faq";
-import Testimonial from "../components/home-page/home-3/Testimonial";
-import Block from "../components/services/Block";
-import Team3 from "../components/team/Team3";
-import Link from "next/link";
-import VideoBlock from "../components/about/VideoBlock";
-import Counter from "../components/about/Counter";
+import Seo from '../components/common/Seo';
+import DefaulHeader from '../components/header/DefaulHeader';
+import DefaultFooter from '../components/footer/DefaultFooter';
+import Partners from '../components/services/Partners';
+import Faq from '../components/services/Faq';
+import Testimonial from '../components/home-page/home-3/Testimonial';
+import Block from '../components/services/Block';
+import Team3 from '../components/team/Team3';
+import Link from 'next/link';
+import VideoBlock from '../components/about/VideoBlock';
+import Counter from '../components/about/Counter';
 import aboutData from '../data/about/about.json';
+import Image from 'next/image';
 const myData = aboutData;
 
 const AboutUsV1 = () => {
   const features = [
-    { text: "Empowering Your Financial Success, One Investment at a Time." },
-    { text: "Unleashing the Power of Your Investments for a Brighter Future." },
-    { text: "Precision, Strategy, and Performance - The Foundations of Our Investment Approach." },
-    { text: "Together, we build lasting partnerships that stand the test of time, empowering your financial future." },
-    { text: "When you succeed, we celebrate. Your success is our driving force." },
-    { text: "Transforming Your Financial Vision into Reality" },
-    { text: "Partner with Us for a Thriving Financial Future." },
+    { text: 'Empowering Your Financial Success, One Investment at a Time.' },
+    { text: 'Unleashing the Power of Your Investments for a Brighter Future.' },
+    {
+      text: 'Precision, Strategy, and Performance - The Foundations of Our Investment Approach.',
+    },
+    {
+      text: 'Together, we build lasting partnerships that stand the test of time, empowering your financial future.',
+    },
+    {
+      text: 'When you succeed, we celebrate. Your success is our driving force.',
+    },
+    { text: 'Transforming Your Financial Vision into Reality' },
+    { text: 'Partner with Us for a Thriving Financial Future.' },
   ];
 
   const starRating = Array(5)
@@ -100,59 +107,73 @@ const AboutUsV1 = () => {
 			============================================== 
 			--> */}
       <VideoBlock />
-{/* visiona and mision */}
+      {/* visiona and mision */}
 
-<div className="fancy-feature-thirtySeven mt-80 lg-mt-120">
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-6" data-aos="fade-right">
-        <div className="ps-xxl-5 ps-xl-5 ps-lg-5 ps-md-5 ps-sm-5 ps-xs-5">
-          <h3 className="mb-30">Our Vision.</h3>
-          <p className=" tx-dark">At [Company Name], our mission is to empower our clients with reliable and insightful investment advisory services. We are dedicated to helping our clients navigate the complex world of investments, achieve their financial goals, and secure their financial future. We strive to provide exceptional expertise, personalized attention, and innovative solutions that exceed our clients' expectations.</p>
-        </div>
-      </div>
-      <div className="col-lg-6" data-aos="fade-right">
-        <div className="ps-xxl-5 ps-xl-5 ps-lg-5 ps-md-5 ps-sm-5 ps-xs-5">
-          <h3 className="mb-30">Our Mision.</h3>
-          <p className=" tx-dark">Our vision at [Company Name] is to be recognized as a leading investment advisory firm, renowned for our commitment to excellence, integrity, and client-centric approach. We aspire to be the trusted partner that our clients turn to for expert advice, tailored investment strategies, and superior financial outcomes. By leveraging our deep industry knowledge and staying at the forefront of market trends, we aim to continuously deliver exceptional value to our clients and contribute to their long-term success.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-{/* vision and mision */}
-{/* Features of invesstmnet  */}
-
-{
-  myData.map((aboutData)=>(
-    <div className="fancy-feature-thirtySeven mt-80 lg-mt-120">
-  <div className="container">
-  <div className="parent row">
-           {
-            aboutData.stakeList.stakeListInfo.map((stakeListData)=>(
-              <div className=" valued-service mt-5 mb-5">
-              <div className="row abcd">
-                <div className="col-md-6">
-                  <h3 className="title" >{stakeListData.title}</h3>
-                  <p>{stakeListData.description}</p>
-               
-                </div>
-                <div className="col-md-6">
-                  <img src={stakeListData.image} alt={stakeListData.title} />
-                </div>
+      <div className="fancy-feature-thirtySeven mt-80 lg-mt-120">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6" data-aos="fade-right">
+              <div className="ps-xxl-5 ps-xl-5 ps-lg-5 ps-md-5 ps-sm-5 ps-xs-5">
+                <h3 className="mb-30">Our Vision.</h3>
+                <p className=" tx-dark">
+                  At [Company Name], our mission is to empower our clients with
+                  reliable and insightful investment advisory services. We are
+                  dedicated to helping our clients navigate the complex world of
+                  investments, achieve their financial goals, and secure their
+                  financial future. We strive to provide exceptional expertise,
+                  personalized attention, and innovative solutions that exceed
+                  our client &apos;s expectations.
+                </p>
               </div>
             </div>
-            ))
-           }
-           </div>
-  </div>
-</div>
-  ))
-}
-{/* Features of invesstmnet  */}
+            <div className="col-lg-6" data-aos="fade-right">
+              <div className="ps-xxl-5 ps-xl-5 ps-lg-5 ps-md-5 ps-sm-5 ps-xs-5">
+                <h3 className="mb-30">Our Mision.</h3>
+                <p className=" tx-dark">
+                  Our vision at [Company Name] is to be recognized as a leading
+                  investment advisory firm, renowned for our commitment to
+                  excellence, integrity, and client-centric approach. We aspire
+                  to be the trusted partner that our clients turn to for expert
+                  advice, tailored investment strategies, and superior financial
+                  outcomes. By leveraging our deep industry knowledge and
+                  staying at the forefront of market trends, we aim to
+                  continuously deliver exceptional value to our clients and
+                  contribute to their long-term success.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      {/* vision and mision */}
+      {/* Features of invesstmnet  */}
 
+      {myData.map((aboutData, i) => (
+        <div className="fancy-feature-thirtySeven mt-80 lg-mt-120" key={i}>
+          <div className="container">
+            <div className="parent row">
+              {aboutData.stakeList.stakeListInfo.map((stakeListData, i) => (
+                <div className=" valued-service mt-5 mb-5" key={i}>
+                  <div className="row abcd">
+                    <div className="col-md-6">
+                      <h3 className="title">{stakeListData.title}</h3>
+                      <p>{stakeListData.description}</p>
+                    </div>
+                    <div className="col-md-6">
+                      <img
+                        src={stakeListData.image}
+                        alt={stakeListData.title}
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+      {/* Features of invesstmnet  */}
 
       {/* <!-- /.fancy-feature-fiftyTwo --> */}
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+
 // import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setLoginUser }) => {

@@ -1,9 +1,9 @@
-import ModalVideo from "react-modal-video";
-import { Gallery, Item } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
-import { useState } from "react";
-import Image from "next/image";
-import portfolioItems from "../../../data/portfolio";
+import ModalVideo from 'react-modal-video';
+import { Gallery, Item } from 'react-photoswipe-gallery';
+import 'photoswipe/dist/photoswipe.css';
+import { useState } from 'react';
+import Image from 'next/image';
+import portfolioItems from '../../../data/portfolio';
 
 const Portfolio = () => {
   const [isOpen, setOpen] = useState(
@@ -16,7 +16,7 @@ const Portfolio = () => {
           <div className="isotop-item item-xl" key={index}>
             <div className="portfolio-block-two mb-55 lg-mb-30">
               <div className="img-holder">
-                <Image
+                <img
                   width={1320}
                   height={611}
                   src={item.imgSrc}
@@ -71,7 +71,7 @@ const Portfolio = () => {
                 {/* /.caption */}
               </div>
             </div>
-            {/* /.portfolio-block-two */}{" "}
+            {/* /.portfolio-block-two */}{' '}
             {item.videoUrl && (
               <ModalVideo
                 channel="youtube"

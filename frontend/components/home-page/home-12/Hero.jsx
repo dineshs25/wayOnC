@@ -1,10 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Hero = () => {
   const socialLinks = [
-    { label: "Fb.", url: "#" },
-    { label: "Tw.", url: "#" },
-    { label: "Inst.", url: "#" },
+    { label: 'Fb.', url: '#' },
+    { label: 'Tw.', url: '#' },
+    { label: 'Inst.', url: '#' },
   ];
 
   return (

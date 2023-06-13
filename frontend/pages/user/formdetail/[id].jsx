@@ -8,7 +8,7 @@ import { Table } from '@nextui-org/react';
 import Sidebar from '../../../components/user/Sidebar';
 import Load from '../../../components/common/Loading';
 
-const formDetails = () => {
+const FormDetails = () => {
   const router = useRouter();
 
   const userID = router.query.id;
@@ -310,4 +310,4 @@ const formDetails = () => {
   );
 };
 
-export default formDetails;
+export default FormDetails;

@@ -1,22 +1,24 @@
+import Image from 'next/image';
+
 const Features2 = () => {
   const listItems = [
-    "Amazing communication.",
-    "Best trending designing experience.",
-    "Email & Live chat.",
+    'Amazing communication.',
+    'Best trending designing experience.',
+    'Email & Live chat.',
   ];
 
   const platformButtons = [
     {
-      href: "#",
-      imgSrc: "/images/icon/apple.svg",
-      imgAlt: "media",
-      platform: "App store",
+      href: '#',
+      imgSrc: '/images/icon/apple.svg',
+      imgAlt: 'media',
+      platform: 'App store',
     },
     {
-      href: "#",
-      imgSrc: "/images/icon/playstore.svg",
-      imgAlt: "media",
-      platform: "Google play",
+      href: '#',
+      imgSrc: '/images/icon/playstore.svg',
+      imgAlt: 'media',
+      platform: 'Google play',
     },
   ];
 
@@ -42,7 +44,7 @@ const Features2 = () => {
             key={index}
             href={button.href}
             className={`d-flex align-items-center ${
-              button.platform === "App store" ? "ios-button" : "windows-button"
+              button.platform === 'App store' ? 'ios-button' : 'windows-button'
             }`}
           >
             <img

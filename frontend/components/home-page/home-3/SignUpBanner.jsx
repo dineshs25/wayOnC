@@ -1,21 +1,22 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const SignUpBanner = () => {
   const images = [
     {
-      src: "/images/media/img_69.jpg",
-      alt: "media",
-      className: "lazy-img img-one mt-30 mb-30 lg-mt-20 lg-mb-20",
+      src: '/images/media/img_69.jpg',
+      alt: 'media',
+      className: 'lazy-img img-one mt-30 mb-30 lg-mt-20 lg-mb-20',
     },
     {
-      src: "/images/media/img_70.jpg",
-      alt: "media",
-      className: "lazy-img img-two mt-30 mb-30 lg-mt-20 lg-mb-20",
+      src: '/images/media/img_70.jpg',
+      alt: 'media',
+      className: 'lazy-img img-two mt-30 mb-30 lg-mt-20 lg-mb-20',
     },
     {
-      src: "/images/media/img_71.jpg",
-      alt: "media",
-      className: "lazy-img img-three mt-30 mb-30 lg-mt-20 lg-mb-20",
+      src: '/images/media/img_71.jpg',
+      alt: 'media',
+      className: 'lazy-img img-three mt-30 mb-30 lg-mt-20 lg-mb-20',
     },
   ];
 
@@ -75,7 +76,7 @@ const SignUpBanner = () => {
                 alt="shapes"
                 className="lazy-img shapes shape-one"
               />
-            </div>{" "}
+            </div>{' '}
             {/* /.img-holder */}
           </div>
         </div>

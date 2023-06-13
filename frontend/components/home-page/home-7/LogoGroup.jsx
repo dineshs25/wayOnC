@@ -1,12 +1,14 @@
+import Image from 'next/image';
+
 const LogoGroup = () => {
   const logoImages = [
-    "Plogo-7.png",
-    "Plogo-8.png",
-    "Plogo-9.png",
-    "Plogo-10.png",
-    "Plogo-11.png",
-    "Plogo-12.png",
-    "Plogo-13.png",
+    'Plogo-7.png',
+    'Plogo-8.png',
+    'Plogo-9.png',
+    'Plogo-10.png',
+    'Plogo-11.png',
+    'Plogo-12.png',
+    'Plogo-13.png',
   ];
 
   return (

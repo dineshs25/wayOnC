@@ -1,45 +1,45 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const Feature = () => {
   const features = [
     {
-      background: "#fffee7",
+      background: '#fffee7',
       title: (
         <>
           Regulated by <br /> WICO.
         </>
       ),
-      description: "100% Reliable",
-      icon: "images/icon/icon_100.svg",
-      width: "169",
-      height: "165",
-      delay: "100",
+      description: '100% Reliable',
+      icon: 'images/icon/icon_100.svg',
+      width: '169',
+      height: '165',
+      delay: '100',
     },
     {
-      background: "#FBF1FF",
+      background: '#FBF1FF',
       title: (
         <>
           Get Instant support <br /> all day.
         </>
       ),
-      width: "202",
-      height: "170",
-      description: "Claim Support",
-      icon: "images/icon/icon_101.svg",
-      delay: "200",
+      width: '202',
+      height: '170',
+      description: 'Claim Support',
+      icon: 'images/icon/icon_101.svg',
+      delay: '200',
     },
     {
-      background: "#EEFBFA",
+      background: '#EEFBFA',
       title: (
         <>
           Unbiased advice <br /> from expert.
         </>
       ),
-      width: "175",
-      height: "175",
-      description: "Consultation",
-      icon: "images/icon/icon_102.svg",
-      delay: "300",
+      width: '175',
+      height: '175',
+      description: 'Consultation',
+      icon: 'images/icon/icon_102.svg',
+      delay: '300',
     },
   ];
 
@@ -58,7 +58,7 @@ const Feature = () => {
           >
             <h4>{feature.title}</h4>
             <p>{feature.description}</p>
-            <Image
+            <img
               width={feature.width}
               height={feature.height}
               layout="intrinsic"
@@ -66,7 +66,7 @@ const Feature = () => {
               alt="icon"
               className="position-absolute"
             />
-          </div>{" "}
+          </div>{' '}
           {/* /.card-style-fifteen */}
         </div>
       ))}

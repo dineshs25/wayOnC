@@ -1,19 +1,19 @@
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import DefaultFooter from "../../components/footer/DefaultFooter";
-import SearchBox from "../../components/blog/SearchBox";
-import Category from "../../components/blog/Category";
-import RecentPost from "../../components/blog/RecentPost";
-import BannerPost from "../../components/blog/BannerPost";
-import Tag from "../../components/blog/blog-details/Tag";
-import SocialShare from "../../components/blog/blog-details/SocialShare";
-import SingleComments from "../../components/blog/blog-details/SingleComments";
-import CommentBox from "../../components/blog/blog-details/CommentBox";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import blogsData from "../../data/blog";
-import Image from "next/image";
+import Seo from '../../components/common/Seo';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import DefaultFooter from '../../components/footer/DefaultFooter';
+import SearchBox from '../../components/blog/SearchBox';
+import Category from '../../components/blog/Category';
+import RecentPost from '../../components/blog/RecentPost';
+import BannerPost from '../../components/blog/BannerPost';
+import Tag from '../../components/blog/blog-details/Tag';
+import SocialShare from '../../components/blog/blog-details/SocialShare';
+import SingleComments from '../../components/blog/blog-details/SingleComments';
+import CommentBox from '../../components/blog/blog-details/CommentBox';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import blogsData from '../../data/blog';
+import Image from 'next/image';
 
 const DynamicBlogDetails = () => {
   const router = useRouter();
@@ -78,7 +78,7 @@ const DynamicBlogDetails = () => {
                 <div className="blog-meta-wrapper pe-xxl-5">
                   <article className="blog-details-content">
                     {blog.imageSrc && (
-                      <Image
+                      <img
                         width={816}
                         height={597}
                         layout="responsive"
@@ -101,7 +101,7 @@ const DynamicBlogDetails = () => {
                       gravida cum. Sit amet ris nullam eget felis. Enim praesent
                       elementum facilisis leo. Ultricies leo integer.
                     </p>
-                    <Image
+                    <img
                       width={800}
                       height={410}
                       src="/images/blog/blog_img_26.jpg"

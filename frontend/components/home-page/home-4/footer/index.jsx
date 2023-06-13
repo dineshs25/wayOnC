@@ -1,8 +1,9 @@
-import Link from "next/link";
-import Address from "./Address";
-import Copyright from "./Copyright";
-import FooterMenu from "./FooterMenu";
-import Social from "./Social";
+import Link from 'next/link';
+import Address from './Address';
+import Copyright from './Copyright';
+import FooterMenu from './FooterMenu';
+import Social from './Social';
+import Image from 'next/image';
 
 const index = () => {
   return (

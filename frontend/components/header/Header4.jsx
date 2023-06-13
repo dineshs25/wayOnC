@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import MainMenu from "./MainMenu";
-import Link from "next/link";
+import { useEffect, useState } from 'react';
+import MainMenu from './MainMenu';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Header4 = () => {
   const [navbar, setNavbar] = useState(false);
-  const [selectedLang, setSelectedLang] = useState("En");
+  const [selectedLang, setSelectedLang] = useState('En');
 
   const handleLangSelect = (event) => {
     event.preventDefault();
@@ -12,9 +13,9 @@ const Header4 = () => {
   };
 
   const languages = [
-    { code: "Fr", name: "French" },
-    { code: "In", name: "Indian" },
-    { code: "Ru", name: "Russian" },
+    { code: 'Fr', name: 'French' },
+    { code: 'In', name: 'Indian' },
+    { code: 'Ru', name: 'Russian' },
   ];
 
   const changeBackground = () => {
@@ -26,23 +27,28 @@ const Header4 = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground);
+    window.addEventListener('scroll', changeBackground);
     return () => {
-      window.removeEventListener("scroll", changeBackground);
+      window.removeEventListener('scroll', changeBackground);
     };
   }, []);
 
   return (
     <header
       className={`theme-main-menu sticky-menu theme-menu-five white-vr ${
-        navbar ? "fixed" : ""
+        navbar ? 'fixed' : ''
       }`}
     >
       <div className="inner-content position-relative">
         <div className="d-flex align-items-center">
           <div className="logo order-lg-0">
             <Link href="/">
-              <img src="/images/logo/logo_02.png" alt="" width={95} />
+              <img
+                src="/images/logo/logo.jpg"
+                alt="logo"
+                width={95}
+                height={30}
+              />
             </Link>
           </div>
           {/* End logo */}

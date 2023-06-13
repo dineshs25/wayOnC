@@ -1,39 +1,40 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
+import Image from 'next/image';
 
 const footerData = [
   {
-    title: "Links",
-    className: "col-lg-3 col-sm-4 ms-auto mb-30",
+    title: 'Links',
+    className: 'col-lg-3 col-sm-4 ms-auto mb-30',
     links: [
-      { label: "Home", href: "/" },
-      { label: "Pricing", href: "/pages-menu/pricing" },
-      { label: "About us", href: "/pages-menu/about-us-v1" },
-      { label: "Careers", href: "/blog/blog-v2" },
-      { label: "Features", href: "/pages-menu/service-v1" },
-      { label: "Demo the product", href: "/blog/blog-v3" },
+      { label: 'Home', href: '/' },
+      { label: 'Pricing', href: '/pages-menu/pricing' },
+      { label: 'About us', href: '/pages-menu/about-us-v1' },
+      { label: 'Careers', href: '/blog/blog-v2' },
+      { label: 'Features', href: '/pages-menu/service-v1' },
+      { label: 'Demo the product', href: '/blog/blog-v3' },
     ],
   },
   {
-    title: "Legal",
-    className: "col-lg-3 col-sm-4 mb-30",
+    title: 'Legal',
+    className: 'col-lg-3 col-sm-4 mb-30',
     links: [
-      { label: "Terms of use", href: "/pages-menu/faq" },
-      { label: "Terms & conditions", href: "/pages-menu/faq" },
-      { label: "Privacy policy", href: "/pages-menu/faq" },
-      { label: "Cookie policy", href: "/pages-menu/faq" },
+      { label: 'Terms of use', href: '/pages-menu/faq' },
+      { label: 'Terms & conditions', href: '/pages-menu/faq' },
+      { label: 'Privacy policy', href: '/pages-menu/faq' },
+      { label: 'Cookie policy', href: '/pages-menu/faq' },
     ],
   },
   {
-    title: "Products",
-    className: "col-xl-2 col-lg-3 col-sm-4 mb-30",
+    title: 'Products',
+    className: 'col-xl-2 col-lg-3 col-sm-4 mb-30',
     links: [
-      { label: "Take the tour", href: "/blog/1" },
-      { label: "Live chat", href: "/blog/2" },
-      { label: "Self-service", href: "/blog/3" },
-      { label: "Social", href: "/blog/4" },
-      { label: "Collaboration", href: "/blog/4" },
-      { label: "Jano Reviews", href: "/blog/5" },
+      { label: 'Take the tour', href: '/blog/1' },
+      { label: 'Live chat', href: '/blog/2' },
+      { label: 'Self-service', href: '/blog/3' },
+      { label: 'Social', href: '/blog/4' },
+      { label: 'Collaboration', href: '/blog/4' },
+      { label: 'Jano Reviews', href: '/blog/5' },
     ],
   },
 ];

@@ -1,4 +1,5 @@
-import FilterBox from "./FilterBox";
+import FilterBox from './FilterBox';
+import Image from 'next/image';
 
 const Hero = () => {
   return (

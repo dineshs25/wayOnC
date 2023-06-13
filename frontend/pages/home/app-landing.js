@@ -1,19 +1,20 @@
-import React from "react";
-import Seo from "../../components/common/Seo";
-import Header from "../../components/home-page/home-7/Header";
-import Hero from "../../components/home-page/home-7/Hero";
-import Features from "../../components/home-page/home-7/Features";
-import Features2 from "../../components/home-page/home-7/Features2";
-import WhyChoose from "../../components/home-page/home-7/WhyChoose";
-import Features3 from "../../components/home-page/home-7/Features3";
-import Testimonial from "../../components/home-page/home-7/Testimonial";
-import Faq from "../../components/home-page/home-7/Faq";
-import Pricng from "../../components/home-page/home-7/Pricng";
-import LogoGroup from "../../components/home-page/home-7/LogoGroup";
-import AddressInfo from "../../components/home-page/home-7/AddressInfo";
-import Subsribe from "../../components/home-page/home-7/Subsribe";
-import Social from "../../components/home-page/home-7/Social";
-import Link from "next/link";
+import React from 'react';
+import Seo from '../../components/common/Seo';
+import Header from '../../components/home-page/home-7/Header';
+import Hero from '../../components/home-page/home-7/Hero';
+import Features from '../../components/home-page/home-7/Features';
+import Features2 from '../../components/home-page/home-7/Features2';
+import WhyChoose from '../../components/home-page/home-7/WhyChoose';
+import Features3 from '../../components/home-page/home-7/Features3';
+import Testimonial from '../../components/home-page/home-7/Testimonial';
+import Faq from '../../components/home-page/home-7/Faq';
+import Pricng from '../../components/home-page/home-7/Pricng';
+import LogoGroup from '../../components/home-page/home-7/LogoGroup';
+import AddressInfo from '../../components/home-page/home-7/AddressInfo';
+import Subsribe from '../../components/home-page/home-7/Subsribe';
+import Social from '../../components/home-page/home-7/Social';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const AppLanding = () => {
   return (
@@ -162,7 +163,7 @@ const AppLanding = () => {
                     Over
                     <span
                       className="text-decoration-underline"
-                      style={{ color: "#6A45FF" }}
+                      style={{ color: '#6A45FF' }}
                     >
                       150,000+ client
                     </span>
@@ -204,7 +205,7 @@ const AppLanding = () => {
                 className="title-style-four text-center pb-100"
                 data-aos="fade-up"
               >
-                <div className="sc-title-two" style={{ color: "#6A45FF" }}>
+                <div className="sc-title-two" style={{ color: '#6A45FF' }}>
                   Features
                 </div>
                 <h2 className="main-title fw-500 tx-dark m0">
@@ -234,7 +235,7 @@ const AppLanding = () => {
           <div className="row">
             <div className="col-xl-5 col-lg-6 ms-auto">
               <div className="title-style-four text-center text-lg-start pb-100 lg-pb-30">
-                <div className="sc-title-two" style={{ color: "#6A45FF" }}>
+                <div className="sc-title-two" style={{ color: '#6A45FF' }}>
                   Testimonials
                 </div>
                 <h2 className="main-title fw-500 tx-dark m0">
@@ -263,25 +264,25 @@ const AppLanding = () => {
             src="/images/media/img_22.jpg"
             alt="media"
             className="lazy-img shapes rounded-circle avatar-one"
-            style={{ width: "50px", height: "50px" }}
+            style={{ width: '50px', height: '50px' }}
           />
           <img
             src="/images/media/img_23.jpg"
             alt="media"
             className="lazy-img shapes rounded-circle avatar-two"
-            style={{ width: "80px", height: "80px" }}
+            style={{ width: '80px', height: '80px' }}
           />
           <img
             src="/images/media/img_24.jpg"
             alt="media"
             className="lazy-img shapes rounded-circle avatar-three"
-            style={{ width: "60px", height: "60px" }}
+            style={{ width: '60px', height: '60px' }}
           />
           <img
             src="/images/media/img_25.jpg"
             alt="media"
             className="lazy-img shapes rounded-circle avatar-four"
-            style={{ width: "80px", height: "80px" }}
+            style={{ width: '80px', height: '80px' }}
           />
         </div>
       </div>
@@ -296,7 +297,7 @@ const AppLanding = () => {
           <div className="row align-items-start align-items-xl-center">
             <div className="col-xl-5 col-lg-6" data-aos="fade-right">
               <div className="title-style-four">
-                <div className="sc-title-two" style={{ color: "#6A45FF" }}>
+                <div className="sc-title-two" style={{ color: '#6A45FF' }}>
                   Questions &amp; Answers
                 </div>
                 <h2 className="main-title fw-500 tx-dark m0">
@@ -306,7 +307,7 @@ const AppLanding = () => {
               {/* /.title-style-four */}
               <div
                 className="fs-15 fw-500 pt-70 pb-5 lg-pt-40"
-                style={{ color: "#6A45FF" }}
+                style={{ color: '#6A45FF' }}
               >
                 Confusion?
               </div>
@@ -395,7 +396,7 @@ const AppLanding = () => {
           <div className="row align-items-center">
             <div className="col-xl-5 col-lg-6" data-data-aos="fade-right">
               <div className="title-style-four">
-                <div className="sc-title-two" style={{ color: "#6A45FF" }}>
+                <div className="sc-title-two" style={{ color: '#6A45FF' }}>
                   Our Partners
                 </div>
                 <h2 className="main-title fw-500 tx-dark m0">

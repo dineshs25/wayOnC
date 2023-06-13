@@ -1,9 +1,10 @@
-import Seo from "../components/common/Seo";
-import DefaulHeader from "../components/header/DefaulHeader";
-import DefaultFooter from "../components/footer/DefaultFooter";
-import Testimonial from "../components/home-page/home-3/Testimonial";
-import Testimonial2 from "../components/home-page/home-5/Testimonial";
-import Testimonial3 from "../components/home-page/home-6/Testimonial";
+import Seo from '../components/common/Seo';
+import DefaulHeader from '../components/header/DefaulHeader';
+import DefaultFooter from '../components/footer/DefaultFooter';
+import Testimonial from '../components/home-page/home-3/Testimonial';
+import Testimonial2 from '../components/home-page/home-5/Testimonial';
+import Testimonial3 from '../components/home-page/home-6/Testimonial';
+import Image from 'next/image';
 
 const Testimonials = () => {
   return (
@@ -148,7 +149,7 @@ const Testimonials = () => {
               <div className="title-style-three text-center mb-70 lg-mb-40">
                 <div
                   className="icon d-flex align-items-center justify-content-center rounded-circle"
-                  style={{ background: "#FFC961" }}
+                  style={{ background: '#FFC961' }}
                 >
                   <img
                     src="/images/icon/icon_19.svg"
@@ -162,7 +163,7 @@ const Testimonials = () => {
                     client
                     <span
                       className="mark-bg"
-                      style={{ backgroundColor: "#BCF8F1" }}
+                      style={{ backgroundColor: '#BCF8F1' }}
                     />
                   </span>
                   say about us.
@@ -192,37 +193,37 @@ const Testimonials = () => {
             src="/images/media/img_07.jpg"
             alt="shape"
             className="lazy-img shapes rounded-circle cp-one"
-            style={{ width: "80px", height: "80px" }}
+            style={{ width: '80px', height: '80px' }}
           />
           <img
             src="/images/media/img_08.jpg"
             alt="shape"
             className="lazy-img shapes rounded-circle cp-two"
-            style={{ width: "45px", height: "45px" }}
+            style={{ width: '45px', height: '45px' }}
           />
           <img
             src="/images/media/img_09.jpg"
             alt="shape"
             className="lazy-img shapes rounded-circle cp-three"
-            style={{ width: "85px", height: "85px" }}
+            style={{ width: '85px', height: '85px' }}
           />
           <img
             src="/images/media/img_10.jpg"
             alt="shape"
             className="lazy-img shapes rounded-circle cp-four"
-            style={{ width: "45px", height: "45px" }}
+            style={{ width: '45px', height: '45px' }}
           />
           <img
             src="/images/media/img_11.jpg"
             alt="shape"
             className="lazy-img shapes rounded-circle cp-five"
-            style={{ width: "110px", height: "110px" }}
+            style={{ width: '110px', height: '110px' }}
           />
           <img
             src="/images/media/img_12.jpg"
             alt="shape"
             className="lazy-img shapes rounded-circle cp-six"
-            style={{ width: "55px", height: "55px" }}
+            style={{ width: '55px', height: '55px' }}
           />
         </div>
       </div>

@@ -4,6 +4,7 @@ import axios from 'axios';
 import validator from 'aadhaar-validator';
 import Form from 'react-bootstrap/Form';
 import ContactBank from '../../components/form/form_Components/contact&Bank';
+import Image from 'next/image';
 
 import Nominee from '../../components/form/form_Components/nominee';
 import ImageUpload from '../../components/form/form_Components/imageUpload';
@@ -15,7 +16,7 @@ import { useRouter } from 'next/navigation';
 
 const ClientForm = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const [auth, setAuth] = useState(false);
   const [panError, setPanError] = useState(false);
   const [panLength, setPanLength] = useState(false);
@@ -68,7 +69,6 @@ const ClientForm = () => {
     }
   };
 
-
   const logout = async () => {
     await axios
       .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/logout`)
@@ -106,7 +106,6 @@ const ClientForm = () => {
 
   const [duedate, setDueDate] = useState('');
   const [checkbox, setCheckBox] = useState(false);
-
 
   const [id, setId] = useState('');
 
@@ -171,7 +170,7 @@ const ClientForm = () => {
     const signatureImageVer = signatureImageValidation(signatureImage);
     const checkedVer = handleCheckboxSubmit(checkbox);
     if (
-      checkedVer && 
+      checkedVer &&
       panVer &&
       aadhaarVal &&
       passver &&
@@ -323,12 +322,15 @@ const ClientForm = () => {
   //handleUploadImage
   const handleImageUpload = async (e) => {
     e.preventDefault();
-    await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/client_images`, {
-      aadharImage,
-      passportSizeImage,
-      signatureImage,
-      panImage,
-    });
+    await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_API}/client/client_images`,
+      {
+        aadharImage,
+        passportSizeImage,
+        signatureImage,
+        panImage,
+      }
+    );
   };
 
   //panValidation
@@ -794,7 +796,9 @@ const ClientForm = () => {
               </p>
               <div className="checkbox">
                 <input type="checkbox" onChange={handleCheckbox} required />
-                <p className='checkbox-p'>I agree for the terms and conditions</p>
+                <p className="checkbox-p">
+                  I agree for the terms and conditions
+                </p>
               </div>
               <button type="submit">submit</button>
 

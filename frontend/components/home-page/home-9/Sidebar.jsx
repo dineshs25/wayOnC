@@ -1,11 +1,12 @@
-import Link from "next/link";
-import { navItems } from "../../../data/menu";
+import Link from 'next/link';
+import { navItems } from '../../../data/menu';
+import Image from 'next/image';
 
 const Sidebar = () => {
   const socialIcons = [
-    { icon: "fab fa-facebook-f", url: "#" },
-    { icon: "fab fa-twitter", url: "#" },
-    { icon: "fab fa-linkedin-in", url: "#" },
+    { icon: 'fab fa-facebook-f', url: '#' },
+    { icon: 'fab fa-twitter', url: '#' },
+    { icon: 'fab fa-linkedin-in', url: '#' },
   ];
 
   return (
@@ -77,15 +78,15 @@ const Sidebar = () => {
       </ul>
 
       <p className="pt-10 fs-15">
-        Copyright © {new Date().getFullYear()}{" "}
+        Copyright © {new Date().getFullYear()}{' '}
         <a
-          style={{ color: "inherit" }}
+          style={{ color: 'inherit' }}
           href="https://themeforest.net/user/ib-themes"
           target="_blank"
           rel="noopener noreferrer"
         >
           ib-themes
-        </a>{" "}
+        </a>{' '}
         inc.
       </p>
     </div>

@@ -1,13 +1,14 @@
-import Form from "./Form";
+import Form from './Form';
+import Image from 'next/image';
 
 const Contact = () => {
   const contentData = {
-    imgSrc: "/images/icon/icon_60.svg",
-    title: "Let’s talk with experience advisors.",
+    imgSrc: '/images/icon/icon_60.svg',
+    title: 'Let’s talk with experience advisors.',
     subtitle:
-      "eiusmod tempor incididunt. Ut enim mim veniam, quis nostrud elit.",
-    urgent: "Urgent?",
-    phone: "+227 300-3676",
+      'eiusmod tempor incididunt. Ut enim mim veniam, quis nostrud elit.',
+    urgent: 'Urgent?',
+    phone: '+227 300-3676',
   };
 
   return (
@@ -23,7 +24,7 @@ const Contact = () => {
         <div className="fw-500 fs-18 ur-text mb-5">{contentData.urgent}</div>
         <div className="call-btn">
           <span className="fs-18 tx-dark d-inline-block">Call us</span>
-          <a href={"tel:" + contentData.phone} className="tx-dark tran3s">
+          <a href={'tel:' + contentData.phone} className="tx-dark tran3s">
             {contentData.phone}
           </a>
         </div>

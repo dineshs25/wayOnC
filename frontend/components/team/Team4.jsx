@@ -1,52 +1,52 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const teamData = [
   {
     id: 1,
-    name: "Rashed Kabir",
-    position: "UI Designer",
-    imgSrc: "/images/team/img_08.jpg",
+    name: 'Rashed Kabir',
+    position: 'UI Designer',
+    imgSrc: '/images/team/img_08.jpg',
     socialLinks: [
-      { icon: "fab fa-facebook-f", url: "#" },
-      { icon: "fab fa-instagram", url: "#" },
-      { icon: "fab fa-pinterest-p", url: "#" },
-      { icon: "fab fa-linkedin-in", url: "#" },
+      { icon: 'fab fa-facebook-f', url: '#' },
+      { icon: 'fab fa-instagram', url: '#' },
+      { icon: 'fab fa-pinterest-p', url: '#' },
+      { icon: 'fab fa-linkedin-in', url: '#' },
     ],
   },
   {
     id: 2,
-    name: "Jannat Ferdaus",
-    position: "Marketing Lead",
-    imgSrc: "/images/team/img_09.jpg",
+    name: 'Jannat Ferdaus',
+    position: 'Marketing Lead',
+    imgSrc: '/images/team/img_09.jpg',
     socialLinks: [
-      { icon: "fab fa-facebook-f", url: "#" },
-      { icon: "fab fa-instagram", url: "#" },
-      { icon: "fab fa-pinterest-p", url: "#" },
-      { icon: "fab fa-linkedin-in", url: "#" },
+      { icon: 'fab fa-facebook-f', url: '#' },
+      { icon: 'fab fa-instagram', url: '#' },
+      { icon: 'fab fa-pinterest-p', url: '#' },
+      { icon: 'fab fa-linkedin-in', url: '#' },
     ],
   },
   {
     id: 3,
-    name: "Jubayer Hasan",
-    position: "Developer",
-    imgSrc: "/images/team/img_10.jpg",
+    name: 'Jubayer Hasan',
+    position: 'Developer',
+    imgSrc: '/images/team/img_10.jpg',
     socialLinks: [
-      { icon: "fab fa-facebook-f", url: "#" },
-      { icon: "fab fa-instagram", url: "#" },
-      { icon: "fab fa-pinterest-p", url: "#" },
-      { icon: "fab fa-linkedin-in", url: "#" },
+      { icon: 'fab fa-facebook-f', url: '#' },
+      { icon: 'fab fa-instagram', url: '#' },
+      { icon: 'fab fa-pinterest-p', url: '#' },
+      { icon: 'fab fa-linkedin-in', url: '#' },
     ],
   },
   {
     id: 4,
-    name: "Jubayer Hasan",
-    position: "Developer",
-    imgSrc: "/images/team/img_11.jpg",
+    name: 'Jubayer Hasan',
+    position: 'Developer',
+    imgSrc: '/images/team/img_11.jpg',
     socialLinks: [
-      { icon: "fab fa-facebook-f", url: "#" },
-      { icon: "fab fa-instagram", url: "#" },
-      { icon: "fab fa-pinterest-p", url: "#" },
-      { icon: "fab fa-linkedin-in", url: "#" },
+      { icon: 'fab fa-facebook-f', url: '#' },
+      { icon: 'fab fa-instagram', url: '#' },
+      { icon: 'fab fa-pinterest-p', url: '#' },
+      { icon: 'fab fa-linkedin-in', url: '#' },
     ],
   },
 ];
@@ -62,7 +62,7 @@ const Team4 = () => {
           key={index}
         >
           <div className="team-block-three position-relative mt-40 ">
-            <Image
+            <img
               width={341}
               height={486}
               src={teamMember.imgSrc}

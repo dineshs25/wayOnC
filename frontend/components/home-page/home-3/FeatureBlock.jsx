@@ -1,18 +1,20 @@
+import Image from 'next/image';
+
 const featuresData = [
   {
-    icon: "/images/icon/icon_124.svg",
-    title: "Learn skills over 120k+",
-    subtitle: "Video courses.",
+    icon: '/images/icon/icon_124.svg',
+    title: 'Learn skills over 120k+',
+    subtitle: 'Video courses.',
   },
   {
-    icon: "/images/icon/icon_125.svg",
-    title: "Choose courses taught",
-    subtitle: "Real-world experts.",
+    icon: '/images/icon/icon_125.svg',
+    title: 'Choose courses taught',
+    subtitle: 'Real-world experts.',
   },
   {
-    icon: "/images/icon/icon_126.svg",
-    title: "Learn lifetime access on",
-    subtitle: "Mobile and desktop.",
+    icon: '/images/icon/icon_126.svg',
+    title: 'Learn lifetime access on',
+    subtitle: 'Mobile and desktop.',
   },
 ];
 

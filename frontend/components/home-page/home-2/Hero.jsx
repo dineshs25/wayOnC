@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -18,7 +19,7 @@ const Hero = () => {
               <h1 className="hero-heading fw-bold tx-dark mt-25">
                 Trust your site to the world’s
                 <span className="position-relative ms-3 d-inline-block">
-                  no. 1 <img src="/images/shape/shape_95.svg" alt="shape" />
+                  no. 1<img src="/images/shape/shape_95.svg" alt="shape" />
                 </span>
                 web host.
               </h1>

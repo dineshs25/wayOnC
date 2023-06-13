@@ -1,20 +1,22 @@
+import Image from 'next/image';
+
 const CallToAction = () => {
   const platformButtons = [
     {
-      href: "#",
-      className: "ios-button",
-      icon: "/images/icon/icon_89.svg",
-      text1: "Download on the",
-      text2: "App store",
-      aos: "fade-right",
+      href: '#',
+      className: 'ios-button',
+      icon: '/images/icon/icon_89.svg',
+      text1: 'Download on the',
+      text2: 'App store',
+      aos: 'fade-right',
     },
     {
-      href: "#",
-      className: "windows-button",
-      icon: "/images/icon/playstore.svg",
-      text1: "Get it on",
-      text2: "Google play",
-      aos: "fade-left",
+      href: '#',
+      className: 'windows-button',
+      icon: '/images/icon/playstore.svg',
+      text1: 'Get it on',
+      text2: 'Google play',
+      aos: 'fade-left',
     },
   ];
   return (

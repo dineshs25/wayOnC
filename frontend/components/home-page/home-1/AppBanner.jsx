@@ -1,20 +1,22 @@
+import Image from 'next/image';
+
 const AppBanner = () => {
   const features = [
-    "Compare different insurance Item",
-    "Buy, store and share all your policies online",
-    "Email & Live chat.",
+    'Compare different insurance Item',
+    'Buy, store and share all your policies online',
+    'Email & Live chat.',
   ];
 
   const buttons = [
     {
-      platform: "Google play",
-      icon: "images/icon/playstore.svg",
-      className: "windows-button",
+      platform: 'Google play',
+      icon: 'images/icon/playstore.svg',
+      className: 'windows-button',
     },
     {
-      platform: "App store",
-      icon: "images/icon/apple-black.svg",
-      className: "ios-button",
+      platform: 'App store',
+      icon: 'images/icon/apple-black.svg',
+      className: 'ios-button',
     },
   ];
 
@@ -81,7 +83,7 @@ const AppBanner = () => {
             alt=""
             className="lazy-img shapes shape-two"
           />
-        </div>{" "}
+        </div>{' '}
         {/* /.illustration-holder */}
       </div>
     </div>

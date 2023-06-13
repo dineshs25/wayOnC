@@ -1,42 +1,42 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 const CourseCategory = () => {
   const categories = [
     {
-      icon: "/images/icon/icon_127.svg",
-      title: "IT",
-      courses: "120+ Courses",
+      icon: '/images/icon/icon_127.svg',
+      title: 'IT',
+      courses: '120+ Courses',
     },
     {
-      icon: "/images/icon/icon_128.svg",
-      title: "Graphic Design",
-      courses: "318+ Courses",
+      icon: '/images/icon/icon_128.svg',
+      title: 'Graphic Design',
+      courses: '318+ Courses',
     },
     {
-      icon: "/images/icon/icon_129.svg",
-      title: "Art",
-      courses: "73+ Courses",
+      icon: '/images/icon/icon_129.svg',
+      title: 'Art',
+      courses: '73+ Courses',
     },
     {
-      icon: "/images/icon/icon_130.svg",
-      title: "Business",
-      courses: "430+ Courses",
+      icon: '/images/icon/icon_130.svg',
+      title: 'Business',
+      courses: '430+ Courses',
     },
     {
-      icon: "/images/icon/icon_131.svg",
-      title: "Digital Marketing",
-      courses: "230+ Courses",
+      icon: '/images/icon/icon_131.svg',
+      title: 'Digital Marketing',
+      courses: '230+ Courses',
     },
     {
-      icon: "/images/icon/icon_132.svg",
-      title: "Language",
-      courses: "310+ Courses",
+      icon: '/images/icon/icon_132.svg',
+      title: 'Language',
+      courses: '310+ Courses',
     },
     {
-      icon: "/images/icon/icon_133.svg",
-      title: "Development",
-      courses: "73+ Courses",
+      icon: '/images/icon/icon_133.svg',
+      title: 'Development',
+      courses: '73+ Courses',
     },
   ];
 
@@ -49,7 +49,7 @@ const CourseCategory = () => {
             className="card-style-eighteen text-center tran3s mb-40 xs-mb-20"
           >
             <div className="icon d-flex align-items-end justify-content-center">
-              <Image
+              <img
                 width={42}
                 height={42}
                 src={category.icon}

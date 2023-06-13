@@ -1,11 +1,12 @@
-import Link from "next/link";
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
-import blogPosts from "../../../data/blog";
+import Link from 'next/link';
+import { useState } from 'react';
+import ModalVideo from 'react-modal-video';
+import blogPosts from '../../../data/blog';
+import Image from 'next/image';
 
 const Blog = () => {
   const [isOpen, setOpen] = useState(false);
-  const [videoId, setVideoId] = useState("");
+  const [videoId, setVideoId] = useState('');
   const openModal = (id) => {
     setVideoId(id);
     setOpen(true);
@@ -18,7 +19,7 @@ const Blog = () => {
         isOpen={isOpen}
         videoId={videoId}
         onClose={() => {
-          setVideoId("");
+          setVideoId('');
           setOpen(false);
         }}
       />

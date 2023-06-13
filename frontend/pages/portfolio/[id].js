@@ -1,15 +1,16 @@
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import DefaultFooter from "../../components/footer/DefaultFooter";
-import SocialShare from "../../components/portfolio/portfolio-details/SocialShare";
-import ProjectDetails from "../../components/portfolio/portfolio-details/ProjectDetails";
-import ProjectSlide from "../../components/portfolio/portfolio-details/ProjectSlide";
-import CallToAction from "../../components/portfolio/CallToAction";
-import PortfolioGallery from "../../components/portfolio/portfolio-details/PortfolioGallery";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import portfolioData from "../../data/portfolio";
-import PortfolioDetailsTitle from "../../components/portfolio/portfolio-details/PortfolioDetailsTitle";
+import Seo from '../../components/common/Seo';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import DefaultFooter from '../../components/footer/DefaultFooter';
+import SocialShare from '../../components/portfolio/portfolio-details/SocialShare';
+import ProjectDetails from '../../components/portfolio/portfolio-details/ProjectDetails';
+import ProjectSlide from '../../components/portfolio/portfolio-details/ProjectSlide';
+import CallToAction from '../../components/portfolio/CallToAction';
+import PortfolioGallery from '../../components/portfolio/portfolio-details/PortfolioGallery';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import portfolioData from '../../data/portfolio';
+import PortfolioDetailsTitle from '../../components/portfolio/portfolio-details/PortfolioDetailsTitle';
+import Image from 'next/image';
 
 const DynamicPortfolioDetails = () => {
   const router = useRouter();

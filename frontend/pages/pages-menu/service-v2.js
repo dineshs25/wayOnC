@@ -1,11 +1,12 @@
-import Seo from "../../components/common/Seo";
-import Header5 from "../../components/header/Header5";
-import Property from "../../components/home-page/home-5/Property";
-import CallToActions from "../../components/home-page/home-5/CallToActions";
-import Footer from "../../components/home-page/home-5/footer";
-import Service2 from "../../components/services/Service2";
-import Testimonial from "../../components/home-page/home-5/Testimonial";
-import Link from "next/link";
+import Seo from '../../components/common/Seo';
+import Header5 from '../../components/header/Header5';
+import Property from '../../components/home-page/home-5/Property';
+import CallToActions from '../../components/home-page/home-5/CallToActions';
+import Footer from '../../components/home-page/home-5/footer';
+import Service2 from '../../components/services/Service2';
+import Testimonial from '../../components/home-page/home-5/Testimonial';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const ServiceV2 = () => {
   return (

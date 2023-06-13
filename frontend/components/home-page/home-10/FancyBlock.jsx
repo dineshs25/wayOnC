@@ -1,34 +1,36 @@
+import Image from 'next/image';
+
 const FancyBlock = () => {
   const images = [
     {
-      src: "/images/media/img_04.jpg",
-      alt: "media",
-      className: "lazy-img rounded-3",
+      src: '/images/media/img_04.jpg',
+      alt: 'media',
+      className: 'lazy-img rounded-3',
     },
     {
-      src: "/images/shape/shape_15.svg",
-      alt: "media",
-      className: "lazy-img shapes shape-one",
+      src: '/images/shape/shape_15.svg',
+      alt: 'media',
+      className: 'lazy-img shapes shape-one',
     },
     {
-      src: "/images/shape/shape_16.svg",
-      alt: "media",
-      className: "lazy-img shapes shape-two",
+      src: '/images/shape/shape_16.svg',
+      alt: 'media',
+      className: 'lazy-img shapes shape-two',
     },
     {
-      src: "/images/shape/shape_17.svg",
-      alt: "media",
-      className: "lazy-img shapes shape-three",
+      src: '/images/shape/shape_17.svg',
+      alt: 'media',
+      className: 'lazy-img shapes shape-three',
     },
     {
-      src: "/images/shape/shape_18.svg",
-      alt: "media",
-      className: "lazy-img shapes shape-four",
+      src: '/images/shape/shape_18.svg',
+      alt: 'media',
+      className: 'lazy-img shapes shape-four',
     },
     {
-      src: "/images/shape/shape_19.svg",
-      alt: "media",
-      className: "lazy-img shapes shape-five",
+      src: '/images/shape/shape_19.svg',
+      alt: 'media',
+      className: 'lazy-img shapes shape-five',
     },
   ];
 
@@ -40,9 +42,9 @@ const FancyBlock = () => {
       </>
     ),
     subtitle:
-      "Auis nostrud exercitation ullamco labors nis slit alquip Duis aute irure dolor in reprehen erio isu voluptate velit sed.",
-    author: "Rashed Kabir",
-    authorTitle: "CEO Janu",
+      'Auis nostrud exercitation ullamco labors nis slit alquip Duis aute irure dolor in reprehen erio isu voluptate velit sed.',
+    author: 'Rashed Kabir',
+    authorTitle: 'CEO Janu',
   };
 
   return (
@@ -57,7 +59,7 @@ const FancyBlock = () => {
             {data.subtitle}
           </p>
           <div className="name fs-20 tx-dark fw-500">
-            - {data.author},{" "}
+            - {data.author},{' '}
             <span className="opacity-25">{data.authorTitle}</span>
           </div>
         </div>

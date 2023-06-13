@@ -1,21 +1,21 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const Block2 = () => {
   const data = [
     {
-      icon: "/images/icon/icon_78.png",
-      title: "Best Exchange Rate",
-      description: "Convert data noise intelligent for quis lorem.",
+      icon: '/images/icon/icon_78.png',
+      title: 'Best Exchange Rate',
+      description: 'Convert data noise intelligent for quis lorem.',
     },
     {
-      icon: "/images/icon/icon_79.png",
-      title: "Protected by insurance",
-      description: "Convert data noise intelligent for quis lorem.",
+      icon: '/images/icon/icon_79.png',
+      title: 'Protected by insurance',
+      description: 'Convert data noise intelligent for quis lorem.',
     },
     {
-      icon: "/images/icon/icon_81.png",
-      title: "Secure storage",
-      description: "Convert data noise intelligent for quis lorem.",
+      icon: '/images/icon/icon_81.png',
+      title: 'Secure storage',
+      description: 'Convert data noise intelligent for quis lorem.',
     },
   ];
 
@@ -24,7 +24,7 @@ const Block2 = () => {
       {data.map((item, index) => (
         <div
           key={index}
-          className={`col-lg-4 col-md-6 ${index === 1 ? "active" : ""}`}
+          className={`col-lg-4 col-md-6 ${index === 1 ? 'active' : ''}`}
         >
           <div
             className="card-style-twelve text-center position-relative mt-40"
@@ -32,7 +32,7 @@ const Block2 = () => {
             data-aos-delay={`${index * 100}`}
           >
             <div className="icon d-flex align-items-center justify-content-center">
-              <Image
+              <img
                 width={180}
                 height={180}
                 layout="intrinsic"

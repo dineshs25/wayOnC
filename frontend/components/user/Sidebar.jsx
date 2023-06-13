@@ -1,8 +1,9 @@
 import React from 'react';
 import Logout from './logout';
 import Link from 'next/link';
+import Image from 'next/image';
 
-const Sidebar = ({name}) => {
+const Sidebar = ({ name }) => {
   return (
     <>
       <div className="sidebar">

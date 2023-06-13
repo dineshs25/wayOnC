@@ -1,8 +1,9 @@
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import DefaultFooter from "../../components/footer/DefaultFooter";
-import Team2 from "../../components/team/Team2";
-import CallToAction from "../../components/team/CallToAction";
+import Seo from '../../components/common/Seo';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import DefaultFooter from '../../components/footer/DefaultFooter';
+import Team2 from '../../components/team/Team2';
+import CallToAction from '../../components/team/CallToAction';
+import Image from 'next/image';
 
 const TeamV1 = () => {
   return (

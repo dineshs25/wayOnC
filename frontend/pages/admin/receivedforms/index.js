@@ -247,7 +247,7 @@ const ClientsData = () => {
                                         );
                                       }}
                                     >
-                                      Registere User
+                                      Register User
                                     </Button>
                                   )}
                                 </Table.Cell>

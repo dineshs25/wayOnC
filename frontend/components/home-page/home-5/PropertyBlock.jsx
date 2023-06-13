@@ -1,23 +1,23 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const properties = [
   {
-    imgSrc: "/images/media/img_76.jpg",
-    name: "Blueberry villa",
-    address: "Mirpur 10, Stadium dhaka 1208",
-    price: "$34,900",
+    imgSrc: '/images/media/img_76.jpg',
+    name: 'Blueberry villa',
+    address: 'Mirpur 10, Stadium dhaka 1208',
+    price: '$34,900',
   },
   {
-    imgSrc: "/images/media/img_77.jpg",
-    name: "White House villa",
-    address: "Mirpur 10, Stadium dhaka 1208",
-    price: "$28,100",
+    imgSrc: '/images/media/img_77.jpg',
+    name: 'White House villa',
+    address: 'Mirpur 10, Stadium dhaka 1208',
+    price: '$28,100',
   },
   {
-    imgSrc: "/images/media/img_78.jpg",
-    name: "Luxury villa in Dal lake",
-    address: "Mirpur 10, Stadium dhaka 1208",
-    price: "$42,500",
+    imgSrc: '/images/media/img_78.jpg',
+    name: 'Luxury villa in Dal lake',
+    address: 'Mirpur 10, Stadium dhaka 1208',
+    price: '$42,500',
   },
 ];
 
@@ -27,7 +27,7 @@ const Property = () => {
       {properties.map((property, index) => (
         <div key={index} className="col-lg-4 col-sm-6">
           <div className="card-style-twentyTwo mt-35">
-            <Image
+            <img
               width={424}
               height={361}
               src={property.imgSrc}

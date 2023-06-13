@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -47,7 +47,7 @@ const Hero = () => {
                 className="lazy-img"
               />
               <div className="media-img">
-                <Image
+                <img
                   width={490}
                   height={542}
                   layout="responsive"

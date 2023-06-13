@@ -1,19 +1,20 @@
-import React from "react";
-import Seo from "../../components/common/Seo";
-import Header from "../../components/home-page/home-6/Header";
-import Hero from "../../components/home-page/home-6/Hero";
-import ScreenHolder from "../../components/home-page/home-6/ScreenHolder";
-import Link from "next/link";
-import ProductTabs from "../../components/home-page/home-6/ProductTabs";
-import TagList from "../../components/home-page/home-6/TagList";
-import Features from "../../components/home-page/home-6/Features";
-import Testimonial from "../../components/home-page/home-6/Testimonial";
-import CircleBgShape from "../../components/home-page/home-6/CircleBgShape";
-import Partners from "../../components/home-page/home-6/Partners";
-import Pricing from "../../components/home-page/home-6/Pricing";
-import Subscribe from "../../components/home-page/home-6/Subscribe";
-import FooterMenu from "../../components/home-page/home-6/FooterMenu";
-import CopyrightFooter2 from "../../components/footer/CopyrightFooter2";
+import React from 'react';
+import Seo from '../../components/common/Seo';
+import Header from '../../components/home-page/home-6/Header';
+import Hero from '../../components/home-page/home-6/Hero';
+import ScreenHolder from '../../components/home-page/home-6/ScreenHolder';
+import Link from 'next/link';
+import ProductTabs from '../../components/home-page/home-6/ProductTabs';
+import TagList from '../../components/home-page/home-6/TagList';
+import Features from '../../components/home-page/home-6/Features';
+import Testimonial from '../../components/home-page/home-6/Testimonial';
+import CircleBgShape from '../../components/home-page/home-6/CircleBgShape';
+import Partners from '../../components/home-page/home-6/Partners';
+import Pricing from '../../components/home-page/home-6/Pricing';
+import Subscribe from '../../components/home-page/home-6/Subscribe';
+import FooterMenu from '../../components/home-page/home-6/FooterMenu';
+import CopyrightFooter2 from '../../components/footer/CopyrightFooter2';
+import Image from 'next/image';
 
 const SassProduct = () => {
   return (
@@ -56,7 +57,7 @@ const SassProduct = () => {
                       software
                       <span
                         className="mark-bg"
-                        style={{ backgroundColor: "#D6F9EF" }}
+                        style={{ backgroundColor: '#D6F9EF' }}
                       />
                     </span>
                     you use.
@@ -108,7 +109,7 @@ const SassProduct = () => {
                     managment
                     <span
                       className="mark-bg"
-                      style={{ backgroundColor: "#F7E4FF" }}
+                      style={{ backgroundColor: '#F7E4FF' }}
                     />
                   </span>
                   &amp; task togather
@@ -147,7 +148,7 @@ const SassProduct = () => {
                     Over
                     <span
                       className="text-decoration-underline"
-                      style={{ color: "#FF7B5E" }}
+                      style={{ color: '#FF7B5E' }}
                     >
                       150,000+ client
                     </span>
@@ -158,7 +159,7 @@ const SassProduct = () => {
                       choose
                       <span
                         className="mark-bg"
-                        style={{ backgroundColor: "#D8FFE8" }}
+                        style={{ backgroundColor: '#D8FFE8' }}
                       />
                     </span>
                     Janu tools.
@@ -215,7 +216,7 @@ const SassProduct = () => {
                     Discover
                     <span
                       className="mark-bg"
-                      style={{ backgroundColor: "#E1EDFF" }}
+                      style={{ backgroundColor: '#E1EDFF' }}
                     />
                   </span>
                   our all features
@@ -259,7 +260,7 @@ const SassProduct = () => {
               <div className="title-style-three text-center mb-70 lg-mb-40">
                 <div
                   className="icon d-flex align-items-center justify-content-center rounded-circle"
-                  style={{ background: "#FFC961" }}
+                  style={{ background: '#FFC961' }}
                 >
                   <img
                     src="/images/icon/icon_19.svg"
@@ -273,7 +274,7 @@ const SassProduct = () => {
                     client
                     <span
                       className="mark-bg"
-                      style={{ backgroundColor: "#BCF8F1" }}
+                      style={{ backgroundColor: '#BCF8F1' }}
                     />
                   </span>
                   say about us.
@@ -316,7 +317,7 @@ const SassProduct = () => {
                     support
                     <span
                       className="mark-bg"
-                      style={{ backgroundColor: "#FFF3C6" }}
+                      style={{ backgroundColor: '#FFF3C6' }}
                     />
                   </span>
                   us always
@@ -369,7 +370,7 @@ const SassProduct = () => {
                     choose
                     <span
                       className="mark-bg"
-                      style={{ backgroundColor: "#FFE1FB" }}
+                      style={{ backgroundColor: '#FFE1FB' }}
                     />
                   </span>
                   your plan.
@@ -445,7 +446,7 @@ const SassProduct = () => {
                     plan?
                     <span
                       className="mark-bg"
-                      style={{ backgroundColor: "#C3F0FF" }}
+                      style={{ backgroundColor: '#C3F0FF' }}
                     />
                   </span>
                   It’s just a matter of clike

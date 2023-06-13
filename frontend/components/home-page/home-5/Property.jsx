@@ -1,21 +1,22 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Property = () => {
   const properties = [
     {
-      image: "/images/media/img_73.jpg",
-      title: "Condos",
-      delay: "100",
+      image: '/images/media/img_73.jpg',
+      title: 'Condos',
+      delay: '100',
     },
     {
-      image: "/images/media/img_74.jpg",
-      title: "Property",
-      delay: "200",
+      image: '/images/media/img_74.jpg',
+      title: 'Property',
+      delay: '200',
     },
     {
-      image: "/images/media/img_75.jpg",
-      title: "Home Rent",
-      delay: "300",
+      image: '/images/media/img_75.jpg',
+      title: 'Home Rent',
+      delay: '300',
     },
   ];
 

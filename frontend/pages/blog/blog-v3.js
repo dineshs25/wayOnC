@@ -1,8 +1,9 @@
-import Seo from "../../components/common/Seo";
-import DefaulHeader from "../../components/header/DefaulHeader";
-import DefaultFooter from "../../components/footer/DefaultFooter";
-import Blog3 from "../../components/blog/Blog3";
-import Pagination from "../../components/blog/Pagination";
+import Seo from '../../components/common/Seo';
+import DefaulHeader from '../../components/header/DefaulHeader';
+import DefaultFooter from '../../components/footer/DefaultFooter';
+import Blog3 from '../../components/blog/Blog3';
+import Pagination from '../../components/blog/Pagination';
+import Image from 'next/image';
 
 const GridLayout = () => {
   return (

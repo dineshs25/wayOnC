@@ -1,53 +1,53 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const teamMembers = [
   {
     id: 1,
-    name: "Zubayer Al Hasan",
-    role: "Developer",
-    imgSrc: "/images/team/img_04.jpg",
+    name: 'Zubayer Al Hasan',
+    role: 'Developer',
+    imgSrc: '/images/team/img_04.jpg',
   },
   {
     id: 2,
-    name: "Jannatul Ferdaus",
-    role: "CEO",
-    imgSrc: "/images/team/img_05.jpg",
+    name: 'Jannatul Ferdaus',
+    role: 'CEO',
+    imgSrc: '/images/team/img_05.jpg',
   },
   {
     id: 3,
-    name: "Rashed Kabir",
-    role: "Designer",
-    imgSrc: "/images/team/img_06.jpg",
+    name: 'Rashed Kabir',
+    role: 'Designer',
+    imgSrc: '/images/team/img_06.jpg',
   },
   {
     id: 4,
-    name: "Angelina Shelly",
-    role: "Analyst",
-    imgSrc: "/images/team/img_07.jpg",
+    name: 'Angelina Shelly',
+    role: 'Analyst',
+    imgSrc: '/images/team/img_07.jpg',
   },
   {
     id: 5,
-    name: "Zubayer Al Hasan",
-    role: "Developer",
-    imgSrc: "/images/team/img_12.jpg",
+    name: 'Zubayer Al Hasan',
+    role: 'Developer',
+    imgSrc: '/images/team/img_12.jpg',
   },
   {
     id: 6,
-    name: "Jannatul Ferdaus",
-    role: "CEO",
-    imgSrc: "/images/team/img_13.jpg",
+    name: 'Jannatul Ferdaus',
+    role: 'CEO',
+    imgSrc: '/images/team/img_13.jpg',
   },
   {
     id: 7,
-    name: "Rashed Kabir",
-    role: "Designer",
-    imgSrc: "/images/team/img_14.jpg",
+    name: 'Rashed Kabir',
+    role: 'Designer',
+    imgSrc: '/images/team/img_14.jpg',
   },
   {
     id: 8,
-    name: "Angelina Shelly",
-    role: "Analyst",
-    imgSrc: "/images/team/img_15.jpg",
+    name: 'Angelina Shelly',
+    role: 'Analyst',
+    imgSrc: '/images/team/img_15.jpg',
   },
 ];
 
@@ -63,7 +63,7 @@ const Team1 = () => {
         >
           <div className="team-block-two mt-40">
             <div className="img-meta position-relative">
-              <Image
+              <img
                 width={312}
                 height={281}
                 src={member.imgSrc}

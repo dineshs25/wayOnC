@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const FancySection = () => {
   return (
     <div className="fancy-feature-fortyNine pt-110 pb-90 xl-pt-70 lg-pb-60 zn2 position-relative">
