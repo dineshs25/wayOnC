@@ -10370,6 +10370,7 @@ button.reqbtn:hover {
   padding: 20px 40px;
   width: 450px;
   border-radius: 30px;
+  margin-top: 12px;
 }
 
 .investBox input {
@@ -10821,22 +10822,42 @@ p.client-add-p {
   width: 70%;
 }
 
-.assignInterest{
-    width: 207px;
-    height: 38px;
-    border: 1px solid #d09600;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.assignInterest {
+  width: 207px;
+  height: 38px;
+  border: 1px solid #d09600;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 p.p-line-height {
-    line-height: 9px !important;
-    text-align: center;
+  line-height: 9px !important;
+  text-align: center;
 }
 
 .sign-mar {
   margin-top: 14px;
   margin-right: 25px;
+}
+
+p.tableClientEmail.clientID {
+    text-align: left;
+    padding-left: 24px;
+}
+
+p.tableClientEmail.sidebarID {
+  padding-bottom: 17px;
+}
+
+button.confirm-btn {
+    border: 1px solid #d09600;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #d09600;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.6px;
 }
 
 @media print {

@@ -4,6 +4,9 @@ const client_Schema = new mongoose.Schema({
   userAuth: {
     type: String,
   },
+  clientID:{
+    type:String,
+  },
   clintInfo: {
     clientName: {
       type: String,

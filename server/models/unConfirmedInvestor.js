@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 
-const investor_Schema = new mongoose.Schema({
+const unConfirmedInvestor_Schema = new mongoose.Schema({
   userAuth: {
+    type: String,
+  },
+  agreeStatus: {
+    type: Boolean,
+  },
+  tds: {
     type: String,
   },
   interest: {
@@ -9,6 +15,9 @@ const investor_Schema = new mongoose.Schema({
   },
   clientID: {
     type: String,
+  },
+  verified: {
+    type: Boolean,
   },
   clintInfo: {
     clientName: {
@@ -106,12 +115,6 @@ const investor_Schema = new mongoose.Schema({
     expdate: {
       type: Date,
     },
-    submittedDate: {
-      type: String,
-    },
-    principal: {
-      type: String,
-    },
     interestPerMonth: {
       type: String,
     },
@@ -136,30 +139,18 @@ const investor_Schema = new mongoose.Schema({
     pendingTotalAmount: {
       type: String,
     },
+    submittedDate: {
+      type: String,
+    },
+    principal: {
+      type: String,
+    },
   },
-  reqmoney: {
-    type: String,
-  },
-  extend: {
-    type: Boolean,
-  },
-  checkout: {
-    type: Boolean,
-  },
-  checkoutMoney: {
-    type: String,
-  },
-  tds: {
-    type: String,
-  },
-  annumInt: {
-    type: String,
-  },
-  // paymentID: {
-  //   type: String,
-  // },
 });
 
-const investor_collection = mongoose.model('Investor', investor_Schema);
+const unConfirmedInvestor_collection = mongoose.model(
+  'UnConfirmedInvestor',
+  unConfirmedInvestor_Schema
+);
 
-module.exports = investor_collection;
+module.exports = unConfirmedInvestor_collection;

@@ -12,6 +12,7 @@ const Invest = () => {
 
   const [auth, setAuth] = useState(false);
 
+
   const [amt, setAmt] = useState('');
   const [time, setTime] = useState('');
 
@@ -29,6 +30,7 @@ const Invest = () => {
   const [showData, setShowData] = useState(false);
   const [pageData, setPageData] = useState('');
   const [profileImage, setProfileImage] = useState('');
+  const [ID, setID] = useState('');
 
   const [investmentCountError, setInvestmentCountError] = useState(false);
   const [investmentError, setInvestmentError] = useState(false);
@@ -53,6 +55,7 @@ const Invest = () => {
                     setShowData(true);
                     setPageData(result.data.result);
                     setProfileImage(result.data.image);
+                    setID(result.data.clientID);
                   } else {
                     setShowData(false);
                   }
@@ -100,50 +103,7 @@ const Invest = () => {
         )
         .then((result) => {
           if (result.data.Status === 'Success') {
-            const resu = result.data.result;
-            const amount = result.data.data.amount;
-            const options = {
-              key: result.data.key, // Enter the Key ID generated from the Dashboard
-              amount: result.data.data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-              currency: 'INR',
-              name: 'WayOnC Investemnets Pvt Ltd',
-              description: 'Test Transaction',
-              // image: 'https://example.com/your_logo',
-              order_id: result.data.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-              // callback_url: 'http://localhost:8000/client/paymentSuccess',
-              handler: function (response) {
-                axios
-                  .post('http://localhost:8000/client/paymentSuccess', {
-                    response,
-                    resu,
-                    time,
-                    amount,
-                  })
-                  .then((res) => {
-                    if (res.data.Status === 'Success') {
-                      alert('Payment Success');
-                    } else {
-                      alert('Payment Failed');
-                    }
-                  })
-                  .catch((e) => {
-                    console.log(e);
-                  });
-              },
-              prefill: {
-                name: result.data.result.clintInfo.clientName,
-                email: result.data.result.bankInfo.email,
-                contact: result.data.result.bankInfo.mobile,
-              },
-              notes: {
-                address: 'Razorpay Corporate Office',
-              },
-              theme: {
-                color: '#3399cc',
-              },
-            };
-            var rzp1 = new window.Razorpay(options);
-            rzp1.open();
+            alert('Investement Request sent Successfully');
           } else if (result.data.Status === 'You have already invested') {
             alert(result.data.Status);
           } else {
@@ -155,6 +115,8 @@ const Invest = () => {
         });
     }
   };
+
+
 
   const handleCalculation = () => {
     const principal = parseInt(calculationAmt);
@@ -201,7 +163,7 @@ const Invest = () => {
     if (!amt) {
       alert('Please enter investment amount');
       return false;
-    } else if (amt < 5000) {
+    } else if (amt < 100000) {
       setInvestmentCountError(true);
       return false;
     } else {
@@ -230,7 +192,7 @@ const Invest = () => {
         alert('Please select valid Months');
         return false;
       } else {
-        if (val === 6 || val === 12 || val === 24 || val === 36) {
+        if ( val === 12 || val === 24 || val === 36) {
           return true;
         } else {
           alert('Please select month in given options');
@@ -239,6 +201,35 @@ const Invest = () => {
       }
     }
   };
+
+  const handleInvestForVer = async() =>{
+    const checkedVer = handleCheckboxSubmit(checkbox);
+    const checkedVer2 = handleCheckboxSubmit(checkbox2);
+    const InvestmentVer = investmentValidation(amt);
+    const monthVer = monthSelectValidation(time);
+    if (checkedVer && InvestmentVer && monthVer && checkedVer2) {
+      await axios
+        .post(
+          `${process.env.NEXT_PUBLIC_BACKEND_API}/client/${clientID}/investVer`,
+          {
+            amt,
+            time,
+          }
+        )
+        .then((result) => {
+          if (result.data.Status === 'Success') {
+            alert('Investement Request sent Successfully');
+          } else if (result.data.Status === 'You have already invested') {
+            alert(result.data.Status);
+          } else {
+            alert(result.data.Status);
+          }
+        })
+        .catch((e) => {
+          console.log('axios error', e);
+        });
+    }
+  }
 
   return (
     <>
@@ -252,6 +243,7 @@ const Invest = () => {
                   name={pageData.username}
                   email={pageData.userEmail}
                   image={profileImage}
+                  clientId={ID}
                 />
               </div>
               <div className="child-content">
@@ -259,6 +251,10 @@ const Invest = () => {
                   <div>
                     <Container>
                       <div>
+                      <p className="tableClientEmail clientID">Bank Details of WayOnC Investment Pvt Ltd :</p>
+                      <p className="tableClientEmail clientID">A/C No : 50200067814536</p>
+                      <p className="tableClientEmail clientID">IFSC Code : HDFC0004052</p>
+                      <p className="tableClientEmail clientID"><i>Important Note : Please mention your Client ID : {ID}<br/> while sending Investment Amount.</i></p>
                         <div className="investBox">
                           <h5>Investment Amount</h5>
                           <input
@@ -291,7 +287,6 @@ const Invest = () => {
                             <option disabled selected hidden>
                               Choose Duration
                             </option>
-                            <option value="6">6</option>
                             <option value="12">12</option>
                             <option value="24">24</option>
                             <option value="36">36</option>
@@ -318,7 +313,7 @@ const Invest = () => {
                               signature to process the legal investment bond.
                             </p>
                           </div>
-                          <button onClick={handleInvest}>Invest</button>
+                          <button onClick={handleInvestForVer}>Invest</button>
                         </div>
                       </div>
                       {/* <hr /> */}

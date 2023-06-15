@@ -63,6 +63,7 @@ const ClentID = () => {
                     } else {
                       setShowTable(true);
                       setUserData(result.data.result);
+
                       if (parseInt(result.data.result.reqmoney) <= 0) {
                         setReqStatus(true);
                       } else {
@@ -163,9 +164,10 @@ const ClentID = () => {
                   userID={userID}
                   name={userData.clintInfo.clientName}
                   email={userData.bankInfo.email}
-                  image={userData.image.passportSizeImage} 
+                  image={userData.image.passportSizeImage}
                   pdfDownload={pdfDownload}
                   path={userData.image.agreement}
+                  clientId={userData.clientID}
                 />
               </div>
               <div className="child-content">

@@ -22,7 +22,7 @@ const Sidebar = ({ name }) => {
                 <li>Received forms</li>
               </Link>
               <Link href="/user/agreements">
-                <li>Aggrements</li>
+                <li>Inv Requests</li>
               </Link>
             </ul>
           </div>

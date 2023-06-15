@@ -10,6 +10,7 @@ import Search from '../../../components/common/Search';
 import Load from '../../../components/common/Loading';
 import { useRouter } from 'next/navigation';
 import UploadModal from '../../../components/user/uploadModal';
+import { DeleteIcon } from '../../../components/admin/ui/DeleteIcon';
 
 const AgreementPage = () => {
   const [auth, setAuth] = useState(false);
@@ -18,7 +19,7 @@ const AgreementPage = () => {
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
   const [modalShow, setModalShow] = useState(false);
-
+  const [uploadStatus, setUploadStatus] = useState(false);
 
   const router = useRouter();
 
@@ -32,7 +33,7 @@ const AgreementPage = () => {
             setAuth(true);
             try {
               axios
-                .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/clientsdata`)
+                .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/investVer`)
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     if (result.data.result === null) {
@@ -71,11 +72,28 @@ const AgreementPage = () => {
     fetchAPI2(API2);
   }, []);
 
-  const handleShowMore = (e, id) => {
+  const handleAgreeMent = (e, id) => {
     let rep = id.replace(/\//g, 'slash');
     router.push(`/admin/agreements/${[rep]}`);
   };
 
+  const handleShowMore = (e, id) => {
+    let rep = id.replace(/\//g, 'slash');
+    router.push(`/admin/agreements/details/${[rep]}`);
+  };
+
+  const handleDelete = (e, id) => {
+    axios
+      .delete(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/unconfirm/delete/${id}`)
+      .then((result) => {
+        if (result.data.Status === 'Success') {
+          alert('Deleted Successfully');
+          window.location.reload(true);
+        } else {
+          alert(res.data.Status);
+        }
+      });
+  };
 
   return (
     <>
@@ -89,7 +107,7 @@ const AgreementPage = () => {
               <div className="child-content">
                 <div className="admin-content scroll">
                   <Container>
-                    <h2>Agreement Upload</h2>
+                    <h2>Investment Requests</h2>
                     <div className="searchDiv">
                       <Search setSearch={setSearch} />
                     </div>
@@ -103,8 +121,10 @@ const AgreementPage = () => {
                       <Table.Header>
                         <Table.Column>SL.NO</Table.Column>
                         <Table.Column>NAME</Table.Column>
-                        <Table.Column>SHOW MORE</Table.Column>
+                        <Table.Column>VIEW AGREEMENT</Table.Column>
                         <Table.Column>UPLOAD AGREEMENT</Table.Column>
+                        <Table.Column>SHOW MORE</Table.Column>
+                        <Table.Column>DELETE</Table.Column>
                       </Table.Header>
                       <Table.Body>
                         {userData
@@ -135,6 +155,34 @@ const AgreementPage = () => {
                                 <Table.Cell>
                                   <IconButton
                                     onClick={(e) => {
+                                      handleAgreeMent(e, value.userAuth);
+                                    }}
+                                  >
+                                    <EyeIcon size={20} fill="#979797" />
+                                  </IconButton>
+                                </Table.Cell>
+                                <Table.Cell>
+                                  {value.agreeStatus ? (
+                                    <button className="pay">UPLOADED</button>
+                                  ) : (
+                                    <>
+                                      <button
+                                        className="pay"
+                                        onClick={() => setModalShow(true)}
+                                      >
+                                        UPLOAD
+                                      </button>
+                                      <UploadModal
+                                        show={modalShow}
+                                        id={value._id}
+                                        onHide={() => setModalShow(false)}
+                                      />
+                                    </>
+                                  )}
+                                </Table.Cell>
+                                <Table.Cell>
+                                  <IconButton
+                                    onClick={(e) => {
                                       handleShowMore(e, value.userAuth);
                                     }}
                                   >
@@ -142,17 +190,13 @@ const AgreementPage = () => {
                                   </IconButton>
                                 </Table.Cell>
                                 <Table.Cell>
-                                  <button
-                                    className="pay"
-                                    onClick={() => setModalShow(true)}
+                                  <IconButton
+                                    onClick={(e) => {
+                                      handleDelete(e, value._id);
+                                    }}
                                   >
-                                    UPLOAD
-                                  </button>
-                                  <UploadModal
-                                    show={modalShow} 
-                                    id={value._id}
-                                    onHide={() => setModalShow(false)}
-                                  />
+                                    <DeleteIcon size={20} fill="#FF0080" />
+                                  </IconButton>
                                 </Table.Cell>
                               </Table.Row>
                             );

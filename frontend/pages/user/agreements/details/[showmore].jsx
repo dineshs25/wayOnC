@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import LogOut from '../../components/auth/logout';
 import Container from 'react-bootstrap/Container';
 import { Table } from '@nextui-org/react';
-import Sidebar from '../../components/admin/Sidebar';
+import Sidebar from '../../../../components/user/Sidebar';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
-import Load from '../../components/common/Loading';
+import Load from '../../../../components/common/Loading';
 
-const ClentID = () => {
+const UnConfirmedInvestor = () => {
   const router = useRouter();
 
   const userID = router.query.showmore;
@@ -38,30 +37,20 @@ const ClentID = () => {
             let hash = userID.replace(/slash/g, '/');
             try {
               axios
-                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showdetails`, {
-                  authEmail: hash,
-                })
+                .post(
+                  `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/investVer/showdetails`,
+                  {
+                    authEmail: hash,
+                  }
+                )
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
                     setUserData(result.data.result);
-                    if (result.data.result.plan.pendingInterest > 0) {
-                      setReqStatus(false);
-                    } else {
-                      setReqStatus(true);
-                    }
-                    const start = new Date(userData.plan.startdate)
-                      .toLocaleString('en-GB')
-                      .substring(0, 10);
-                    setStartDate(start);
-                    const end = new Date(userData.plan.expdate)
-                      .toLocaleString('en-GB')
-                      .substring(0, 10);
-                    setExpDate(end);
                   } else {
                     setShowData(false);
                     // setAuth(false);
-                    router.push('/auth/login');
+                    router.push('/user/login');
                   }
                 })
                 .catch((e) => {
@@ -72,7 +61,7 @@ const ClentID = () => {
             }
           } else {
             setAuth(false);
-            router.push('/admin/login');
+            router.push('/user/login');
           }
         })
         .catch((e) => {
@@ -87,10 +76,9 @@ const ClentID = () => {
     if (!userID) {
       return;
     }
-    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
+    const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/user/auth`;
     fetchAPI2(API2);
   }, [userID]);
-
 
   const handlePaidInterest = async () => {
     let hash = userID.replace(/slash/g, '/');
@@ -127,14 +115,50 @@ const ClentID = () => {
       alert('Assign Interest');
     } else {
       await axios
-        .put(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/assignInterest`, { interest, id })
+        .put(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/assignInterest`, {
+          interest,
+          id,
+        })
         .then((result) => {
           if (result.data.Status === 'Success') {
             alert('Assigned Interest Successfully');
+            window.location.reload(true);
           } else {
             alert(result.data.Status);
           }
         });
+    }
+  };
+
+  const handleConfirm = async (e, userAuth) => {
+    e.preventDefault();
+    if (userData.agreeStatus === false) {
+      alert('Upload Agreement to Confirm Investor');
+    } else {
+      if (userData.interest) {
+        await axios
+          .post(
+            `${process.env.NEXT_PUBLIC_BACKEND_API}/client/${userID}/invest`,
+            {
+              submittedDate: userData.plan.submittedDate,
+              time: userData.plan.months,
+            }
+          )
+          .then((result) => {
+            if (result.data.Status === 'Success') {
+              alert('Investor Added');
+            } else if (result.data.Status === 'You have already invested') {
+              alert(result.data.Status);
+            } else {
+              alert('Failed');
+            }
+          })
+          .catch((e) => {
+            alert('Server error');
+          });
+      } else {
+        alert('Assign Interest to Confirm Investor');
+      }
     }
   };
 
@@ -151,81 +175,9 @@ const ClentID = () => {
                 <div className="admin-content scroll">
                   <div>
                     <Container>
-                      <Table
-                        aria-label="Example table with static content"
-                        css={{
-                          height: 'auto',
-                          minWidth: '100%',
-                        }}
-                      >
-                        <Table.Header>
-                          <Table.Column>INVESTMENT</Table.Column>
-                          <Table.Column>A.O.I</Table.Column>
-                          <Table.Column>INT EARNED</Table.Column>
-                          <Table.Column>INT PAID</Table.Column>
-                          <Table.Column>INT PENDING</Table.Column>
-                          {/* <Table.Column>REQ AMOUNT</Table.Column> */}
-                          <Table.Column>TOTAL PENDING RETURNS</Table.Column>
-                          <Table.Column>PAY INT</Table.Column>
-                        </Table.Header>
-                        <Table.Body>
-                          <Table.Row>
-                            <Table.Cell>{userData.plan.principal}</Table.Cell>
-                            <Table.Cell>
-                              {userData.plan.ageOfInterest}
-                            </Table.Cell>
-                            <Table.Cell>
-                              {userData.plan.earnedInterest}
-                            </Table.Cell>
-                            <Table.Cell>
-                              {userData.plan.paidInterest}
-                            </Table.Cell>
-                            <Table.Cell>
-                              {userData.plan.pendingInterest}
-                            </Table.Cell>
-                            {/* <Table.Cell>{userData.reqmoney}</Table.Cell> */}
-                            <Table.Cell>
-                              {userData.plan.pendingTotalAmount}
-                            </Table.Cell>
-                            <Table.Cell>
-                              {reqStatus === true ? (
-                                <button className="pay">PAID</button>
-                              ) : (
-                                <Button
-                                  onClick={handlePaidInterest}
-                                  variant="outline-success"
-                                >
-                                  PAY
-                                </Button>
-                              )}
-                            </Table.Cell>
-                          </Table.Row>
-                        </Table.Body>
-                      </Table>
-                      {/* <p>
-                        <strong>Assign Interest</strong>
+                      <p className="tableClientEmail">
+                        ClientID : {userData.clientID}
                       </p>
-                      <input
-                        className="assignInterest"
-                        type="number"
-                        onChange={(e) => {
-                          setInterest(e.target.value);
-                        }}
-                      />
-                      <button
-                        className="pay"
-                        onClick={(e) => {
-                          handleInterest(e, userData._id);
-                        }}
-                      >
-                        Assign
-                      </button> */}
-                      {/* <p className="note">
-                        <i>
-                          NOTE : Every Month Interest will be Credited with the
-                          deduction of Rs {userData.tds} (10% of Int Per Month)
-                        </i>
-                      </p> */}
                       <h4 className="h4">Selected Plan</h4>
                       <Table
                         aria-label="Example table with static content"
@@ -235,36 +187,45 @@ const ClentID = () => {
                         }}
                       >
                         <Table.Header>
-                          <Table.Column>MONTHS</Table.Column>
                           <Table.Column>INVESTMENT</Table.Column>
-                          <Table.Column>START DATE</Table.Column>
-                          <Table.Column>END DATE</Table.Column>
-                          <Table.Column>INT PER MONTH</Table.Column>
-                          <Table.Column>TOTAL INT EXPECTED</Table.Column>
-                          <Table.Column>TOTAL RETURNS EXPECTED</Table.Column>
+                          <Table.Column>SELECTED MONTHS</Table.Column>
+                          <Table.Column>INVESTMENT SUBMITTED DATE</Table.Column>
                         </Table.Header>
                         <Table.Body>
                           <Table.Row>
-                            <Table.Cell>{userData.plan.months}</Table.Cell>
                             <Table.Cell>{userData.plan.principal}</Table.Cell>
+                            <Table.Cell>{userData.plan.months}</Table.Cell>
                             <Table.Cell>
-                              {userData.plan.startdate.substring(0, 10)}
-                            </Table.Cell>
-                            <Table.Cell>
-                              {userData.plan.expdate.substring(0, 10)}
-                            </Table.Cell>
-                            <Table.Cell>
-                              {userData.plan.interestPerMonth}
-                            </Table.Cell>
-                            <Table.Cell>
-                              {userData.plan.totalInterest}
-                            </Table.Cell>
-                            <Table.Cell>
-                              {userData.plan.totalReturnAmount}
+                              {userData.plan.submittedDate}
                             </Table.Cell>
                           </Table.Row>
                         </Table.Body>
                       </Table>
+                      <p>
+                        <strong>Assign Interest</strong>
+                      </p>
+                      {userData.interest ? (
+                        <button className="pay">Assigned</button>
+                      ) : (
+                        <>
+                          <input
+                            className="assignInterest"
+                            type="number"
+                            onChange={(e) => {
+                              setInterest(e.target.value);
+                            }}
+                          />
+                          <button
+                            className="pay"
+                            onClick={(e) => {
+                              handleInterest(e, userData._id);
+                            }}
+                          >
+                            Assign
+                          </button>
+                        </>
+                      )}
+
                       <h4 className="h4">Client Details</h4>
                       <Table
                         aria-label="Example table with static content"
@@ -419,7 +380,6 @@ const ClentID = () => {
                           <Table.Column>PAN</Table.Column>
                           <Table.Column>CLIENT PHOTO</Table.Column>
                           <Table.Column>SIGNATURE</Table.Column>
-                          <Table.Column>AGREEMENT</Table.Column>
                         </Table.Header>
                         <Table.Body>
                           <Table.Row>
@@ -451,16 +411,17 @@ const ClentID = () => {
                                 Signature Image
                               </Link>
                             </Table.Cell>
-                            <Table.Cell>
-                              <Link
-                                href={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${userData.image.agreement}`}
-                              >
-                                Agreement
-                              </Link>
-                            </Table.Cell>
                           </Table.Row>
                         </Table.Body>
                       </Table>
+                      <button
+                        className="confirm-btn"
+                        onClick={(e) => {
+                          handleConfirm(e, userData.userAuth);
+                        }}
+                      >
+                        Confirm Investor
+                      </button>
                     </Container>
                   </div>
                 </div>
@@ -475,4 +436,4 @@ const ClentID = () => {
   );
 };
 
-export default ClentID;
+export default UnConfirmedInvestor;

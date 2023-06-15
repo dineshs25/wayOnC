@@ -1,5 +1,5 @@
 const { paidDone } = require('../../emailTemplates/paidDone');
-const investor_collection = require('../../models/investers');
+const unConfirmedInvestor_collection = require('../../models/unConfirmedInvestor');
 const backup_collection = require('../../models/backup');
 const user_collection = require('../../models/users');
 const nodemailer = require('nodemailer');
@@ -8,13 +8,13 @@ require('dotenv').config();
 module.exports = async (req, res) => {
   const { interest, id } = req.body;
 
-  const annumInt = parseInt(interest) * 12;
+  // const annumInt = parseInt(interest) * 12;
 
-  investor_collection
+  unConfirmedInvestor_collection
     .findOne({ _id: id })
     .then((result) => {
       if (result === null) {
-        res.send({ Status: 'Success' });
+        res.send({ Status: 'No Investor found' });
       } else {
         if (result.interest) {
           res.send({ Status: 'Interest already assigned' });
@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
 
           const tds = (parseInt(perMonthInterest) * 10) / 100;
 
-          investor_collection
+          unConfirmedInvestor_collection
             .findOneAndUpdate(
               { _id: id },
               {
@@ -39,7 +39,6 @@ module.exports = async (req, res) => {
                   'plan.totalInterest': totalInterest,
                   'plan.totalReturnAmount': totalAmountReturns,
                   'plan.interestPerMonth': perMonthInterest,
-                  annumInt: annumInt,
                 },
               }
             )

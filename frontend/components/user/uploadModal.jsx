@@ -95,7 +95,7 @@ const UploadModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>Select Number of months you want to extend.</p>
+        {/* <p>Select Number of months you want to extend.</p> */}
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Passport Size photo</Form.Label>
           <Form.Control
@@ -120,7 +120,7 @@ const UploadModal = (props) => {
             handleUpload(e, props.id);
           }}
         >
-          EXTEND
+          UPLOAD
         </button>{' '}
       </Modal.Body>
       <Modal.Footer>

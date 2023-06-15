@@ -16,6 +16,7 @@ const cookieParser = require('cookie-parser');
 const investedClient = require('../controllers/clientControle/investedClient');
 const extend = require('../controllers/clientControle/extend');
 const paymentSuccess = require('../controllers/clientControle/paymentSuccess');
+const investVer = require('../controllers/clientControle/investVer');
 
 
 router.use(express.json());
@@ -40,6 +41,7 @@ router.post('/client_post', client_post);
 router.post('/client_images', client_images);
 router.post('/user', user);
 router.post('/:slug/invest', invest);
+router.post('/:slug/investVer', investVer);
 router.post('/paidamt', paidamt);
 router.put('/req', req);
 router.post('/profile', profile);

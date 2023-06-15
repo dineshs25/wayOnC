@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
           .findOne({ userAuth: authEmail })
           .then((imageResult) => {
             // console.log(imageResult);
-            res.send({ Status: 'Success', result: result, image: imageResult.image.passportSizeImage });
+            res.send({ Status: 'Success', result: result, image: imageResult.image.passportSizeImage, clientID: imageResult.clientID });
           })
           .catch((e) => {
             console.log(e);

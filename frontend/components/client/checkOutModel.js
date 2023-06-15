@@ -17,6 +17,9 @@ const CheckOutModel = (props) => {
       });
   };
 
+
+  
+
   return (
     <Modal
       {...props}
@@ -31,7 +34,7 @@ const CheckOutModel = (props) => {
       </Modal.Header>
       <Modal.Body>
         <p>
-          Your Investment will be returned with deduction of 15% + paid interest in your total
+          Your Investment will be returned with deduction of 25% from your total
           Investment.
         </p>
         <p>Please click on Checkout button below to send a checkout request</p>

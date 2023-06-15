@@ -18,8 +18,18 @@ cloudinary.config({
 });
 
 module.exports = async (req, res) => {
+  // const transporter = nodemailer.createTransport({
+  //   service: 'gmail',
+  //   auth: {
+  //     user: process.env.GMAIL_AUTH_USER,
+  //     pass: process.env.GMAIL_AUTH_PASSWORD,
+  //   },
+  // });
+
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.privateemail.com',
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.GMAIL_AUTH_USER,
       pass: process.env.GMAIL_AUTH_PASSWORD,
@@ -125,28 +135,24 @@ module.exports = async (req, res) => {
                   .then((result) => {
                     //mail
                     let mailOptions = {
-                      from: 'Finance Company Pvt ltd<dineshroyc25@gmail.com>', // sender address
-                      to: 'dineshroyc25@gmail.com', // list of receivers
+                      from: 'Finance Company Pvt ltd<investors@wayonc.com>', // sender address
+                      to: 'investors@wayonc.com', // list of receivers
                       subject: 'New Form Submitted', // Subject liners
 
                       text: 'Hello world?', // plain text body
                       html: `<table border="1px"><tr><td>Name</td><td>${clientName}</td>
-                      </tr><tr><td>Email</td><td>${email}</td></tr>
+                      </tr>
+                      <tr><td>Email</td><td>${email}</td></tr>
                       </table>`, // html body
                     };
 
                     let mailClientOption = {
-                      from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+                      from: 'WayOnC Investments Pvt Ltd.<investors@wayonc.com>', // sender address
                       to: email, // list of receivers
                       subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
 
                       text: 'Hello world?', // plain text body
-                      // html: `<p>Dear ${clientName},</p><br/>
-                      // <p>Thank you for showing interest in our company</p><br/>
-                      // <p>Our team members will verify your submitted form details</p><br/>
-                      // <p>Then we'll notify with the next procedure</p><br/>
-                      // <p>Thank you</p>
-                      // `,
+                    
                       html: formSubmit(clientName),
                     };
 

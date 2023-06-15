@@ -11,6 +11,11 @@ const saltRounds = 10;
 module.exports = async (req, res) => {
   const { id, name, email } = req.body;
 
+  const compName = 'wayonc-';
+  const random = Math.floor(1000 + Math.random() * 9000);
+  const unique = id.substring(21, 24);
+  const clientID = compName + unique + random;
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -48,9 +53,12 @@ module.exports = async (req, res) => {
                       .then((result3) => {
                         client_collection
                           .findOneAndUpdate(
-                            { 'bankInfo.email': result3[0].userEmail },
+                            {
+                              'bankInfo.email': result3[0].userEmail,
+                            },
                             {
                               $set: {
+                                clientID: clientID,
                                 userAuth: hashEmail,
                               },
                             }

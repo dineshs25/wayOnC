@@ -51,7 +51,7 @@ app.use('/admin', admin);
 app.use('/user', user);
 
 cron.schedule('*/10 * * * * *', () => {
-  const date = new Date('2023-10-09').toISOString().substring(0, 10);
+  const date = new Date('2023-07-17').toISOString().substring(0, 10);
   investor_collection.find().then((result) => {
     result.map((doc) => {
       const len = doc.plan.arrayMonths.length - 2;

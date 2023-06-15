@@ -39,26 +39,26 @@ const ClentID = () => {
             let hash = userID.replace(/slash/g, '/');
             try {
               axios
-                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showdetails`, {
+                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/investVer/showdetails`, {
                   authEmail: hash,
                 })
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
                     setUserData(result.data.result);
-                    if (result.data.result.reqmoney > 0) {
-                      setReqStatus(false);
-                    } else {
-                      setReqStatus(true);
-                    }
-                    const start = new Date(userData.plan.startdate)
-                      .toLocaleString('en-GB')
-                      .substring(0, 10);
-                    setStartDate(start);
-                    const end = new Date(userData.plan.expdate)
-                      .toLocaleString('en-GB')
-                      .substring(0, 10);
-                    setExpDate(end);
+                    // if (result.data.result.reqmoney > 0) {
+                    //   setReqStatus(false);
+                    // } else {
+                    //   setReqStatus(true);
+                    // }
+                    // const start = new Date(userData.plan.startdate)
+                    //   .toLocaleString('en-GB')
+                    //   .substring(0, 10);
+                    // setStartDate(start);
+                    // const end = new Date(userData.plan.expdate)
+                    //   .toLocaleString('en-GB')
+                    //   .substring(0, 10);
+                    // setExpDate(end);
                   } else {
                     setShowData(false);
                     // setAuth(false);

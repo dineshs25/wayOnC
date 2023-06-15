@@ -1,4 +1,6 @@
-const investor_collection = require('../../models/investers');
+// const investor_collection = require('../../models/investers');
+const unConfirmedInvestor_collection = require('../../models/unConfirmedInvestor');
+
 require('dotenv').config();
 const cloudinary = require('cloudinary').v2;
 
@@ -10,7 +12,7 @@ cloudinary.config({
 
 module.exports = async (req, res) => {
   const { passportSizeImage, id } = req.body;
-  investor_collection
+  unConfirmedInvestor_collection
     .findOne({ _id: id })
     .then((result) => {
       const path = result.image.passportSizeImage;
@@ -40,7 +42,7 @@ module.exports = async (req, res) => {
         })
         .then((result2) => {
           //   console.log(result2.public_id);
-          investor_collection
+          unConfirmedInvestor_collection
             .findOneAndUpdate(
               { _id: id },
               {
@@ -57,10 +59,11 @@ module.exports = async (req, res) => {
             });
         })
         .catch((e) => {
-          res.send({ Status: 'Failed to upload agreement' });
+          res.send({ Status: 'Failed to upload agreement'  });
         });
     })
     .catch((e) => {
-      res.send({ Status: 'Failed to upload agreement' });
+      res.send({ Status: 'Failed to upload agreement'});
+      console.log(e);
     });
 };

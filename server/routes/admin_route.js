@@ -28,6 +28,9 @@ const addEmployee = require('../controllers/adminControle/addEmployee');
 const deleteUser = require('../controllers/adminControle/deleteUser');
 const upload = require('../controllers/adminControle/upload');
 const assignInterest = require('../controllers/adminControle/assignInterest');
+const investVer = require('../controllers/adminControle/investVer');
+const invVerShowDetail = require('../controllers/adminControle/invVerShowDetail');
+const unConfirmDel = require('../controllers/adminControle/unConfirmDel');
 
 router.use(express.json());
 router.use(cookieParser());
@@ -69,14 +72,8 @@ router.post('/addEmployee', addEmployee);
 router.delete('/deleteUser/:id', deleteUser);
 router.post('/agreements/upload', upload);
 router.put('/assignInterest', assignInterest);
-
-
-
-
-
-
-
-
-
+router.get('/investVer', investVer);
+router.post('/investVer/showdetails', invVerShowDetail);
+router.delete('/unconfirm/delete/:id', unConfirmDel);
 
 module.exports = router;

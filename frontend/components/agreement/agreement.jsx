@@ -9,8 +9,8 @@ const Agreement = ({ data }) => {
     window.print();
   };
 
-  const date = data.plan.startdate.substring(7, 10);
-  const monthNames = new Date(data.plan.startdate);
+  const date = data.plan.submittedDate.substring(7, 10);
+  const monthNames = new Date(data.plan.submittedDate);
   const month = monthNames.toLocaleString('default', { month: 'long' });
   const year = monthNames.getFullYear();
   const principal = data.plan.principal;
@@ -115,7 +115,7 @@ const Agreement = ({ data }) => {
           &#8377; {data.plan.principal} /- (in words: &ldquo;Rupees {words}
           &nbsp; Only&rdquo;)
         </strong>{' '}
-        on the {date} day of {month} {year} (hereinafter referred to as
+        on the {date}<sup>th</sup> day of {month} {year} (hereinafter referred to as
         &ldquo;the due date&rdquo; which expression shall also mean the date on
         which the amount hereby secured becomes due and payable under and by
         virtue of any of the terms of these Presents irrespective of whether the
@@ -263,10 +263,10 @@ const Agreement = ({ data }) => {
         </span>{' '}
         as within mentioned.
       </p>
-      <div className="sign-div-flex">
+      <div className="sign-div-flex page-break">
         <div className="sign-img-div">
           <img
-            src={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${data.image.signatureImage}`}
+            src={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${data.image.signatureImage}`}
             alt="client-sign"
           />
         </div>

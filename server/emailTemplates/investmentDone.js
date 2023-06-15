@@ -1,4 +1,4 @@
-const investmentDone = (name, id) => {
+const investmentDone = (name) => {
   return `<!DOCTYPE html>
     <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
     
@@ -128,8 +128,7 @@ const investmentDone = (name, id) => {
                                                                 <td class="pad">
                                                                     <div style="color:#101112;direction:ltr;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;">
                                                                         <p style="margin: 0; margin-bottom: 16px;"><strong>Dear ${name},</strong></p>
-                                                                        <p style="margin: 0; margin-bottom: 16px;">Your Transaction ID : ${id},</p>
-                                                                        <p style="margin: 0; margin-bottom: 16px;"><strong>Thank you for Investing.</strong></p>
+                                                                        <p style="margin: 0; margin-bottom: 16px;"><strong>Your Investment Details are Successfully Verified</strong></p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">You can view your Investment details in your Dashboard.</p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">&nbsp;</p>
                                                                         <p style="margin: 0; margin-bottom: 16px;">Thank you</p>

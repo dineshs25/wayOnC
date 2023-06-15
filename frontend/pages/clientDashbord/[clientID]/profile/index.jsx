@@ -20,6 +20,7 @@ const Invest = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passowrdError, setPasswordError] = useState(false);
   const [profileImage, setProfileImage] = useState('');
+  const [ID, setID] = useState('');
 
   axios.defaults.withCredentials = true;
 
@@ -42,6 +43,7 @@ const Invest = () => {
                     setShowData(true);
                     setPageData(result.data.result);
                     setProfileImage(result.data.image);
+                    setID(result.data.clientID)
                   } else {
                     setShowData(false);
                   }
@@ -164,6 +166,7 @@ const Invest = () => {
                   name={pageData.username}
                   email={pageData.userEmail}
                   image={profileImage}
+                  clientId={ID}
                 />
               </div>
               <div className="child-content">

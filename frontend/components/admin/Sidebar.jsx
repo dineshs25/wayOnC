@@ -41,7 +41,7 @@ const Sidebar = () => {
                 <li>Users</li>
               </Link>
               <Link href="/admin/agreements">
-                <li>Agreements</li>
+                <li>Inv Requests</li>
               </Link>
             </ul>
           </div>
