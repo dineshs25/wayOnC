@@ -8,7 +8,9 @@ module.exports = async (req, res) => {
   const { email } = req.body;
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.privateemail.com',
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.GMAIL_AUTH_USER,
       pass: process.env.GMAIL_AUTH_PASSWORD,
@@ -37,7 +39,7 @@ module.exports = async (req, res) => {
         )
         .then((updateResult) => {
           let mailClientOption = {
-            from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+            from: 'WayOnC Investments Pvt Ltd.<investors@wayonc.com>', // sender address
             to: email, // list of receivers
             subject: 'Forgot Password.', // Subject liners
 

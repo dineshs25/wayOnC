@@ -24,7 +24,16 @@ const LoginForm = () => {
   axios.defaults.withCredentials = true;
   const login = async (e) => {
     e.preventDefault();
-    console.log(user.email);
+
+    // let axiosConfig = {
+    //   header: {
+    //     withCredentials: true,
+    //     credentials: 'include',
+    //     'Content-Type': 'application/json',
+    //     'Access-Contol-Allow-Origin': '*',
+    //   },
+    // };
+
     await axios
       .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/auth/login`, user, {
         withCredentials: true,
@@ -59,12 +68,12 @@ const LoginForm = () => {
             <div className="input-group-meta mb-30">
               <label>Email</label>
               <input
-              type="text"
-              name="email"
-              value={user.email}
-              onChange={handleChange}
-              placeholder="hasan@gmail.com"
-            ></input>
+                type="text"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
+                placeholder="hasan@gmail.com"
+              ></input>
             </div>
           </div>
           {/* End .col-12 */}
@@ -76,7 +85,7 @@ const LoginForm = () => {
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Enter Password"
                 value={user.password}
-                name='password'
+                name="password"
                 onChange={handleChange}
                 className="pass_log_id"
                 required

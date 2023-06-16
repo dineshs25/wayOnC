@@ -15,7 +15,9 @@ module.exports = async (req, res) => {
   let hash = userAuth.replace(/slash/g, '/');
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.privateemail.com',
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.GMAIL_AUTH_USER,
       pass: process.env.GMAIL_AUTH_PASSWORD,
@@ -120,8 +122,8 @@ module.exports = async (req, res) => {
 
                        //mail
                 let mailOptions = {
-                  from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
-                  to: 'dineshroyc25@gmail.com', // list of receivers
+                  from: 'WayOnC Investments Pvt Ltd.<investors@wayonc.com>', // sender address
+                  to: 'investors@wayonc.com', // list of receivers
                   subject: 'New Investment Received', // Subject liners
 
                   text: 'Hello world?', // plain text body
@@ -131,7 +133,7 @@ module.exports = async (req, res) => {
                 };
 
                 let mailClientOption = {
-                  from: 'WayOnC Investments Pvt Ltd.<dineshroyc25@gmail.com>', // sender address
+                  from: 'WayOnC Investments Pvt Ltd.<investors@wayonc.com>', // sender address
                   to: result1.bankInfo.email, // list of receivers
                   subject: 'WayOnC Investments Pvt Ltd.', // Subject liners
 
