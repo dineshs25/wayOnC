@@ -41,7 +41,7 @@ router.use(
 );
 router.use(
   cors({
-    origin: ['http://localhost:3000'],
+    origin: ['*'],
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true,
     allowedHeaders: ['Content-Type'],

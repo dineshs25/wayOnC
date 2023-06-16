@@ -22,7 +22,7 @@ router.use(
 router.use(cookieParser());
 router.use(
   cors({
-    origin: ['http://localhost:3000'],
+    origin: ['*'],
     methods: ['POST', 'GET', 'PUT'],
     credentials: true,
     allowedHeaders: ['Content-Type'],

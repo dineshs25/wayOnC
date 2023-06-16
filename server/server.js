@@ -23,7 +23,7 @@ const { StateUpdate } = require('./extendState/stateUpdate');
 
 app.use(
   cors({
-    origin: ['http://localhost:3000'],
+    origin: ['*'],
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true,
     allowedHeaders: ['Content-Type'],
@@ -51,7 +51,7 @@ app.use('/admin', admin);
 app.use('/user', user);
 
 cron.schedule('*/10 * * * * *', () => {
-  const date = new Date('2023-07-17').toISOString().substring(0, 10);
+  const date = new Date().toISOString().substring(0, 10);
   investor_collection.find().then((result) => {
     result.map((doc) => {
       const len = doc.plan.arrayMonths.length - 2;

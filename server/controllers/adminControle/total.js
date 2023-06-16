@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
           investor_collection
             .find()
             .then((todayResult) => {
-              const today = new Date('2023-06-29')
+              const today = new Date()
                 .toISOString()
                 .substring(0, 10);
               const arrayDoc = [];

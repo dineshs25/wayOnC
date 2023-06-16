@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
   await investor_collection
     .find()
     .then((result) => {
-      const today = new Date('2023-07-06').toISOString().substring(0, 10);
+      const today = new Date().toISOString().substring(0, 10);
       const arrayDoc = [];
       result.map((doc) => {
         const todayArray = doc.plan.arrayMonths;
