@@ -24,7 +24,7 @@ const Login = ({ setLoginUser }) => {
   axios.defaults.withCredentials = true;
   const login = async () => {
     await axios
-      .post(`https://admin.wayonc.cloud/api/admin/login`, user, {
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/login`, user, {
         withCredentials: true,
         credentials: 'include',
       })

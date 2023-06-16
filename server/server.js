@@ -23,7 +23,7 @@ const { StateUpdate } = require('./extendState/stateUpdate');
 
 app.use(
   cors({
-    origin: ['*'],
+    origin: ['http://localhost:3000','https://www.wayonc.com','https://wayonc.com'],
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true,
     allowedHeaders: ['Content-Type'],
@@ -42,8 +42,6 @@ mongoose
   .catch(() => {
     console.log('DB Connection failed');
   });
-
-
 
 app.use('/client', client);
 app.use('/auth', auth);

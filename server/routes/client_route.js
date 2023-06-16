@@ -28,7 +28,7 @@ router.use(
 );
 router.use(
   cors({
-    origin: ['*'],
+    origin: ['http://localhost:3000','https://www.wayonc.com','https://wayonc.com'],
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true,
     allowedHeaders: ['Content-Type'],
