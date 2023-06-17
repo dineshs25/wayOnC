@@ -7,6 +7,7 @@ import Sidebar from '../../components/admin/Sidebar';
 import Container from 'react-bootstrap/Container';
 import { Table } from '@nextui-org/react';
 import Load from '../../components/common/Loading';
+import Cookies from 'js-cookie';
 
 const AdminProfile = () => {
   const router = useRouter();
@@ -24,9 +25,10 @@ const AdminProfile = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+        .post(url, { cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);
@@ -260,7 +262,7 @@ const AdminProfile = () => {
               </div>
             </div>
           ) : (
-            <Load/>
+            <Load />
           )}
         </>
       )}

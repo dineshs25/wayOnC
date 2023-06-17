@@ -7,6 +7,7 @@ import Sidebar from '../../../components/admin/Sidebar';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Load from '../../../components/common/Loading';
+import Cookies from 'js-cookie';
 
 const CheckOutShowMore = () => {
   const router = useRouter();
@@ -27,9 +28,10 @@ const CheckOutShowMore = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+        .post(url, { cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);
@@ -37,9 +39,12 @@ const CheckOutShowMore = () => {
             let hash = userID.replace(/slash/g, '/');
             try {
               axios
-                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showdetails`, {
-                  authEmail: hash,
-                })
+                .post(
+                  `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showdetails`,
+                  {
+                    authEmail: hash,
+                  }
+                )
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
@@ -127,7 +132,7 @@ const CheckOutShowMore = () => {
     let hash = userID.replace(/slash/g, '/');
     await axios
       .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/payCheckout`, {
-        authEmail:hash,
+        authEmail: hash,
       })
       .then((result) => {
         if (result.data.Status === 'Success') {

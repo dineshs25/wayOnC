@@ -9,6 +9,7 @@ import Load from '../../../components/common/Loading';
 import Button from 'react-bootstrap/Button';
 import MyVerticallyCenteredModal from '../../../components/client/MyVerticallyCenteredModal';
 import CheckOutModel from '../../../components/client/checkOutModel';
+import Cookies from 'js-cookie';
 
 const ClentID = () => {
   const router = useRouter();
@@ -34,14 +35,15 @@ const ClentID = () => {
   axios.defaults.withCredentials = true;
 
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get('newtoken');
     try {
       let hash = userID.replace(/slash/g, '/');
       await axios
-        .post(url, { authEmail: hash })
+        .post(url, { authEmail: hash, cookie: cookie })
         .then((result) => {
+
           if (result.data.message === 'Success') {
             setAuth(true);
-
             let hash = userID.replace(/slash/g, '/');
             try {
               axios
@@ -51,7 +53,7 @@ const ClentID = () => {
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
-                    console.log(result.data.result.image.agreement);
+                    // console.log(result.data.result.image.agreement);
                     if (result.data.result.image.agreement) {
                       setPdsDownload(true);
                     } else {
@@ -103,6 +105,8 @@ const ClentID = () => {
     const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/auth/auth`;
     fetchAPI2(API2);
   }, [userID]);
+
+  // console.log(Cookies.get("newtoken"));
 
   const handleCheckout = () => {
     const reqVer = reqValidation(reqMoney);

@@ -11,6 +11,8 @@ import Load from '../../../components/common/Loading';
 import { useRouter } from 'next/navigation';
 import UploadModal from '../../../components/user/uploadModal';
 import { DeleteIcon } from '../../../components/admin/ui/DeleteIcon';
+import Cookies from "js-cookie";
+
 
 const AgreementPage = () => {
   const [auth, setAuth] = useState(false);
@@ -25,9 +27,10 @@ const AgreementPage = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+      .post(url,{cookie: cookie})
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);

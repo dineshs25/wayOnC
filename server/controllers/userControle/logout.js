@@ -5,6 +5,6 @@ require("dotenv").config();
 
 module.exports = async (req, res) => {
   
-  res.clearCookie(process.env.USER_JWT_NAME);
+  res.clearCookie("usertoken");
   return res.json({ Status: 'Success' });
 };

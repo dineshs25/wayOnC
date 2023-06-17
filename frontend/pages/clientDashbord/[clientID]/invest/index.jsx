@@ -5,13 +5,13 @@ import ClientSidebar from '../../../../components/client/ClientSideBar';
 import Container from 'react-bootstrap/Container';
 import Link from 'next/link';
 import Load from '../../../../components/common/Loading';
+import Cookies from 'js-cookie';
 
 const Invest = () => {
   const router = useRouter();
   const { clientID } = router.query;
 
   const [auth, setAuth] = useState(false);
-
 
   const [amt, setAmt] = useState('');
   const [time, setTime] = useState('');
@@ -38,10 +38,11 @@ const Invest = () => {
   axios.defaults.withCredentials = true;
 
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get('newtoken');
     try {
       let hash = clientID.replace(/slash/g, '/');
       await axios
-        .post(url, { authEmail: hash })
+        .post(url, { authEmail: hash, cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);
@@ -115,8 +116,6 @@ const Invest = () => {
         });
     }
   };
-
-
 
   const handleCalculation = () => {
     const principal = parseInt(calculationAmt);
@@ -192,7 +191,7 @@ const Invest = () => {
         alert('Please select valid Months');
         return false;
       } else {
-        if ( val === 12 || val === 24 || val === 36) {
+        if (val === 12 || val === 24 || val === 36) {
           return true;
         } else {
           alert('Please select month in given options');
@@ -202,7 +201,7 @@ const Invest = () => {
     }
   };
 
-  const handleInvestForVer = async() =>{
+  const handleInvestForVer = async () => {
     const checkedVer = handleCheckboxSubmit(checkbox);
     const checkedVer2 = handleCheckboxSubmit(checkbox2);
     const InvestmentVer = investmentValidation(amt);
@@ -229,7 +228,7 @@ const Invest = () => {
           console.log('axios error', e);
         });
     }
-  }
+  };
 
   return (
     <>
@@ -251,10 +250,22 @@ const Invest = () => {
                   <div>
                     <Container>
                       <div>
-                      <p className="tableClientEmail clientID">Bank Details of WayOnC Investment Pvt Ltd :</p>
-                      <p className="tableClientEmail clientID">A/C No : 50200067814536</p>
-                      <p className="tableClientEmail clientID">IFSC Code : HDFC0004052</p>
-                      <p className="tableClientEmail clientID"><i>Important Note : Please mention your Client ID : {ID}<br/> while sending Investment Amount.</i></p>
+                        <p className="tableClientEmail clientID">
+                          Bank Details of WayOnC Investment Pvt Ltd :
+                        </p>
+                        <p className="tableClientEmail clientID">
+                          A/C No : 50200067814536
+                        </p>
+                        <p className="tableClientEmail clientID">
+                          IFSC Code : HDFC0004052
+                        </p>
+                        <p className="tableClientEmail clientID">
+                          <i>
+                            Important Note : Please mention your Client ID :{' '}
+                            {ID}
+                            <br /> while sending Investment Amount.
+                          </i>
+                        </p>
                         <div className="investBox">
                           <h5>Investment Amount</h5>
                           <input

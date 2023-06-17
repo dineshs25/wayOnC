@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import { Table } from '@nextui-org/react';
 import Sidebar from '../../../components/admin/Sidebar';
 import Load from '../../../components/common/Loading';
+import Cookies from 'js-cookie';
 
 const FormDetails = () => {
   const router = useRouter();
@@ -19,16 +20,19 @@ const FormDetails = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+        .post(url, { cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);
 
             try {
               axios
-                .get(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/formdetail/${userID}`)
+                .get(
+                  `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/formdetail/${userID}`
+                )
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
@@ -303,7 +307,8 @@ const FormDetails = () => {
                           </Table.Row>
                         </Table.Body>
                       </Table>
-                      <Button className='verifi-btn'
+                      <Button
+                        className="verifi-btn"
                         variant="outline-success"
                         onClick={(e) => {
                           handleVerification(e, userData._id);
@@ -317,7 +322,7 @@ const FormDetails = () => {
               </div>
             </div>
           ) : (
-            <Load/>
+            <Load />
           )}
         </>
       )}

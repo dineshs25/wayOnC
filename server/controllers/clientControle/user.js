@@ -6,6 +6,7 @@ const saltRounds = 10;
 
 module.exports = async (req, res) => {
   const { authEmail } = req.body;
+  
 
   investor_collection
     .findOne({ userAuth: authEmail })

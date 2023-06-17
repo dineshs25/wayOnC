@@ -5,10 +5,10 @@ require('dotenv').config();
 
 
 module.exports = async (req, res) => {
-  //   const { authEmail } = req.body;
+    const { cookie } = req.body;
   const token = req.cookies.admintoken;
-  if (token) {
-    jwt.verify(token, process.env.ADMIN_JWT_SECRET, (err, decoded) => {
+  if (cookie) {
+    jwt.verify(cookie, process.env.ADMIN_JWT_SECRET, (err, decoded) => {
       if (err) {
         return res.send({ message: 'Authentication Error.' });
       } else {

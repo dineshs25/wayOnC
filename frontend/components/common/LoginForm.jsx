@@ -2,6 +2,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -43,7 +44,9 @@ const LoginForm = () => {
         if (res.data.Status === 'Success') {
           let hash = res.data.result;
           let rep = hash.replace(/\//g, 'slash');
-
+          Cookies.set("newtoken", res.data.cookie, {
+            expires: 7,
+          });
           router.push(`/clientDashbord/${[rep]}`);
         } else if (res.data.message === 'Please enter correct password') {
           alert(res.data.message);

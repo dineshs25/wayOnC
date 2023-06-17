@@ -8,6 +8,8 @@ import { IconButton } from '../../components/admin/ui/IconButton';
 import { EyeIcon } from '../../components/admin/ui/EyeIcon';
 import Search from '../../components/common/Search';
 import Load from '../../components/common/Loading';
+import Cookies from "js-cookie";
+
 
 const ClientsData = () => {
   const [auth, setAuth] = useState(false);
@@ -20,9 +22,10 @@ const ClientsData = () => {
   axios.defaults.withCredentials = true;
 
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+      .post(url,{cookie: cookie})
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);

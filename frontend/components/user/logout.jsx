@@ -1,20 +1,24 @@
 import React from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
+
 
 const Logout = () => {
   const logout = async () => {
-    await axios
-      .post('http://localhost:8000/user/logout')
-      .then((res) => {
-        if (res.data.Status === 'Success') {
-          window.location.reload(true);
-        } else {
-          alert('failed to logout');
-        }
-      })
-      .catch((e) => {
-        console.log('logout axios error', e);
-      });
+    Cookies.remove("newUsertoken");
+    window.location.reload(true);
+    // await axios
+    //   .post('http://localhost:8000/user/logout')
+    //   .then((res) => {
+    //     if (res.data.Status === 'Success') {
+    //       window.location.reload(true);
+    //     } else {
+    //       alert('failed to logout');
+    //     }
+    //   })
+    //   .catch((e) => {
+    //     console.log('logout axios error', e);
+    //   });
   };
 
   return (

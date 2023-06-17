@@ -4,6 +4,7 @@ import axios from 'axios';
 import LogOut from '../../components/auth/logout';
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
+import Cookies from 'js-cookie';
 
 import Sidebar from '../../components/user/Sidebar';
 
@@ -28,10 +29,12 @@ const User = () => {
   const [loading, setLoading] = useState(false);
 
   axios.defaults.withCredentials = true;
+
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newUsertoken");
     try {
       await axios
-        .get(url)
+        .post(url, { cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);

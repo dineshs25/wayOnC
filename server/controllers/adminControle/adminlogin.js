@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
               }
             );
             res.cookie(process.env.ADMIN_JWT_NAME, token, { httpOnly: true });
-            return res.send({ message: 'Success' });
+            return res.send({ message: 'Success', cookie: token });
           } else {
             res.send({ Status: 'Password is Incorrect' });
           }

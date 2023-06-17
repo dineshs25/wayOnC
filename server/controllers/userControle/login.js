@@ -19,13 +19,13 @@ module.exports = async (req, res) => {
           if (hashPassword === true) {
             const token = jwt.sign(
               { admin_id: result._id },
-              process.env.USER_JWT_SECRET,
+              "our-wayone-user-jsonwebtoken-secret-key",
               {
                 expiresIn: '1d',
               }
             );
-            res.cookie(process.env.USER_JWT_NAME, token, { httpOnly: true });
-            res.send({ Status: 'Success' });
+            res.cookie("usertoken", token, { httpOnly: true });
+            res.send({ Status: 'Success', cookie:token });
           } else {
             res.send({ Status: 'Password is Incorrect' });
           }

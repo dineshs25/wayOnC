@@ -53,7 +53,7 @@ router.get('/clientsdata', clientsData);
 router.post('/showmore', showmore);
 router.post('/showdetails', showdetails);
 router.post('/login', login);
-router.get('/auth', adminAuth);
+router.post('/auth', adminAuth);
 router.post('/logout', logout);
 router.get('/receivedforms', receivedforms);
 router.get('/formdetail/:id', formdetail);

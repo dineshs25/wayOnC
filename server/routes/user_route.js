@@ -27,7 +27,7 @@ router.use(
 
 
 router.post('/login', login);
-router.get('/auth', userAuth);
+router.post('/auth', userAuth);
 router.post('/logout', logout);
 
 

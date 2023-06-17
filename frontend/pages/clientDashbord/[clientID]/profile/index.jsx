@@ -5,6 +5,7 @@ import ClientSidebar from '../../../../components/client/ClientSideBar';
 import Container from 'react-bootstrap/Container';
 import { Table } from '@nextui-org/react';
 import Load from '../../../../components/common/Loading';
+import Cookies from 'js-cookie';
 
 const Invest = () => {
   const router = useRouter();
@@ -25,10 +26,11 @@ const Invest = () => {
   axios.defaults.withCredentials = true;
 
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get('newtoken');
     try {
       let hash = clientID.replace(/slash/g, '/');
       await axios
-        .post(url, { authEmail: hash })
+        .post(url, { authEmail: hash, cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);
@@ -43,7 +45,7 @@ const Invest = () => {
                     setShowData(true);
                     setPageData(result.data.result);
                     setProfileImage(result.data.image);
-                    setID(result.data.clientID)
+                    setID(result.data.clientID);
                   } else {
                     setShowData(false);
                   }

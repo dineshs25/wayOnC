@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Cookies from "js-cookie";
+
 
 // import { useNavigate } from 'react-router-dom';
 
@@ -30,7 +32,10 @@ const Login = ({ setLoginUser }) => {
       })
       .then((res) => {
         if (res.data.message === 'Success') {
-          router.push('/admin');
+          Cookies.set("newAdmintoken", res.data.cookie, {
+            expires: 7,
+          });
+          router.push('/admin/dashboard');
         } else {
           alert(res.data.Status);
         }

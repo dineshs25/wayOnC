@@ -10,6 +10,8 @@ import Load from '../../components/common/Loading';
 import { IconButton } from '../../components/admin/ui/IconButton';
 import { DeleteIcon } from '../../components/admin/ui/DeleteIcon';
 import AddUserModel from '../../components/admin/addUserModel';
+import Cookies from "js-cookie";
+
 
 const AddUser = () => {
   const router = useRouter();
@@ -22,9 +24,10 @@ const AddUser = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+      .post(url,{cookie: cookie})
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);

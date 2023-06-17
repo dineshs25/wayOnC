@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Cookies from "js-cookie";
+
 
 const Plans = () => {
   const [auth, setAuth] = useState(false);
@@ -12,9 +14,10 @@ const Plans = () => {
   axios.defaults.withCredentials = true;
 
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+      .post(url,{cookie: cookie})
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);

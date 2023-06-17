@@ -2,8 +2,7 @@ const user_collection = require('../../models/users');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-require("dotenv").config();
-
+require('dotenv').config();
 
 const saltRounds = 10;
 
@@ -26,11 +25,14 @@ module.exports = async (req, res) => {
                     expiresIn: '1d',
                   }
                 );
-                res.cookie(process.env.CLIENT_JWT_NAME, token, { httpOnly: true });
+                res.cookie(process.env.CLIENT_JWT_NAME, token, {
+                  httpOnly: true,
+                });
 
                 return res.json({
                   Status: 'Success',
                   result: result.authEmail,
+                  cookie: token,
                 });
               } else {
                 return res.send({ message: 'Please enter correct password' });
@@ -45,7 +47,9 @@ module.exports = async (req, res) => {
         }
       });
     } else {
-      res.send({ message: 'Please fill the form Or wait till get the login credentials' });
+      res.send({
+        message: 'Please fill the form Or wait till get the login credentials',
+      });
     }
   });
 

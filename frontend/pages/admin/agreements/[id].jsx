@@ -10,6 +10,8 @@ import Search from '../../../components/common/Search';
 import Load from '../../../components/common/Loading';
 import Link from 'next/link';
 import Agreement from '../../../components/agreement/agreement';
+import Cookies from "js-cookie";
+
 
 const ClentID = () => {
   const router = useRouter();
@@ -29,9 +31,10 @@ const ClentID = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+      .post(url,{cookie: cookie})
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);

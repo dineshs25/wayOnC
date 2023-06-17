@@ -8,6 +8,7 @@ import Sidebar from '../../components/admin/Sidebar';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Load from '../../components/common/Loading';
+import Cookies from 'js-cookie';
 
 const ClentID = () => {
   const router = useRouter();
@@ -28,9 +29,10 @@ const ClentID = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+        .post(url, { cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);
@@ -38,9 +40,12 @@ const ClentID = () => {
             let hash = userID.replace(/slash/g, '/');
             try {
               axios
-                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showdetails`, {
-                  authEmail: hash,
-                })
+                .post(
+                  `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showdetails`,
+                  {
+                    authEmail: hash,
+                  }
+                )
                 .then((result) => {
                   if (result.data.Status === 'Success') {
                     setShowData(true);
@@ -91,7 +96,6 @@ const ClentID = () => {
     fetchAPI2(API2);
   }, [userID]);
 
-
   const handlePaidInterest = async () => {
     let hash = userID.replace(/slash/g, '/');
     if (parseInt(payedInterest) > parseInt(userData.plan.earnedInterest)) {
@@ -127,7 +131,10 @@ const ClentID = () => {
       alert('Assign Interest');
     } else {
       await axios
-        .put(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/assignInterest`, { interest, id })
+        .put(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/assignInterest`, {
+          interest,
+          id,
+        })
         .then((result) => {
           if (result.data.Status === 'Success') {
             alert('Assigned Interest Successfully');

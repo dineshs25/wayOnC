@@ -4,10 +4,10 @@ const user_collection = require('../../models/users');
 require('dotenv').config();
 
 module.exports = async (req, res) => {
-  const { authEmail } = req.body;
-  const token = req.cookies.token;
-  if (token) {
-    jwt.verify(token, process.env.CLIENT_JWT_SECRET, (err, decoded) => {
+  const { authEmail, cookie } = req.body;
+  const token = req.cookies.newtoken;
+  if (cookie) {
+    jwt.verify(cookie, process.env.CLIENT_JWT_SECRET, (err, decoded) => {
       if (err) {
         return res.send({ message: 'Authentication Error.' });
       } else {

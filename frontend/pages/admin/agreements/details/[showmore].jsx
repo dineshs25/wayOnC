@@ -7,6 +7,7 @@ import Sidebar from '../../../../components/admin/Sidebar';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Load from '../../../../components/common/Loading';
+import Cookies from 'js-cookie';
 
 const UnConfirmedInvestor = () => {
   const router = useRouter();
@@ -27,9 +28,10 @@ const UnConfirmedInvestor = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+        .post(url, { cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);

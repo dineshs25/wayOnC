@@ -8,6 +8,7 @@ import { IconButton } from '../../components/admin/ui/IconButton';
 import { EyeIcon } from '../../components/admin/ui/EyeIcon';
 import Search from '../../components/common/Search';
 import Load from '../../components/common/Loading';
+import Cookies from 'js-cookie';
 
 const ClientsData = () => {
   const [auth, setAuth] = useState(false);
@@ -21,9 +22,10 @@ const ClientsData = () => {
   axios.defaults.withCredentials = true;
 
   const fetchAPI2 = async (url) => {
+    const cookie = Cookies.get("newAdmintoken");
     try {
       await axios
-        .get(url)
+        .post(url, { cookie: cookie })
         .then((result) => {
           if (result.data.message === 'Success') {
             setAuth(true);
@@ -38,7 +40,6 @@ const ClientsData = () => {
                     } else {
                       setShowData(true);
                       setUserData(result.data.result);
-                      
                     }
                   } else {
                     router.push('/auth/login');
@@ -67,7 +68,6 @@ const ClientsData = () => {
     const API2 = `${process.env.NEXT_PUBLIC_BACKEND_API}/admin/auth`;
     fetchAPI2(API2);
   }, []);
-
 
   const handleShowMore = async (e, id) => {
     e.preventDefault();
