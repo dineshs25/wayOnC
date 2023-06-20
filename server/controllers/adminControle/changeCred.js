@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
                 .then((hashPassword) => {
                   admin_collection
                     .findOneAndUpdate(
-                      { password: adminExistingPassword },
+                      { adminEmail: adminExistingEmail },
                       {
                         $set: {
                           adminName: adminName,
