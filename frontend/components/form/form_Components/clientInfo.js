@@ -2,6 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import moment from 'moment';
 
 const ClientInfo = ({
   handledatachange,
@@ -16,7 +17,7 @@ const ClientInfo = ({
     <>
       <h2>Client Information</h2>
       <Form.Group className="mb-3 " controlId="formBasicPassword">
-        <Form.Label>Client Name</Form.Label>
+        <Form.Label>Client Name<span className='mandate'>*</span></Form.Label>
 
         <Form.Control
           type="text"
@@ -29,12 +30,12 @@ const ClientInfo = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>DOB</Form.Label>
+        <Form.Label>DOB<span className='mandate'>*</span></Form.Label>
 
         <Form.Control
           type="date"
           name="dob"
-          placeholder="DOB"
+          placeholder="DOB" 
           onChange={handledatachange}
         />
         {dobError ? (
@@ -42,7 +43,7 @@ const ClientInfo = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>PAN NO</Form.Label>
+        <Form.Label>PAN NO<span className='mandate'>*</span></Form.Label>
 
         <Form.Control
           type="text"
@@ -59,7 +60,7 @@ const ClientInfo = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Adhraa Number</Form.Label>
+        <Form.Label>Adhraa Number<span className='mandate'>*</span></Form.Label>
 
         <Form.Control
           type="number"

@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
   const { email } = req.body;
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.privateemail.com',
+    host: 'smtp.hostinger.com',
     port: 587,
     secure: false,
     auth: {

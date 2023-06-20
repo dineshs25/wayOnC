@@ -271,7 +271,7 @@ const ClientsData = () => {
                         shadow
                         noMargin
                         align="center"
-                        rowsPerPage={2}
+                        rowsPerPage={6}
                       />
                     </Table>
                   </Container>

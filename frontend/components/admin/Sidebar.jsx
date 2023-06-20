@@ -12,14 +12,14 @@ const Sidebar = () => {
     <>
       <div className="sidebar">
         <div className="sidebar-header">
-          <Link href="/admin">
+          <Link href="/admin/dashboard">
             <img src="/images/logo/wayOnC-logo.png" alt="Logo" />
           </Link>
         </div>
         <div className="sidebar-content-parent">
           <div className="sidebar-content-child-header">
             <ul>
-              <Link href="/admin" className="active">
+              <Link href="/admin/dashboard" className="active">
                 <li>DashBord</li>
               </Link>
               <Link href="/admin/receivedforms">

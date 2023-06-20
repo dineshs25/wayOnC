@@ -22,6 +22,8 @@ const Invest = () => {
   const [passowrdError, setPasswordError] = useState(false);
   const [profileImage, setProfileImage] = useState('');
   const [ID, setID] = useState('');
+  const [pdfDownload, setPdsDownload] = useState(false);
+
 
   axios.defaults.withCredentials = true;
 

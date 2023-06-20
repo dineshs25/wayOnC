@@ -16,7 +16,7 @@ const ContactBank = ({
     <>
       <h2>Contact & Bank Information</h2>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Mobile No</Form.Label>
+        <Form.Label>Mobile No<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="tel"
           name="mobile"
@@ -30,7 +30,7 @@ const ContactBank = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Alt Mobile No</Form.Label>
+        <Form.Label>Alt Mobile No<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="tel"
           name="altMobile"
@@ -44,7 +44,7 @@ const ContactBank = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Bank A/c No</Form.Label>
+        <Form.Label>Bank A/c No<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="number"
           name="bank_AC_Num"
@@ -56,7 +56,7 @@ const ContactBank = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Acc. Holder Name</Form.Label>
+        <Form.Label>Acc. Holder Name<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="text"
           name="acc_holder_name"
@@ -68,7 +68,7 @@ const ContactBank = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>IFSC Code</Form.Label>
+        <Form.Label>IFSC Code<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="text"
           name="ifsc_Code"
@@ -80,7 +80,7 @@ const ContactBank = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Bank Name</Form.Label>
+        <Form.Label>Bank Name<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="text"
           name="bankName"
@@ -92,7 +92,7 @@ const ContactBank = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>E-mail ID</Form.Label>
+        <Form.Label>E-mail ID<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="email"
           name="email"
@@ -104,7 +104,7 @@ const ContactBank = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Communication Address</Form.Label>
+        <Form.Label>Communication Address<span className='mandate'>*</span></Form.Label>
         <Form.Control
           as="textarea"
           name="address"

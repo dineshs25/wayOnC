@@ -158,6 +158,7 @@ const ClentID = () => {
                 <div className="admin-content scroll">
                   <div>
                     <Container>
+                    <p className="tableClientEmail sidebarID"><i>Client ID : {userData.clientID}</i></p>
                       <Table
                         aria-label="Example table with static content"
                         css={{

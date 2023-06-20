@@ -25,7 +25,7 @@ const ImageUpload = ({
     <>
       <h2>Images upload</h2>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Passport Size photo</Form.Label>
+        <Form.Label>Passport Size photo<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="file"
           onChange={(e) => handleChangePassport(e)}
@@ -49,7 +49,7 @@ const ImageUpload = ({
         </>
       )}
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Adhaar photo</Form.Label>
+        <Form.Label>Adhaar photo<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="file"
           onChange={(e) => handleChangeAadhaar(e)}
@@ -73,7 +73,7 @@ const ImageUpload = ({
         </>
       )}
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Pan photo</Form.Label>
+        <Form.Label>Pan photo<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="file"
           onChange={(e) => handleChangePan(e)}
@@ -95,7 +95,7 @@ const ImageUpload = ({
         </>
       )}
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Signature</Form.Label>
+        <Form.Label>Signature<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="file"
           onChange={(e) => handleChangeSignature(e)}

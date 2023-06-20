@@ -23,7 +23,11 @@ const { StateUpdate } = require('./extendState/stateUpdate');
 
 app.use(
   cors({
-    origin: ['http://localhost:3000','https://www.wayonc.com','https://wayonc.com'],
+    origin: [
+      'http://localhost:3000',
+      'https://www.wayonc.com',
+      'https://wayonc.com',
+    ],
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true,
     allowedHeaders: ['Content-Type'],
@@ -42,11 +46,16 @@ mongoose
   .catch(() => {
     console.log('DB Connection failed');
   });
-
-app.use('/client', client);
-app.use('/auth', auth);
-app.use('/admin', admin);
-app.use('/user', user);
+app.get('/', (req, res) => {
+  res.redirect('https://wayonc.com');
+});
+app.get('/api', (req, res) => {
+  res.redirect('https://wayonc.com');
+});
+app.use('/api/client', client);
+app.use('/api/auth', auth);
+app.use('/api/admin', admin);
+app.use('/api/user', user);
 
 cron.schedule('*/10 * * * * *', () => {
   const date = new Date().toISOString().substring(0, 10);

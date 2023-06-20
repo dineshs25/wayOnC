@@ -42,7 +42,7 @@ const ClentID = () => {
             let hash = userID.replace(/slash/g, '/');
             try {
               axios
-                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/showdetails`, {
+                .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/admin/investVer/showdetails`, {
                   authEmail: hash,
                 })
                 .then((result) => {

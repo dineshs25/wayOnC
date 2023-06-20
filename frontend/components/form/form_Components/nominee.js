@@ -14,7 +14,7 @@ const Nominee = ({
     <>
       <h2>Nominee Details</h2>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Name</Form.Label>
+        <Form.Label>Name<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="text"
           name="nominee_name"
@@ -26,7 +26,7 @@ const Nominee = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Mobile No</Form.Label>
+        <Form.Label>Mobile No<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="tel"
           name="nominee_mobile"
@@ -38,7 +38,7 @@ const Nominee = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Relationship</Form.Label>
+        <Form.Label>Relationship<span className='mandate'>*</span></Form.Label>
         <br />
         {/* <Form.Control
           type="text"
@@ -68,7 +68,7 @@ const Nominee = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Aadhaar No</Form.Label>
+        <Form.Label>Aadhaar No<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="text"
           name="nominee_adhaar"
@@ -81,7 +81,7 @@ const Nominee = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>E-mail ID</Form.Label>
+        <Form.Label>E-mail ID<span className='mandate'>*</span></Form.Label>
         <Form.Control
           type="email"
           name="nominee_email"
@@ -93,7 +93,7 @@ const Nominee = ({
         ) : null}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Communication Address</Form.Label>
+        <Form.Label>Communication Address<span className='mandate'>*</span></Form.Label>
         <Form.Control
           as="textarea"
           name="nominee_address"

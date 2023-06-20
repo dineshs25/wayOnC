@@ -51,6 +51,7 @@ const ClentID = () => {
                   authEmail: hash,
                 })
                 .then((result) => {
+                  console.log(result);
                   if (result.data.Status === 'Success') {
                     setShowData(true);
                     // console.log(result.data.result.image.agreement);

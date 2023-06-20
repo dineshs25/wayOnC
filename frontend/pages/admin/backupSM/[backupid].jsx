@@ -28,7 +28,7 @@ const ClentID = () => {
 
   axios.defaults.withCredentials = true;
   const fetchAPI2 = async (url) => {
-    const cookie = Cookies.get("newAdmintoken");
+    const cookie = Cookies.get('newAdmintoken');
     try {
       await axios
         .post(url, { cookie: cookie })
@@ -135,6 +135,9 @@ const ClentID = () => {
                 <div className="admin-content scroll">
                   <div>
                     <Container>
+                      <p className="tableClientEmail sidebarID">
+                        <i>Client ID : {userData.clientID}</i>
+                      </p>
                       <Table
                         aria-label="Example table with static content"
                         css={{
@@ -148,7 +151,7 @@ const ClentID = () => {
                           <Table.Column>INT EARNED</Table.Column>
                           <Table.Column>INT PAID</Table.Column>
                           <Table.Column>INT PENDING</Table.Column>
-                          <Table.Column>REQ AMOUNT</Table.Column>
+                          <Table.Column>INT ASSIGNED</Table.Column>
                           <Table.Column>TOTAL PENDING RETURNS</Table.Column>
                           <Table.Column>PAY REQ</Table.Column>
                         </Table.Header>
@@ -167,7 +170,7 @@ const ClentID = () => {
                             <Table.Cell>
                               {userData.plan.pendingInterest}
                             </Table.Cell>
-                            <Table.Cell>{userData.reqmoney}</Table.Cell>
+                            <Table.Cell>{userData.interest}</Table.Cell>
                             <Table.Cell>
                               {userData.plan.pendingTotalAmount}
                             </Table.Cell>
@@ -379,33 +382,41 @@ const ClentID = () => {
                           <Table.Column>PAN</Table.Column>
                           <Table.Column>CLIENT PHOTO</Table.Column>
                           <Table.Column>SIGNATURE</Table.Column>
+                          <Table.Column>AGREEMENT</Table.Column>
                         </Table.Header>
                         <Table.Body>
                           <Table.Row>
                             <Table.Cell>
                               <Link
-                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.aadharImage}`}
+                                href={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${userData.image.aadharImage}`}
                               >
                                 Aadhar Image
                               </Link>
                             </Table.Cell>
                             <Table.Cell>
                               <Link
-                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.panImage}`}
+                                href={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${userData.image.panImage}`}
                               >
                                 Pan Image
                               </Link>
                             </Table.Cell>
                             <Table.Cell>
                               <Link
-                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.passportSizeImage}`}
+                                href={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${userData.image.passportSizeImage}`}
                               >
                                 Client Image
                               </Link>
                             </Table.Cell>
                             <Table.Cell>
                               <Link
-                                href={`http://res.cloudinary.com/duusv7nak/image/upload/v1684669380/${userData.image.signatureImage}`}
+                                href={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${userData.image.signatureImage}`}
+                              >
+                                Signature Image
+                              </Link>
+                            </Table.Cell>
+                            <Table.Cell>
+                              <Link
+                                href={`http://res.cloudinary.com/dtjlq2uaq/image/upload/v1686306194/${userData.image.agreement}`}
                               >
                                 Signature Image
                               </Link>

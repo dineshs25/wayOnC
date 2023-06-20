@@ -196,7 +196,7 @@ const ClientForm = () => {
       signatureImageVer
     ) {
       await axios
-        .post(`${process.env.NEXT_PUBLIC_BACKEND_API}/client/client_post`, {
+        .post(`http://localhost:8000/client/client_post`, {
           formData,
           nomineeData,
           aadharImage,
@@ -205,6 +205,7 @@ const ClientForm = () => {
           panImage,
         })
         .then((res) => {
+          console.log(res);
           if (res.data.Status === 'Please provide different Email') {
             alert('Please provide different Email');
           } else {
@@ -797,7 +798,7 @@ const ClientForm = () => {
               <div className="checkbox">
                 <input type="checkbox" onChange={handleCheckbox} required />
                 <p className="checkbox-p">
-                  I agree for the terms and conditions
+                  I agree for the terms and conditions<span className='mandate'>*</span>
                 </p>
               </div>
               <button type="submit">submit</button>

@@ -111,7 +111,7 @@ const ClientsData = () => {
               <div className="child-content">
                 <div className="admin-content">
                   <Container>
-                    <h2>Interest Requests</h2>
+                    <h2>Checkout Requests</h2>
                     <div className="searchDiv">
                       <Search setSearch={setSearch} />
                     </div>
